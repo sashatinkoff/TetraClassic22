@@ -6,6 +6,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'com.google.firebase.crashlytics'
     id 'com.google.gms.google-services'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 apply from: "$rootDir/versions.gradle"
 def versionPropsFile = file('version.properties')
@@ -101,11 +102,14 @@ dependencies {
     implementation google.app_compat
     implementation google.constraint
     implementation google.core_ktx
+    implementation google.gson
     implementation google.hilt
     implementation google.lifecycle_runtime_ktx
     implementation google.lifecycle_viewmodel_ktx
     implementation google.lifecycler_viewmodel_savedstate
     implementation google.material
+    implementation google.navigation_fragment
+    implementation google.navigation_ui_ktx
     implementation google.prefs
     implementation google.room
     implementation google.swipe_layout
@@ -115,6 +119,7 @@ dependencies {
     kapt google.room_compiler
 
     // network
+    implementation network.converter_gson
     implementation network.logging
     implementation network.okhttp
     implementation network.okio
