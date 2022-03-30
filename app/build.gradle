@@ -34,6 +34,12 @@ android {
         versionName "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
         setProperty("archivesBaseName", applicationId + "." + versionName)
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += ["room.schemaLocation":"$projectDir/schemas".toString()]
+            }
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
