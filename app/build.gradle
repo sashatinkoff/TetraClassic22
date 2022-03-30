@@ -1,19 +1,48 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.gms.google-services'
 }
+apply from: "$rootDir/versions.gradle"
+def versionPropsFile = file('version.properties')
 
 android {
-    compileSdk 32
+    compileSdk build_versions.compile_sdk
 
     defaultConfig {
         applicationId "com.isidroid.b21"
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        minSdk build_versions.min_sdk
+        targetSdk build_versions.target_sdk
+
+        def versionMajor = 1
+        def versionMinor = 0
+        def versionPatch = 0
+        def versionBuild = 0
+
+        if (versionPropsFile.canRead()) {
+            Properties versionProps = new Properties()
+            versionProps.load(new FileInputStream(versionPropsFile))
+            versionBuild = versionProps['VERSION_BUILD'].toInteger()
+        }
+
+        versionCode versionMajor * 100000 + versionMinor * 10000 + versionPatch * 100 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}.${versionBuild}"
+        setProperty("archivesBaseName", applicationId + "." + versionName)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(System.getenv("ISIDROID_KEYSTORE"))
+            storePassword System.getenv("ISIDROID_KEYSTORE_PASSWORD") ?: 'UNSET'
+            keyAlias System.getenv("ISIDROID_KEY_ALIAS") ?: 'UNSET'
+            keyPassword System.getenv("ISIDROID_KEY_PASSWORD") ?: 'UNSET'
+        }
     }
 
     buildTypes {
@@ -29,15 +58,82 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        dataBinding true
+        compose false
+    }
+
+    flavorDimensions 'app_type', 'mockable'
+    productFlavors {
+        stage {
+            dimension = 'app_type'
+            applicationIdSuffix = ".stage"
+        }
+
+        prod {
+            dimension = 'app_type'
+        }
+
+        mock {
+            dimension = 'mockable'
+        }
+
+        real {
+            dimension = 'mockable'
+        }
+    }
+
+    variantFilter { variant ->
+        if (
+        (name.contains("real") && name.contains("Mock"))
+                || (name.contains("prod") && name.contains("Mock"))
+                || (name.contains("stage") && name.contains("Mock") && name.contains("Release"))
+        ) {
+            setIgnore(true)
+        }
+    }
 }
 
 dependencies {
+    // google
+    implementation google.activity_ktx
+    implementation google.app_compat
+    implementation google.constraint
+    implementation google.core_ktx
+    implementation google.hilt
+    implementation google.lifecycle_runtime_ktx
+    implementation google.lifecycle_viewmodel_ktx
+    implementation google.lifecycler_viewmodel_savedstate
+    implementation google.material
+    implementation google.prefs
+    implementation google.room
+    implementation google.swipe_layout
+    implementation google.work
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    kapt google.hilt_compiler
+    kapt google.room_compiler
+
+    // network
+    implementation network.logging
+    implementation network.okhttp
+    implementation network.okio
+    implementation network.retrofit
+
+    // firebase
+    implementation firebase.analytics
+    implementation firebase.crashlytics
+    implementation firebase.messaging
+    implementation platform(firebase.bom)
+
+    // tools
+    implementation tools.glide
+    implementation tools.photoview
+    implementation tools.timber
+    kapt tools.glide_compiler
+
+    // test
+    androidTestImplementation test.espresso_core
+    androidTestImplementation test.junit_ext
+    testImplementation test.junit
 }
