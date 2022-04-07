@@ -110,25 +110,28 @@ dependencies {
     implementation google.core_ktx
     implementation google.gson
     implementation google.hilt
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1'
+
+    implementation google.lifecycle_runtime_ktx
+    implementation google.lifecycle_viewmodel_ktx
+    implementation google.lifecycler_viewmodel_savedstate
+
     implementation google.material
     implementation google.navigation_fragment
     implementation google.navigation_ui_ktx
     implementation google.prefs
-    implementation 'androidx.room:room-runtime:2.4.2'
+    implementation google.room
+    implementation google.splash
     implementation google.swipe_layout
     implementation google.work
 
     kapt google.hilt_compiler
-    kapt 'androidx.room:room-compiler:2.4.2'
+    kapt google.room_compiler
 
     // network
     implementation network.converter_gson
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6'
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.6'
-    implementation 'com.squareup.okio:okio:3.0.0'
+    implementation network.logging
+    implementation network.okhttp
+    implementation network.okio
     implementation network.retrofit
 
     // firebase
@@ -138,10 +141,12 @@ dependencies {
     implementation platform(firebase.bom)
 
     // tools
-    implementation 'com.github.bumptech.glide:glide:4.13.1'
-    implementation tools.photoview
+    implementation tools.glide
+
+    // enable it for using scalable images
+//    implementation tools.photoview
     implementation tools.timber
-    kapt 'com.github.bumptech.glide:compiler:4.13.1'
+    kapt tools.glide_compiler
 
     // test
     androidTestImplementation test.espresso_core

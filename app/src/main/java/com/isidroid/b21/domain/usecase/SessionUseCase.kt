@@ -10,7 +10,7 @@ import javax.inject.Inject
 class SessionUseCase @Inject constructor(
     private val repository: SessionRepository
 ) {
-    fun name() = flow {
+    fun create() = flow {
         emit(ResultData.Loading)
         delay(2_500)
         emit(

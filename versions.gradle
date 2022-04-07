@@ -1,9 +1,9 @@
 ext.deps = [:]
 
 def build_versions = [:]
-build_versions.compile_sdk = 31
+build_versions.compile_sdk = 32
 build_versions.min_sdk = 21
-build_versions.target_sdk = 31
+build_versions.target_sdk = 32
 ext.build_versions = build_versions
 
 def google = [:]
@@ -14,15 +14,16 @@ google.core_ktx = "androidx.core:core-ktx:1.7.0"
 google.gson = "com.google.code.gson:gson:2.9.0"
 google.hilt = "com.google.dagger:hilt-android:$hilt"
 google.hilt_compiler = "com.google.dagger:hilt-compiler:$hilt"
-google.lifecycle_runtime_ktx = "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
-google.lifecycle_viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
-google.lifecycler_viewmodel_savedstate = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.0"
+google.lifecycle_runtime_ktx = "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
+google.lifecycle_viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+google.lifecycler_viewmodel_savedstate = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1"
 google.material = "com.google.android.material:material:1.5.0"
 google.navigation_fragment = "androidx.navigation:navigation-fragment-ktx:$navigation"
 google.navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:$navigation"
 google.prefs = "androidx.preference:preference-ktx:1.2.0"
-google.room = "androidx.room:room-runtime:2.4.1"
-google.room_compiler = "androidx.room:room-compiler:2.4.1"
+google.room = "androidx.room:room-runtime:2.4.2"
+google.room_compiler = "androidx.room:room-compiler:2.4.2"
+google.splash = "androidx.core:core-splashscreen:1.0.0-beta02"
 google.swipe_layout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 google.work = "androidx.work:work-runtime-ktx:2.7.1"
 ext.google = google
@@ -31,7 +32,7 @@ def network = [:]
 network.converter_gson = "com.squareup.retrofit2:converter-gson:2.9.0"
 network.logging = "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
 network.okhttp = "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
-network.okio = "com.squareup.okio:okio:3.0.0-alpha.1"
+network.okio = "com.squareup.okio:okio:3.0.0"
 network.retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
 ext.network = network
 
@@ -43,8 +44,8 @@ firebase.messaging = "com.google.firebase:firebase-messaging-ktx"
 ext.firebase = firebase
 
 def tools = [:]
-tools.glide = "com.github.bumptech.glide:glide:4.12.0"
-tools.glide_compiler = "com.github.bumptech.glide:compiler:4.12.0"
+tools.glide = "com.github.bumptech.glide:glide:4.13.1"
+tools.glide_compiler = "com.github.bumptech.glide:compiler:4.13.1"
 tools.photoview = "com.github.chrisbanes:PhotoView:2.3.0"
 tools.timber = "com.jakewharton.timber:timber:5.0.1"
 ext.tools = tools

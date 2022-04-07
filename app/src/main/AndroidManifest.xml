@@ -9,10 +9,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Tetra22">
+        android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.MainActivity"
+            android:theme="@style/Theme.App.Splash"
+            android:name=".ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
