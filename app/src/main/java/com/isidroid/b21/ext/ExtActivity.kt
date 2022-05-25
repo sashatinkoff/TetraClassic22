@@ -3,7 +3,13 @@ package com.isidroid.b21.ext
 import android.app.Activity
 import android.content.Context
 import android.view.View
+import android.view.WindowManager
+import androidx.annotation.IdRes
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 
 internal val Activity.rootView: View
     get() = findViewById(android.R.id.content)
@@ -67,4 +73,14 @@ fun Context?.alert(
     val result = builder.create()
     result.show()
     return result
+}
+
+fun Activity.updateStatusBarColor(color: Int) {
+    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+    window.statusBarColor = color( color)
+}
+
+fun FragmentActivity.findNavController(@IdRes viewId: Int): NavController {
+    val navHostFragment = supportFragmentManager.findFragmentById(viewId) as NavHostFragment
+    return navHostFragment.navController
 }

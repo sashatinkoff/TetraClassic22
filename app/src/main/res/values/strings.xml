@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tetra22</string>
+    <string name="label">Hint</string>
 </resources>

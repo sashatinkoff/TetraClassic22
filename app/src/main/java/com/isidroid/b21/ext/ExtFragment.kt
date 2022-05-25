@@ -2,9 +2,12 @@ package com.isidroid.b21.ext
 
 import android.os.Bundle
 import android.os.Parcelable
+import androidx.annotation.IdRes
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.isidroid.b21.utils.ParcelArg
 import java.io.Serializable
 
@@ -65,3 +68,10 @@ private fun putArgument(fragment: Fragment, key: String, value: Any?) = fragment
     arguments = arguments ?: Bundle()
     arguments?.putArgument(key, value)
 }
+
+fun Fragment.findNavController(@IdRes viewId: Int): NavController {
+    val navHostFragment = childFragmentManager.findFragmentById(viewId) as NavHostFragment
+    return navHostFragment.navController
+}
+
+val Fragment.parent get() = (parentFragment as? NavHostFragment)?.parentFragment ?: parentFragment

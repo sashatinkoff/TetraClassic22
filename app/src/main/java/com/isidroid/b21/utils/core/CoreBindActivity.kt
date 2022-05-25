@@ -6,8 +6,10 @@ import androidx.annotation.CallSuper
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
 import com.isidroid.b21.data.source.settings.Settings
 import com.isidroid.b21.ext.alert
+import com.isidroid.b21.utils.FragmentConnector
 import timber.log.Timber
 
 /**
@@ -15,9 +17,10 @@ import timber.log.Timber
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindActivity : AppCompatActivity(), IBaseView {
-
+abstract class CoreBindActivity : AppCompatActivity(), IBaseView, FragmentConnector {
     private var errorDialog: AlertDialog? = null
+
+    override var currentFragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Timber.tag("activity_lifecycle").i("${javaClass.simpleName} onCreate")

@@ -9,4 +9,8 @@
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
+    <style name="HintStyle">
+        <item name="android:textColor">#FF0</item>
+    </style>
+
 </resources>
