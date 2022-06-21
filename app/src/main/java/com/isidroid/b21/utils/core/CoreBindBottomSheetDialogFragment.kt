@@ -17,7 +17,7 @@ import com.isidroid.b21.R
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindBottomSheetDialogFragment() : BottomSheetDialogFragment(), IBaseView {
+abstract class CoreBindBottomSheetDialogFragment() : BottomSheetDialogFragment(), BaseView {
     protected open val noDim: Boolean = false
     protected open val fullScreenHeight: Boolean = false
 

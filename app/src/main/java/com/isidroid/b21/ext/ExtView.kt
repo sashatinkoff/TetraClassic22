@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.doOnLayout
+import androidx.core.widget.NestedScrollView
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.button.MaterialButton
 import kotlin.random.Random
@@ -47,3 +48,22 @@ inline fun <reified T : ViewGroup.LayoutParams> View.updateSize(
 }
 
 fun randomColor(): Int = Color.argb(255, Random.nextInt(256), Random.nextInt(256), Random.nextInt(256))
+
+
+fun NestedScrollView.activateOnScrollToFooter(onScrolled: (Boolean) -> Unit) {
+    var isFooter = false
+
+    setOnScrollChangeListener { _, _, scrollY, _, _ ->
+        val verticalScrollableHeight = getChildAt(0).measuredHeight - measuredHeight
+        val verticalPercentage = scrollY.toFloat() / verticalScrollableHeight
+        val y = .9f
+
+        if (verticalPercentage >= y && !isFooter) {
+            isFooter = true
+            onScrolled(true)
+        } else if (verticalPercentage < y && isFooter) {
+            isFooter = false
+            onScrolled(false)
+        }
+    }
+}

@@ -3,10 +3,10 @@ package com.isidroid.b21.utils.core
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.CallSuper
-import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import com.isidroid.b21.ext.hideSoftKeyboard
 import com.isidroid.b21.utils.FragmentConnector
@@ -17,7 +17,7 @@ import timber.log.Timber
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwner, IBaseView, FragmentConnector {
+abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwner, BaseView, FragmentConnector {
     override var currentFragment: Fragment? = null
 
     @CallSuper
@@ -31,6 +31,7 @@ abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwne
     @CallSuper
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         createBaseView()
+        lifecycleScope.launchWhenResumed { onReady() }
     }
 
     override fun onResume() {

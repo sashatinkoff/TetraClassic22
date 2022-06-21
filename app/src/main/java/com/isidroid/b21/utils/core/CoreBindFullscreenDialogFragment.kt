@@ -18,7 +18,7 @@ import com.isidroid.b21.R
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindFullscreenDialogFragment() : AppCompatDialogFragment(), IBaseView {
+abstract class CoreBindFullscreenDialogFragment() : AppCompatDialogFragment(), BaseView {
     open val canceledOnTouchOutside: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {

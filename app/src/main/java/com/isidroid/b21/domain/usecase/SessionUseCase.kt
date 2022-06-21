@@ -11,7 +11,6 @@ class SessionUseCase @Inject constructor(
     private val repository: SessionRepository
 ) {
     fun create() = flow {
-        emit(ResultData.Loading)
         delay(2_500)
         emit(
             ResultData.Success(

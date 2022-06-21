@@ -2,7 +2,7 @@ package com.isidroid.b21.utils.core
 
 import androidx.annotation.CallSuper
 
-interface IBaseView {
+interface BaseView {
     @CallSuper
     fun createBaseView() {
         createAppBar()
@@ -10,6 +10,7 @@ interface IBaseView {
         createAdapter()
     }
 
+    fun onReady(){}
     fun createAppBar(){}
     fun createForm(){}
     fun createAdapter(){}

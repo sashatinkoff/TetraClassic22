@@ -40,7 +40,7 @@ android {
             }
         }
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.isidroid.b21.MockTestRunner"
     }
 
     signingConfigs {

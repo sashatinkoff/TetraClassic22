@@ -17,19 +17,20 @@ import timber.log.Timber
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindActivity : AppCompatActivity(), IBaseView, FragmentConnector {
+abstract class CoreBindActivity : AppCompatActivity(), BaseView, FragmentConnector {
     private var errorDialog: AlertDialog? = null
 
     override var currentFragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(Settings.theme)
         Timber.tag("activity_lifecycle").i("${javaClass.simpleName} onCreate")
         super.onCreate(savedInstanceState)
         createBaseView()
+        onCreateViewModel()
     }
 
     override fun onResume() {
-        AppCompatDelegate.setDefaultNightMode(Settings.theme)
         super.onResume()
         Timber.tag("activity_lifecycle").i("${javaClass.simpleName} onResume")
     }
@@ -40,43 +41,40 @@ abstract class CoreBindActivity : AppCompatActivity(), IBaseView, FragmentConnec
         Timber.tag("activity_lifecycle").i("${javaClass.simpleName} onDestroy")
     }
 
-    override fun onPause() {
-        super.onPause()
-    }
-
+    open fun onCreateViewModel() {}
 
     @CallSuper
     open fun showError(
-            t: Throwable?,
-            isCritical: Boolean = false,
-            buttonTitle: String? = null,
-            onButtonClick: (() -> Unit)? = null
+        t: Throwable?,
+        isCritical: Boolean = false,
+        buttonTitle: String? = null,
+        onButtonClick: (() -> Unit)? = null
     ) {
         showError(
-                message = t?.message,
-                isCritical = isCritical,
-                buttonTitle = buttonTitle,
-                onButtonClick = onButtonClick
+            message = t?.message,
+            isCritical = isCritical,
+            buttonTitle = buttonTitle,
+            onButtonClick = onButtonClick
         )
     }
 
     @CallSuper
     open fun showError(
-            message: String?,
-            isCritical: Boolean = false,
-            buttonTitle: String? = null,
-            onButtonClick: (() -> Unit)? = null
+        message: String?,
+        isCritical: Boolean = false,
+        buttonTitle: String? = null,
+        onButtonClick: (() -> Unit)? = null
     ) {
         message ?: return
 
         if (isCritical && errorDialog?.isShowing != true)
             errorDialog = alert(
-                    message = message,
-                    positive = buttonTitle,
-                    onPositive = { onButtonClick?.invoke() },
-                    onDismiss = { errorDialog = null },
-                    negativeRes = android.R.string.cancel,
-                    isCancelable = false
+                message = message,
+                positive = buttonTitle,
+                onPositive = { onButtonClick?.invoke() },
+                onDismiss = { errorDialog = null },
+                negativeRes = android.R.string.cancel,
+                isCancelable = false
             )
         else if (!isCritical)
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
