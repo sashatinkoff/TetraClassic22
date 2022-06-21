@@ -4,13 +4,12 @@
     <style name="FullScreenDialogStyle" parent="Theme.AppCompat.DayNight.Dialog" />
 
     <style name="Theme.App.Splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/brandColor</item>
-        <item name="windowSplashScreenAnimationDuration">5000</item>
+        <item name="windowSplashScreenBackground">@color/md_theme_light_background</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
     <style name="HintStyle">
-        <item name="android:textColor">#FF0</item>
     </style>
 
 </resources>

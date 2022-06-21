@@ -75,7 +75,7 @@ fun Context?.alert(
     return result
 }
 
-fun Activity.updateStatusBarColor(color: Int) {
+fun Activity.updateStatusBarColorExt(color: Int) {
     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
     window.statusBarColor = color( color)
 }

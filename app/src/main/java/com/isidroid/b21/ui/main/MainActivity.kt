@@ -3,17 +3,16 @@ package com.isidroid.b21.ui.main
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import com.isidroid.b21.R
 import com.isidroid.b21.databinding.ActivityMainBinding
 import com.isidroid.b21.ext.findNavController
+import com.isidroid.b21.ext.updateStatusBarColorExt
 import com.isidroid.b21.ui.home.HomeFragment
-import com.isidroid.b21.ui.main.MainView
-import com.isidroid.b21.ui.main.MainViewModel
 import com.isidroid.b21.utils.base.BindActivity
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : BindActivity(), MainView {
@@ -27,12 +26,14 @@ class MainActivity : BindActivity(), MainView {
             else -> null
         }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
             .setKeepOnScreenCondition { viewModel.isInitInProgress }
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        updateStatusBarColor()
     }
 
     // MainView
@@ -46,5 +47,10 @@ class MainActivity : BindActivity(), MainView {
             null
 
         navController.navigate(action, navOptions = options)
+    }
+
+    override fun updateStatusBarColor(colorRes: Int, isLightStatusBarIcons: Boolean) {
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = isLightStatusBarIcons
+        updateStatusBarColorExt(colorRes)
     }
 }
