@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import com.isidroid.b21.ext.hideSoftKeyboard
 import com.isidroid.b21.utils.FragmentConnector
+import com.isidroid.b21.utils.FragmentResultListener
 import timber.log.Timber
 
 /**
@@ -17,7 +18,7 @@ import timber.log.Timber
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwner, BaseView, FragmentConnector {
+abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwner, BaseView, FragmentConnector, FragmentResultListener {
     override var currentFragment: Fragment? = null
 
     @CallSuper
