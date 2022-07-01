@@ -41,6 +41,16 @@ abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwne
         fragmentConnector(true)
     }
 
+    override fun onStart() {
+        super.onStart()
+        startFragmentResultListeners()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        stopFragmentResultListeners()
+    }
+
     @CallSuper
     override fun onHiddenChanged(hidden: Boolean) {
         Timber.tag("fragment_lifecycle").i("onHiddenChanged hidden=$hidden ${javaClass.simpleName} act=${requireActivity().javaClass.simpleName}")

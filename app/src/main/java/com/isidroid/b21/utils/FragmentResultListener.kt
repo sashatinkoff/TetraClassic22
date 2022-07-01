@@ -8,6 +8,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.LifecycleOwner
 
 interface FragmentResultListener {
+    fun startFragmentResultListeners(){}
+    fun stopFragmentResultListeners(){}
+
     fun listen(fragmentManager: FragmentManager, viewLifeCycleOwner: LifecycleOwner, requestKey: String, onComplete: (Bundle) -> Unit) {
         fragmentManager
             .setFragmentResultListener(requestKey, viewLifeCycleOwner) { _, result -> onComplete(result) }
@@ -20,6 +23,14 @@ interface FragmentResultListener {
             requestKey = requestKey,
             onComplete = onComplete
         )
+    }
+
+    fun stopListen(fragmentManager: FragmentManager, vararg requestKey: String) {
+        requestKey.forEach { fragmentManager.clearFragmentResultListener(it) }
+    }
+
+    fun stopListen(fragment: Fragment, vararg requestKey: String) {
+        stopListen(fragment.requireActivity().supportFragmentManager, *requestKey.toList().toTypedArray())
     }
 
     fun setFragmentResult(
