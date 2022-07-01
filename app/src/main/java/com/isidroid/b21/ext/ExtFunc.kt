@@ -26,9 +26,16 @@ val Any?.json: String
 
 inline fun <reified T> Gson.fromJson(json: String?): T = fromJson(json, object : TypeToken<T>() {}.type)
 inline fun <reified T> Gson.fromJson(obj: JsonObject): T? = fromJson(obj, object : TypeToken<T>() {}.type)
+inline fun <reified T> Any.isType(): Boolean = this is T
 
 val Bundle?.debug: String?
     get() {
         this ?: return null
         return keySet().joinToString(", ") { "$it=${get(it)}" }
     }
+
+inline fun <T> tryCatch(block: () -> T): T? = try {
+    block()
+} catch (t: Throwable) {
+    null
+}

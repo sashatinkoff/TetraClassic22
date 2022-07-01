@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <cache-path
+        name="cache_path"
+        path="." />
+
+    <files-path
+        name="files_path"
+        path="." />
+
+    <external-path
+        name="sdcard"
+        path="." />
+</paths>

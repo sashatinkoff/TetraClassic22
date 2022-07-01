@@ -11,10 +11,11 @@
         android:label="@string/navigation_label_home"
         tools:layout="@layout/fragment_home">
 
+        <deepLink app:uri="staging.getweho.app/activate?key={key}" />
+
         <argument
-            android:name="some_value"
-            app:argType="string"
-            app:nullable="true" />
+            android:name="key"
+            app:argType="string" />
 
     </fragment>
 </navigation>
