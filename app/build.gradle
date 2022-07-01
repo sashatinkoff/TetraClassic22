@@ -123,6 +123,7 @@ dependencies {
     implementation google.splash
     implementation google.swipe_layout
     implementation google.work
+    implementation 'androidx.hilt:hilt-work:1.0.0'
 
     kapt google.hilt_compiler
     kapt google.room_compiler
