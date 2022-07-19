@@ -16,12 +16,17 @@ class App : Application(), Configuration.Provider  {
     override fun onCreate() {
         super.onCreate()
 
+        instance = this
         NotificationsChannels(this)
-        InboxWorker.schedule(this)
+//        InboxWorker.schedule(this)
         Timber.plant(Timber.DebugTree())
     }
 
     override fun getWorkManagerConfiguration() = Configuration.Builder()
         .setWorkerFactory(workerFactory)
         .build()
+
+    companion object {
+        lateinit var instance: App
+    }
 }
