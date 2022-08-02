@@ -1,7 +1,7 @@
 package com.isidroid.b21.domain.usecase
 
 import com.isidroid.b21.domain.repository.SessionRepository
-import com.isidroid.b21.utils.ResultData
+import com.isidroid.core.utils.ResultData
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import java.util.*

@@ -1,4 +1,4 @@
-package com.isidroid.b21.utils
+package com.isidroid.core.utils
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

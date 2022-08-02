@@ -3,7 +3,7 @@ package com.isidroid.b21.ui.main
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.isidroid.b21.domain.usecase.SessionUseCase
-import com.isidroid.b21.utils.BaseViewModel
+import com.isidroid.core.utils.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject

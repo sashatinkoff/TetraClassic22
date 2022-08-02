@@ -3,7 +3,7 @@ package com.isidroid.b21.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
-import com.isidroid.b21.utils.BaseViewModel
+import com.isidroid.core.utils.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

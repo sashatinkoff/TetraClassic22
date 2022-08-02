@@ -1,4 +1,4 @@
-package com.isidroid.b21.utils
+package com.isidroid.core.utils
 
 /**
  * Generic class for holding success response, error response and loading status
