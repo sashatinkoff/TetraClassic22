@@ -106,54 +106,56 @@ android {
 }
 
 dependencies {
+    api project(path: ':core')
+
     // google
-    implementation google.activity_ktx
-    implementation google.app_compat
-    implementation google.constraint
-    implementation google.core_ktx
-    implementation google.gson
-    implementation google.hilt
+    implementation "androidx.activity:activity-ktx:$google.activity_ktx"
+    implementation "androidx.appcompat:appcompat:$google.app_compat"
+    implementation "androidx.constraintlayout:constraintlayout:$google.constraint"
+    implementation "androidx.core:core-ktx:$google.core_ktx"
+    implementation "com.google.code.gson:gson:$google.gson"
+    implementation "com.google.dagger:hilt-android:$google.hilt"
 
-    implementation google.lifecycle_runtime_ktx
-    implementation google.lifecycle_viewmodel_ktx
-    implementation google.lifecycler_viewmodel_savedstate
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$google.lifecycle_runtime_ktx"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$google.lifecycle_viewmodel_ktx"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$google.lifecycler_viewmodel_savedstate"
 
-    implementation google.material
-    implementation google.navigation_fragment
-    implementation google.navigation_ui_ktx
-    implementation google.prefs
-    implementation google.room
-    implementation google.splash
-    implementation google.swipe_layout
-    implementation google.work
-    implementation 'androidx.hilt:hilt-work:1.0.0'
+    implementation "com.google.android.material:material:$google.material"
+    implementation "androidx.navigation:navigation-fragment-ktx:$google.navigation_fragment"
+    implementation "androidx.navigation:navigation-ui-ktx:$google.navigation_ui_ktx"
+    implementation "androidx.preference:preference-ktx:$google.prefs"
+    implementation "androidx.room:room-runtime:$google.room"
+    implementation "androidx.core:core-splashscreen:$google.splash"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$google.swipe_layout"
+    implementation "androidx.work:work-runtime-ktx:$google.work"
+    implementation "androidx.hilt:hilt-work:$google.hilt_work"
 
-    kapt google.hilt_compiler
-    kapt google.room_compiler
+    kapt "com.google.dagger:hilt-compiler:$google.hilt_compiler"
+    kapt "androidx.room:room-compiler:$google.room_compiler"
 
     // network
-    implementation network.converter_gson
-    implementation network.logging
-    implementation network.okhttp
-    implementation network.okio
-    implementation network.retrofit
+    implementation "com.squareup.retrofit2:converter-gson:$network.converter_gson"
+    implementation "com.squareup.okhttp3:logging-interceptor:$network.logging"
+    implementation "com.squareup.okhttp3:okhttp:$network.okhttp"
+    implementation "com.squareup.okio:okio:$network.okio"
+    implementation "com.squareup.retrofit2:retrofit:$network.retrofit"
 
     // firebase
     implementation firebase.analytics
     implementation firebase.crashlytics
     implementation firebase.messaging
-    implementation platform(firebase.bom)
+    implementation platform("com.google.firebase:firebase-bom:$firebase.bom")
 
     // tools
-    implementation tools.glide
+    implementation "com.github.bumptech.glide:glide:$tools.glide"
 
     // enable it for using scalable images
-//    implementation tools.photoview
-    implementation tools.timber
-    kapt tools.glide_compiler
+//    implementation "com.github.chrisbanes:PhotoView:"tools.photoview
+    implementation "com.jakewharton.timber:timber:$tools.timber"
+    kapt "com.github.bumptech.glide:compiler:$tools.glide_compiler"
 
     // test
-    androidTestImplementation test.espresso_core
-    androidTestImplementation test.junit_ext
-    testImplementation test.junit
+    androidTestImplementation "androidx.test.espresso:espresso-core:$test.espresso_core"
+    androidTestImplementation "junit:junit:$test.junit"
+    testImplementation "androidx.test.ext:junit:$test.junit_ext"
 }

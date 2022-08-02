@@ -8,8 +8,8 @@ import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import com.isidroid.b21.R
 import com.isidroid.b21.databinding.ActivityMainBinding
-import com.isidroid.b21.ext.findNavController
-import com.isidroid.b21.ext.updateStatusBarColorExt
+import com.isidroid.core.ext.findNavController
+import com.isidroid.core.ext.updateStatusBarColorExt
 import com.isidroid.b21.ui.home.HomeFragment
 import com.isidroid.b21.utils.base.BindActivity
 import dagger.hilt.android.AndroidEntryPoint

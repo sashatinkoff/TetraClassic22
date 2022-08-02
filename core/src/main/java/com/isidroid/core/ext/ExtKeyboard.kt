@@ -1,4 +1,4 @@
-package com.isidroid.b21.ext
+package com.isidroid.core.ext
 
 import android.app.Activity
 import android.content.Context

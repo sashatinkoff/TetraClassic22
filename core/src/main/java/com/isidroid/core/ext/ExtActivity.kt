@@ -1,4 +1,4 @@
-package com.isidroid.b21.ext
+package com.isidroid.core.ext
 
 import android.app.Activity
 import android.content.Context
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.WindowManager
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment

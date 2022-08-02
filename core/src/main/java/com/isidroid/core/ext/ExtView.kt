@@ -1,9 +1,11 @@
-package com.isidroid.b21.ext
+package com.isidroid.core.ext
 
 import android.content.Context
 import android.graphics.Color
+import android.os.Build
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.view.doOnLayout
 import androidx.core.widget.NestedScrollView
 import androidx.viewbinding.ViewBinding
@@ -50,6 +52,7 @@ inline fun <reified T : ViewGroup.LayoutParams> View.updateSize(
 fun randomColor(): Int = Color.argb(255, Random.nextInt(256), Random.nextInt(256), Random.nextInt(256))
 
 
+@RequiresApi(Build.VERSION_CODES.M)
 fun NestedScrollView.activateOnScrollToFooter(onScrolled: (Boolean) -> Unit) {
     var isFooter = false
 

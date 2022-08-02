@@ -15,6 +15,7 @@ enum class SettingId(
     fun update(value: Int) {
         when (this) {
             THEME -> Settings.theme = value
+            else -> {}
         }
     }
 }

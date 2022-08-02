@@ -7,13 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.isidroid.b21.databinding.FragmentHomeBinding
-import com.isidroid.b21.ext.date
 import com.isidroid.b21.utils.base.BindFragment
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import java.text.SimpleDateFormat
-import java.time.Instant
-import java.util.*
 
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {

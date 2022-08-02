@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TetraClassic22"
 include ':app'
+include ':core'

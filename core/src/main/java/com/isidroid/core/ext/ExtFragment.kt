@@ -1,4 +1,4 @@
-package com.isidroid.b21.ext
+package com.isidroid.core.ext
 
 import android.os.Bundle
 import android.os.Parcelable
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.isidroid.b21.utils.ParcelArg
+import com.isidroid.core.utils.ParcelArg
 import java.io.Serializable
 
 fun Fragment.put(key: String, value: Any?) =

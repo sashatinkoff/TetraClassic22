@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.isidroid.b21.data.source.settings.Settings
-import com.isidroid.b21.ext.alert
+import com.isidroid.core.ext.alert
 import com.isidroid.b21.utils.FragmentConnector
 import timber.log.Timber
 
