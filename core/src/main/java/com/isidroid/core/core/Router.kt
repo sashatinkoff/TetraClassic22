@@ -1,4 +1,4 @@
-package com.isidroid.b21.utils.core
+package com.isidroid.core.core
 
 import android.app.Activity
 import android.app.ActivityOptions
@@ -8,7 +8,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import androidx.fragment.app.Fragment
-import com.isidroid.b21.Const
 import java.io.Serializable
 
 open class Router(
@@ -17,7 +16,7 @@ open class Router(
     private val closeCurrent: Boolean = false,
     private val closeAll: Boolean = false,
     private val isAnimate: Boolean = false,
-    private val requestCode: Const.Code? = null,
+    private val requestCode: Int? = null,
     private val sceneTransitionAnimation: ((Activity?) -> ActivityOptions)? = null,
     private val onIntent: ((Intent) -> Unit)? = null,
     private val intent: Intent? = null,
@@ -33,7 +32,7 @@ open class Router(
         }
 
     private val arguments = hashMapOf<String, Any?>()
-    fun putExtra(key: Const.Arg, value: Any?) = apply { arguments[key.name] = value }
+    fun putExtra(key: String, value: Any?) = apply { arguments[key] = value }
 
     private fun openActivity() {
         val intent = intent ?: Intent(context, activity)
@@ -54,10 +53,8 @@ open class Router(
 
         val options: Bundle? = (context as? Activity)?.let { activity ->
             if (isAnimate)
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                    (sceneTransitionAnimation?.invoke(activity)
-                        ?: ActivityOptions.makeSceneTransitionAnimation(activity)).toBundle()
-                } else null
+                (sceneTransitionAnimation?.invoke(activity)
+                    ?: ActivityOptions.makeSceneTransitionAnimation(activity)).toBundle()
             else null
         }
 
@@ -78,7 +75,7 @@ open class Router(
     private fun activityStarts(activity: Activity, intent: Intent, options: Bundle?) =
         activity.apply {
             requestCode
-                ?.let { startActivityForResult(intent, requestCode.code, options) }
+                ?.let { startActivityForResult(intent, requestCode, options) }
                 ?: run { startActivity(intent, options) }
 
             if(noAnimation) overridePendingTransition(0, 0)
@@ -87,7 +84,7 @@ open class Router(
     private fun fragmentStarts(fragment: Fragment, intent: Intent, options: Bundle?) =
         fragment.apply {
             requestCode
-                ?.let { startActivityForResult(intent, requestCode.code, options) }
+                ?.let { startActivityForResult(intent, requestCode, options) }
                 ?: run { startActivity(intent, options) }
 
             if(noAnimation) requireActivity().overridePendingTransition(0, 0)

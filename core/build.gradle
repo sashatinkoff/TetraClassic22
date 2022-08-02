@@ -34,7 +34,7 @@ android {
 }
 
 dependencies {
-
+    // google
     implementation "androidx.appcompat:appcompat:$google.app_compat"
     implementation "androidx.core:core-ktx:$google.core_ktx"
     implementation "com.google.code.gson:gson:$google.gson"
@@ -42,4 +42,6 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$google.navigation_ui_ktx"
     implementation "com.google.android.material:material:$google.material"
 
+    // tools
+    implementation "com.jakewharton.timber:timber:$tools.timber"
 }

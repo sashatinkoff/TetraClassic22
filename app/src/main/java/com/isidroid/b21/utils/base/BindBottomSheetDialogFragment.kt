@@ -1,5 +1,5 @@
 package com.isidroid.b21.utils.base
 
-import com.isidroid.b21.utils.core.CoreBindBottomSheetDialogFragment
+import com.isidroid.core.core.CoreBindBottomSheetDialogFragment
 
 abstract class BindBottomSheetDialogFragment() : CoreBindBottomSheetDialogFragment()

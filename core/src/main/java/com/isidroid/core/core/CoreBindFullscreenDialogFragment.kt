@@ -1,4 +1,4 @@
-package com.isidroid.b21.utils.core
+package com.isidroid.core.core
 
 import android.app.Dialog
 import android.graphics.Color
@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatDialogFragment
-import com.isidroid.b21.R
+import com.isidroid.core.R
 
 /**
  * this class contains the base implementation, do not modify it.

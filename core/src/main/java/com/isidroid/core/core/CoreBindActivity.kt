@@ -1,15 +1,13 @@
-package com.isidroid.b21.utils.core
+package com.isidroid.core.core
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
-import com.isidroid.b21.data.source.settings.Settings
 import com.isidroid.core.ext.alert
-import com.isidroid.b21.utils.FragmentConnector
+import com.isidroid.core.utils.FragmentConnector
 import timber.log.Timber
 
 /**
@@ -23,7 +21,6 @@ abstract class CoreBindActivity : AppCompatActivity(), BaseView, FragmentConnect
     override var currentFragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AppCompatDelegate.setDefaultNightMode(Settings.theme)
         Timber.tag("activity_lifecycle").i("${javaClass.simpleName} onCreate")
         super.onCreate(savedInstanceState)
         createBaseView()

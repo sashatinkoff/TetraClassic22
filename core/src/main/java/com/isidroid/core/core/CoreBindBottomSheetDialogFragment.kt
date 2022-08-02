@@ -1,4 +1,4 @@
-package com.isidroid.b21.utils.core
+package com.isidroid.core.core
 
 import android.app.Dialog
 import android.graphics.Color
@@ -10,7 +10,7 @@ import androidx.annotation.CallSuper
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.isidroid.b21.R
+import com.isidroid.core.R
 
 /**
  * this class contains the base implementation, do not modify it.

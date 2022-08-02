@@ -1,4 +1,4 @@
-package com.isidroid.b21.utils.core
+package com.isidroid.core.core
 
 import android.os.Bundle
 import android.view.View
@@ -9,8 +9,8 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import com.isidroid.core.ext.hideSoftKeyboard
-import com.isidroid.b21.utils.FragmentConnector
-import com.isidroid.b21.utils.FragmentResultListener
+import com.isidroid.core.utils.FragmentConnector
+import com.isidroid.core.utils.FragmentResultListener
 import timber.log.Timber
 
 /**
