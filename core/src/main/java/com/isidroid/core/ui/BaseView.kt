@@ -1,4 +1,4 @@
-package com.isidroid.core.core
+package com.isidroid.core.ui
 
 import androidx.annotation.CallSuper
 

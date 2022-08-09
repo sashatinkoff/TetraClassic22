@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -41,6 +43,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$google.navigation_fragment"
     implementation "androidx.navigation:navigation-ui-ktx:$google.navigation_ui_ktx"
     implementation "com.google.android.material:material:$google.material"
+    implementation "com.google.dagger:hilt-android:$google.hilt"
+
+    kapt "com.google.dagger:hilt-compiler:$google.hilt_compiler"
 
     // tools
     implementation "com.jakewharton.timber:timber:$tools.timber"

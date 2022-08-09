@@ -1,4 +1,4 @@
-package com.isidroid.core.core
+package com.isidroid.core.ui
 
 import android.app.Activity
 import android.app.ActivityOptions
