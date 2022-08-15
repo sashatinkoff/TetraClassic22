@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.isidroid.b21.constants.TEST
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,5 +21,4 @@ class HomeFragment : BindFragment(), HomeView {
 
     override fun onReady() {
     }
-
 }
