@@ -1,0 +1,1938 @@
+﻿{
+    "rss": {
+        "channel": {
+            "title": {
+                "__cdata": "fixin"
+            },
+            "link": "https://www.liveinternet.ru/users/fixin/",
+            "description": {
+                "__cdata": "Дневник fixin :: LiveInternet"
+            },
+            "generator": "LiveInternet / LiveInternet.ru",
+            "updatePeriod": {
+                "__prefix": "sy",
+                "__text": "hourly"
+            },
+            "updateFrequency": {
+                "__prefix": "sy",
+                "__text": "1"
+            },
+            "language": "ru",
+            "copyright": "fixin",
+            "image": {
+                "url": "https://i.li.ru/av/799/34799_2136489.jpg",
+                "title": "",
+                "link": "https://www.liveinternet.ru/users/fixin/"
+            },
+            "item": [
+                {
+                    "title": {
+                        "__cdata": "Рацуха!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4629672/"
+                    },
+                    "description": {
+                        "__cdata": "<font size=\"1\">В колонках играет - <a href=\"http://mp3.li.ru/search/%F1%E0%F3%ED%E4%F2%F0%E5%EA+%22Vanila+Sky%22\" target=\"_blank\"><i>саундтрек \"Vanila Sky\"</i></a></font><br /> <font size=\"1\">Настроение сейчас - <i>Работа идет по плану, в личной жизни - заебись!</i></font><br /> <br /> Пластиковый стилус от КПК очень удобно использовать в качестве зубочистки, когда таковой нету под рукой. Гораздо приятнее и нежнее, чем ковырять пломбы вилкой. Проверено на себе!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 28 Feb 2005 18:46:15 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4629672/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4629672/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Опыт"
+                        },
+                        {
+                            "__cdata": "КПК"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4629672/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Скрипты в Virtual Dub"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589552/"
+                    },
+                    "description": {
+                        "__cdata": "Использование скриптов в Virtual Dub для автоматизации работ с видео<br /> <br /> Задача по использованию скриптов у меня возникла, когда мне понадобилось нарезать около 100 фильмов на jpeg-картинки через каждые 5 секунд. С несколькими файлами это можно было бы сделать вручную, но 100 - достаточное количество, чтобы изучить, как можно заставить virtual dub работать по сценарию. <br /> <br /> Скрипты и задания<br /> <br /> В Virtual Dub можно написать любую задачу по конвертированию видео, а затем не запустить ее, а сохранить как задание (job). Этим я и воспользовался. Job-файл оказался простым текстовым файлом примерно такого вида:<br /> <br /> // VirtualDub job list (Sylia script format)<br /> // This is a program generated file -- edit at your own risk.<br /> //<br /> // $numjobs 1<br /> //<br /> <br /> // $job \"Job 1\"<br /> // $input \"F:\\09003027.mpg\"<br /> // $output \"*.tga\"<br /> // $state 0<br /> // $start_time 0 0<br /> // $end_time 0 0<br /> // $script<br /> <br /> VirtualDub.Open(\"F:\\\\09003027.mpg\",\"\",0);<br /> VirtualDub.audio.SetSource(1);<br /> VirtualDub.audio.SetMode(0);<br /> VirtualDub.audio.SetInterleave(1,500,1,0,0);<br /> VirtualDub.audio.SetClipMode(1,1);<br /> VirtualDub.audio.SetConversion(0,0,0,0,0);<br /> VirtualDub.audio.SetVolume();<br /> VirtualDub.audio.SetCompression();<br /> VirtualDub.audio.EnableFilterGraph(0);<br /> VirtualDub.video.SetDepth(24,24);<br /> VirtualDub.video.SetMode(3);<br /> VirtualDub.video.SetFrameRate(0,1);<br /> VirtualDub.video.SetIVTC(0,0,-1,0);<br /> VirtualDub.video.SetRange(0,0);<br /> VirtualDub.video.SetCompression();<br /> VirtualDub.video.filters.Clear();<br /> VirtualDub.audio.filters.Clear();<br /> VirtualDub.subset.Clear();<br /> VirtualDub.subset.AddRange(0,17596);<br /> VirtualDub.SaveImageSequence(\"\", \".tga\", 0, 1);<br /> VirtualDub.Close();<br /> <br /> // $endjob<br /> //<br /> //--------------------------------------------------<br /> // $done<br /> Файл заданий представляет собой один большой скрипт на встроенном интуитивно понятном языке Virtual Dub, который комментариями разделен на отдельные задания. Как показали тесты, шапку и завершающий тег $done указывать необязательно, достаточно для каждого скрипта написать теги $script, $job и $endjob.<br /> <br /> Скрипт для вашей задачи вы можете получить, сохранив задание в файл. В принципе, можно было бы не оформлять скрипты для нескольких файлов в виде Job-файла, а записать их одним скриптом, если бы не одно \"но\". Дело в том, что если Virtual Dub выполняя скрипт встретит ошибку, он останавливает скрипт. А вот если выполняется job-файл текущий скрипт останавливается и начинает выполняться следующий. Поэтому если вы хотите запустить конвертацию на всю ночь, лучше дооформить каждый скрипт тегами начала и конца задания, записать его в job-файл и запустить этот job-файл.<br /> <br /> Job-файл запускается из меню File - Job conrol - Load Job List. Скрип запускается из меню File-Run script. Кстати job-файл можно запустить как скрипт, ведь теги начала и конца задания оформлены как комментарии. Но этот скрипт остановится на первой же ошибке.<br /> <br /> В скрипт-файле есть одна особенность. В именах файлов все бек-слеши \"\\\" заменяются на двойные бек-слеши \"\\\\\". Кроме того для русских букв используется кодировка кодов букв, примерно так \"F:\\\\\\xd1\\x83\\xd0\\xb4\\xd0\\xb0\\xd0\\xbb\\xd1\\x8f\\xd1\\x82\\xd1\\x8c\". Это нужно учитывать для правильного указания путей.<br /> <br /> Скрипт, создающий скрипт<br /> <br /> Окей, мы разобрались, как написать скрипт для одного файла. Если у вас много видеофайлов и всех их нужно обработать одинаково, можно конечно использовать COPY/PASTE и менять только имя файла в скрипте, но гораздо правильнее написать скрипт, который сделает это за вас. Я работаю в Windows и использовал для своей задачи командный файл CMD.<br /> <br /> В моей задачке видеофайл сохранялся как последовательность картинок. Папка с картинками должна была располагаться в папке F:\\PM и имя папки должно соответствовать имени файла. Кстати, Virtual Dub умеет сохранять картинки только в bmp или tga. Но потом все картинки я конвертировал через ACDSEE.<br /> <br /> Итак я создал в одной директории два скрипта dubbing.cmd и test.cmd.<br /> <br /> DUBBING.CMD<br /> <br /> @echo off<br /> <br /> rem %1 - script file<br /> rem %2 - avi file<br /> rem %3 - result dir<br /> <br /> set sf=%~1<br /> set workfile=%~2<br /> set workdir=%~3%~n2<br /> <br /> echo Script File: %sf%<br /> echo Avi File: %workfile%<br /> echo Result Dir: %workdir%<br /> <br /> rem pause<br /> <br /> <br /> if exist %1 goto skip_create<br /> rem echo> %sf% // VirtualDub job list (Sylia script format)<br /> rem echo>>%sf% // This is a program generated file -- edit at your own risk.<br /> rem echo>>%sf% // $numjobs 1000<br /> <br /> :skip_create<br /> <br /> <br /> :addfile<br /> md>nul \"%workdir%\"<br /> set workfile1=%workfile:\\=\\\\%<br /> echo %workfile1%<br /> set workdir1=%workdir:\\=\\\\%<br /> <br /> echo>> %sf% // $job \"Job%workfile1%\"<br /> echo>> %sf% // $script<br /> <br /> echo>> %sf% VirtualDub.Open(\"%workfile1%\",\"\",0);<br /> echo>> %sf% VirtualDub.audio.SetSource(1);<br /> echo>> %sf% VirtualDub.audio.SetMode(0);<br /> echo>> %sf% VirtualDub.audio.SetInterleave(1,500,1,0,0);<br /> echo>> %sf% VirtualDub.audio.SetClipMode(1,1);<br /> echo>> %sf% VirtualDub.audio.SetConversion(0,0,0,0,0);<br /> echo>> %sf% VirtualDub.audio.SetVolume();<br /> echo>> %sf% VirtualDub.audio.SetCompression();<br /> echo>> %sf% VirtualDub.audio.EnableFilterGraph(0);<br /> echo>> %sf% VirtualDub.video.SetDepth(24,24);<br /> echo>> %sf% VirtualDub.video.SetMode(3);<br /> echo>> %sf% VirtualDub.video.SetFrameRate(0,1);<br /> echo>> %sf% VirtualDub.video.SetTargetFrameRate(450,10000);<br /> echo>> %sf% VirtualDub.video.SetIVTC(0,0,-1,0);<br /> rem echo>> %sf% VirtualDub.video.SetRange(0,0);<br /> echo>> %sf% VirtualDub.video.SetCompression();<br /> echo>> %sf% VirtualDub.video.filters.Clear();<br /> echo>> %sf% VirtualDub.audio.filters.Clear();<br /> rem echo >> %sf% VirtualDub.subset.Clear();<br /> rem echo >> %sf% VirtualDub.subset.AddRange(0,999999);<br /> echo>> %sf% VirtualDub.SaveImageSequence(\"%workdir1%\\\\\", \".bmp\", 3, 0);<br /> echo>> %sf% VirtualDub.Close();<br /> <br /> echo>> %sf% // $endjob<br /> Этот скрипт добавляет в файл скрипта %sf% строки со скриптом. Как видите, такой способ удобнее, чем COPY/PASTE - если нужно внести изменения в скрипт, это можно сделать только в этом командном файле и перегенерировать задание. Файл имеет три параметра: первый - имя файла скрипта, второй - имя обрабатываемого avi-файла, третий - папка, куда складывать картинки.<br /> <br /> Мне некогда было заниматься преобразовыванием русских букв по шестнадцатиричным кодам, поэтому я работал только с латинскими названиями. В начале блок команд set обрабатывает имена файлов, удаляя из них кавычки, заменяя бекслеши на двойные слеши, извлекая имя видеофайла из его полного пути.. Для уточнения этого момента запустите команду set /? и увидите все возможные режимы работы этой команды в Win 2K.<br /> <br /> Файл не удаляет файл задания, он только добавляет в него строки. ПОэтому сначала файл нужно очистить.<br /> <br /> TEST.CMD<br /> <br /> set sf=F:\\_pm\\vdub_job.jobs<br /> <br /> del %sf%<br /> <br /> call dubbing %sf% \"F:\\Films\\Lost Highway CD1.avi\" \"F:\\_pm\\\"<br /> call dubbing %sf% \"F:\\Films\\Lost Highway CD2.avi\" \"F:\\_pm\\\"<br /> rem for %%i in (f:\\films\\*.avi) do call dubbing %sf% %%i \"F:\\_pm\\\"<br /> for /R f:\\films\\ %%i in (*.avi) do call dubbing %sf% %%i \"F:\\_pm\\\"<br /> В этом тестовом примере показано, как можно обработать или отдельные файлы, или файлы в папке - команда FOR. Команда FOR с ключем /R перебирает рекурсивно все файлы в папке и подпапках.<br /> <br /> Обратите внимание, что в начале файл скрипта удаляется.<br /> <br />  <br /> <br />  "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:51:28 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589552/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589552/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Опыт"
+                        },
+                        {
+                            "__cdata": "Софт"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589552/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Порядок в файлах"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589528/"
+                    },
+                    "description": {
+                        "__cdata": "Порядок в файлах<br /> <br /> Каждому, кто интенсивно работает с данными и не заботится об упорядочении их хранения, наверное понятны и знакомы ситуации, когда нужного вам файла не находится под рукой, файлы пропадают, потому что вы забыли включить их в архивный план или винчестер забивается большим объемом данных, а вы не знаете, какие из них вам на самом деле нужны.<br /> <br /> Я тоже достаточно долго не думал об организации данных, пока объем папки \"Мои документы\" не превысил размера DVD-диска, на который я архивировал данные. Тогда я и начала задумываться, как грамотно увязать хранение и архивацию данных. Предлагаю вам свою систему. Благодаря ей у вас на диске будут только нужные вам данные а тех, что не хватает можно будет легко и быстро достать из архива. Не утверждаю, что эту систему придумал я, я точно видел, что похожей системой пользовался Меркулов Александр из \"Интеллектуального офиса\".<br /> <br /> Новый год для данных<br /> <br /> В основу системы положено хранение данных по годам. Например, вначале 2004 года я создаю папку \"Мои документы\" и работаю с ней. В конце 2004 года я сохраняю папку \"Мои документы\" на архивный диск и оставляю в папке \"Мои документы\" только нужные мне документы, которые я буду использовать и дорабатывать в следующем году. <br /> <br /> Если позволет винчестер, я копирую архивную папку \"Мои документы\" в корневую директорию, например C:\\2004. Данные в архиве и в архивной папке не редактируются - архив за прошлый год закрыт. Если что-то нужно изменить, эти данные копируются из архива в текущий год и корректируются уже в папке \"Мои документы\".<br /> <br /> Таким образом я убиваю целое стадо зайцев:<br /> <br /> 1. Уменьшаю объем хранимых на винчестере данных. Хранятся только текущие данные, архив всегда доступен.<br /> 2. Уменьшаю объем архива. Архивные диски один раз будучи выпущены уже не меняются.<br /> 3. Я имею версии своих проектов за каждый год.<br /> <br /> Архивирование<br /> <br /> Минимум раз в неделю, а на самом деле через день в конце рабочего дня я запускаю архивирование папки \"Мои документы\". Архив получается небольшой - ведь там только текущие данные.<br /> <br /> Я всегда записываю две архивные копии годового архива. Одну копию храню возле рабочего компьтера, другую отдаю знакомым или родственникам на случай, если меня обворуют. Если винчестер позволяет, сбрасываю копию архива на винчестер.<br /> <br /> Коллекционирование софта<br /> <br /> Наверное любой достаточно продвинутый пользователь имеет на своем компьютере папочку \"SOFT\", куда складывает весь ему необходимый софт, часто скачанный из интернета. Понятно, что серьезные пакеты занимают много места и хранятся не на винчестере, а на дистрибутивных дисках. А вот в утилитах с течением времени возникает бардак или они начинают занимать слишком много времени. Используйте этот же подход. В конце года очистите папку \"SOFT\", запишите дистрибутивы на CD SOFT-2004 и начните новый год с пустой папкой \"SOFT\". Софт за прошлый год можно будет или достать с архивного CD или создать папку Soft 2004.<br /> <br /> Резюме<br /> <br /> Этот метод подходит для архивирования данных, софта, видео, аудио-материалов. Используйте его, как первый шаг к временной организации данных. Второй шаг - организация данных в течении года. Но мне его не удалось сделать. Наверное потому что теперь папка \"Мои документы\" не вырастает до огромных размеров, мне нет нужды особо изощренно упорядочивать ее. Я не думаю, что из папки нужно архивировать, а что уже есть в архиве. Я архивирую ее целиком. Удачи и вам с этим способом!<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/git.gif\" border=\"0\" width=\"52\" height=\"40\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:49:24 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589528/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589528/"
+                    },
+                    "category": {
+                        "__cdata": "Опыт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589528/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Как сдавать тесты"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589496/"
+                    },
+                    "description": {
+                        "__cdata": "Из личной жизни.<br /> <br /> 27 января 2004 года я сдавал сразу два теста 1С:Профессионал. В каждом тесте содержалось 14 наугад выбранных из 400 вопросов . Для сдачи нужно было правильно ответить на 12 вопросов. Первый тест я сдал на 13, второй на 12. То есть я сдал за одни раз два достаточно сложных теста, изучив ответы на примерно 700 вопросов. Я хочу поделиться с вами своим способом сдачи таких тестов.<br /> <br /> Тесты.<br /> <br /> Население растет и общество придумывает все новые способы, чтобы справиться с таким огромным населением. Вот и в сфере образования появились тесты, где преподаватель заменен бесплатным машинным временем. Впервые с ними я столкнулся, когда сдавал экзамены в ГАИ, а теперь вот многие профессиональные атестации сдаются в виде тестов. <br /> <br /> Как я заметил, авторы тестов не ограничиваются вопросами, касающимися тестируемого предмета, а добавляют еще около 10% вопросов, проверяющие память испытуемого (в реальной жизни это помнить не надо - достаточно залезть в справочник) или предназначенных на то, чтобы его завалить (ответы неоднозначны или даже неправильны). Наверное, сказывается скрытый садизм составителей тестов. Но честное слово, не видел еще ни одного корректного теста, везде есть 10-20% \"хитрых\" вопросов.<br /> <br /> Мой метод<br /> <br /> Необходимое и достаточное условие для сдачи теста - список вопросов и номера правильных ответов. Также желательно чтобы по мере чтения вопросов вы не просто запоминали правильные ответы, а пытались разобраться, почему именно эти ответы правильные.<br /> <br /> Можно обойтись и без компьютера, делая пометки в тесте или на отдельной бумажке, ну а если вы обременены компьютером - используйте Эксель.<br /> <br /> 1. Начальное решение.<br /> <br /> Итак, в первом проходе мы просто просматриваем ВСЕ вопросы и пытаемся разобраться, почему на них даны такие ответы. Попутно заносим список вопросов в Эксель. Проставляем номера вопросов в колонку \"Вопрос\" и в колонку \"Ответ\" проставляем номер правильного ответа.<br /> <br /> 2. Первая сдача.<br /> <br /> Затем делаем первый проход по решению вопросов теста. Добавляем колонку \"Мнение\" и заносим туда номера предполагаемых ответов. Естественно, колонка \"Ответ\" должна быть скрыта. Добавляем колонку \"Сложность\". Если вопрос кажется нам сложным, ставим в эту колонку 0.<br /> <br /> После прохода сравниваем ответы и мнения (автоматически автофильтром или вручную) и везде, где ответ неправильный ставим в колонку \"Сложность\" значение 1, даже там, где сложность \"0\".<br /> <br /> 3. Решаем сложные задачи.<br /> <br /> Текущий уровень сложности - ноль. Автофильтром оставляем только задачи текущего уровня сложности или выше. Опять пробуем их решить. В конце теста проверяем, какие задачи не удалось решить и увеличиваем в них сложность на единицу.<br /> Увеличиваем текущий уровень сложности на единицу и повторяем этот шаг, пока не решим все задачи. Таким образом, мы будем решать сложные задачи пока их не решим. <br /> <br /> 4. Решаем простые задачи - повторение.<br /> <br /> Этот шаг нужен на тот случай, если вы случайно угадали ответ на простую задачу. В принципе, его можно пропустить, если у вас нет времени. Решайте задачи без проставленного уровня сложности и если на какую-то задачу дали неправильный ответ, ставьте задаче первый уровень сложности. Далее можно прорешать первый уровень сложности и т.п.<br /> <br /> В результате такой схемы прохождения экзамена вы проранжируете вопросы по сложности запоминания/понимания. Вопросы, не вызывающие сложности (50%) можно сразу отмести и сосредоточиться на сложных. Это дает выигрыш в распределении внимания, а следовательно и в результатах теста.<br /> <br /> Общие рекомендации.<br /> <br /> К тесту, как и к любому экзамену применимы общие рекомендации обучения. Лучше делать один прогон теста один раз вечером после работы, чем все прогоны в один день. Памяти нужно некоторое время, чтобы отложить данные.<br /> <br /> Психологическое правило - наплюйте на результат теста. Помните, что тест всегда можно пересдать. Идите на экзамен, как будто вам все равно сдадите вы его или нет.<br /> <br /> Удачных вам тестов!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:47:26 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589496/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589496/"
+                    },
+                    "category": {
+                        "__cdata": "Опыт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589496/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "На борту 2 медали и 2 ордена"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589493/"
+                    },
+                    "description": {
+                        "__cdata": "Короче сдал экзамены на 2 \"специалиста\" и 2 \"профессионала\" по 1С. Никогда не гонялся за нагрудными знаками, а ведь прыятно, гыгыгы... <img style=\"margin:0px;\" src=\"//i.li.ru//images/brandnewsmilies/king.gif\" border=\"0\" width=\"28\" height=\"28\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:46:50 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589493/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589493/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "1С"
+                        },
+                        {
+                            "__cdata": "Опыт"
+                        },
+                        {
+                            "__cdata": "Програмист"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589493/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Мне помогли прибить XML"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589476/"
+                    },
+                    "description": {
+                        "__cdata": "Короче сегодня полдня мучался, чтобы XML записывал в правильной кодировке Win-1251.<br /> Добрые люди подсказали:<br /> <br /> var pi = xmldoc.createProcessingInstruction(\"xml\", <br />                        \" version='1.0' encoding=\"win-1251\"); <br /> xmldoc.appendChild(pi); <br /> <br /> Ура, вот исходная статья:<br /> <br /> <br /> To change the encoding that the XML DOM Save method uses, you need to create an XML declaration with an encoding attribute at the top of your document as follows: <br /> <br /> var pi = xmldoc.createProcessingInstruction(\"xml\", <br />                        \" version='1.0' encoding='ISO-8859-1'\"); <br /> xmldoc.appendChild(pi); <br /> <br /> When you call the save method, you will then get an ISO-8859-1 encoded file as follows: <br /> <br />  <br /> <test>&#229;</test> <br /> <br /> Now, be careful you don't let the XML property confuse you. The XML property returns a Unicode string. If you call the XML property on the DOMDocument object after creating the ISO-8859-1 encoding declaration, you will get the following Unicode string back: <br /> <br />  <br /> <test>&#229;</test> <br /> <br /> Notice that the ISO-8859-1 encoding declaration is gone. This is normal. The reason it did this is so that you can turn around and call LoadXML with this string and it will work. If it does not do this, LoadXML will fail with the error message: \"Switch from current encoding to specified encoding not supported.\" <br /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:45:41 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589476/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589476/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Опыт"
+                        },
+                        {
+                            "__cdata": "Програмист"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589476/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Моя мечта."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589449/"
+                    },
+                    "description": {
+                        "__cdata": "На данный момент времени меня все устраивает и у меня почти все есть.<br /> Я мечтаю только о квартире-двушке в городе \"Орехово-Зуево\", которая стоит 20.000$<br /> Орехово-Зуево (<a href=\"http://www.ozuevo.ru\" target=\"_blank\">www.ozuevo.ru</a>) - чудный город в 85 км от МКАД.<br /> Электричкой - полтора часа.<br /> В городе имеются заводы и один франчайзи 1С - значит с работой проблем не будет. Ну или можно ездить на пол-ставки программистом в Москву - три дня из пяти.<br /> Вот такая вот простая мечта простого программиста.<br /> Я посчитал, что мне не особо напрягаясь достаточно копить 3 года. <br /> Для этого нужно ежемесячно откладывать по 600$.<br /> В принципе нормально. Ипотека не устраивает, потому что далеко ездить, если жить в Орехово. Жаль, 300$ ежемесячно за квартиру пропадает.<br /> Такие вот дела."
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:43:37 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589449/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589449/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Жизнь"
+                        },
+                        {
+                            "__cdata": "Москва"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589449/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Сайт..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589301/"
+                    },
+                    "description": {
+                        "__cdata": "Короче наверное я прикрою свой сайт.<br /> Во-первых он не обновляется уже месяца три. Материалы есть, но лень обновлять - доступа по ftp у меня нет, а веб-интерфейсом париться - увольте.<br /> С другой стороны увлечение сайтостроительством отнимает кучу времени, которое можно просто прожить или проиграть в компьютерные игры.<br /> Наверное я буду печатать свои идеи и мысли в дневнике, а уже потом публиковать на сайте.<br /> А может сайт пускай умрет - сколько там, три оплаченных месяца осталось? Посмотрим."
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:33:27 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589301/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589301/"
+                    },
+                    "category": {
+                        "__cdata": "Сайт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589301/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Санатории."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589264/"
+                    },
+                    "description": {
+                        "__cdata": "Интересно, какая-нибудь турфирма организовывает что-то вроде корпоративного отдыха на природе - ну группа товарищей человек 30-40, только не из одной фирмы, а собрать всех желающих и за счет массовости сделать дешевле отдых в санатории? Я бы поехал, мне понравилась корпоративная встреча нового года в Подмосковье!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:31:08 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589264/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589264/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Идеи"
+                        },
+                        {
+                            "__cdata": "Москва"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589264/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Разрезные гранаты"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589225/"
+                    },
+                    "description": {
+                        "__cdata": "<font size=\"1\">В колонках играет - <a href=\"http://mp3.li.ru/search/Davide+Byrn\" target=\"_blank\"><i>Davide Byrn</i></a></font><br /> <br /> Я уже отчаялся купить нормальный гранат - не гнилой и не подмороженный. Хоть ходи с ножом и разрезай перед покупкой.<br /> Дык вот какая идея - в супермаркетах могут продавать гранаты разрезанные пополам в вакуумной упаковке - товар лицом, так сказать.<br /> А может кто знает способ, как проверить качество граната?<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/hat.gif\" border=\"0\" width=\"17\" height=\"31\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 25 Feb 2005 19:28:24 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4589225/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589225/"
+                    },
+                    "category": {
+                        "__cdata": "Идеи"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4589225/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Фильтры в аутглюке."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530645/"
+                    },
+                    "description": {
+                        "__cdata": "Теперь я умею программно менять фильтр в OUTLOOK.<br /> То есть считываю свойство XML, меняю фильтр на свой и - войла!<br /> И вот как это можно использовать - например пройтись процедуркой по всем элементам папки, запомнить EntryID всех элементов, которые есть в папке и потом поставить фильтр, указав перечень нужных элементов типа EntryID in (a,b,c,d,,,f)<br /> <br /> Нашел форум по аутлуку (на англицком) <a href=\"http://www.outlookcode.com\" target=\"_blank\">www.outlookcode.com</a>. Там хороший и внимательный админ.<br /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 21 Feb 2005 18:24:56 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4530645/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530645/"
+                    },
+                    "category": {
+                        "__cdata": "Програмист"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530645/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Научился сохранять виды."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530582/"
+                    },
+                    "description": {
+                        "__cdata": "Научился сохранять виды аутлук. Оказывается, каждый вид имеет свойство XML, полностью описывающий вид. Сейчас пишу софтину, которая перекидывает виды из домашнего аутлука в рабочий.<br /> Жаль, что аутлук не дает только никаких средств для доступа к свойству вида \"Автоформатирование\", поэтому его можно переносить только ручками. "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 21 Feb 2005 18:21:26 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4530582/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530582/"
+                    },
+                    "category": {
+                        "__cdata": "Програмист"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530582/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Ордена и медали."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530556/"
+                    },
+                    "description": {
+                        "__cdata": "Получил очередной сертификат \"Специалист по 1С:Управление торговлей 8.0\".<br /> В принципе была объемная задача на знание конфигурации (как пользователь) - делал около часа.<br /> А задачка на программирование оказалась простой - но я в своем стиле час парился, чтобы потом за полчаса все накатать. :)<br /> Задачка была на тонкую настройку партионного учета, нужно было анализировать разницу между стоимостью продажи и себестоимостью и не допускать разницы более определенного процента.<br /> Я очень долго искал, как выщемить стоимость продажи, но потом нашел. :)"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 21 Feb 2005 18:19:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4530556/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530556/"
+                    },
+                    "category": {
+                        "__cdata": "1С"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4530556/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Туалетная психология."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4493185/"
+                    },
+                    "description": {
+                        "__cdata": "Задачка по человеческой психологии и реальной жизни.<br /> Имеется общий туалет на три кабинки (М и Ж совмещен). Кабинки расположены по правую руку от входной двери - ближняя, средняя и дальняя. Умывальник за третьей кабинкой. Вопрос - какая из кабинок посещается чаще всего мужчинами, женщинами и суммарно."
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 18 Feb 2005 18:46:44 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4493185/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4493185/"
+                    },
+                    "category": {
+                        "__cdata": "Юмор"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4493185/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Дурилка мобильная."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4486420/"
+                    },
+                    "description": {
+                        "__cdata": "Вот только давеча прочитал в компьютерре как дурят народ, предлагая наклейку на аккумулятор, якобы увеличивающую в три раза срок работы от одной подзарядки, как в электричке предлагали девайс, который ложат  под аккумулятор, якобы усиливающий прием антенны. <br /> Причем девушка-продавец приводила пример, что вот когда мы пальцами беремся за ТВ-антенну, сигнал улучшается. Смешно. Аргументы были еще и такие - какое то там заключение у нее на руках имеется от МТС, да еще и рекламу на ТВ говорила крутят.<br /> Я вот думаю если этот девайс реально бы работал и стоил 150 рублей, то все производители мобил давно бы его в свои мобилы вставили. Опять хочется всего и сразу."
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 18 Feb 2005 09:44:13 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4486420/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4486420/"
+                    },
+                    "category": {
+                        "__cdata": "Жизнь"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4486420/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Накопилось штук 10 DVD"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398988/"
+                    },
+                    "description": {
+                        "__cdata": "Готов поменяться DVD с гражданами из Москвы. Есть резак.<br /> Жду предложений."
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 11 Feb 2005 18:38:32 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4398988/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398988/"
+                    },
+                    "category": {
+                        "__cdata": "Обмен CD"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398988/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Обмен данными по XML"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398962/"
+                    },
+                    "description": {
+                        "__cdata": "Пришлось серьезно заняться XML-обменом данных.<br /> Начал смотреть конфигурацию \"Конвертация данных\".<br /> Все замечательно, но очень тормознуто и документация составлена только на описание, описания конкретных примеров нет. А тормозит реально.<br /> Есть пара глюков при выгрузке из семерки, пришлось причесывать.<br /> Также спотыкался на конфликте версий обработок выгрузки/загрузки.<br /> <br /> В результате недовольства и лени я придумал хорошую альтернативную схему выгрузки, основанную на том, что вся база данных представляется с точки выгрузки, как набор регистров сведений с произвольным количеством измерений и ресурсов.<br /> Справочник - это тоже регистр сведений с одним измерением - объект и ресурсами - реквизиты.<br /> То есть файл обмена состоит из набора записей свойство=значение, часть из этих пар является ключом записи.<br /> Такая организация позволяет строить прозрачные правила обмена, часть которых может действовать в обе стороны. Такие двухсторонние правила обмена, например:<br /> <br /> 1. Изменение наименования свойства, например<br /> (Объект=пиво) Тип=Справочник Вид=Товары Код=11<br /> конвертируется в<br /> (Объект=пиво) Тип=Справочник Вид=Номенклатура Код=11<br /> Понятно, что это правило работает в обе стороны.<br /> Или на примере переноса курса валют.<br /> (Объект=usd Дата=12.01.04) Курс=28 тип=Справочник вид=Валюты<br /> конвертируется в <br /> (Валюта=usd Дата=12.01.04) Курс=28 тип=РегистрСведений вид=КурсыВалют<br /> <br /> 2. Реструктуризация ключа. <br /> (Склад=главный Товар=пиво Фирма=Рога и Ко) Остаток=10<br /> конвертируется в <br /> (Склад=главный Товар=пиво)<br /> В обратную сторону проставляется некая условная одна и та же фирма.<br /> <br /> <br /> Кроме того, можно сразу же использовать транзитивные правила, т.е. если есть правила выгрузки из торговли 7.7. в торговлю 8.0 а затем в УПП 8.0, то сложив эти правила можно получить транзитивный перенос из торговли 7.7. в УПП 8.0."
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 11 Feb 2005 18:36:50 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4398962/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398962/"
+                    },
+                    "category": {
+                        "__cdata": "1С"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398962/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Сдал очередной экзамент"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398783/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня сдавал экзамен на Специалиста по Платформе. Это был мой первый экзамен на специалиста. Сдал на пять. Хочу поделиться опытом.<br /> Задачки в принципе простые. Принимал Аксёнов.<br /> Мне, как ни странно, было напряжно строить отчеты с помощью построителя (недоучил).<br /> Ну и конечно, два с половиной часа из четырех с половиной (немного затянулся экзамен) потратил на компоненту расчет.<br /> Рекомендую не только теоретически изучить компоненту расчет, но и прорешать пару задачек по этой теме. Насчет теории – у меня есть черновик моей статьи «Сложные периодические расчеты в 8.0 для чайников». Если надо, обращайтесь.<br /> В расчетах у меня была задача по оплате сверхурочных часов и выходов в выходные дни. <br /> В оперативном учете – списание ФИФО/ЛИФО.<br /> В бух учете – закрытие взаиморасчетов по ФИФО/ЛИФО, ведение учета в разрезе договоров.<br /> Я сделал из оперучета весь, бухгалтерии половину принялся за расчет, потом буквально за двадцать минут доделал бухгалтерию, повезло. Вообще то я рассчитывал на трояк. <br /> В списании по ФИФО желательно сворачивать табличную часть Расходной, чтобы не зависеть от дублей строк. :)<br /> Можно пользоваться Радченко и Митичкиным, но мне не пригодились.<br /> Да, кстати, там в 1С выдают значки Профессионал и Специалист. Я взял их себе – не знал, что их дают. <br /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 11 Feb 2005 18:22:59 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4398783/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398783/"
+                    },
+                    "category": {
+                        "__cdata": "1С"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4398783/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Жалоба на ментов почти готова"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4286562/"
+                    },
+                    "description": {
+                        "__cdata": "Меня спросят - зачем я жалуюсь на милицию? Очень просто - если действия милиционеров после жалобы будут иметь хоть какие-то негативные последствия для них - пусть просто им сообщат, что их действия были неправильными - с этой бумагой (решением прокуратуры или начальника УВД), как с индульгенцией я и другие белорусы могут спокойно ходить и предъявлять ее вместо паспорта наглым ментам."
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 03 Feb 2005 09:41:06 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4286562/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4286562/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Москва"
+                        },
+                        {
+                            "__cdata": "Закон"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4286562/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Составляю жалобу"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4266937/"
+                    },
+                    "description": {
+                        "__cdata": "Составляю жалобу на воскресные шалости ментов.<br /> <br /> Обсуждение жалобы веду в ветке:<br /> <br /> <a href=\"http://forum.nelegal.info/phpbb/showthread.php?p=60670&posted=1#post60670\" target=\"_blank\">http://forum.nelegal.info/phpbb/showthread.php?p=60670&posted=1#post60670</a> <br /> <br /> Кто силен в юриспруденции подключайтесь.<br /> <br /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 01 Feb 2005 19:22:43 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4266937/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4266937/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Москва"
+                        },
+                        {
+                            "__cdata": "Закон"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4266937/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Держали 4 часа. :)"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4246575/"
+                    },
+                    "description": {
+                        "__cdata": "Да отпустили еще вчера, после 4х часов задержания. Наверное сказалось то, что я позвонил в консульство РБ и сообщил, что держат больше 3х часов не предъявляя обвинения. Протокола копию не дали, номер протокола не сообщили.<br /> Но у меня есть доказательства - фотография застенков и диктофонная запись большей части разговоров.<br /> Буду писать жалобу.<br /> Завтра ее здесь опубликую (сегодня занят), подскажите чего добавить.<br /> Это беспредел - любого человека без документов можно посадить под замок на 3 часа и более. Я фигею с московской милиции..."
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 31 Jan 2005 09:38:07 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4246575/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4246575/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Москва"
+                        },
+                        {
+                            "__cdata": "Закон"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4246575/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "сижу за решеткой в ментовке сырой"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4238853/"
+                    },
+                    "description": {
+                        "__cdata": "сижу в отделе. слава Gprs<br /> сижу в отделении в новогиреево, мартеновская 31. пишу сообщение через кпк. посадили в 15.30, 2 часа назад, за то что при себе не имел документов, а кроме гражданства и фио больше ничего не сообщил. составили протокол на нарушение правил регистрации, я написал в объяснении, что не нарушал закона о регистрации. пока сижу в камере. жду пока знакомые подвезут паспорт . через 2.5 часа обещали привезти. что делать?<br /> __________________<br />  Fixin, великий и могучий<br />    <br />   #2  <br />  Сегодня, 15:22 <br /> fixin  <br /> Senior Member<br />  <br /> Регистрация: 07.04.2003<br /> Адрес: Россия<br /> Возраст: 29<br /> Сообщения: 367<br /> дык вопросы следующие - могут ли для выяснения личности задержать больше чем на 3 часа.<br />  кстати официальная рега у меня есть - в паспорте талон. не левая.<br />  может сообщить им где я зареглен и не выпендриваться?<br />  копию протокола обещали дать.<br /> __________________<br />  Fixin, великий и могучий<br />    <br />   #3  <br />  Сегодня, 15:24 <br /> fixin  <br /> Senior Member<br />  <br /> Регистрация: 07.04.2003<br /> Адрес: Россия<br /> Возраст: 29<br /> Сообщения: 367<br /> мда. счас на сайте по ходу никого нет.<br />  можете мне прислать смс на номер +7(916)374-85-13<br />  я телефон включаю время от времени - берегу батарею. так что лучше смс.<br /> __________________<br />  Fixin, великий и могучий<br />    <br />   #4  <br />  Сегодня, 15:30 <br /> fixin  <br /> Senior Member<br />  <br /> Регистрация: 07.04.2003<br /> Адрес: Россия<br /> Возраст: 29<br /> Сообщения: 367<br /> со мной алкоголик - храпит на лавке.<br />  может попросить поставить в известность консула? а...<br /> <br />  изучаю наскальную живопись:<br />  на левой стене нацарапано - андрей 9.8.03, на правой - баткен кыргызстан.<br />  да. прикольно завершился поход в кино на выходных... <br />  ладно, сообщу чем закончился инциндент. шлите смс или звоните в отделение...<br />  гы, а тут есть \"скрытая камера\".  правда в выходные никто в нее не смотрит. жаль, что задержали меня не на тверской - шлюх в камере нет, скучно.<br />  может в усб позвонить?<br /> <br /> скопировал этот пост с nelegal.ru, откорректирую потом"
+                    },
+                    "pubDate": {
+                        "__cdata": "Sun, 30 Jan 2005 17:36:10 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4238853/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4238853/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Москва"
+                        },
+                        {
+                            "__cdata": "Закон"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4238853/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Совет сдающим 1С8:Специалист"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4123025/"
+                    },
+                    "description": {
+                        "__cdata": "Для ускорения отладки можете в модуль приложения добавить строки, которые будут открывать все нужные формы. Это съэкономит время на лазание по интерфейсу для их открытия и быстрее, чем создавать интерфейс. Ненужные формы можно закомментировать.<br /> Процедура ПриНачалеРаботыСистемы() <br />   Документы.НачислениеЗарплаты.ПолучитьФормуСписка().Открыть();<br /> КонецПроцедуры"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 21 Jan 2005 14:16:56 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4123025/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4123025/"
+                    },
+                    "category": {
+                        "__cdata": "1С"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4123025/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Микрософт Аутлук  меня разочаровал. Список рассылки делается одним письмом, нельзя со"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120642/"
+                    },
+                    "description": {
+                        "__cdata": "Микрософт Аутлук  меня разочаровал. Список рассылки делается одним письмом, нельзя создать письмо каждому разработчику. Mail.ru режет рассылки с большим числом получателей.<br /> Но есть выход - я отправил письмо через своего хостера - <a href=\"mailto:hi@fixin.ru\">hi@fixin.ru</a><br /> Указал в письме список адресатов.<br /> Столкнулся с тем, что аутлук не может преобразовать список адресов в списке рассылки в список адресов, разделенных запятыми. <br /> Сохранил список рассылки в текстовый формат, оттуда загрузил в эксель с разделителем табуляция, скопировал колонку с e-mail адресами в ворд, заменил знак абзаца на запятую. Получил список адресов. Ура!<br /> Хотя можно было отправить и из аутлука, просто через учетную запись <a href=\"mailto:hi@fixin.ru\">hi@fixin.ru</a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 21 Jan 2005 10:18:01 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4120642/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120642/"
+                    },
+                    "category": {
+                        "__cdata": "Опыт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120642/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Опять застрял в Nitro Family"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120493/"
+                    },
+                    "description": {
+                        "__cdata": "Теперь застрял в мусорке на уровне \"Лаборатория\". Из дырки в стене выскакивают бесконечные тетки с криком \"Гринго\", запрыгнуть в эту дырку или мусорку не получается. Я пробовал истреблять теток, но они бесконечны. Чего делать-то надо?"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 21 Jan 2005 09:52:43 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4120493/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120493/"
+                    },
+                    "category": {
+                        "__cdata": "Развлечения"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120493/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Игры на новогодних каникулах"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120491/"
+                    },
+                    "description": {
+                        "__cdata": "На новогодних каникулах прошел до конца Max Payne 2. В конце где Вилли забирается на люстру нужно стрелять по подвесам (круглым деревянным брусочкам), а когда люстра падает, расстреливать Вилли. Я уже хотел было юзать чит, но все-таки справился сам.<br /> Еще одна игрушка, которой баловался - Alien Shooter. Очень толковая вещь. Обязательно сырайте, вид в 3d сверху - море крови, мяса и ошметков.<br /> Рекомендация - если на уровне есть пушка, первым делом рвитесь к ней. Первый уровень я прошел сам, а последний этап второго уровня использовал читы - очень уж там мяса много. С читами неинтересно, если играть так, игра держит в напряжении.<br /> Один уровень можно проходить час-два. Используйте friendly fire - монстры мочат друг друга, когда вы стоите за стенкой."
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 21 Jan 2005 09:52:21 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4120491/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120491/"
+                    },
+                    "category": {
+                        "__cdata": "Развлечения"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4120491/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Разделяй ЖЖ и властвуй."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4111739/"
+                    },
+                    "description": {
+                        "__cdata": "Это хорошо, что в ЖЖ появилась возможность разделять топики по рубрикам. Мне кажется было бы полезно, чтобы был общий список категорий, пользователь может использовать или готовые общие категории или же может (если захочет) указать, к какой общей категории относится категория пользователя.<br /> Что это даст?<br /> Например можно будет смотреть записи всех пользователей, относящихся например к автомобилям или умным мыслям и т.п.<br /> Кстати категории можно сделать древовидными, от частного к общему, например<br /> Авто - Вольво, Пежо, Вольксваген.<br /> Человек может писать или просто про автомобиль или про конкретную марку.<br /> Или например<br /> Религия - Ислам, Христианство, Иудаизм.<br /> Или еще Россия - Москва, Орел, Петербург и т.д. (к какому месту относится запись)<br /> Время - Средние века или Ренессанс и т.п.<br /> Или тип записи - совет, впечатление, мнение, сон и т.п."
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 20 Jan 2005 16:17:46 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4111739/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4111739/"
+                    },
+                    "category": {
+                        "__cdata": "Идеи"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4111739/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Успехи в 1С 8.0"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4111663/"
+                    },
+                    "description": {
+                        "__cdata": "Решил задачу Специалиста 8.0 по Платформе.<br /> <br /> Решал задачу в общей сложности часов 10, хотя на экзамене под нее отводится четыре часа. Часа два ушло на освоение компоненты расчет, которую я вообще впервые в жизни вижу. :) Кстати, процесс решения задачи я задокументировал в ворде по шагам, кому интересно могу скинуть задачу и ее решение.<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/atom.gif\" border=\"0\" width=\"31\" height=\"31\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 20 Jan 2005 16:12:15 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4111663/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4111663/"
+                    },
+                    "category": {
+                        "__cdata": "1С"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4111663/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Нашел солюшн для Die Hard Nakatomi Plaza"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4107732/"
+                    },
+                    "description": {
+                        "__cdata": "Еще одна радостная новость - на ag.ru нашел солюшн для Nakatomi Plaza (на английском).<br /> Ура, теперь я таки доиграю эту игру, где я застрял на дурацком логическом паззле, абсолютно неуместном в шутере."
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 20 Jan 2005 09:44:03 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4107732/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4107732/"
+                    },
+                    "category": {
+                        "__cdata": "Развлечения"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4107732/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Я прошел-таки завод в Nitro Family"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4107696/"
+                    },
+                    "description": {
+                        "__cdata": "Я прошел-таки завод в Nitro Family!!!<br /> Я надолго застрял в самом начале уровня West Coast, там где герои заходят в завод (у него еще на крыше квадратные окна, через которые брезжит голубое небо), откачал зеленую жидкость, а что делать дальше не знал. Единственная дверь не открывалась. Оказалось, реально есть глюк. Эта дверь - такая же дверь как и у других лифтов (и в самом деле это оказалась дверь лифта). Только у этой двери нет кнопки вызова лифта. Когда я сообразил, что это лифт, я начал двигаться влево-вправо около двери и возникла заветная надпись \"Жми\", т.е. кнопка лифта НЕВИДИМАЯ. Блин, сколько я парился с этой фигней…"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 20 Jan 2005 09:37:00 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4107696/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4107696/"
+                    },
+                    "category": {
+                        "__cdata": "Развлечения"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4107696/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Персидский принц"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088883/"
+                    },
+                    "description": {
+                        "__cdata": "Начал было играть в принца персии, но он у меня виснет дома на компьютере все время на одном и том же месте, блин. Какая жалость! Вообще играть не во что, может кто чего посоветует? ФарКрай не предлагать и иже с ним."
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 18 Jan 2005 19:01:37 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4088883/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088883/"
+                    },
+                    "category": {
+                        "__cdata": "Жизнь"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088883/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Вспоминая поход к стоматологу"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088852/"
+                    },
+                    "description": {
+                        "__cdata": "В декабре ходил к стоматологу. Так что меня поразило - там есть слюноотсос - такая трубочка вставляется в рот и откачивает слюну. Плевать в плевательницу не нужно. Прикольно. Правда и содрали с меня порядком - 60 баксов за лечение одного зуба, блин. Но то была острая боль."
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 18 Jan 2005 18:58:29 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4088852/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088852/"
+                    },
+                    "category": {
+                        "__cdata": "Жизнь"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088852/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Ориентация для фотика"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088817/"
+                    },
+                    "description": {
+                        "__cdata": "Известно, что цифровые фотоаппараты если их повернуть под углом 90 градусов делают перевернутые снимки, которые затем приходится править в графических редакторах. А что, если добавить в фотик нивелир (гироскоп, уровень), который будет определять положение фотоаппарата относительно вектора гравитационных сил и если не переворачивать картинку, то по крайней мере вносить в метаданные картинки угол наклона, по которому повернутые картинки можно будет быстро отобрать для обработки."
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 18 Jan 2005 18:55:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4088817/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088817/"
+                    },
+                    "category": {
+                        "__cdata": "Идеи"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088817/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Архив моих данных"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088784/"
+                    },
+                    "description": {
+                        "__cdata": "Архив моих данных (программы, фотки, видео, информация) за 2000-2003 год занял один дивиди, а вот архив моих данных за 2004 год занимает целиком один дивиди. Причем половина диска - видео, снятое цифровиком. Придется под видео отводить отдельный дивидюк.<br /> Да, дистрибутивы программ я не учитывал.<br /> Объем DVD = 4.5 Гигов"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 18 Jan 2005 18:51:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4088784/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088784/"
+                    },
+                    "category": {
+                        "__cdata": "Жизнь"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4088784/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Встретил Митичкина."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4070613/"
+                    },
+                    "description": {
+                        "__cdata": "<font size=\"1\">В колонках играет - <a href=\"http://mp3.li.ru/search/%C2\" target=\"_blank\"><i>В</i></a></font><br /> <br /> В метро \"Арбатская\" сегодня утром был узнан Митичкиным. Он узнал меня по фотке. Митичкин - автор известной книжки по 1С 8.0. Вообще-то за два года в москве я только пару раз встречался случайно со знакомыми (большой город), а тут - нате вам. <br /> Короче, он дал мне свою визитку. Я ответить тем же не мог, т.к. визитки у меня вытащили вместе с кошельком в середине декабря, а новые я напечатать не успел.<br /> Вот такие бывают встречи в москве! :)"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 17 Jan 2005 10:48:13 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post4070613/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4070613/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "1С"
+                        },
+                        {
+                            "__cdata": "Москва"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post4070613/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "с новым 2005м"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3882169/"
+                    },
+                    "description": {
+                        "__cdata": "Дорогие друзья! Поздравляю всех с новым годом, желаю всем счастья, здоровья, удачи, любви! Год 2004 был хорошим, следовательно по индукции новый 2005 год будет еще лучше!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 31 Dec 2004 15:49:58 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3882169/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3882169/"
+                    },
+                    "category": {
+                        "__cdata": "Жизнь"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3882169/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "О гражданстве РФ."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3765378/"
+                    },
+                    "description": {
+                        "__cdata": "Получить гражданство РФ белорусам, такжикам и казахам проще, чем РНВП.Спешите до 2006 года.<br /> <br /> <br /> <br /> До 1 января 2006 года нужно успеть подать заявление об упрощенном порядке приема в гражданство РФ.<br /> <br /> Для этого должен быть хотя бы один родственник - жена, ребенок, дед, мать, отец, сестра - гражданин РФ.<br /> <br /> Сей порядок действует только для белорусов, таджиков, казахов.<br /> <br /> Спешите.<br /> <br /> Я ходил в паспортно-визовое отделение - никаких проблем, все документы готовы принять.<br /> <br /> Даже по ребенку можно пройти, только у ребенка должна быть прописка и вкладыш в свидетельство о гражданстве.<br /> <br /> Так что рожайте бейбера, а через 9 месяцев еще успеете стать гражданами РФ. :)<br /> <br /> Ну а если совсем все печально, три года службы в армии по контракту - и вы гражданин. Как в Риме. :)<br /> <br /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 21 Dec 2004 09:12:27 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3765378/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3765378/"
+                    },
+                    "category": {
+                        "__cdata": "Закон"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3765378/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Как послать СМС на МТС?"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3723253/"
+                    },
+                    "description": {
+                        "__cdata": "<a href=\"http://sms.mts.ru/cgi-bin/cgi.exe?function=sms_send&isFree=1&MMObjectType=0&MMObjectID=&To=79163748513&Msg=Privet%20Sergey&count=4&Hour=01&Min=18&Day=25&Mon=09&Year=2004&Lang=2\" target=\"_blank\">http://sms.mts.ru/cgi-bin/cgi.exe?function=sms_sen...Day=25&Mon=09&Year=2004&Lang=2</a> <br /> Я все хотел сделать пользователям возможность отправлять СМС с моего сайта на мою мобилу, нашел форму на сайте МТС, но никак не мог придуматЬ, как автоматически в этой форме забивать мой номер телефона и текст сообщения.<br /> Мне подсказали - вот по этой ссылке можно отправить СМС на мой номер телефона, правда там выскакивает надпись \"Тема устарела\", но отправка тем не менее работает. :) Ура!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 17 Dec 2004 09:39:57 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3723253/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3723253/"
+                    },
+                    "category": {
+                        "__cdata": "Опыт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3723253/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Про отопление - совет."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3723155/"
+                    },
+                    "description": {
+                        "__cdata": "Бабка-хозяйка оказывается заменила две четырехсекционные на две семисекционные батареи, ибо прошлые квартиранты ваще замерзали.<br /> Но все равно было холодно.<br /> <br /> Совет - я купил полителеновую пленку 100 мкм, очень недорого, и кнопки, закрепил пленку на окне кнопками. Стало значительно в разы! теплее... Неудивительно - ибо пленка тут же натянулась как парус, как не изолировал я малярной лентой, сквозняки оставались.<br /> Тока вот надо было, теперь правда уже поздно, в промежутки между стеклами (внутри стекол) проложить войлок.<br /> Но и так замечательно - не дует и тепло. <br /> Говорят еще можно трубы Вентилятором обдувать, не пробовал, не нашел.<br /> Трубу резиновую с водой может еще попробую обернуть вокруг батарей и пустить по квартире, если найду недорого. "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 17 Dec 2004 09:21:46 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3723155/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3723155/"
+                    },
+                    "category": {
+                        "__cdata": "Опыт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3723155/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Книга моей мечты..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716840/"
+                    },
+                    "description": {
+                        "__cdata": "Видел тут в библиотеке книжку \"Разработка приложений для Outlook 2004\". Открыл - чуть не захлебнулся слюной. Все, до чего я доходил горьким опытом, тут как на ладони, цена 10 баксов.<br /> Но не купил, блин. Денег нет, фирма книжку не оплатит. Эх....<br /> Хотя тема с Аутлуком неплохо продвигается. Я уже сам навострился им пользоваться для планирования и даже несколько макросов написал. Уря!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 16 Dec 2004 18:21:50 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3716840/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716840/"
+                    },
+                    "category": {
+                        "__cdata": "Програмист"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716840/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Пиво."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716811/"
+                    },
+                    "description": {
+                        "__cdata": "Впервые попробовал давеча пиво. Не очень крепкое по-моему, раньше пробовал только безалкогольное. С бокала не опьянел, т.к. запивал мясное блюдо. Ну че могу сказать - под мясо неплохо, почти так же хорошо, как кефир.<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/beer.gif\" border=\"0\" width=\"60\" height=\"40\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 16 Dec 2004 18:19:42 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3716811/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716811/"
+                    },
+                    "category": {
+                        "__cdata": "Жизнь"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716811/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Вернисаж в Измайлово."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716786/"
+                    },
+                    "description": {
+                        "__cdata": "Впервые побывал на вернисаже в Измайлово.<br /> Заглянул давеча на вернисаж в Измайлово, впервые, там много прикольных картин и сувениров и толпятся иностранцы.<br /> Вход = 10 рублей.<img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/1/281.gif\" border=\"0\" width=\"31\" height=\"31\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 16 Dec 2004 18:16:54 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3716786/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716786/"
+                    },
+                    "category": {
+                        "__cdata": "Москва"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716786/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "1С и реестр - пути автообмена"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716759/"
+                    },
+                    "description": {
+                        "__cdata": "Вот где 1С хранит пути автообмена, которые вечно слетают.<br /> Запихните их через командный файл. <br /> <br /> Windows Registry Editor Version 5.00<br /> <br /> [HKEY_CURRENT_USER\\Software\\1C\\1Cv7\\7.7\\ОФИС\\Config\\Upload/Download directories]<br /> @=\"{{\\\"ДА\\\",\\\"\\\\\\\\buh\\\\bases\\\\InOut\\\\For\\\",\\\"\\\\\\\\buh\\\\bases\\\\InOut\\\\From\\\",\\\"1\\\"},{\\\"ОР\\\",\\\"\\\\\\\\buhserv\\\\bases\\\\InOut\\\\For\\\",\\\"\\\\\\\\buh\\\\bases\\\\InOut\\\\From\\\",\\\"1\\\"},{\\\"СБ \\\",\\\"\\\\\\\\buh\\\\bases\\\\InOut\\\\For\\\",\\\"\\\\\\\\buh\\\\bases\\\\InOut\\\\From\\\",\\\"1\\\"},{\\\"УС\\\",\\\"\\\\\\\\buh\\\\bases\\\\InOut\\\\For\\\",\\\"\\\\\\\\buh\\\\bases\\\\InOut\\\\From\\\",\\\"1\\\"},{\\\"EMail_Par\\\",\\\"\\\",\\\"\\\",\\\"0\\\"}}\"<br /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 16 Dec 2004 18:14:08 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3716759/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716759/"
+                    },
+                    "category": {
+                        "__cdata": "1С"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716759/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Поиск в icq"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716744/"
+                    },
+                    "description": {
+                        "__cdata": "Оказывается в icq в белых страницах можно использовать * для поиска.<br /> Таким образом можно искать не только конкретную фамилию, но и все фамилии, начинающиеся например на osipov*. Я минут 15 искал своих знакомых, правда никого не нашел, но забавно."
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 16 Dec 2004 18:12:12 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3716744/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716744/"
+                    },
+                    "category": {
+                        "__cdata": "Опыт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716744/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Просмотр в отладчике строки."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716739/"
+                    },
+                    "description": {
+                        "__cdata": "Иногда в отладчике нужно посмтортеть длинную строку, например текст запроса. В табло отладки показывается только первая строка многострочной строки.<br /> Введите в табло Вопрос(ИмяПеременной) и вуаля!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 16 Dec 2004 18:11:48 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3716739/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716739/"
+                    },
+                    "category": {
+                        "__cdata": "1С"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716739/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "В коллекцию глюков 1С"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716736/"
+                    },
+                    "description": {
+                        "__cdata": "Шаблон(\"Просто строка, без квадратных скобок \") выдает пустую строку.<br /> Если же записать так Шаблон(\"Просто строка, без квадратных скобок  [] \") то все ок."
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 16 Dec 2004 18:11:08 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3716736/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716736/"
+                    },
+                    "category": {
+                        "__cdata": "1С"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716736/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Опоздание на минус час."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716687/"
+                    },
+                    "description": {
+                        "__cdata": "Приехал к служебному автобусу вовремя, еле успел. Смотрю на часы - блин, приехал на час раньше, а ведь летел сломя голову. Вот зациклился блин, перепутал восемь часов и семь. Пришлось ехать в объезд - не мерзнуть же на морозе. Служебный автобус приехал через 10 минут после того, как я попал на работу. :)"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 16 Dec 2004 18:07:34 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3716687/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716687/"
+                    },
+                    "category": {
+                        "__cdata": "Жизнь"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3716687/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Доработал Аутглюк - виды."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3637076/"
+                    },
+                    "description": {
+                        "__cdata": "В Аутглюке к сожалению нельзя настроить панельку, чтобы по нажатию кнопки вызывался нужный вид, например задачи по категориям. Поэтому приходится сначала переходить в папку задачи, потом заходить в меню и выбирать нужный вид.<br /> <br /> К сожалению я не нашел, как в VBA анализировать статус нажатия клавиши. Можно было бы с Shift открывать в новом окне. А так она всегда открывается в новом окне и при этом разворачивается на весь экран. Очень сильно экономит время, когда видов много сделано. Можно из контактов перейти в задачи или календарь, знаете ли.<br /> Юзайте на здоровье!<br /> <br /> Вот как выглядит панелька. Мордочками - контакты. Стрелками вверх - задачи. Звонками - встречи.<br /> M:\\Мои рисунки\\Панель видов аутглюка.gif<br /> <br /> Кстати, рекомендую создать виды \"последние задачи\" и \"последние контакты\" - это объекты, отсортированные по полю Изменено в порядке убывания даты. Так вы будете видеть объекты, которые меняли в последний раз.<br /> <br /> А вот что нужно сделать:<br /> 1. Создать новую панель.<br /> 2. Нажать ALT+F11, откроется редактор Visual Basic.<br /> 3. Сервис - Макросы - Создать. Создать нужные макросы.<br /> 4. В модуль макросов добавить функцию SelectView<br /> 5. Назначить каждой кнопке панельки макрос.<br /> <br /> <br /> == А макросы выглядят так ===<br /> <br /> 'Виды папок<br /> 'olFolderCalendar  - календарь<br /> 'olFolderContacts - контакты<br /> 'olFolderDeletedItems  - удаленные<br /> 'olFolderDrafts  - черновики<br /> 'olFolderInbox  - входящие<br /> 'olFolderJournal  - журнал (сегодня)<br /> 'olFolderNotes  - заметки<br /> 'olFolderOutbox  - исходящие<br /> 'olFolderSentMail  - отправленные<br /> 'olFolderTasks - задачи<br /> <br /> <br /> Sub ВыбратьВид_Задачи_ПоКатегориям()<br />     SelectView olFolderTasks, \"По категориям\"<br /> End Sub<br /> <br /> Sub ВыбратьВид_Задачи_РаботаАктивные()<br />     SelectView olFolderTasks, \"Работа активные\"<br /> End Sub<br /> <br /> Sub ВыбратьВид_Задачи_Агенда()<br />     SelectView olFolderTasks, \"Агенда\"<br /> End Sub<br /> <br /> Sub ВыбратьВид_Задачи_Последние()<br />     SelectView olFolderTasks, \"Последние\"<br /> End Sub<br /> <br /> Sub ВыбратьВид_Контакты_ПоКатегориям()<br />     'SelectView olFolderJournal, \"\"<br />     SelectView olFolderContacts, \"По категориям\"<br /> <br /> End Sub<br /> Sub ВыбратьВид_Контакты_Последние()<br />     SelectView olFolderContacts, \"Последние\"<br /> End Sub<br /> Sub ВыбратьВид_Встречи_Последние()<br />     SelectView olFolderCalendar, \"Последние\"<br /> End Sub<br /> <br /> Sub ВыбратьВид_Встречи_ДНМ()<br />     SelectView olFolderCalendar, \"День/неделя/месяц\"<br /> End Sub<br /> <br /> <br /> === А функция SelectView выглядит так ===<br /> <br /> Sub SelectView(folder, view, Optional new_window = True)<br />     Dim myOlApp As New Outlook.Application<br />     Dim myOlExplorer As Outlook.Explorer<br />     Dim myOlView As Outlook.view<br />     <br />     On Error GoTo sss<br />     <br />     Set new_folder = myOlApp.GetNamespace(\"mapi\").GetDefaultFolder(folder)<br />     <br />     If new_window Then<br />         Set myExplorer = new_folder.GetExplorer<br />         myExplorer.Display<br />     Else<br />         Set myExplorer = myOlApp.ActiveExplorer<br />         Set myExplorer.CurrentFolder = new_folder<br />     End If<br /> <br />     <br />     Set myOlView = new_folder.Views.Item(view)<br />     Set myExplorer.CurrentView = myOlView<br />     myExplorer.WindowState = olMaximized<br />     <br />     Exit Sub<br /> sss:<br />     MsgBox \"Error 2 \" & Err.Description & \" \" & Err.Source<br />     Exit Sub<br />     <br /> End Sub<br /> <br /> Вопросы программерам:<br /> <br /> Можно ли как-то настроить запрос на SQL, чтобы записи в папке Outlook показывались на основе фильтра, написанного на VBA, т.е. не просто сравнивались поля записей, а производились какие-либо вычисления и на основе этого принималось решение, показывать запись или нет.<br /> Может есть событие типа - ПриОтбореЗаписи или ПриПоказеЗаписи, ПриФильтрацииСписка и как его это событие перехватить?<br /> <br /> Еще вопрос по ходу. Кнопке панели можно присвоить макрос. А как в этот макрос передать параметр. Например я всем кнопкам хочу присвоить один и тот же макрос.<br /> Можно определить, какая кнопка была нажата и каким образом - мышью, с нажатым шифтом, с отжатым?<br /> <br /> Еще вопрос - как определить была ли нажата кнопка Shift, Ctrl, Alt, когда был вызван макрос с панели инструментов.<br /> Без шифта будет делаться одно, с шифтом другое - открываться вид в новом или текущем окне.<br /> <br /> Или может быть так - вид, папка или эксплорер хранит где-то набор записей, которые он отображает, так перед отображением пройтись по этим записям и пофильтровать их моим условием. Можно такое сделать?<br /> <br /> <img src=\"http://www.liveinternet.ru/images/attach/34799/1581716.gif\" />"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 09 Dec 2004 09:31:32 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3637076/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3637076/"
+                    },
+                    "enclosure": {
+                        "_url": "http://www.liveinternet.ru/images/attach/34799/1581716.gif",
+                        "_type": "image/jpeg",
+                        "_width": "",
+                        "_height": "",
+                        "_length": "0"
+                    },
+                    "category": {
+                        "__cdata": "Програмист"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3637076/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "В субботу вечером проходя мимо мента в ментро, не"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3625972/"
+                    },
+                    "description": {
+                        "__cdata": "В субботу вечером проходя мимо мента в ментро, не вписался и вызвал подозрение.<br /> <br /> - ОВД такое-то. Проверка паспортного режима, предъявите документы.<br /> <br /> - А по поводу?<br /> <br /> .... У мента на лице неприкрытое удивление, смешанное с раздражением.<br /> <br /> - Тут Рамстор заминировали.<br /> <br /> - А, у вас ориентировочка, ну ладно, так бы и сказали.<br /> <br /> Достаю свой верный потертый военник, предъявляю.<br /> <br /> - Вот все вам гражданин с милицией поспорить, вот ведь служите.<br /> <br /> - Уже не служу.<br /> <br /> - Ну служили.<br /> <br /> - Не служил.<br /> <br /> - Ах, да, - увидев \"лейтенант запаса\".<br /> <br /> Мент отдает документ и даже не интересуется, когда я, белорус, приехал в Россию. Видит, что хер что ему обломится. :)<br /> <br /> Такие вот дела.<br /> <br /> Бедные расеяне. Будь у меня расейский паспорт, я бы по москве смело ходил и слал ментов подальше. Хотя, гм, я и так смело хожу, просто виновата темнота. Если знать свои права, никогда никакому менту не заплатишь. Менты не докажут.<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/4u.gif\" border=\"0\" width=\"26\" height=\"26\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 08 Dec 2004 09:27:57 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3625972/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3625972/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Москва"
+                        },
+                        {
+                            "__cdata": "Закон"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3625972/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Бассейн и телки."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3625878/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера совмещал приятное с полезным.<br /> Проплыл 1 км в бассейне, а потом в приподнятом душевном состоянии клеился ко всем мимопроплывающим телкам, общим количеством 3 штуки. Две были настроены миролюбиво, одна злобно. В общем, плавайте на здоровье.<br /> Заказал билеты в сауну. Попарюсь тут.<img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/dance.gif\" border=\"0\" width=\"32\" height=\"32\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 08 Dec 2004 09:11:12 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3625878/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3625878/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Девушки"
+                        },
+                        {
+                            "__cdata": "Жизнь"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3625878/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Предлагаю желающим, снимающим жилье в Москве,"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3620234/"
+                    },
+                    "description": {
+                        "__cdata": "Предлагаю желающим, снимающим жилье в Москве, скинуться и купить на двоих участок в 6 соток возле электричек Горьковского направления (Орехово-зуево).<br /> <br /> Участок делим пополам по 3 сотки. <br /> <br /> Я лично буду жить в бытовке (имеется), вам могу порекомендовать дешевый щитовой домик.<br /> <br /> Можно жить только летом, экономя нехилые бабки в теплый сезон, например 300 баксов за 6 месяцев = 1800.<br /> <br /> Желающие - велком. Наймем юриста, оформим,будем жить.<br /> <br /> Участок я ищу со светов и желательно водой или чтобы вода была, пробурив скважину или колодец.<br /> <br /> Зимой собираюсь утеплить бытовку.<br /> <br /> По деньгам это гдето по 3000-5000 баков с носа.<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/kngt.gif\" border=\"0\" width=\"56\" height=\"66\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 07 Dec 2004 18:44:10 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3620234/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3620234/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Жизнь"
+                        },
+                        {
+                            "__cdata": "Москва"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3620234/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Сделал регу."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3620159/"
+                    },
+                    "description": {
+                        "__cdata": "Ну вот други, единственная проблема, которая мешала мне зарегиться - отсутствие присутствия жилплощади хитрым образом решена и я начал процесс регистрации.<br /> <br /> Ситуация осложнялась тем, что регился я в подмосковье.<br /> <br /> Описываю весь процесс, а затем посочуствуйте:<br /> <br /> <br /> <br /> 1. Всех прописанных в квартире лично веду в ЖЭК, там мне дают отксерить у секретаря бланк заявления за 7 рублей, ксерю, заполняю, все прописанные расписываются, заходим к паспортистке ЖЭКа (благо очередь невелика), она ставит роспись и отправляет к секретарю. Секретарь ставит штамп. Все проходит быстро, без очереди. Паспортистка сообщает мне приемные дни центрального паспортно-визового отдела в областном городе.<br /> <br /> 2. Еду в ПВО этого города, к счастию он работает по субботам. Сажусь в очередь (человек 10, около получаса), захожу в кабинет к инспектору, он проверяет документы, говорит нужен паспорт хозяина, якобы были случаи когда паспортистки выписывали на мертвых душ. Пять минут обсуждаем эту проблему, ни к чему не приходим (диктофонная запись имеется). Прошу бланк заявления. Не дает почему-то.<br /> <br /> 3. Иду к начальнику ПВО (5 человек, около получаса). Она также не разрешает без паспорта хозяина начать регистрацию, но сообщает инспектору, чтобы выдал бланк.<br /> <br /> 4. Срисовываю со стенда реквизиты оплаты госпошлины, плачу в сберкассу 20 рублей.<br /> <br /> 5. Кроме всего прочего требуются отпечатки пальцев и страховка. В следующую субботу сначала иду в милицию, сдаю отпечатки (бесплатно и якобы добровольно), плачу 150 рублей страховки за 3 месяца через себркассу (опять же \"добровольно\") - сначала беру квитанцию у тетеньки, потом иду ее оплачивать, потом приношу ее тетеньке, она ставит штамп на заявление \"Застрахован\".<br /> <br /> 6. С чистой совестью прихожу в ПВО, очередь всего 2 человека, мне дают заполнить один маленький квадратный бланк, я его заполняю, иду без очереди, говорят в первый раз нужно два, заполняю. Захожу без очереди, сдаю бланки и 2 фотографии 3*4 (неважно цветные или ч/б).<br /> <br /> 7. Отправляют к местному подначальнику. Иду к нему, он ставит резюме \"Зарегистрировать\". Возвращаюсь к инспектору, очередь слава богу маленькая и у подначальника и у инспектора, он выписывает маленький прямоугольный вкладыш к паспорту, без печати. <br /> <br /> 8. Этот вкладыш несу на подпись к подначальнику. Он расписывается и - вуаля, я законно нахожусь на територрии РБ.<br /> <br /> <br /> <br /> Итого мне пришлось дважды приходить за регистрацией, в общем это заняло с дорогой в областной центр около 12 часов моего личного времени. Не стоит говорить о том, что на стендах информация весьма скудная и неполная. Наверное, боятся описывать все этапы их незаконных требований. Да здраствует закон.<br /> <br /> <br /> <br /> Однако, чукчу заинтересовал список документов на РВНП. В следующий раз буду делать не регу, а РВНП. Кстати, в следующий раз отпечатки пальцев сдавать не надо, только страховку и опять же заявление от хозяина. Интересно, а если бы хозяин написал на 10 лет, все равно бы пришлось переписывать каждые 3 месяца? гыгыгы.<br /> <br /> <br /> <br /> А вот список, чего требуется на РНВП:<br /> <br /> <br /> <br /> * 6 фотографий 35*45 <br /> <br /> * паспорт<br /> <br /> * справка о судимости от государства гражданина<br /> <br /> * миграционная карта<br /> <br /> * средства - сумма<br /> <br /> * свидетельство о браке, паспорт супруги<br /> <br /> * сертификат ВИЧ<br /> <br /> * не болеет инф. Заболеваниями<br /> <br /> * жилое помещение<br /> <br /> * отпечатки<br /> <br /> * картонные скоросшиватели, конверты, открытки<br /> <br /> <br /> <br /> Правда не ручаюсь, что все точно выписал - меня подвел КПК.<br /> <br /> <br /> <br /> После РНВП можно сделать вид на жительство.<br /> <br /> <br /> <br /> Так что если есть хата, дорога к законной жизни открыта.<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/fkr.gif\" border=\"0\" width=\"34\" height=\"27\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 07 Dec 2004 18:37:43 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3620159/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3620159/"
+                    },
+                    "category": {
+                        "__cdata": "Закон"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3620159/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Все таки я сделал из SoftAir конфетку"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3579309/"
+                    },
+                    "description": {
+                        "__cdata": "Все таки я сделал из SoftAir конфетку<br /> Вчера она у меня разъехалась, оказалось мало вшил колец. Вшил кольца через каждые 10 сантиметров, протянул веревкой длиной 10 метров, кровать стянулась на 100%. Теперича спать мягко, удобно и без ям.<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/treadmill.gif\" border=\"0\" width=\"50\" height=\"50\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 03 Dec 2004 19:22:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3579309/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3579309/"
+                    },
+                    "category": {
+                        "__cdata": "Опыт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3579309/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Если кончились деньги в Москве"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3579234/"
+                    },
+                    "description": {
+                        "__cdata": "Так получилось, что я загулял и утром обнаружил, что последние деньги кончились. На метро еще можно было добраться, а вот от метро на автобусе до работы никак - кондуктор высадит без денег. Метро … гм… а что идея - я ведь видел как ловкие дельцы предлагают в часы пик пройти гражданам без очереди по талончику за десятку. Они покупают десять поездок по 7.5 продают одну по 10 имеют навар. Я тоже пристроился к очереди  и провел одну девушку за десятку и одного парня за пятак. Этих денег мне хватило проехать на автобусе до точки назначения. :)"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 03 Dec 2004 19:13:33 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3579234/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3579234/"
+                    },
+                    "category": {
+                        "__cdata": "Опыт"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3579234/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Острова коммунизма."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3551848/"
+                    },
+                    "description": {
+                        "__cdata": "Да, такие еще есть. В городе Ногинске есть центральная гостиница, где двуместный номер (около 20 нумеров) стоит 240 рублей, а одноместный (правда он один) 150 рублей. В гостинице можно официально зарегистрироваться.<br /> Так что такие вот дела.<br /> Места чаще бывают, чем нет, по телефону о наличии мест не говорят - обычно лицам в подпитии отказывают, но с девушкой прийти никаких проблем. Но если вы вдруг вы не попали, есть по пути от вокзала в Электросталь, прямо возле торгового дома Подмосковье гостиница Гирус (т. ). Ехать на любой маршрутке Ногинск-Электросталь или на такси рублей за 50. В этом хотеле 600-750 (одно и двуместный соответственно).<br /> <br /> Гирус:<br /> Телефон: (09651) 4-19-68  <br /> Факс:(09651) 4-22-47  <br /> Услуги: вызов такси , кафе , комната для переговоров , конференц-зал , общенациональное ТВ , парковка . <br /> В номере: телевизор , холодильник , ванна . <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/mat.gif\" border=\"0\" width=\"44\" height=\"40\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 01 Dec 2004 09:06:38 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post3551848/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3551848/"
+                    },
+                    "category": [
+                        {
+                            "__cdata": "Москва"
+                        },
+                        {
+                            "__cdata": "Опыт"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post3551848/rss"
+                    }
+                }
+            ]
+        },
+        "_xmlns:content": "http://purl.org/rss/1.0/modules/content/",
+        "_xmlns:wfw": "http://wellformedweb.org/CommentAPI/",
+        "_xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "_xmlns:atom": "http://www.w3.org/2005/Atom",
+        "_xmlns:sy": "http://purl.org/rss/1.0/modules/syndication/",
+        "_xmlns:slash": "http://purl.org/rss/1.0/modules/slash/",
+        "_version": "2.0"
+    }
+}

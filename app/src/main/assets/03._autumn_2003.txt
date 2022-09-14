@@ -1,0 +1,1118 @@
+﻿{
+    "rss": {
+        "channel": {
+            "title": {
+                "__cdata": "fixin"
+            },
+            "link": "https://www.liveinternet.ru/users/fixin/",
+            "description": {
+                "__cdata": "Дневник fixin :: LiveInternet"
+            },
+            "generator": "LiveInternet / LiveInternet.ru",
+            "updatePeriod": {
+                "__prefix": "sy",
+                "__text": "hourly"
+            },
+            "updateFrequency": {
+                "__prefix": "sy",
+                "__text": "1"
+            },
+            "language": "ru",
+            "copyright": "fixin",
+            "image": {
+                "url": "https://i.li.ru/av/799/34799_2136489.jpg",
+                "title": "",
+                "link": "https://www.liveinternet.ru/users/fixin/"
+            },
+            "item": [
+                {
+                    "title": {
+                        "__cdata": "Матрица поимела меня"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post944246/"
+                    },
+                    "description": {
+                        "__cdata": "Уже в третий раз.<br /> Ходил в кино на Матрицу-3.<br /> Заночевал в Орехово в гостинице...<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/tank.gif\" border=\"0\" width=\"47\" height=\"48\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 28 Nov 2003 14:10:05 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post944246/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post944246/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post944246/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Моя надувная кровать близка к одеялу, тьфу, идеалу!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post907786/"
+                    },
+                    "description": {
+                        "__cdata": "<img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/tnp.gif\" border=\"0\" width=\"60\" height=\"49\" /> <br /> Предыстория такова: я купил 15 надувных блоков для кровать SoftAir Bed 140 за $105. Чехол, в которые они складываются и образуют кровать, стоит 250$, поэтому жаба не позволила купить.<br /> Я купил материал и фурнитуру за $25, заплатил в ателье за пошив чехла $10 и - вуаля! Мечта идиёта сбылась.<br /> Однако я немного не подрасчитал размеры и чехол оказался сантиметров на десять шире и длиннее, поэтому между блоками можно было провалиться да и лежать было неудобно.<br /> Так вот, один раз я уже попробовал ушить, но ушил слишком много, пришлось по ширине каждый блок немного сдуть, чтобы затолкнуть в кровать.<br /> И вот я распорол эту ушивку и перешил по новой, укоротив по ширине и длинне ровно настолько, насколько нужно.<br /> Теперь я понимаю, почему SoftAir относят к элитной мебели, весь секрет в чехле! Теперь, когда блоки плотно сидят внутри, спать на такой кровати просто отпад.<br /> Да, как сексодром, она подходит, ничего не лопнет, все выдержат блоки с нагрузкой до 500 кг.<br /> А кровать лучше чем матрас по следующим причинам:<br /> 1. Один блок можно заменить, а дырку в матрасе найти сложно. Стоит блок 7$<br /> 2. Матрас прогибается посредине, как его не накачивай, а блоки нет, т.к. нагрузка равномерно распределена.<br /> <br /> Еще прикуплю поролончика, чтобы снивелировать щелки и все, можно печатать на своем сайте размеры, инструкции по сборке кровати.<br /> <br /> Скитаться по жизни можно с комфортом! Браво, SoftAir!!!<br /> <br /> Короче, сегодня ночью я спал превосходно, чего и вам желаю!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 21 Nov 2003 10:31:40 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post907786/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post907786/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post907786/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Готовлюсь к переезду в Москву"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post897477/"
+                    },
+                    "description": {
+                        "__cdata": "<img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/new/silly.gif\" border=\"0\" width=\"25\" height=\"24\" /> <br /> Уже 3 недели работаю в Москве.<br /> Езжу каждый день на электричке из Куровского, нашел оптимальный график.<br /> От дверей до дверей в Москву 3 часа, из Москвы 2 с половиной часа.<br /> Напрягает не очень, в электричках читаю книжки.<br /> После 1 декабря, если не выгорит с квартирой в Железке, сниму комнату в Москве.<br /> А пока - личная жизнь только по выходным, будни заполнены битвой с расстояниями.<br /> В конце декабря мы едем с фирмой отмечать грядущий Новый Год. Вау!<br /> <br /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 19 Nov 2003 12:29:22 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post897477/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post897477/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post897477/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Вся  жизнь в дороге."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post830734/"
+                    },
+                    "description": {
+                        "__cdata": "Ищу квартиру в г.Железнодорожный.<br /> А пока что приходится каждый день ездить в Москву и обратно.<br /> До москвы добираюсь за 3 часа плюс минус 15 минут. Тяжко, но не обременительно.<br /> Дал объявления в газету, заплатил за расклейку объявлений на платных щитах, звонил в агенства. Пока ничего. В Железке, кстати, тоже есть агенства-лохотроны, хаха. Предоплату просят, без агентов работают.<br /> Ну ладно, мне всегда везет на поиски квартиры, ищу я ее по месяцу, блин.<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/new/type.gif\" border=\"0\" width=\"40\" height=\"20\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 05 Nov 2003 14:48:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post830734/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post830734/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post830734/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Теперь работаю в Москве"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post830703/"
+                    },
+                    "description": {
+                        "__cdata": "Работаю в Москве, в районе м.Домодедовской.<br /> Опять я в Москве, теперь развернемся. <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/1/101.gif\" border=\"0\" width=\"31\" height=\"35\" /> <br /> Принимаются поздравления и соболезнования.<br /> Залез в гостевую - смотрю, а там столько придурков.<br /> Я ответил только на осмысленные послания. Большинство же тем написано по принципу: \"Я умный, ты дурак\". Ну раз так, негоже мне этим \"умникам\" отвечать.<br /> А так прикольно было после полторы недели без интернета опять окунуться в его пучину.<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/dunce.gif\" border=\"0\" width=\"15\" height=\"26\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 05 Nov 2003 14:44:15 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post830703/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post830703/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post830703/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Ничто не случайно. Круговорот компьютеров в природе."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post773215/"
+                    },
+                    "description": {
+                        "__cdata": "Меня переводят в Москву, в нашу же фирму.<br /> Пришел новый человек, мы выделили ему компьютер.<br /> Каково же было мое удивление, когда оказалось, что это тот самый компьютер, с которого я начинал в нашей фирме в ноябре 2002.<br /> Мистика просто какая-то!!! <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/brandnewsmilies/king.gif\" border=\"0\" width=\"28\" height=\"28\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 23 Oct 2003 16:51:02 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post773215/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post773215/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post773215/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Продал своего двухколесного друга."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post746636/"
+                    },
+                    "description": {
+                        "__cdata": "Продал велосипед за 5000. Я покупал его за 6400. Плюс аксессуары на 1500. Итого я потерял 3000 рублей. Пользовался я им все лето.<br /> Но так ли уж и потерял, посчитаем, сколько с его помощью я съэкономил.<br /> Итак, 5 поездок туда и обратно на работу в Орехово 5*70=350.<br /> Штук 10 поездок туда и обратно на работу в Куровской 10*15=150<br /> Итого я съэкономил с его помощью 500 рублей.<br /> Таким образом, за 2500 рублей или 700 баксов я катался 7 месяцев с марта по сентябрь включительно. Ну что ж.<br /> Просто хочется уже мопед. :)<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/bud.gif\" border=\"0\" width=\"60\" height=\"40\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 17 Oct 2003 09:25:20 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post746636/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post746636/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post746636/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Придумал новую многопользовательскую игру."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post739431/"
+                    },
+                    "description": {
+                        "__cdata": "Фишка была в способе сохранения во время отсутствия в игре и замены денег энергией, а потом это развернулось в приятную экономическую модель.<br /> Блин, я бы в такую поиграл. Это не фэнтези, это жизнь, блин!<br /> Если знаете издателя - отдайте ему. Блин, руки чешутся!<br /> <a href=\"http://koenigsoft.boom.ru/hworld.htm\" target=\"_blank\">http://koenigsoft.boom.ru/hworld.htm</a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 15 Oct 2003 15:48:18 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post739431/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post739431/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post739431/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Иностранец в РФ"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730907/"
+                    },
+                    "description": {
+                        "__cdata": "То что я заболел, а полечиться негде, как бы решаемая проблема. Сходить к платному, если очень дорого, съездить в Белоруссию, 400 рублей туда 400 обратно = 30 баксов, ну комнату там снять на месяц за 30 баксов или посуточно, итого 60 баксов.<br /> Это то ладно.<br /> Будем надеяться, что это просто отравление и мне еще светит поработать в России. Если же здоровье подкачает, придется ехать домой. Нафига мне лишние проблемы и гражданство за 6000$ ???<br /> Ну и пусть я там буду получать жалкие 200$, зато будут все права и всякое милицейское мурло не будет мне тыкать в лицо...<br /> Все бы хорошо, да только есть одно обстоятельство, что держит меня в Москве. Кто, кто, придумал эту любовь, блин....<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/leb.gif\" border=\"0\" width=\"74\" height=\"22\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 13 Oct 2003 16:42:29 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post730907/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730907/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730907/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Да уж, после этого жить в России? Надо подумать."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730775/"
+                    },
+                    "description": {
+                        "__cdata": "То что я заболел, а полечиться негде, как бы решаемая проблема. Сходить к платному, если очень дорого, съездить в Белоруссию, 400 рублей туда 400 обратно = 30 баксов, ну комнату там снять на месяц за 30 баксов или посуточно, итого 60 баксов.<br /> Это то ладно.<br /> Будем надеяться, что это просто отравление и мне еще светит поработать в России. Если же здоровье подкачает, придется ехать домой. Нафига мне лишние проблемы и гражданство за 6000$ ???<br /> Ну и пусть я там буду получать жалкие 200$, зато будут все права и всякое милицейское мурло не будет мне тыкать в лицо...<br /> Все бы хорошо, да только есть одно обстоятельство, что держит меня в Москве. Кто, кто, придумал эту любовь, блин....<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/leb.gif\" border=\"0\" width=\"74\" height=\"22\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 13 Oct 2003 16:18:47 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post730775/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730775/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730775/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Я заболел, наверное самым серьезным образом в своей жизни..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730534/"
+                    },
+                    "description": {
+                        "__cdata": "Что-то у меня с пищеварительным трактом. Есть не хочется, голова болит, вялость и слабость, короче полный пиздец.<br /> Началось все в субботу, а вчера мне снилось, что я тону. Такой мистический сон о смерти. Гыгыгы, как болезнь возрождает страхи.<br /> Сходил к терапевту в платный мед.центр, она мне понавыписывала таблеток. Консультация длилась минут 10, а стоила 250 руб, столько же лекарства. Да, пиздец какой-то. Нужно или искать терапевта посолиднее, которая точно скажет что со мной,  или ждать, может пройдет с этой помощью.<br /> Утешает только то, что как писал Соломон, все пройдет. И добавлял: \"И это тоже\".<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/1/049.gif\" border=\"0\" width=\"25\" height=\"27\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 13 Oct 2003 15:34:35 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post730534/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730534/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post730534/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Нашел вот такую тему!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post729540/"
+                    },
+                    "description": {
+                        "__cdata": "Поступайте так, как должен вести себя нормальный мужчина, знающий себе цену, по прибытию к месту отдыха. Не важно, в ночной клуб или в санаторий на урологическое отделение. Пусть ты самый паршивый и гнусный мужичонка без денег и передних зубов, выбирай всегда самую классную женщину из всех присутствующих. Пусть даже ничего не перепадёт, но зато потом не придется отплёвываться. <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/4u.gif\" border=\"0\" width=\"26\" height=\"26\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 13 Oct 2003 11:58:45 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post729540/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post729540/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post729540/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Как только один тэг может изменить дизайн сайта!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post717112/"
+                    },
+                    "description": {
+                        "__cdata": "Всего лишь один тэг IFRAME, а какое изменение дизайна. С его помощью я вставил в каждую страничку сайта меню для навигации по сайту, а внизу разместил одни и те же счетчики.<br /> Да, порой кажется, что в HTML не хватает таких простых тегов, для замены которых приходится использовать извращения вроде SSI. <br /> Но, конечно, IFRAME - не панацея, он вставляет другую страницу целиком, хотя мне всего лишь необходимо вставить код главного меню и счетчика, был бы тег INSERT FROM FILE. Эх, мечты, мечты...<br /> Однако теперь мой сайт будет просматриваться только под HTML 4.0<br /> Ну и фиг с ним, все равно я юзаю CSS, а она тоже не из старых выдумок.<br /> <br /> Кстати, насчет CSS, говорят с ее помощью можно сделать верх и низ страницы, а также менюшку справа. Может кто знает как, откликнитесь.<br /> <br /> А пока я сижу и наслаждаюсь новым дизайном <a href=\"http://www.koenigsoft.boom.ru\" target=\"_blank\">www.koenigsoft.boom.ru</a><br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/heart.gif\" border=\"0\" width=\"15\" height=\"15\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 09 Oct 2003 21:34:14 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post717112/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post717112/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post717112/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Странные сны..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post711455/"
+                    },
+                    "description": {
+                        "__cdata": "Давеча приснилась мне моя бывшая жена. Странно, никогда не снилась, а тут - на-те. И к чему я ее вспомнил?<br /> Типа отправили меня с фирмы на какую-то конференцию, все уже расселись а тут заходит она с, возможно, шефом, глаза горят, волосы вьются по плечам - гораздо красивее, чем в жизни, как в японском аниме.<br /> Но тут прозвенел будильник я проснулся и почему-то подумал - а подошел бы я к ней на этом семинаре. Наверное подошел, я ж наглец.<br /> <br /> Да, вот так и живут люди, как прямые мчатся по бесконечной, пересекаются мгновением, которое длится порой несколько лет, а затем продолжают свой путь, становясь бесконечно далеким друг другу и уже никогда не пересекутся опять, что бы не утверждал там романтик Лобачевский. В любви преобладает Евклидова геометрия и треугольники-многоугольники здесь не в чести.<br /> <br /> Да, ну слава богу, все позади. Или, говоря по другому, все впереди, что то же самое.<br /> <br /> Прямые! Я - сторонник нелинейных Римановых пространств, я назначаю вам точки встречи в локальных минимумах, дабы добиться экстремума и лететь по гиперболе.... Я мчусь к вам! Не проходите по касательной! Пересечемся!<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/mar.gif\" border=\"0\" width=\"60\" height=\"25\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 08 Oct 2003 15:40:47 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post711455/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post711455/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post711455/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Мой цифровик снимает кино!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post710291/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня утром подключил свой цифровой фотоаппарат к компьютеру через TV-тюнер (хотя по идее можно было через видео-вход моей  видеокарты Radeon 9200).<br /> И картинка ожила!<br /> Качество съемки кстати было именно 3 мегапиксела. <br /> Видео, что я делал на фотике очень малого разрешения, а в таком режиме камера дает полную картинку на видеовыход и разрешение получается такое же, как при фотосъемке.<br /> Изумительно!<br /> Я снял свои выкрунтасы, но 5 минут съемки заняли 80 мегабайт. Кошмар! <br /> Придется искать чем сжать! Найду - выложу в интернет.<br /> Клево, теперь у меня есть и видеокамера."
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 08 Oct 2003 10:37:13 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post710291/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post710291/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post710291/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Купил надувную кровать..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post710281/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера после обеда отпросился поехать в москву, чтобы купить себе блоки для надувной кровати SoftAir.ru. 15 блоков, из которых состоит надувная кровать (шведская) стоят 105$. А вот чехол, в которые они помещаются, стоит 200$. Так что я решил купить только блоки, а чехол сшить самому.<br /> Приехал в офис \"Марш\" на Черкизовскую в 15.30 - он находится в высотке, от метро \"Черкизовская\" видно издалека по Щелковскому шоссе. Выписал пропуск, поднялся наверх и увидел ее - мечту, кровать в фирменном чехле, желтого цвета.<br /> У симпатичной девушки-менеджера оформил документы. Склад компании в 3х километрах от офиса. Я взял такси за полтинник и добрался до склада. Лил дождик. Кровать оказалась довольно тяжелым и большим бумажным ящиком с надувными пакетами, но на спину мне влезла!<br /> Так что другие планы в Москве пришлось свернуть и я поехал домой на электричке. <br /> Дома я попробовал ее надуть лягушкой, но там без фена или пылесоса не разберешься. Отверстие для надува большое, рассчитано на применению техники. Придется купить фен, в хозяйстве пригодится. :)<br /> Пока свяжу блоки в кровать веревкой, а потом на досуге сошью чехол.<br /> Ура, сбылась мечта идиета!<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/coolman.gif\" border=\"0\" width=\"70\" height=\"65\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 08 Oct 2003 10:34:00 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post710281/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post710281/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post710281/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Скоро мой бездей...."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post701902/"
+                    },
+                    "description": {
+                        "__cdata": "21 числа я родился когда-то 28 лет назад... Ура...<br /> Поздравления принимаются... <br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/hat.gif\" border=\"0\" width=\"17\" height=\"31\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 06 Oct 2003 11:30:52 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post701902/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post701902/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post701902/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "В жизни очередной апгрейд, тьфу переезд!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post701883/"
+                    },
+                    "description": {
+                        "__cdata": "Через три недели, т.е. 27 октября, начинаю работать в Москве. Меня переводят из Подмосковья в Москву, где я и начинал в ноябре прошлого года.<br /> Привет, златоглавая, а то я тут в деревне расслабился.<br /> Ух, теперь зажжем, трепещите все!<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/bunnyhop.gif\" border=\"0\" width=\"74\" height=\"40\" />   <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/dogrun.gif\" border=\"0\" width=\"36\" height=\"36\" /> <br /> <br /> Зажжем!<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/flame.gif\" border=\"0\" width=\"19\" height=\"36\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 06 Oct 2003 11:26:49 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post701883/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post701883/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post701883/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Разверзлись хляби небесные..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post689666/"
+                    },
+                    "description": {
+                        "__cdata": "И на меня обрушился поток сообщений из ICQ. Кто-то сделал мне бесплатную рекламу и ко мне посыпались сообщения, начинающиеся \"Во сколько первая электричка на Куровскую\".<br /> К 100-му сообщению я перепробовал столько экзотических ответов на этот незатейливый вопрос, что сам удивился, как мой креатив не кончается. Не люблю повторяться.<br /> Были просто любопытные (большинство), любопытные девушки (меньшинство, к сожалению), откровенно злые товарищи (ушли в игнор) и прочие, прочие, прочие.<br /> В общем, я славно провел два часа после работы.<br /> Собственно, заинтересовало большинство их на моем сайте обращение к девушке. Ну что ж, это говорит о том, что я смог искренне и доходчиво выразить свои чувства, возможно с этого мне чего и обломится.<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/1/303.gif\" border=\"0\" width=\"55\" height=\"19\" /> <br /> <br /> Ура! Пойду спать и обдумывать происшедшее... еее..."
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 02 Oct 2003 20:36:27 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post689666/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post689666/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post689666/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "О суете сует..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post687252/"
+                    },
+                    "description": {
+                        "__cdata": "Вокруг все - сон<br /> Я в сновиденье<br /> Попал и чуствую - кошмар<br /> Но вдруг настало пробужденье -<br /> То разбудил меня комар.<br /> <br /> Спасибо боли и уколам<br /> За то что будят ото сна<br /> А наша жизнь, как ни прискорбно<br /> Всего лишь сонная игра!<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/spinner.gif\" border=\"0\" width=\"27\" height=\"20\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 02 Oct 2003 10:06:19 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post687252/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post687252/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post687252/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Перепевки."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post684041/"
+                    },
+                    "description": {
+                        "__cdata": "Прочитал такой стих:<br /> <br /> Ты запуган, сородич, прячешься по углам.<br /> Хватит лить, словно раб, бесполезные слезы.<br /> Позабудь гуманизм, то масонский обман,<br /> Поднимайся, народ, скорых битв надвигаются страшные грозы.<br /> Разорви цепи и выпрями спину,<br /> Встань с колен, стисни зубы, сожми кулаки.<br /> Исполни воинский долг, как надлежит славянину,<br /> Салютуй победе жестом вскинутой к солнцу руки.<br /> <br /> Решил, что мне больше подходит:<br /> <br /> Охренел ты, сородич, шляешься по углам.<br /> Хватит ебать, словно баб, бесполезные надувные игрушки.<br /> Позабудь про резину, то заморский обман,<br /> Подними свой член, скорых битв надвигаются страшные стоны.<br /> Разорви кучу целок и выпрями спину,<br /> Раком ставь, стисни зубы, зажав ими сиськи.<br /> Взяв супружеский долг, как надлежит славянину,<br /> Салютуй победе выстрелом вскинутой кверху капели!.<br /> <br /> Проще говоря, я занимаюсь любовью, а не войной!<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/q3.gif\" border=\"0\" width=\"94\" height=\"25\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 01 Oct 2003 13:56:14 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post684041/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post684041/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post684041/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Я не знаю, чем вызываю злость."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post683383/"
+                    },
+                    "description": {
+                        "__cdata": "Так поется у Чижа в песне \"Дверь в лето\":<br /> \"Я не знаю, чем вызываю злость<br /> Никому не мешал, взю жизнь починял свой примус<br /> Не брал их игрушки не воровал их кость<br /> Не доставал их и не целился в спину.\"<br /> <br /> <br /> Эта песня вспомнилась мне сегодня, когда я просматривал свою гостевую.<br /> Казалось бы, от других меня отличает только то, что я выложил свое честное объявление о знакомстве в интернет да в шутку назвал себя гением в определенной области программирования (1С).<br /> <br /> А сколько негодования, хаха. Я бы на месте этих товарищей подумал, что их так раздражает во мне, что они не могут смириться и выплескивают эту ненависть на страницы гостевой.<br /> <br /> Кажется, простой принцип - живи сам и дай жить другим, до них еще не дошел. Они готовы заставить жить меня другой жизнью, лишь бы я не напоминал им о том, что у них не все благополучно.<br /> <br /> Ладно, я иду своим путем, моя яхта мчится на всех парусах, не спрашивая у гадких медуз разрешения проехать.<br /> <br /> А в конце пути меня ждет богатство, прекрасные дамы, очаровательный замок и спокойная жизнь.<br /> <br /> Удачи, завистники!<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/heart.gif\" border=\"0\" width=\"15\" height=\"15\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 01 Oct 2003 10:46:04 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post683383/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post683383/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post683383/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Чудны дела твои, господи!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post681264/"
+                    },
+                    "description": {
+                        "__cdata": "Короче, одна из девушек, фотомодель, узнала себя на фотке на моем сайте. Она связалась со мной по аське, я посмотрел - действительно на ее сайте висела ее фотка. <br /> Что ж, с грустью пришлось удалить одну из моих идеальных подруг.<br /> Жениться на себе она не предлагала, хаха... <br /> Да я счас и не в таком состоянии.<br /> Бывает же такое.<br /> Кстати, фотки я сдирал или с конкурсов красоты или с сайтов по рекламе проституции. Так что возможно девушке придется говорить еще и другим админам, чтобы они убрали ее фотки. Вроде на dosug.ru.<br /> Раз уж вышла \"пригожая\" лицом и телом, то всякие неформалы используют ее для \"недоброкачественной\" рекламы.<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/punk/kav.gif\" border=\"0\" width=\"28\" height=\"28\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 30 Sep 2003 19:18:45 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post681264/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post681264/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post681264/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Дизайн сайта был содран, сознаюсь."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659625/"
+                    },
+                    "description": {
+                        "__cdata": "У nokia.ru....<br /> Но в оправдание хочу сказать, что он мне понравился... и не только мне но и motorola.ru <br /> У обоих этих контор одинаковый дизайн. Кто у кого содрал, хаха!<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/brandnewsmilies/angel.gif\" border=\"0\" width=\"27\" height=\"26\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 24 Sep 2003 21:33:01 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post659625/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659625/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659625/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Может начать цикл статей - как я перестал быть чайником?"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659621/"
+                    },
+                    "description": {
+                        "__cdata": "Текущую статью можно было назвать:<br /> Как я перестал быть чайником в CSS."
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 24 Sep 2003 21:31:49 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post659621/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659621/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659621/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Переделал koenigsoft.boom.ru на CSS"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659616/"
+                    },
+                    "description": {
+                        "__cdata": "Вернее только титульную страницу. Да, FronPage отдыхает перед Macromedia Editor.<br /> Мне нужно было отменить HTML разметку, чтобы включить CSS. Я все это быстро и красиво сделал в Macromedia.<br /> Удобная вещь CSS - сайт смотрится стильно и можно менять дизайн хоть каждый сезон - под лето, зиму, осень и т.п., хаха...<br /> Но я убил часа два на переделку титульного листа и еще минут десять на отдельную страничку. Уже руку набил, все хорошо.<br /> Теперь осталось придумать, как на каждой странице выводить меню и подвал. <br /> Мне советуют SSI, но на boom SSI нету. Думаю, можно выкрутиться с помощью JAVA-script, который будет вставлять в мою HTML страничку другую страничку с меню на лету...<br /> Ну да ладно, надо идти спать, не всеж сайты клепать.<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/biglach.gif\" border=\"0\" width=\"50\" height=\"40\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 24 Sep 2003 21:30:30 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post659616/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659616/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post659616/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Matrix has me!!!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post652925/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера раздобыл игрушку \"Матрица\". И играл в нее с 21 до двух ночи.<br /> Усилием воли оторвал себя от клавы и уложил спать, хотя в голове еще проносились невероятные эпизоды этой изумительной игры.<br /> Играть можно за мужика или бабу. Я выбрал негритянку, люблю бои с участием женщин.<br /> Это что-то!<br /> Режим фокусировки, когда законы мира нарушаются, побеждается время и гравитация. Можно бегать по стенам, уворачиваться от пуль, причем все так реально - видишь траекторию пули и можешь от нее убежать.<br /> Но он длится недолго, зато в отличие от Max Payne, его удобно выключать - просто отпустить левый Shift.<br /> Гонки на машине меня убили - тупо, хорошо хоть только один эпизод.<br /> И конечно, кунг-фу, я просто обезумел. Удары, тычки, захваты, ты только указываешь направление и вид удара - рукой или ногой, а твой персонаж сам проводит головокружительные комбо и это в режиме \"фокусировки\", когда противники еле двигаются.<br /> Выхватывать оружие соперника, стрелять из-за угла - круто.<br /> Особенно интересно выбегать в середину толпы человек из пяти и раздавать удары налево и направо, здесь оружие необязательно.<br /> Вы видели, как летят пули из автомата, когда восприятие ускоренно в сотни раз? Красиво.<br /> Ночью я дошел до битвы в самолете с агентом Смитом. Агенты вообще-то непобедимы, но я правильно догадался, что его нужно выбросить в открытый трап грузового самолета. Только непонятно, зачем выбрасывать Смита, а затем прыгать с парашютом самому? Но весело, еле замочил гаденыша.<br /> Уровни короткие, сохраняться можно только в конце, это попахивает добрыт старым IGI. Но убить тебя у противников мало шансов на Medium уровне. Жизнь и фокусировка восстанавливаются, когда отдыхаешь.<br /> Так что Матрица в компьютере мне понравилась больше, чем на экране!!!<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/hb.gif\" border=\"0\" width=\"28\" height=\"29\" /> Браво!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 23 Sep 2003 10:20:27 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post652925/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post652925/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post652925/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Выходные..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post648763/"
+                    },
+                    "description": {
+                        "__cdata": "На выходных был на Савеловском радиорынке, купил себе видюху ATI RADEON 9200 за 2600 руб, прикольная штуковина, вчера Вольфа гонял только так, а еще Индиану Джонса попробовал, Грома, короче все, что у меня раньше не шло.<br /> Теперь осталось сделать только апгрейд камня. У меня Duron 850 стоит, шина 100 Мгц, коэфф. умножения 8.5. Шину можно поставить на 133 (память позволяет), разьем Soket A, возможно поставить AMD-1100, а может и помощнее! Улет! Узнаю, сколько фирмы берут за такой апгрейд и порезвлюсь.<br /> <br /> Еще я попробовал соленых грибочков. Русский экстрим - покупаешь вкусные грибочки и не знаешь, доживешь ли до понедельника. А ну его, этот понедельник.<br /> <br /> Ходят слухи, что меня переводят в Москву. Интересно. Возможно, скоро буду работать в столице, держитесь московские девки!<br /> <br /> Еще из новостей - нашел программы для тренировки слуха, так что свою писать не буду. Попробую, попробую. Вот определюсь  с местом жительства, найду училку музыки и буду тренироваться на пианине.<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/batman.gif\" border=\"0\" width=\"15\" height=\"19\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 22 Sep 2003 10:51:49 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post648763/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post648763/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post648763/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Сбылась мечта идиёта!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post638714/"
+                    },
+                    "description": {
+                        "__cdata": "Нашел-таки кровать своей мечты - SoftAir.ru  BED 140.<br /> Двуспальная кровать, состоящая из надувных блоков. Она гораздо более упругая, чем надувные матрасы и если блок проколется, запасной стоит всего $7.<br /> Правда, кровать стоит не по-детски 300$. За такие деньги можно купить 10 надувных матрасов. Но после звонка в фирму оказалось, что сами блоки (15 штук на кровать) стоят 105$, остальное - стоимость чехла, MADE IN Швеция. Ничего себе чехольчик.<br /> Итак, решено, покупаю блоки, а с чехлом что-нибудь придумаю.<br /> Ну, куплю ткани и отдам кому-нибудь сшить. Зато весчь на всю жизнь! И идеальный сексодром!<br /> <br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/nnn.gif\" border=\"0\" width=\"82\" height=\"16\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 19 Sep 2003 09:06:42 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post638714/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post638714/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post638714/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Как убить любую гостевую книгу с аватарами (например gb.ru)"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post627361/"
+                    },
+                    "description": {
+                        "__cdata": "Я в печали!<br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/brandnewsmilies/help.gif\" border=\"0\" width=\"29\" height=\"33\" /> <br /> Вчера часа 2 лазил по интернету, скушал весь свой ежедневный траффик но так и не нашел ни одной бесплатной гостевой книги  с аватарами, такой как оно было на gb.ru<br /> Нашел еще несколько сервисов на таком же движке, как gb.ru, но все они страдают той же незащищенностью.<br /> Если в сообщении написать:<br /> <br /> &lt;script>  <br /> document.body.innerHTML=\"Huy!!!\";  <br /> &lt;/script><br /> <br /> то при просмотре гостевой эта фраза воспринимается как код и страница заменяется на слово Huy.<br /> <br /> Пришлось использовать гостевуху на borda, хотя смайлики меня не прикалывают. Жаль что на li.ru нету гостевухи. Я бы дал в качестве гостевой дневник, но ведь комментарии можно дописывать только к моим сообщениям, а в гостевухе оставляют и свои, независимые, сообщения.<br /> <br /> Так что, прощай, любимая гостевуха. Сделаю твой архив и перейду на новую.<br /> А вот админ gb.ru похоже крепко спит. Т.к. даже в демо-гостевухе стоит этот убийственный скрипт, а админу пофиг. Интересная политика.<br /> <br /> Может кто знает, как это лечится??<br /> <br /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 16 Sep 2003 10:27:25 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post627361/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post627361/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post627361/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Как я провел выходные."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post625089/"
+                    },
+                    "description": {
+                        "__cdata": "Гм, ну был в деревне в Подмосковье, ходил в ватничке и сапогах, т.к. куртку забыл, а было холодно.<br /> Такие вот делы!<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/lol3.gif\" border=\"0\" width=\"23\" height=\"26\" /> <br /> <br /> А вообще мне надо купить дубленку, а то околею.<br /> Надо купить матрас, а то мой старый сдулся.<br /> Нужно купить видюху, а то старая сдохла.<br /> <br /> И на все это есть деньги (прикиньте!) но нет времени - всего два выходных в неделю, когда можно сорваться в Москву!!!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 15 Sep 2003 16:06:17 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post625089/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post625089/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post625089/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Крякнули мою гостевуху."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post614997/"
+                    },
+                    "description": {
+                        "__cdata": "Гм, давеча заглянул в свою гостевую, а там выскакивает неприличное слово из трех букв.<br /> Да, пароль на нее я забыл, админом войти не могу.<br /> Давно уже собирался ее прикрыть, ну если gb.ru не ответит, придется сносить.<br /> Старая гостевая у меня сохранилась в архивах, выложу ее как-нибудь, если не восстановлю.<br /> Прикольно, значит среди моих недругов появились и хакеры. :)<br /> Ну что ж, процессу трахания баб это не повредит. "
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 12 Sep 2003 09:34:07 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post614997/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "5"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post614997/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post614997/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Сделал страничку о том, как я провел отпуск"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post611106/"
+                    },
+                    "description": {
+                        "__cdata": "Заходите, читайте, завидуйте<br /> <a href=\"http://koenigsoft.boom.ru/albumpolska/album.htm\" target=\"_blank\">http://koenigsoft.boom.ru/albumpolska/album.htm</a><br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/compsux.gif\" border=\"0\" width=\"30\" height=\"30\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 11 Sep 2003 09:50:57 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post611106/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post611106/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post611106/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Отдыхали - веселились, посчитали - прослезились!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post605346/"
+                    },
+                    "description": {
+                        "__cdata": "За время отпуска я в общей сложности потратил 620$ = 19000.<br /> Кошмар. Итак, на что ж я их потратил, даже не верится:<br /> Билеты в Кениг (туда и обратно) = 70$<br /> Путевка в Польшу = 95$ (88 евро)<br /> Снимал гостиницу 3 раза = 3*15$=45$<br /> Сувениры в Польше = 70$<br /> Еда в Кениге = 14*5$=70$<br /> Мобильник=45$ (покупка плана и карточки)<br /> Подарил папе=50$<br /> Вещей купил =15$ (рюкзак, аккумуляторы, сумка)<br /> Итого 460$<br /> И попросту говоря, проебал 160$ = 4800 рублей.<br /> Уф, ну не так уж и много, а то меня чуть кондратий не хватил, когда я все подсчитал. <br /> Все таки поездка мне была нужна, чтобы понять, что я не турист.<br /> Можно было сидеть дома, дрыхнуть в постели, а меня на фиг ностальгия замучала, жажда странствий. Не, это все прикольно, но одного раза хватит.<br /> <br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/bath.gif\" border=\"0\" width=\"60\" height=\"36\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 09 Sep 2003 16:44:40 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post605346/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "8"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post605346/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post605346/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Об отношении людей ко мне."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post601847/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня почитал гостевую и подумалось.<br /> Весь мир делится на тех, кто меня любит, кто ко мне равнодушен, кто меня не любит и тех, кто меня не знает.<br /> Количество тех, кто меня не любит, настолько мало по сравнению с количеством тех, кто меня не знает, что их мнением можно пренебречь, как бесконечно малой величиной.<br /> Поэтому я буду принимать признания в любви от тех, кто меня любит и игнорировать тех, кто меня не понимает.<br /> <br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/1/076.gif\" border=\"0\" width=\"25\" height=\"29\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 08 Sep 2003 18:13:57 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post601847/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post601847/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post601847/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Вернулся из отпуска. Первый рабочий день."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post600969/"
+                    },
+                    "description": {
+                        "__cdata": "Тяжко привыкать к работе, но надо.<br /> Кстати, придумал, как оценивать девушек (по возрастающей интереса):<br /> <br /> disable - девушка? ой, бабушка, извините!<br /> suckable - если есть у бабы рот, значит баба не урод.<br /> fuckable - можно потрахать<br /> loveable - можно влюбиться<br /> <br /> Думаю, комментарии излишни.<br /> <br /> <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/sex.gif\" border=\"0\" width=\"60\" height=\"33\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 08 Sep 2003 14:10:17 +0400"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post600969/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post600969/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post600969/rss"
+                    }
+                }
+            ]
+        },
+        "_xmlns:content": "http://purl.org/rss/1.0/modules/content/",
+        "_xmlns:wfw": "http://wellformedweb.org/CommentAPI/",
+        "_xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "_xmlns:atom": "http://www.w3.org/2005/Atom",
+        "_xmlns:sy": "http://purl.org/rss/1.0/modules/syndication/",
+        "_xmlns:slash": "http://purl.org/rss/1.0/modules/slash/",
+        "_version": "2.0"
+    }
+}

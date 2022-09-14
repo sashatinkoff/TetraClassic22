@@ -32,8 +32,6 @@ class MainActivity : BindActivity(), MainView {
         installSplashScreen()
             .setKeepOnScreenCondition { viewModel.isInitInProgress }
 
-        InboxWorker.schedule(this)
-
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         updateStatusBarColor()

@@ -1,6 +1,7 @@
 package com.isidroid.b21.domain.model
 
 import com.isidroid.b21.ext.formatDateTime
+import java.text.SimpleDateFormat
 import java.util.*
 
 data class Post(
@@ -9,5 +10,7 @@ data class Post(
     val text: String,
     val comments: List<Comment>?
 ) {
-    val message: String get() = "${createdAt.formatDateTime}<br /><br />${text}<br /><br />$url"
+    val dateFormat = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale("ru", "RU"))
+
+    val message: String get() = "${dateFormat.format(createdAt)}<br /><br />${text}<br /><br />$url"
 }

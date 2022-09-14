@@ -14,5 +14,6 @@ interface ApiTest {
         @Query("chat_id") channelId: String,
         @Query("parse_mode") parseMode: String = "HTML",
         @Query("text", encoded = false) text: String,
+        @Query("disable_web_page_preview")  disableWebPagePreview: Boolean = true
     ): Call<SendMessageResponse>
 }

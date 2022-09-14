@@ -28,8 +28,6 @@ class InboxWorker @AssistedInject constructor(
         val title = inputData.getString("title")
         val code = inputData.getInt("code", 10)
 
-        Timber.i("sdfsdfsdf doWork on ${Thread.currentThread().name}, ${repository.refreshToken()}")
-
         notification(
             code = code,
             title = title.orEmpty(),
