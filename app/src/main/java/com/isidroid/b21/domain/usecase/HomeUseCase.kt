@@ -29,16 +29,16 @@ class HomeUseCase @Inject constructor(
 
         val files = arrayOf(
             "00.winter_2003",
-//            "01._spring_2003", "02._summer_2003",
-//            "03._autumn_2003", "04._winter_2004", "05._spring_2004",
-//            "06._summer_2004", "07.autumn_2004", "08.winter_2005",
-//            "09.spring_2005", "10.summer_2005", "11.autumn_2005",
-//            "12.winter_2006", "13.spring_2006", "14.summer_2006",
-//            "15.autumn_2006", "16.winter_2007", "17.spring_2007-1",
-//            "18.spring_2007", "19.summer_2007-1", "20.summer_2007",
-//            "21.autumn_2007-1", "22.autumn_2007", "23.winter_2008-1",
-//            "24.winter_2008", "25.spring_2008", "26.summer_2008",
-//            "27.autumn_2008", "28.winter_2009"
+            "01._spring_2003", "02._summer_2003",
+            "03._autumn_2003", "04._winter_2004", "05._spring_2004",
+            "06._summer_2004", "07.autumn_2004", "08.winter_2005",
+            "09.spring_2005", "10.summer_2005", "11.autumn_2005",
+            "12.winter_2006", "13.spring_2006", "14.summer_2006",
+            "15.autumn_2006", "16.winter_2007", "17.spring_2007-1",
+            "18.spring_2007", "19.summer_2007-1", "20.summer_2007",
+            "21.autumn_2007-1", "22.autumn_2007", "23.winter_2008-1",
+            "24.winter_2008", "25.spring_2008", "26.summer_2008",
+            "27.autumn_2008", "28.winter_2009"
         )
 
 
