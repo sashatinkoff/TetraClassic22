@@ -7,6 +7,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import com.isidroid.b21.R
+import com.isidroid.b21.data.InboxWorker
 import com.isidroid.b21.databinding.ActivityMainBinding
 import com.isidroid.core.ext.findNavController
 import com.isidroid.core.ext.updateStatusBarColorExt
@@ -30,6 +31,8 @@ class MainActivity : BindActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
             .setKeepOnScreenCondition { viewModel.isInitInProgress }
+
+        InboxWorker.schedule(this)
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

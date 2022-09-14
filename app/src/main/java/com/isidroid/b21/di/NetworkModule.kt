@@ -80,6 +80,7 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideApiReports(interceptor: AuthInterceptor) = api(
+        baseUrl = "https://api.telegram.org/",
         cl = ApiTest::class.java,
         logLevel = HttpLoggingInterceptor.Level.BODY,
         authInterceptor = interceptor

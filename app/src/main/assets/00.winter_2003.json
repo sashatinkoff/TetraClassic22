@@ -1,0 +1,488 @@
+﻿{
+    "rss": {
+        "channel": {
+            "title": {
+                "__cdata": "fixin"
+            },
+            "link": "https://www.liveinternet.ru/users/fixin/",
+            "description": {
+                "__cdata": "Дневник fixin :: LiveInternet"
+            },
+            "generator": "LiveInternet / LiveInternet.ru",
+            "updatePeriod": {
+                "__prefix": "sy",
+                "__text": "hourly"
+            },
+            "updateFrequency": {
+                "__prefix": "sy",
+                "__text": "1"
+            },
+            "language": "ru",
+            "copyright": "fixin",
+            "image": {
+                "url": "https://i.li.ru/av/799/34799_2136489.jpg",
+                "title": "",
+                "link": "https://www.liveinternet.ru/users/fixin/"
+            },
+            "item": [
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55768/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня получил свой заказ - 9 наливных мужских ароматов от фирмы RENI, франция http://www.parfum21.com/ <br /> Дешевка 4 руб/мл, но зато хоть понюхаю, чем классика пахнет типа XS, Egoist<br /> Три дамских пробника приложили бесплатно, гы...<br /> Такие дела.<br /> Вечер свободный - делать нечево, буду типа отдыхать... "
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 18 Dec 2002 18:24:52 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55768/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55768/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55768/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54909/"
+                    },
+                    "description": {
+                        "__cdata": "<img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/pirate.gif\" border=\"0\" width=\"32\" height=\"32\" /> Сегодня раздобыл 50 баксов, ура, жизнь продолжается.<br /> Все думаю, куда бы поехать на новый год...."
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 17 Dec 2002 15:22:33 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post54909/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54909/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54909/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54166/"
+                    },
+                    "description": {
+                        "__cdata": "Вы знаете, чем я озабочен, друзья?<br /> Как встретить Новый Год.<br /> Вариантов как всегда, слишком много:<br /> 1. У родственников в Москве.<br /> 2. В Минске - у нас рождественские каникулы целая неделя.<br /> 3. Купить билет на какой-нить шоу или турне, всех послать и оттянуться одному.<br /><br /> Осталось так мало времени.<br /> Прошлый Новый Год я встречал с компанией на Куршской Косе, под Калининградом. Было круто - море, блин, собачий холод, шаткие деревянные домишки, пьяно и весело... <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/dunce.gif\" border=\"0\" width=\"15\" height=\"26\" />"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 16 Dec 2002 13:51:03 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post54166/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54166/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54166/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54155/"
+                    },
+                    "description": {
+                        "__cdata": "Ура, я раздобыл 50 баксов - завтра утром их заберу. Долой голодную смерть, здравствуйте 33 удовольствия. <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/new/yes.gif\" border=\"0\" width=\"15\" height=\"15\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 16 Dec 2002 13:36:57 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post54155/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54155/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54155/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54148/"
+                    },
+                    "description": {
+                        "__cdata": "Я сочинил эту песню полмесяца назад. Напевал песенку про девчонок, вспомнил о ментах и понеслось... Слова сами получились.<br /><br /> ПЕСНЯ \"РУКИ ВВЕРХ\"<br /><br /> Ко мне пришел мой самый лучший друг<br /> И говорит - устал от этих сук<br /> Как много их, суровых таких<br /> Ты встретишь этих, а я других.<br /><br /> Припев:<br /> Стоят менты, дубинки по колено<br /> У переходов метрополитена<br /> Привет ребята, я хороший мальчик<br /> Прописки нет, пройдемте на раздачу.<br /><br /> Опять в тюрьме сидим мой друг и я<br /> Маскву давно покинули друзья.<br /> Нам избежать ментов так нелегко<br /> Мы встретим их у станции метро.<br /><br /> Припев (2 раза).<br /><img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/1/148.gif\" border=\"0\" width=\"114\" height=\"36\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 16 Dec 2002 13:31:39 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post54148/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54148/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54148/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54138/"
+                    },
+                    "description": {
+                        "__cdata": "Когда сидишь без денег, начинаешь думать о деньгах<br /> Эх, заработать бы тучу баксов, перестать упражняться в логике на работе и начать упражняться в наслаждених...<br /> Думаю начать писать конфигурацию 1С для розничной торговли в супермаркетах. Я в этом деле дока, подключим еще парочку программеров, организуем дело (черный бизнес), будем иметь деньги на икру к бутерброду с маслом.<br /> Приближается обеденное время - нас тут (на работе) кормят нахаляву и отдуши. Эт здорово.<br /> Ничто так не согревает душу, как горячая пища... <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/eatyou.gif\" border=\"0\" width=\"40\" height=\"16\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 16 Dec 2002 13:22:54 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post54138/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54138/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post54138/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53998/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера блин вечером растягивался от души. Мой сосед ушел куда-то на ночь. Я сидел один, как это называется, по-моему комедия - есть чем, есть где, но нет с кем. Еще варианты - есть где, есть с кем, но нет чем - трагедия, это не про меня! <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/1/076.gif\" border=\"0\" width=\"25\" height=\"29\" /> Позвонил бы кто, что ли, думаю... И тут звонят с работы из Калининграда, ну поболтал минут 15 по мобиле о работе. Гы.... Сон был крепким и безмятежным, как у небритого младенца!"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 16 Dec 2002 09:35:29 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post53998/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53998/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53998/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53991/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера смотрел сериал, вроде \"Лимита\" называется. <br /> Короче, про то, как боксер и будущая актриса приехали покорять Москву. Типа \"Масква слезам не верит - 2\" <br /> И тут не обошлось без пропаганды - на девушку на вокзале наезжают черные, у черных нету прописки, но они подкупают мента, причем за 200 зеленых. <br /> Мент в отделении спрашивает - где у вас разрешение на временное проживание в Москве. Я просто попух от этой фразы, гы.... <br /> Но в целом продажность ментовки и равнодушие москалей подмечено четко. Лучше такое кино, чем совсем никакого. <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/new/phone.gif\" border=\"0\" width=\"24\" height=\"17\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 16 Dec 2002 09:27:21 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post53991/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53991/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53991/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53687/"
+                    },
+                    "description": {
+                        "__cdata": "Легко ли свалить с работы на служебном автобусе в 18.20, когда на работе такие интересные наркотики, как Интернет, песни Чижа, e-mail и прочее, прочее, прочее.<br /> На хер все, домой спать!!!:firegun: "
+                    },
+                    "pubDate": {
+                        "__cdata": "Sun, 15 Dec 2002 17:58:51 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post53687/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53687/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53687/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53666/"
+                    },
+                    "description": {
+                        "__cdata": "<img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/sept/1/party.gif\" border=\"0\" width=\"24\" height=\"45\" /><br /> Скучно на работе, блин, надо делать очень-очень скучный отчет, делать неохота, поболтать (даже по Асе не с кем)..."
+                    },
+                    "pubDate": {
+                        "__cdata": "Sun, 15 Dec 2002 17:26:02 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post53666/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53666/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53666/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": ""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53470/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера был в Рамсторе у м.Рижская.<br /> О да, это круто. Супермаркет+бутики+кафешки+кино = здорово.<br /> Но сам супермаркет в принципе ничем не впечатлил. Чуть побольше, чем калининградская \"Виктория\", но такой же. Наверное, у супермаркетов есть свой предел.<br /> Что удивило - отсутствие камеры хранения (сумки запечатывали в пластик на входе) и отсутствие корзинок - с тележкой неудобно, блин.<br /><br /> А еще я вчера переехал. К парню, который снимает 1-комнатную квартиру, а я типа субарендатор.<br /> Ничего так, жить можно, типа. м.Академическая.<br /> Такси обошлось от м. Нахимовский проспект в 150. Приехал, попил чаю, уложил шмотки, лег спать.<br /><br /> Денег осталось мало, а надо жить до конца недели, а тут я еще заказывал пробники мужских духов 9 штук по 15 мл за 370 рублей. Дешево, сердито, куплю, хотя останется в кошельке столько же. Я ж уже заказ сделал.<br /><br /> Отправил письма всем, у кого халтурю - долганите денег. Жду ответа.<br /><br /> Да, не помню, грил или нет, во вторник и четверг в 20.30 изучаю клубные танцы в Maxi-Dance. Прикольно.<br /><br /> Мы еще повоюем!<br /><img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/bud.gif\" border=\"0\" width=\"60\" height=\"40\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Sun, 15 Dec 2002 12:45:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post53470/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53470/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post53470/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Тяжелая пятница, 13-го"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post52631/"
+                    },
+                    "description": {
+                        "__cdata": "Бля, у меня свистнули или я потерял карточку Cirus Maestro со всеми моими сбережениями.<br /> В кармане 2000 рублей, скоро надо платить за квартиру, бляха-муха.<br /> Карту заблокировал, деньги в банке и новую карточку дадут только через неделю.<br /> Чево делать буду? Чево, чево - по родственникам-знакомым побираться, хехе.<br /> А главное, на мою карточку купили покупок на сумму 2 рубля - наверное кассиры хотели проверить, есть ли на ней деньги....<br /> Е-мое.... ексель!<br /><br /><a href=\"http://soft.rax.ru/li/\">&lt;smallfont>li v 2.12.09&lt;/smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 13 Dec 2002 20:10:16 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post52631/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post52631/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post52631/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Сочинилось вот - графоманство..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post52006/"
+                    },
+                    "description": {
+                        "__cdata": "Такие брат дела,<br /> Подруга родила.<br /> Кричит на целый свет<br /> Что хуже меня нет.<br /><br /> А мне плевать на это<br /> Плевать на мненье света.<br /> И на подругу братцы<br /> Загну я круто пальцы.<br /><br /> Пойду я в модый клуб<br /> Загну повыше чуб<br /> Быть может в дымном зале<br /> Смогу кому я вставить!<br /><br /> Но как всегда - мертвяк<br /> И ждет меня тюфяк<br /> Измученное тело<br /> Храпит и околело!<br /><br /> Уходит день,<br /> Приходит ночь...<br /> Не в силах мне никто помочь.  <img style=\"margin:0px;\" src=\"//i.li.ru//images/newsmiles/1/042.gif\" border=\"0\" width=\"27\" height=\"29\" /> "
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 12 Dec 2002 16:12:41 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post52006/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post52006/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post52006/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Текст объявления был таким"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post51951/"
+                    },
+                    "description": {
+                        "__cdata": "Белорус, программист 27/176/67, вполне симпатичный, одинокий, ищет подругу. Окажу разумную поддержку. Рассмотрю варианты. Места для встреч нет.  Сергей, вечером.<br /><br /> Здесь конечно я не буду обсуждать личные подробности и описывать тех девушек, кто мне позвонит. Это ведь дневник про меня. И я буду описывать себя, озабоченного. :)<br /><br /><br /><p>Текущее настроение: <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/punk/kav.gif\" border=\"0\" width=\"28\" height=\"28\" /></p><br /><br /><a href=\"http://soft.rax.ru/li/\"><smallfont>li v 2.12.09</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 12 Dec 2002 14:24:09 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post51951/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post51951/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post51951/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Обо мне, грешном..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post51921/"
+                    },
+                    "description": {
+                        "__cdata": "27/176/67 программист, родом из Минска, 3 года работаю в России, с ноября 2002 - в Москве.<br /> Люблю кино, потанцевать на дискотеке, развлекаться.<br /> Друзей не завожу почему-то. Люблю девушек, но на серьезные отношения лучше не рассчитывать. Я в поисках своего идеала.<br /> Был женат, разведен.<br /> Вполне симпатичный.<br /> Иногда бегаю по утрам, увлекаюсь растяжкой, но не йогой.<br /> Жизнь спокойная и размеренная, немного одинокая.<br /> Верю в судьбу.<br /><br /> Уже месяц живу в Москве.<br /><br /> Короче, в ближайшее время буду заниматься поиском баб...<br /> Для этого дал объявление в Из Первых Рук со своим телефоном.<br /> Жду звонков где-то после 22 декабря.<br /><br /> Такой способ знакомства я испытал еще в 19 лет в Минске, потом в 27 лет в Калининграде. Было весело и прикольно.<br /> Мне ж от женщин нужен только секс, а им от меня нужно внимание и деньги. Вот и играем - кто кого перехитрит. <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/cow.gif\" border=\"0\" width=\"79\" height=\"47\" /><br /><img src=\"./images/attach/6610.jpg\" />"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 12 Dec 2002 13:31:08 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post51921/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post51921/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post51921/rss"
+                    }
+                }
+            ]
+        },
+        "_xmlns:content": "http://purl.org/rss/1.0/modules/content/",
+        "_xmlns:wfw": "http://wellformedweb.org/CommentAPI/",
+        "_xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "_xmlns:atom": "http://www.w3.org/2005/Atom",
+        "_xmlns:sy": "http://purl.org/rss/1.0/modules/syndication/",
+        "_xmlns:slash": "http://purl.org/rss/1.0/modules/slash/",
+        "_version": "2.0"
+    }
+}

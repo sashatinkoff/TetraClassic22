@@ -21,12 +21,13 @@ class DateDeserializer : JsonDeserializer<Date?> {
             "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
             "yyyy-MM-dd'T'HH:mm:ss'Z'",
             "yyyy-MM-dd HH:mm:ss",
-            "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+            "yyyy-MM-dd'T'HH:mm:ssZZZZ",
+            "EEE, dd MMM yyyy HH:mm:ss ZZZ"
         )
 
         for (format in formats) {
             try {
-                return SimpleDateFormat(format, Locale.getDefault()).parse(jsonElement.asString)
+                return SimpleDateFormat(format, Locale.US).parse(jsonElement.asString)
             } catch (e: ParseException) {
 //                Timber.e(e)
             }

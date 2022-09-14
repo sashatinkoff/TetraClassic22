@@ -7,23 +7,28 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.hilt.work.HiltWorker
 import androidx.work.*
 import com.isidroid.b21.R
+import com.isidroid.b21.domain.repository.SessionRepository
 import com.isidroid.b21.utils.NotificationsChannels
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
+import timber.log.Timber
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
 
 @HiltWorker
-class InboxWorker constructor(
-    appContext: Context,
-    workerParams: WorkerParameters,
-
-    ) : Worker(appContext, workerParams) {
+class InboxWorker @AssistedInject constructor(
+    @Assisted appContext: Context,
+    @Assisted workerParams: WorkerParameters,
+    var repository: SessionRepository
+) : CoroutineWorker(appContext, workerParams) {
 
     @SuppressLint("UnspecifiedImmutableFlag")
-    override fun doWork(): Result {
+    override suspend fun doWork(): Result {
         val title = inputData.getString("title")
         val code = inputData.getInt("code", 10)
+
+        Timber.i("sdfsdfsdf doWork on ${Thread.currentThread().name}, ${repository.refreshToken()}")
 
         notification(
             code = code,
