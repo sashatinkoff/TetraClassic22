@@ -1,7 +1,11 @@
 package com.isidroid.core.ext
 
+import android.content.Context
+import android.net.Uri
 import androidx.core.net.toUri
-import java.io.File
+import androidx.documentfile.provider.DocumentFile
+import java.io.IOException
+import java.nio.charset.Charset
 import java.security.MessageDigest
 import java.text.DecimalFormat
 import kotlin.math.ln
@@ -48,3 +52,18 @@ fun Long.toFileSize(): String {
     return DecimalFormat("#,##0.#").format(size / 1024.0.pow(digitGroups)) + " " + units[digitGroups.toInt()]
 }
 
+fun String.saveContentToFile(context: Context, targetDisplayName: String, destUri: Uri): Boolean {
+    val documentFile = DocumentFile.fromTreeUri(context, destUri) ?: return false
+    val createFile = documentFile.createFile("text/plain", targetDisplayName)
+    val fos = context.contentResolver.openOutputStream(createFile!!.uri) ?: return false
+
+    try {
+        fos.write(this.toByteArray(Charset.forName("UTF-8")))
+    } catch (e: IOException) {
+        e.printStackTrace()
+    } finally {
+        fos.close()
+    }
+
+    return true
+}
