@@ -7,10 +7,10 @@ build_versions.target_sdk = 32
 ext.build_versions = build_versions
 
 def google = [:]
-google.activity_ktx = "1.5.1"
-google.app_compat = "1.4.2"
+google.activity_ktx = "1.6.0"
+google.app_compat = "1.5.1"
 google.constraint = "2.1.4"
-google.core_ktx = "1.8.0"
+google.core_ktx = "1.9.0"
 google.gson = '2.9.1'
 google.hilt = '2.43.2'
 google.hilt_compiler = '2.43.2'
