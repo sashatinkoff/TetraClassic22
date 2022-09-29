@@ -1,6 +1,7 @@
 package com.isidroid.core.ext
 
 import androidx.core.net.toUri
+import java.io.File
 import java.security.MessageDigest
 import java.text.DecimalFormat
 import kotlin.math.ln
@@ -46,3 +47,4 @@ fun Long.toFileSize(): String {
 
     return DecimalFormat("#,##0.#").format(size / 1024.0.pow(digitGroups)) + " " + units[digitGroups.toInt()]
 }
+
