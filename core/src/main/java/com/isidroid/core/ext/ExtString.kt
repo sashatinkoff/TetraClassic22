@@ -4,7 +4,9 @@ import android.content.Context
 import android.net.Uri
 import androidx.core.net.toUri
 import androidx.documentfile.provider.DocumentFile
+import java.io.ByteArrayOutputStream
 import java.io.IOException
+import java.io.OutputStream
 import java.nio.charset.Charset
 import java.security.MessageDigest
 import java.text.DecimalFormat
@@ -67,3 +69,12 @@ fun String.saveContentToFile(context: Context, targetDisplayName: String, destUr
 
     return true
 }
+
+ fun String.convertToStream(): OutputStream {
+    val stringByte = toByteArray()
+    val bos = ByteArrayOutputStream(length)
+    bos.write(stringByte)
+    return bos
+}
+
+fun String.assetsFileContent(context: Context) = context.assets.open(this).bufferedReader().use { it.readText() }

@@ -145,6 +145,7 @@ dependencies {
     implementation firebase.crashlytics
     implementation firebase.messaging
     implementation platform("com.google.firebase:firebase-bom:$firebase.bom")
+    implementation 'com.itextpdf:itextg:5.5.10'
 
     // tools
     implementation "com.github.bumptech.glide:glide:$tools.glide"

@@ -21,11 +21,12 @@
             android:textSize="18sp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonRead"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="Quick action"
+            android:text="read"
             app:elevation="16dp" />
 
         <com.google.android.material.button.MaterialButton
@@ -34,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:text="Submit"
+            android:text="Write"
             app:elevation="16dp" />
     </LinearLayout>
 </layout>
