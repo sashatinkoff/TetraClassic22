@@ -15,7 +15,7 @@ class MainViewModel @Inject constructor(
     private val _viewState = MutableLiveData<State>(State.Empty)
     val viewState: LiveData<State> get() = _viewState
 
-    var isInitInProgress = true
+    var isInitInProgress = false
 
     init {
         io(

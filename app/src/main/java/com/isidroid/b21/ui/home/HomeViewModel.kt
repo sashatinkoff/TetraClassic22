@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.isidroid.b21.App
+import com.isidroid.core.ext.copy
 import com.isidroid.core.ext.copyToPublicFolder
 import com.isidroid.core.ext.saveString
 import com.isidroid.core.utils.BaseViewModel
@@ -44,5 +45,15 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun pickImage(context: Context, uri: Uri) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val documentFile = DocumentFile.fromSingleUri(context, uri)
+            val file = File(context.cacheDir, "${UUID.randomUUID()}.jpg")
 
+            documentFile?.copy(context, file)
+
+            Timber.i("sdfsdfdsf document=${documentFile?.uri}")
+            Timber.i("sdfsdfdsf file=${file.absolutePath}, size=${file.length()}")
+        }
+    }
 }

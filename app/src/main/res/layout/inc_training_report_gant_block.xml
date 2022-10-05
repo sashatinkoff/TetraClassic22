@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="androidx.core.content.ContextCompat" />
+
+        <import type="android.graphics.Color" />
+
+        <variable
+            name="color"
+            type="int" />
+
+        <variable
+            name="titleColor"
+            type="int" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="36dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingHorizontal="2dp"
+            android:textColor="@{titleColor}"
+            android:textSize="20sp"
+            tools:text="12" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="14dp"
+            android:layout_marginVertical="10dp"
+            android:background="@{color}" />
+
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:lines="1"
+            android:textColor="@{titleColor}"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</layout>

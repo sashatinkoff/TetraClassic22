@@ -55,4 +55,16 @@
     <color name="md_theme_dark_inverseOnSurface">#303030</color>
     <color name="md_theme_dark_inversePrimary">#44655B</color>
     <color name="seed">#00231B</color>
+
+    <color name="audit_status_not_started">#169B58</color>
+    <color name="audit_status_started">#7B459B</color>
+    <color name="audit_status_viewed">#FF5579</color>
+    <color name="audit_status_passed">#166285</color>
+    <color name="audit_status_failed">#EA492F</color>
+
+    <color name="audit_text_status_not_started">#006636</color>
+    <color name="audit_text_status_started">#6B29B2</color>
+    <color name="audit_text_status_viewed">#ED474E</color>
+    <color name="audit_text_status_passed">#185876</color>
+    <color name="audit_text_status_failed">#770911</color>
 </resources>
