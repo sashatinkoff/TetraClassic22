@@ -50,6 +50,7 @@
             android:layout_marginTop="6dp"
             android:gravity="center"
             android:lines="1"
+            android:paddingHorizontal="2dp"
             android:textColor="@{titleColor}"
             android:textSize="12sp" />
 

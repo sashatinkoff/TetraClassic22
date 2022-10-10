@@ -60,13 +60,14 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
             textView.text = "${block.value}"
             statusTextView.text = block.title.take(MAX_STATUS_LENGTH)
 
+            val horizontalPadding = statusTextView.paddingStart
+
             val widths = arrayOf(
                 statusTextView.paint.measureText(statusTextView.text.toString()).toInt(),
                 textView.paint.measureText(textView.text.toString()).toInt()
             )
 
-            block.minWidth = widths.max()
-
+            block.minWidth = widths.max() + horizontalPadding * 2
             root.setOnClickListener { block.onClick(textView.text, statusTextView.text) }
         }
     }
