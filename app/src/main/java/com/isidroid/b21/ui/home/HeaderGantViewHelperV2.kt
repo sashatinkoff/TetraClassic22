@@ -8,6 +8,8 @@ import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.updateLayoutParams
 import com.isidroid.b21.databinding.IncTrainingReportGantBlockBinding
+import timber.log.Timber
+import java.util.UUID
 
 private const val MAX_STATUS_LENGTH = 6
 
@@ -55,10 +57,13 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
 
     private fun bindBlockUI(block: Block) {
         with(block.binding) {
+//            val statusTitle = block.title.take(MAX_STATUS_LENGTH)
+            val statusTitle = "${block.value}"
+
             color = block.color
             titleColor = block.titleColor
             textView.text = "${block.value}"
-            statusTextView.text = block.title.take(MAX_STATUS_LENGTH)
+            statusTextView.text = statusTitle
 
             val horizontalPadding = statusTextView.paddingStart
 
@@ -75,10 +80,12 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
     fun show() {
         container.alpha = 0f
         container.removeAllViews()
-        blocks.forEach {
-            bindBlockUI(it)
-            container.addView(it.binding.root)
-        }
+        blocks
+            .sortedBy { it.value }
+            .forEach {
+                bindBlockUI(it)
+                container.addView(it.binding.root)
+            }
 
         container.post {
             val parentWidth = container.width
@@ -111,17 +118,19 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
 
                 with(block.binding) {
                     statusTextView.text = block.title
-                    statusTextView.updateLayoutParams<LinearLayout.LayoutParams> { width = calculatedWidth }
-                    textView.updateLayoutParams<LinearLayout.LayoutParams> { width = calculatedWidth }
-                    root.updateLayoutParams<LinearLayout.LayoutParams> { width = calculatedWidth }
+                    updateSize(calculatedWidth)
                 }
             }
         }
-
         container.animate().alpha(1f).setDuration(300).start()
     }
 
+    private fun IncTrainingReportGantBlockBinding.updateSize(calculatedWidth: Int) {
+        arrayOf(statusTextView, textView, root).forEach { it.updateLayoutParams<LinearLayout.LayoutParams> { width = calculatedWidth } }
+    }
+
     private class Block(
+        val id: String = UUID.randomUUID().toString(),
         val title: String,
         val titleColor: Int,
         val color: Int,
@@ -129,10 +138,23 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         val binding: IncTrainingReportGantBlockBinding,
         var weight: Float = 0f,
         var minWidth: Int = 0,
+        var calculatedWidth: Int = 0,
         inline val onClick: (status: CharSequence?, value: CharSequence?) -> Unit
     ) {
+
+
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (javaClass != other?.javaClass) return false
+
+            other as Block
+
+            return id == other.id
+        }
+
+        override fun hashCode(): Int = id.hashCode()
         override fun toString(): String {
-            return "Block(value=$value, weight=$weight, minWidth=$minWidth)"
+            return "value=$value, calculatedWidth=$calculatedWidth"
         }
     }
 
