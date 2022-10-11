@@ -1,8 +1,11 @@
 package com.isidroid.b21.ui.home;
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.Rect
 import android.view.LayoutInflater
 import android.widget.LinearLayout;
+import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
@@ -88,8 +91,8 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
             val horizontalPadding = statusTextView.paddingStart
 
             val widths = arrayOf(
-                statusTextView.paint.measureText(statusTextView.text.toString()).toInt(),
-                textView.paint.measureText(textView.text.toString()).toInt()
+                getTextWidth(statusTextView) + statusTextView.paddingStart * 2,
+                getTextWidth(textView) + textView.paddingStart * 2,
             )
 
             block.minWidth = widths.max() + horizontalPadding * 2
@@ -143,7 +146,9 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
                         else -> block.title
                     }
 
-                    statusTextView.text = text.fix()
+                    val length = getTextWidth(statusTextView, text)
+                    statusTextView.text = text.fix(trim = length > (calculatedWidth - statusTextView.paddingStart * 2))
+
                     updateSize(calculatedWidth)
                 }
             }
@@ -155,19 +160,28 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         arrayOf(statusTextView, textView, root).forEach { it.updateLayoutParams<LinearLayout.LayoutParams> { width = calculatedWidth } }
     }
 
-    private fun String.fix() = replace(" ", "&nbsp;")
+    private fun String.fix(trim: Boolean = true) = replace(" ", "&nbsp;")
         .let { HtmlCompat.fromHtml(it, HtmlCompat.FROM_HTML_MODE_COMPACT).toString() }
         .let {
-            it
-                .takeIf { it.length <= statusMaxLength }
-                ?: buildString {
-                    var length = statusMaxLength
-                    if (showEllipsis) length--
-
-                    append(it.take(length))
-                    if (showEllipsis) append("…")
-                }
+            if (!trim)
+                it
+            else
+                it
+                    .takeIf { it.length <= statusMaxLength }
+                    ?: buildString {
+                        var length = statusMaxLength
+                        if (showEllipsis) length--
+                        append(it.take(length))
+                        if (showEllipsis) append("…")
+                    }
         }
+
+    private fun getTextWidth(textView: TextView, text: String = textView.text.toString()): Int {
+        val bounds = Rect()
+        textView.paint.getTextBounds(text, 0, text.length, bounds)
+
+        return bounds.width()
+    }
 
     private class Block(
         val id: String = UUID.randomUUID().toString(),
@@ -181,8 +195,6 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         var calculatedWidth: Int = 0,
         inline val onClick: (status: CharSequence?, value: CharSequence?) -> Unit
     ) {
-
-
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

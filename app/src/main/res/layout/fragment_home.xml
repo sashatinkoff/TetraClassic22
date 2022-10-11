@@ -11,7 +11,7 @@
             android:id="@+id/toolbar"
             style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="wrap_content"
             android:background="@color/toolbar_color"
             android:theme="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
             app:menu="@menu/main"
