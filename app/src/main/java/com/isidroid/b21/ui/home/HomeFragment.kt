@@ -1,5 +1,6 @@
 package com.isidroid.b21.ui.home
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
@@ -10,9 +11,13 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
+import androidx.core.view.children
 import androidx.documentfile.provider.DocumentFile
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.radiobutton.MaterialRadioButton
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.isidroid.b21.R
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
@@ -50,9 +55,43 @@ class HomeFragment : BindFragment(), HomeView {
                 )
             }
 
+            modifyInputValue(inputAssigned)
+            modifyInputValue(inputOnControl)
+            modifyInputValue(inputOnRework)
+            modifyInputValue(inputAccepted)
+            modifyInputValue(inputFailed)
+
             buttonRandomDataSet.setOnClickListener {
                 randomDataSet()
             }
+
+            radioGroup.setOnCheckedChangeListener { radioGroup, i ->
+                val selectedRadio = radioGroup.children.filterIsInstance<MaterialRadioButton>().firstOrNull { it.isChecked }
+
+                if (selectedRadio?.id == radioStatus.id)
+                    headerGantView.showStatus()
+                else
+                    headerGantView.showBlockSize()
+
+                buttonForm.performClick()
+            }
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun modifyInputValue(input: TextInputEditText) {
+        val inputLayout: TextInputLayout = input.parent.parent as TextInputLayout
+
+        inputLayout.setStartIconOnClickListener {
+            val value = (input.text.toString().toIntOrNull() ?: 0).let { if (it == 0) 0 else it }
+
+            input.setText("${value - 1}")
+            binding.buttonForm.performClick()
+        }
+        inputLayout.setEndIconOnClickListener {
+            val value = input.text.toString().toIntOrNull() ?: 0
+            input.setText("${value + 1}")
+            binding.buttonForm.performClick()
         }
     }
 
@@ -75,7 +114,7 @@ class HomeFragment : BindFragment(), HomeView {
     }
 
     override fun onReady() {
-        startWorker(8, 8, 1, 0, 0)
+        startWorker(3, 6, 3, 9, 0)
         binding.button.setOnClickListener {
             startWorker(
                 Random.nextInt(0, 10),

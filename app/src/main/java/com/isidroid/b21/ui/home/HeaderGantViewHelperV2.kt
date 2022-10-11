@@ -12,13 +12,24 @@ import timber.log.Timber
 import java.util.UUID
 
 private const val MAX_STATUS_LENGTH = 6
+private const val DISPLAY_TYPE_STATUS = 0
+private const val DISPLAY_TYPE_SIZE = 1
 
 class HeaderGantViewHelperV2(private val container: LinearLayout) {
     private val context = container.context
     private val blocks = mutableListOf<Block>()
     private val layoutInflater by lazy { LayoutInflater.from(context) }
+    private var displayType = DISPLAY_TYPE_STATUS
 
     fun reset() = apply { blocks.clear() }
+
+    fun showStatus() {
+        displayType = DISPLAY_TYPE_STATUS
+    }
+
+    fun showBlockSize() {
+        displayType = DISPLAY_TYPE_SIZE
+    }
 
     fun addBlock(
         title: String,
@@ -57,12 +68,19 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
 
     private fun bindBlockUI(block: Block) {
         with(block.binding) {
-//            val statusTitle = block.title.take(MAX_STATUS_LENGTH)
-            val statusTitle = "${block.value}"
+            val statusTitle = when (displayType) {
+                DISPLAY_TYPE_SIZE -> "${block.value}"
+                else -> block.title.take(MAX_STATUS_LENGTH)
+            }
+
+            val valueTitle = when (displayType) {
+                DISPLAY_TYPE_SIZE -> "123"
+                else -> "${block.value}"
+            }
 
             color = block.color
             titleColor = block.titleColor
-            textView.text = "${block.value}"
+            textView.text = valueTitle
             statusTextView.text = statusTitle
 
             val horizontalPadding = statusTextView.paddingStart
@@ -73,6 +91,8 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
             )
 
             block.minWidth = widths.max() + horizontalPadding * 2
+            textView.text = "${block.value}"
+
             root.setOnClickListener { block.onClick(textView.text, statusTextView.text) }
         }
     }
@@ -81,7 +101,7 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         container.alpha = 0f
         container.removeAllViews()
         blocks
-            .sortedBy { it.value }
+//            .sortedBy { it.value }
             .forEach {
                 bindBlockUI(it)
                 container.addView(it.binding.root)
@@ -113,11 +133,18 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
                         calculatedWidth = spaceLeft
                 }
 
+                Timber.i("${block.value}, w=$calculatedWidth")
+
                 if (!isMaxWeight)
                     spaceLeft -= calculatedWidth
 
                 with(block.binding) {
-                    statusTextView.text = block.title
+                    val text = when (displayType) {
+                        DISPLAY_TYPE_SIZE -> "${calculatedWidth}"
+                        else -> block.title
+                    }
+
+                    statusTextView.text = text
                     updateSize(calculatedWidth)
                 }
             }

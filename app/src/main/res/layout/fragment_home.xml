@@ -20,7 +20,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp">
+            android:layout_marginVertical="4dp"
+            app:endIconDrawable="@drawable/ic_plus"
+            app:endIconMode="custom"
+            app:startIconDrawable="@drawable/ic_minus">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputAssigned"
@@ -35,13 +38,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp">
+            android:layout_marginVertical="4dp"
+            app:endIconDrawable="@drawable/ic_plus"
+            app:endIconMode="custom"
+            app:startIconDrawable="@drawable/ic_minus">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputOnControl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:hint="onControl"
                 android:textSize="12sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -51,7 +56,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp">
+            android:layout_marginVertical="4dp"
+            app:endIconDrawable="@drawable/ic_plus"
+            app:endIconMode="custom"
+            app:startIconDrawable="@drawable/ic_minus">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputOnRework"
@@ -67,7 +75,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp">
+            android:layout_marginVertical="4dp"
+            app:endIconDrawable="@drawable/ic_plus"
+            app:endIconMode="custom"
+            app:startIconDrawable="@drawable/ic_minus">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputAccepted"
@@ -83,7 +94,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp">
+            android:layout_marginVertical="4dp"
+            app:endIconDrawable="@drawable/ic_plus"
+            app:endIconMode="custom"
+            app:startIconDrawable="@drawable/ic_minus">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputFailed"
@@ -93,6 +107,28 @@
                 android:hint="failed"
                 android:textSize="12sp" />
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Display status value" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Display block size" />
+
+        </RadioGroup>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonForm"
@@ -108,24 +144,35 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button"
-            style="@style/Widget.Material3.Button"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
             android:layout_marginBottom="12dp"
-            android:text="Random"
-            app:elevation="16dp" />
+            android:orientation="horizontal">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonRandomDataSet"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:backgroundTint="#F00"
-            android:text="Random Data set"
-            app:elevation="16dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_weight="1"
+                android:text="Random"
+                app:elevation="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRandomDataSet"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#F00"
+                android:text="Random Data set"
+                app:elevation="16dp" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 </layout>
