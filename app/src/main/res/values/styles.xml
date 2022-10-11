@@ -9,7 +9,22 @@
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
-    <style name="HintStyle">
+    <style name="HintStyle"></style>
+
+    <style name="InputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="endIconDrawable">@drawable/ic_plus</item>
+        <item name="endIconMode">custom</item>
+        <item name="startIconDrawable">@drawable/ic_minus</item>
+        <item name="android:layout_marginBottom">4dp</item>
     </style>
 
+    <style name="Input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

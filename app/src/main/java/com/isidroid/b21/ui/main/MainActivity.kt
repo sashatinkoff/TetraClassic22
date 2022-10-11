@@ -33,7 +33,7 @@ class MainActivity : BindActivity(), MainView {
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        updateStatusBarColor()
+        updateStatusBarColor(colorRes = R.color.toolbar_color, isLightStatusBarIcons = false)
     }
 
     // MainView

@@ -67,4 +67,5 @@
     <color name="audit_text_status_viewed">#ED474E</color>
     <color name="audit_text_status_passed">#185876</color>
     <color name="audit_text_status_failed">#770911</color>
+    <color name="toolbar_color">#000</color>
 </resources>

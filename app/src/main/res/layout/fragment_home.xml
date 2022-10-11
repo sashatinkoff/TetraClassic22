@@ -7,172 +7,131 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@color/toolbar_color"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
+            app:menu="@menu/main"
+            app:title="Gantt"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleSmall"
+            app:titleTextColor="#FFF" />
+
         <LinearLayout
             android:id="@+id/lineearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="16dp"
             android:gravity="top"
             android:orientation="horizontal" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp"
-            app:endIconDrawable="@drawable/ic_plus"
-            app:endIconMode="custom"
-            app:startIconDrawable="@drawable/ic_minus">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputAssigned"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="assigned"
-                android:textSize="12sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp"
-            app:endIconDrawable="@drawable/ic_plus"
-            app:endIconMode="custom"
-            app:startIconDrawable="@drawable/ic_minus">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputOnControl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="onControl"
-                android:textSize="12sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp"
-            app:endIconDrawable="@drawable/ic_plus"
-            app:endIconMode="custom"
-            app:startIconDrawable="@drawable/ic_minus">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputOnRework"
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-                android:hint="onRework"
-                android:textSize="12sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp"
-            app:endIconDrawable="@drawable/ic_plus"
-            app:endIconMode="custom"
-            app:startIconDrawable="@drawable/ic_minus">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputAccepted"
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-                android:hint="accepted"
-                android:textSize="12sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginVertical="4dp"
-            app:endIconDrawable="@drawable/ic_plus"
-            app:endIconMode="custom"
-            app:startIconDrawable="@drawable/ic_minus">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputFailed"
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-                android:hint="failed"
-                android:textSize="12sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp">
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Display status value" />
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioSize"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Display block size" />
-
-        </RadioGroup>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonForm"
-            style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginHorizontal="32dp"
-            android:text="Draw Form Falues" />
-
-        <Space
-            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:orientation="horizontal">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/button"
-                style="@style/Widget.Material3.Button"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:layout_weight="1"
-                android:text="Random"
-                app:elevation="16dp" />
+                android:orientation="vertical">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonRandomDataSet"
-                style="@style/Widget.Material3.Button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:layout_weight="1"
-                android:backgroundTint="#F00"
-                android:text="Random Data set"
-                app:elevation="16dp" />
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputLayout">
 
-        </LinearLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputAssigned"
+                        style="@style/Input"
+                        android:hint="Назначено" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputOnControl"
+                        style="@style/Input"
+                        android:hint="На проверке" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputOnRework"
+                        style="@style/Input"
+                        android:hint="На доработке" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputAccepted"
+                        style="@style/Input"
+                        android:hint="Принято" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputFailed"
+                        style="@style/Input"
+                        android:hint="failed" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Показывать статусы (рабочий вариант)"
+                        android:textSize="12sp" />
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-8dp"
+                        android:text="Показывать размеры блоков (дебаг("
+                        android:textSize="12sp" />
+                </RadioGroup>
+
+                <CheckBox
+                    android:id="@+id/checkboxEllipsis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    android:checked="true"
+                    android:text="Показывать многоточие"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/characterCountInputLayout"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="32dp"
+                    app:boxBackgroundColor="#0D2196F3"
+                    app:endIconDrawable="@drawable/ic_plus"
+                    app:endIconMode="custom"
+                    app:helperText="Слишком большие значения могут привести к неправильному высчитыванию размеров"
+                    app:startIconDrawable="@drawable/ic_minus">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/characterCountInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Макс. количество знаков в статусе"
+                        android:text="6"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </layout>

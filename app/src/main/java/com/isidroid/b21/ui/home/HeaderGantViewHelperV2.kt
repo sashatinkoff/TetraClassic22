@@ -6,12 +6,12 @@ import android.widget.LinearLayout;
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import androidx.core.text.HtmlCompat
 import androidx.core.view.updateLayoutParams
 import com.isidroid.b21.databinding.IncTrainingReportGantBlockBinding
 import timber.log.Timber
 import java.util.UUID
 
-private const val MAX_STATUS_LENGTH = 6
 private const val DISPLAY_TYPE_STATUS = 0
 private const val DISPLAY_TYPE_SIZE = 1
 
@@ -20,6 +20,8 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
     private val blocks = mutableListOf<Block>()
     private val layoutInflater by lazy { LayoutInflater.from(context) }
     private var displayType = DISPLAY_TYPE_STATUS
+    var statusMaxLength = 6
+    var showEllipsis = true
 
     fun reset() = apply { blocks.clear() }
 
@@ -70,7 +72,7 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         with(block.binding) {
             val statusTitle = when (displayType) {
                 DISPLAY_TYPE_SIZE -> "${block.value}"
-                else -> block.title.take(MAX_STATUS_LENGTH)
+                else -> block.title.take(statusMaxLength).fix()
             }
 
             val valueTitle = when (displayType) {
@@ -101,7 +103,6 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         container.alpha = 0f
         container.removeAllViews()
         blocks
-//            .sortedBy { it.value }
             .forEach {
                 bindBlockUI(it)
                 container.addView(it.binding.root)
@@ -133,18 +134,16 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
                         calculatedWidth = spaceLeft
                 }
 
-                Timber.i("${block.value}, w=$calculatedWidth")
-
                 if (!isMaxWeight)
                     spaceLeft -= calculatedWidth
 
                 with(block.binding) {
                     val text = when (displayType) {
-                        DISPLAY_TYPE_SIZE -> "${calculatedWidth}"
+                        DISPLAY_TYPE_SIZE -> "$calculatedWidth"
                         else -> block.title
                     }
 
-                    statusTextView.text = text
+                    statusTextView.text = text.fix()
                     updateSize(calculatedWidth)
                 }
             }
@@ -155,6 +154,20 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
     private fun IncTrainingReportGantBlockBinding.updateSize(calculatedWidth: Int) {
         arrayOf(statusTextView, textView, root).forEach { it.updateLayoutParams<LinearLayout.LayoutParams> { width = calculatedWidth } }
     }
+
+    private fun String.fix() = replace(" ", "&nbsp;")
+        .let { HtmlCompat.fromHtml(it, HtmlCompat.FROM_HTML_MODE_COMPACT).toString() }
+        .let {
+            it
+                .takeIf { it.length <= statusMaxLength }
+                ?: buildString {
+                    var length = statusMaxLength
+                    if (showEllipsis) length--
+
+                    append(it.take(length))
+                    if (showEllipsis) append("…")
+                }
+        }
 
     private class Block(
         val id: String = UUID.randomUUID().toString(),
@@ -183,10 +196,6 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         override fun toString(): String {
             return "value=$value, calculatedWidth=$calculatedWidth"
         }
-    }
-
-    interface Listener {
-        fun clickOnHeaderGant(status: CharSequence?, value: CharSequence?)
     }
 }
 

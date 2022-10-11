@@ -11,10 +11,12 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.children
 import androidx.documentfile.provider.DocumentFile
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.dialog.MaterialDialogs
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -32,11 +34,6 @@ import kotlin.random.Random
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
-    private val args: HomeFragmentArgs by navArgs()
-    private val viewModel by viewModels<HomeViewModel>()
-    private val documentsContract = registerForActivityResult(ActivityResultContracts.GetContent()) {
-        viewModel.pickImage(requireActivity(), it ?: return@registerForActivityResult)
-    }
 
     private val headerGantView by lazy { HeaderGantViewHelperV2(binding.lineearLayout) }
 
@@ -44,26 +41,12 @@ class HomeFragment : BindFragment(), HomeView {
 
     override fun createForm() {
         with(binding) {
-            buttonForm.setOnClickListener {
-                requireActivity().hideSoftKeyboard()
-                startWorker(
-                    inputAssigned.text.toString().toIntOrNull() ?: 0,
-                    inputOnControl.text.toString().toIntOrNull() ?: 0,
-                    inputOnRework.text.toString().toIntOrNull() ?: 0,
-                    inputAccepted.text.toString().toIntOrNull() ?: 0,
-                    inputFailed.text.toString().toIntOrNull() ?: 0,
-                )
-            }
-
             modifyInputValue(inputAssigned)
             modifyInputValue(inputOnControl)
             modifyInputValue(inputOnRework)
             modifyInputValue(inputAccepted)
             modifyInputValue(inputFailed)
 
-            buttonRandomDataSet.setOnClickListener {
-                randomDataSet()
-            }
 
             radioGroup.setOnCheckedChangeListener { radioGroup, i ->
                 val selectedRadio = radioGroup.children.filterIsInstance<MaterialRadioButton>().firstOrNull { it.isChecked }
@@ -73,8 +56,39 @@ class HomeFragment : BindFragment(), HomeView {
                 else
                     headerGantView.showBlockSize()
 
-                buttonForm.performClick()
+                submit()
             }
+
+            checkboxEllipsis.setOnCheckedChangeListener { _, b ->
+                headerGantView.showEllipsis = b
+                submit()
+            }
+
+            characterCountInputLayout.setStartIconOnClickListener {
+                val value = ((characterCountInput.text.toString().toIntOrNull() ?: 6) - 1).let { if (it <= 1) 1 else it }
+                headerGantView.statusMaxLength = value
+                characterCountInput.setText("$value")
+                submit()
+            }
+
+            characterCountInputLayout.setEndIconOnClickListener {
+                val value = ((characterCountInput.text.toString().toIntOrNull() ?: 6) + 1)
+                headerGantView.statusMaxLength = value
+
+                characterCountInput.setText("$value")
+                submit()
+            }
+        }
+    }
+
+    override fun createAppBar() {
+        binding.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.action_random -> randomData()
+                R.id.action_submit -> submit()
+                R.id.action_random_data_set -> randomDataSet()
+            }
+            true
         }
     }
 
@@ -83,15 +97,15 @@ class HomeFragment : BindFragment(), HomeView {
         val inputLayout: TextInputLayout = input.parent.parent as TextInputLayout
 
         inputLayout.setStartIconOnClickListener {
-            val value = (input.text.toString().toIntOrNull() ?: 0).let { if (it == 0) 0 else it }
+            val value = (input.text.toString().toIntOrNull() ?: 0).let { if (it < 1) 1 else it }
 
             input.setText("${value - 1}")
-            binding.buttonForm.performClick()
+            submit()
         }
         inputLayout.setEndIconOnClickListener {
             val value = input.text.toString().toIntOrNull() ?: 0
             input.setText("${value + 1}")
-            binding.buttonForm.performClick()
+            submit()
         }
     }
 
@@ -113,17 +127,18 @@ class HomeFragment : BindFragment(), HomeView {
         headerGantView.show()
     }
 
+    private fun randomData() {
+        startWorker(
+            Random.nextInt(0, 10),
+            Random.nextInt(0, 10),
+            Random.nextInt(0, 10),
+            Random.nextInt(0, 10),
+            Random.nextInt(0, 10),
+        )
+    }
+
     override fun onReady() {
         startWorker(3, 6, 3, 9, 0)
-        binding.button.setOnClickListener {
-            startWorker(
-                Random.nextInt(0, 10),
-                Random.nextInt(0, 10),
-                Random.nextInt(0, 10),
-                Random.nextInt(0, 10),
-                Random.nextInt(0, 10),
-            )
-        }
     }
 
     private fun startWorker(assigned: Int, onControl: Int, onRework: Int, accepted: Int, failed: Int) {
@@ -177,5 +192,18 @@ class HomeFragment : BindFragment(), HomeView {
 
     fun showTitle(string: String) {
         Toast.makeText(requireActivity(), "$string", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun submit() {
+        with(binding) {
+            requireActivity().hideSoftKeyboard()
+            startWorker(
+                inputAssigned.text.toString().toIntOrNull() ?: 0,
+                inputOnControl.text.toString().toIntOrNull() ?: 0,
+                inputOnRework.text.toString().toIntOrNull() ?: 0,
+                inputAccepted.text.toString().toIntOrNull() ?: 0,
+                inputFailed.text.toString().toIntOrNull() ?: 0,
+            )
+        }
     }
 }
