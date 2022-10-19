@@ -1,39 +1,29 @@
 package com.isidroid.b21.ui.home
 
 import android.annotation.SuppressLint
-import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.ColorRes
-import androidx.annotation.StringRes
-import androidx.appcompat.app.AlertDialog
 import androidx.core.view.children
-import androidx.documentfile.provider.DocumentFile
-import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.navArgs
-import com.google.android.material.dialog.MaterialDialogs
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.gson.Gson
 import com.isidroid.b21.R
+import com.isidroid.b21.data.source.settings.Settings
+import com.isidroid.b21.databinding.ChipBinding
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
-import com.isidroid.core.ext.hideSoftKeyboard
-import com.isidroid.core.ext.randomColor
+import com.isidroid.core.ext.*
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import java.io.File
-import java.io.IOException
 import kotlin.random.Random
 
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
+    private val gson = Gson()
 
     private val headerGantView by lazy { HeaderGantViewHelperV2(binding.lineearLayout) }
 
@@ -47,6 +37,7 @@ class HomeFragment : BindFragment(), HomeView {
             modifyInputValue(inputAccepted)
             modifyInputValue(inputFailed)
 
+            createChips()
 
             radioGroup.setOnCheckedChangeListener { radioGroup, i ->
                 val selectedRadio = radioGroup.children.filterIsInstance<MaterialRadioButton>().firstOrNull { it.isChecked }
@@ -56,19 +47,19 @@ class HomeFragment : BindFragment(), HomeView {
                 else
                     headerGantView.showBlockSize()
 
-                submit()
+                submit(true)
             }
 
             checkboxEllipsis.setOnCheckedChangeListener { _, b ->
                 headerGantView.showEllipsis = b
-                submit()
+                submit(true)
             }
 
             characterCountInputLayout.setStartIconOnClickListener {
                 val value = ((characterCountInput.text.toString().toIntOrNull() ?: 6) - 1).let { if (it <= 1) 1 else it }
                 headerGantView.statusMaxLength = value
                 characterCountInput.setText("$value")
-                submit()
+                submit(true)
             }
 
             characterCountInputLayout.setEndIconOnClickListener {
@@ -76,7 +67,7 @@ class HomeFragment : BindFragment(), HomeView {
                 headerGantView.statusMaxLength = value
 
                 characterCountInput.setText("$value")
-                submit()
+                submit(true)
             }
         }
     }
@@ -85,7 +76,7 @@ class HomeFragment : BindFragment(), HomeView {
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.action_random -> randomData()
-                R.id.action_submit -> submit()
+                R.id.action_submit -> submit(true)
                 R.id.action_random_data_set -> randomDataSet()
             }
             true
@@ -100,12 +91,16 @@ class HomeFragment : BindFragment(), HomeView {
             val value = (input.text.toString().toIntOrNull() ?: 0).let { if (it < 1) 1 else it }
 
             input.setText("${value - 1}")
-            submit()
+            submit(false)
         }
         inputLayout.setEndIconOnClickListener {
             val value = input.text.toString().toIntOrNull() ?: 0
             input.setText("${value + 1}")
-            submit()
+            submit(false)
+        }
+
+        input.doOnEnter {
+            submit(true)
         }
     }
 
@@ -138,7 +133,8 @@ class HomeFragment : BindFragment(), HomeView {
     }
 
     override fun onReady() {
-        startWorker(3, 6, 3, 9, 0)
+        startWorker(6, 5, 1, 52, 3)
+//        startWorker(150, 3, 2, 3, 3)
     }
 
     private fun startWorker(assigned: Int, onControl: Int, onRework: Int, accepted: Int, failed: Int) {
@@ -190,20 +186,55 @@ class HomeFragment : BindFragment(), HomeView {
             .show()
     }
 
+    fun createChips() {
+        val json = Settings.refreshToken.orEmpty()
+        val data = tryCatch { gson.fromJson<List<Preset>>(json) }.orEmpty()
+        binding.chipGroup.removeAllViews()
+        data.forEach { createChip(it) }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun createChip(preset: Preset) {
+        if (binding.chipGroup.children.any { it.tag == preset }) return
+
+        ChipBinding.inflate(layoutInflater, binding.chipGroup, true).chipView.apply {
+            tag = preset
+            text = "${preset.assigned}, ${preset.onControl}, ${preset.onRework}, ${preset.accepted}, ${preset.failed}"
+
+            setOnClickListener {
+                startWorker(preset.assigned, preset.onControl, preset.onRework, preset.accepted, preset.failed)
+            }
+        }
+    }
+
     fun showTitle(string: String) {
         Toast.makeText(requireActivity(), "$string", Toast.LENGTH_SHORT).show()
     }
 
-    private fun submit() {
+    private fun submit(savePreset: Boolean) {
         with(binding) {
             requireActivity().hideSoftKeyboard()
-            startWorker(
-                inputAssigned.text.toString().toIntOrNull() ?: 0,
-                inputOnControl.text.toString().toIntOrNull() ?: 0,
-                inputOnRework.text.toString().toIntOrNull() ?: 0,
-                inputAccepted.text.toString().toIntOrNull() ?: 0,
-                inputFailed.text.toString().toIntOrNull() ?: 0,
-            )
+
+            val assigned = inputAssigned.text.toString().toIntOrNull() ?: 0
+            val onControl = inputOnControl.text.toString().toIntOrNull() ?: 0
+            val onRework = inputOnRework.text.toString().toIntOrNull() ?: 0
+            val accepted = inputAccepted.text.toString().toIntOrNull() ?: 0
+            val failed = inputFailed.text.toString().toIntOrNull() ?: 0
+
+            if (savePreset) {
+                val preset = Preset(assigned, onControl, onRework, accepted, failed)
+                val json = Settings.refreshToken.orEmpty()
+                val data = tryCatch { gson.fromJson<List<Preset>>(json) }.orEmpty().toMutableList()
+
+                if (!data.contains(preset))
+                    data.add(preset)
+
+                val result = data.takeLast(6)
+                Settings.refreshToken = gson.toJson(result)
+                createChips()
+            }
+
+            startWorker(assigned, onControl, onRework, accepted, failed)
         }
     }
 }

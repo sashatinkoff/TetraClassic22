@@ -78,6 +78,15 @@
                         android:hint="failed" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    app:chipSpacing="4dp"
+                    app:chipSpacingHorizontal="-2dp"
+                    app:chipSpacingVertical="-8dp"
+                    app:singleSelection="false" />
 
                 <RadioGroup
                     android:id="@+id/radioGroup"

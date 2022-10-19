@@ -3,8 +3,11 @@ package com.isidroid.core.ext
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
+import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
 import androidx.annotation.RequiresApi
 import androidx.core.view.doOnLayout
 import androidx.core.widget.NestedScrollView
@@ -69,4 +72,14 @@ fun NestedScrollView.activateOnScrollToFooter(onScrolled: (Boolean) -> Unit) {
             onScrolled(false)
         }
     }
+}
+
+fun EditText.doOnEnter(callback: () -> Unit) = setOnKeyListener { _, actionId, keyEvent ->
+    val isDone = actionId == EditorInfo.IME_ACTION_DONE
+    val isEnter = keyEvent.action == KeyEvent.ACTION_DOWN && keyEvent.keyCode == KeyEvent.KEYCODE_ENTER
+
+    if (isDone || isEnter) {
+        callback()
+        true
+    } else false
 }

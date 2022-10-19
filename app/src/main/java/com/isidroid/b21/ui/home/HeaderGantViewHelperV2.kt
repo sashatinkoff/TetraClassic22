@@ -3,14 +3,17 @@ package com.isidroid.b21.ui.home;
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Rect
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.widget.LinearLayout;
 import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
 import androidx.core.view.updateLayoutParams
+import com.isidroid.b21.R
 import com.isidroid.b21.databinding.IncTrainingReportGantBlockBinding
 import timber.log.Timber
 import java.util.UUID
@@ -75,7 +78,7 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         with(block.binding) {
             val statusTitle = when (displayType) {
                 DISPLAY_TYPE_SIZE -> "${block.value}"
-                else -> block.title.take(statusMaxLength).fix()
+                else -> block.title.fix()
             }
 
             val valueTitle = when (displayType) {
@@ -98,7 +101,7 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
             block.minWidth = widths.max() + horizontalPadding * 2
             textView.text = "${block.value}"
 
-            root.setOnClickListener { block.onClick(textView.text, statusTextView.text) }
+            root.setOnClickListener { block.onClick(textView.text, block.title) }
         }
     }
 
@@ -147,7 +150,10 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
                     }
 
                     val length = getTextWidth(statusTextView, text)
-                    statusTextView.text = text.fix(trim = length > (calculatedWidth - statusTextView.paddingStart * 2))
+                    val w = calculatedWidth - (statusTextView.paddingStart * 2)
+                    statusTextView.text = text.fix(trim = length > w)
+
+                    Timber.i("${block.title}, length=$length, calculatedWidth=$calculatedWidth, w=$w")
 
                     updateSize(calculatedWidth)
                 }
@@ -178,7 +184,12 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
 
     private fun getTextWidth(textView: TextView, text: String = textView.text.toString()): Int {
         val bounds = Rect()
-        textView.paint.getTextBounds(text, 0, text.length, bounds)
+        val paint = textView.paint
+
+        paint.typeface = textView.typeface
+        paint.textSize = textView.textSize
+
+        paint.getTextBounds(text, 0, text.length, bounds)
 
         return bounds.width()
     }
