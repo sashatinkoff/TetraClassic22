@@ -1,19 +1,15 @@
 package com.isidroid.b21.ui.home;
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.Rect
-import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.widget.LinearLayout;
 import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
 import androidx.core.view.updateLayoutParams
-import com.isidroid.b21.R
 import com.isidroid.b21.databinding.IncTrainingReportGantBlockBinding
 import timber.log.Timber
 import java.util.UUID
@@ -149,11 +145,16 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
                         else -> block.title
                     }
 
-                    val length = getTextWidth(statusTextView, text)
-                    val w = calculatedWidth - (statusTextView.paddingStart * 2)
-                    statusTextView.text = text.fix(trim = length > w)
 
-                    Timber.i("${block.title}, length=$length, calculatedWidth=$calculatedWidth, w=$w")
+                    val widths = arrayOf(
+                        getTextWidth(statusTextView, text) + statusTextView.paddingStart * 2,
+                        getTextWidth(textView, block.title) + textView.paddingStart * 2,
+                    )
+
+                    val textLength = widths.max() + statusTextView.paddingStart * 2
+                    val w = calculatedWidth - (statusTextView.paddingStart * 2)
+                    val isTrim = textLength > w
+                    statusTextView.text = text.fix(trim = isTrim)
 
                     updateSize(calculatedWidth)
                 }
