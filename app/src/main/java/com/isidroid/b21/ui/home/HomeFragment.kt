@@ -5,8 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.core.text.*
 import androidx.core.view.children
+import androidx.core.view.isVisible
+import androidx.core.view.updateLayoutParams
+import androidx.core.view.updateMargins
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -52,14 +57,28 @@ class HomeFragment : BindFragment(), HomeView {
 
             checkboxEllipsis.setOnCheckedChangeListener { _, b ->
                 headerGantView.showEllipsis = b
-                submit(true)
+                submit(false)
+            }
+
+            checkboxMonospace.setOnCheckedChangeListener { _, b ->
+                headerGantView.useMonoSpaceFont = b
+                submit(false)
+            }
+
+            checkboxOffsets.setOnCheckedChangeListener { _, b ->
+                val offset = if (b) requireActivity().dpToPx(12) else 0
+                lineearLayout.updateLayoutParams<LinearLayout.LayoutParams> {
+                    updateMargins(offset, topMargin, offset, bottomMargin)
+                    submit(false)
+                }
+
             }
 
             characterCountInputLayout.setStartIconOnClickListener {
                 val value = ((characterCountInput.text.toString().toIntOrNull() ?: 6) - 1).let { if (it <= 1) 1 else it }
                 headerGantView.statusMaxLength = value
                 characterCountInput.setText("$value")
-                submit(true)
+                submit(false)
             }
 
             characterCountInputLayout.setEndIconOnClickListener {
@@ -67,8 +86,9 @@ class HomeFragment : BindFragment(), HomeView {
                 headerGantView.statusMaxLength = value
 
                 characterCountInput.setText("$value")
-                submit(true)
+                submit(false)
             }
+
         }
     }
 
@@ -78,8 +98,18 @@ class HomeFragment : BindFragment(), HomeView {
                 R.id.action_random -> randomData()
                 R.id.action_submit -> submit(true)
                 R.id.action_random_data_set -> randomDataSet()
+                R.id.action_info -> toggleInfo()
             }
             true
+        }
+    }
+
+    private fun toggleInfo() {
+        with(binding) {
+            infoCardView.isVisible = !infoCardView.isVisible
+
+            if (infoCardView.isVisible)
+                buildInformation()
         }
     }
 
@@ -116,7 +146,7 @@ class HomeFragment : BindFragment(), HomeView {
                 titleColor = color,
                 color = color,
                 value = Random.nextInt(0, 100),
-                onClick = { status, value -> showTitle("$status\n$value") }
+                onClick = { showTitle(it) }
             )
         }
         headerGantView.show()
@@ -124,17 +154,17 @@ class HomeFragment : BindFragment(), HomeView {
 
     private fun randomData() {
         startWorker(
-            Random.nextInt(0, 10),
-            Random.nextInt(0, 10),
-            Random.nextInt(0, 10),
-            Random.nextInt(0, 10),
+            Random.nextInt(0, 50),
+            Random.nextInt(0, 20),
+            Random.nextInt(0, 30),
+            Random.nextInt(0, 40),
             Random.nextInt(0, 10),
         )
     }
 
     override fun onReady() {
-        startWorker(6, 5, 1, 52, 3)
-//        startWorker(150, 3, 2, 3, 3)
+        val preset = getPresets().lastOrNull() ?: Preset(6, 5, 1, 52, 3)
+        startWorker(preset.assigned, preset.onControl, preset.onRework, preset.accepted, preset.failed)
     }
 
     private fun startWorker(assigned: Int, onControl: Int, onRework: Int, accepted: Int, failed: Int) {
@@ -146,47 +176,78 @@ class HomeFragment : BindFragment(), HomeView {
             inputFailed.setText("$failed")
         }
 
-
         headerGantView.reset()
             .addBlock(
                 titleRes = R.string.label_audit_new,
                 titleColor = R.color.audit_text_status_not_started,
                 color = R.color.audit_status_not_started,
                 value = assigned,
-                onClick = { status, value -> showTitle("$status\n$value") }
+                onClick = { showTitle(it) }
             )
             .addBlock(
                 titleRes = R.string.label_audit_on_control,
                 titleColor = R.color.audit_text_status_started,
                 color = R.color.audit_status_started,
                 value = onControl,
-                onClick = { status, value -> showTitle("$status\n$value") }
+                onClick = { showTitle(it) }
             )
             .addBlock(
                 titleRes = R.string.label_audit_on_rework,
                 titleColor = R.color.audit_text_status_viewed,
                 color = R.color.audit_status_viewed,
                 value = onRework,
-                onClick = { status, value -> showTitle("$status\n$value") }
+                onClick = { showTitle(it) }
             )
             .addBlock(
                 titleRes = R.string.label_audit_completed2,
                 titleColor = R.color.audit_text_status_passed,
                 color = R.color.audit_status_passed,
                 value = accepted,
-                onClick = { status, value -> showTitle("$status\n$value") }
+                onClick = { showTitle(it) }
             )
             .addBlock(
                 titleRes = R.string.status_failed,
                 titleColor = R.color.audit_text_status_failed,
                 color = R.color.audit_status_failed,
                 value = failed,
-                onClick = { status, value -> showTitle("$status\n$value") }
+                onClick = { showTitle(it) }
             )
-            .show()
+            .show {
+                if (binding.infoTextView.isVisible)
+                    buildInformation()
+            }
     }
 
-    fun createChips() {
+    private fun buildInformation() {
+        val result = buildSpannedString {
+            headerGantView.blocks.sortedByDescending { it.value }.forEach { block ->
+                color(block.titleColor) { bold { append(block.title) } }
+                append("\n")
+
+                append("Размер текста: ${block.textLength}")
+                append("\n")
+                append("Вычисленный размер блока: ${block.calculatedWidth}")
+                append("\n")
+                append("Значение: ${block.value}, вес=${block.weight}")
+                append("\n")
+                append("\n")
+            }
+
+            scale(.85f) {
+                italic {
+                    append("- Размер блока вычисляется на основе значения и оставшегося места в контейнере")
+                    append("\n")
+                    append("- Текст сокращается, если размер текста > вычисленного размера блока")
+                    append("\n")
+                    append("- Размер блока не может быть меньше чем количество выбранных символов. Это может привести к тому, что блоки с меньшим значением могут занимать больше места")
+                }
+            }
+        }
+
+        binding.infoTextView.text = result
+    }
+
+    private fun createChips() {
         val json = Settings.refreshToken.orEmpty()
         val data = tryCatch { gson.fromJson<List<Preset>>(json) }.orEmpty()
         binding.chipGroup.removeAllViews()
@@ -207,8 +268,12 @@ class HomeFragment : BindFragment(), HomeView {
         }
     }
 
-    fun showTitle(string: String) {
-        Toast.makeText(requireActivity(), "$string", Toast.LENGTH_SHORT).show()
+    private fun showTitle(block: HeaderGantViewHelperV2.Block) {
+        val text = buildString {
+            append("${block.title}=${block.value}")
+        }
+
+        Toast.makeText(requireActivity(), text, Toast.LENGTH_LONG).show()
     }
 
     private fun submit(savePreset: Boolean) {
@@ -223,8 +288,7 @@ class HomeFragment : BindFragment(), HomeView {
 
             if (savePreset) {
                 val preset = Preset(assigned, onControl, onRework, accepted, failed)
-                val json = Settings.refreshToken.orEmpty()
-                val data = tryCatch { gson.fromJson<List<Preset>>(json) }.orEmpty().toMutableList()
+                val data = getPresets().toMutableList()
 
                 if (!data.contains(preset))
                     data.add(preset)
@@ -236,5 +300,10 @@ class HomeFragment : BindFragment(), HomeView {
 
             startWorker(assigned, onControl, onRework, accepted, failed)
         }
+    }
+
+    private fun getPresets(): List<Preset> {
+        val json = Settings.refreshToken.orEmpty()
+        return tryCatch<List<Preset>> { gson.fromJson(json) }.orEmpty()
     }
 }

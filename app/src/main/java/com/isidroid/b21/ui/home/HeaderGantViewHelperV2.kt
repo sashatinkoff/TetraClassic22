@@ -2,14 +2,17 @@ package com.isidroid.b21.ui.home;
 
 import android.content.Context
 import android.graphics.Rect
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.widget.LinearLayout;
 import android.widget.TextView
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
 import androidx.core.view.updateLayoutParams
+import com.isidroid.b21.R
 import com.isidroid.b21.databinding.IncTrainingReportGantBlockBinding
 import timber.log.Timber
 import java.util.UUID
@@ -19,13 +22,16 @@ private const val DISPLAY_TYPE_SIZE = 1
 
 class HeaderGantViewHelperV2(private val container: LinearLayout) {
     private val context = container.context
-    private val blocks = mutableListOf<Block>()
     private val layoutInflater by lazy { LayoutInflater.from(context) }
     private var displayType = DISPLAY_TYPE_STATUS
     var statusMaxLength = 6
     var showEllipsis = true
+    var useMonoSpaceFont = false
 
-    fun reset() = apply { blocks.clear() }
+    private val _blocks = mutableListOf<Block>()
+    val blocks: List<Block> get() = _blocks
+
+    fun reset() = apply { _blocks.clear() }
 
     fun showStatus() {
         displayType = DISPLAY_TYPE_STATUS
@@ -40,9 +46,9 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         titleColor: Int,
         color: Int,
         value: Int,
-        onClick: (status: CharSequence?, value: CharSequence?) -> Unit
+        onClick: (Block) -> Unit
     ) = apply {
-        blocks.add(
+        _blocks.add(
             Block(
                 title = title,
                 titleColor = titleColor,
@@ -59,7 +65,7 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         @ColorRes titleColor: Int,
         @ColorRes color: Int,
         value: Int,
-        onClick: (status: CharSequence?, value: CharSequence?) -> Unit
+        onClick: (status: Block) -> Unit
     ) = apply {
         addBlock(
             title = context.getString(titleRes),
@@ -87,6 +93,11 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
             textView.text = valueTitle
             statusTextView.text = statusTitle
 
+            val typeFace = if (useMonoSpaceFont) Typeface.MONOSPACE else ResourcesCompat.getFont(context, R.font.regular)
+            textView.typeface = typeFace
+            statusTextView.typeface = typeFace
+
+
             val horizontalPadding = statusTextView.paddingStart
 
             val widths = arrayOf(
@@ -97,14 +108,14 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
             block.minWidth = widths.max() + horizontalPadding * 2
             textView.text = "${block.value}"
 
-            root.setOnClickListener { block.onClick(textView.text, block.title) }
+            root.setOnClickListener { block.onClick(block) }
         }
     }
 
-    fun show() {
+    fun show(onComplete: (() -> Unit)? = null) {
         container.alpha = 0f
         container.removeAllViews()
-        blocks
+        _blocks
             .forEach {
                 bindBlockUI(it)
                 container.addView(it.binding.root)
@@ -114,17 +125,22 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
             val parentWidth = container.width
             var spaceLeft = parentWidth
 
-            val weight = blocks.sumOf { it.value }.toFloat().let { if (it == 0f) null else it }
-            blocks.forEach { block ->
+            val weight = _blocks.sumOf { it.value }.toFloat().let { if (it == 0f) null else it }
+            _blocks.forEach { block ->
                 block.weight = weight?.let { (block.value / weight).round(2) } ?: 1f
             }
 
-            val maxWeight = blocks.maxBy { it.weight }.weight
-            val maxCount = blocks.filter { it.weight == maxWeight }.size
+            val maxWeight = _blocks.maxBy { it.weight }.weight
+            val maxCount = _blocks.filter { it.weight == maxWeight }.size
 
-            blocks.sortedBy { it.weight }.forEach { block ->
-                var calculatedWidth = (parentWidth.toFloat() * block.weight).toInt()
+            _blocks.sortedBy { it.weight }.forEachIndexed { index, block ->
+                var calculatedWidth = (spaceLeft.toFloat() * block.weight).toInt()
+//
+//                val weightLeft = _blocks.takeLast(_blocks.size - index).sumOf { it.weight.toDouble() }
+//                var calculatedWidth = (parentWidth.toFloat() * block.weight).toInt()
                 val isMaxWeight = block.weight == maxWeight
+
+                Timber.i("${block.title}, weight=${block.weight}, width=$calculatedWidth, min=${block.minWidth}, spaceLeft=$spaceLeft")
 
                 if (calculatedWidth < block.minWidth)
                     calculatedWidth = block.minWidth
@@ -145,20 +161,28 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
                         else -> block.title
                     }
 
-
                     val widths = arrayOf(
                         getTextWidth(statusTextView, text) + statusTextView.paddingStart * 2,
-                        getTextWidth(textView, block.title) + textView.paddingStart * 2,
+                        getTextWidth(textView, "${block.value}") + textView.paddingStart * 2,
                     )
 
                     val textLength = widths.max() + statusTextView.paddingStart * 2
                     val w = calculatedWidth - (statusTextView.paddingStart * 2)
                     val isTrim = textLength > w
+
                     statusTextView.text = text.fix(trim = isTrim)
+                    block.calculatedWidth = calculatedWidth
+                    block.textLength = textLength
+
+                    if (block.value > 20)
+                        Timber.e("${block.title}, weight=${block.weight}, width=$calculatedWidth, min=${block.minWidth}")
+
 
                     updateSize(calculatedWidth)
                 }
             }
+
+            onComplete?.invoke()
         }
         container.animate().alpha(1f).setDuration(300).start()
     }
@@ -195,7 +219,7 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         return bounds.width()
     }
 
-    private class Block(
+    inner class Block(
         val id: String = UUID.randomUUID().toString(),
         val title: String,
         val titleColor: Int,
@@ -205,7 +229,8 @@ class HeaderGantViewHelperV2(private val container: LinearLayout) {
         var weight: Float = 0f,
         var minWidth: Int = 0,
         var calculatedWidth: Int = 0,
-        inline val onClick: (status: CharSequence?, value: CharSequence?) -> Unit
+        var textLength: Int = 0,
+        inline val onClick: (Block) -> Unit
     ) {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true

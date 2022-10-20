@@ -8,8 +8,16 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/action_info"
+        android:icon="@drawable/ic_info"
+        android:title=""
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/action_random"
-        android:title="Случайный набор данных" />
+        android:icon="@drawable/round_shuffle_20"
+        android:title=""
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_random_data_set"
