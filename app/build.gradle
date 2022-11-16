@@ -8,6 +8,8 @@ plugins {
     id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs.kotlin'
 }
+
+apply from: '../tasks.gradle'
 apply from: "$rootDir/versions.gradle"
 def versionPropsFile = file('version.properties')
 
@@ -74,7 +76,7 @@ android {
         compose false
     }
 
-    flavorDimensions 'app_type', 'mockable'
+    flavorDimensions 'app_type'
     productFlavors {
         stage {
             dimension = 'app_type'
@@ -83,14 +85,6 @@ android {
 
         prod {
             dimension = 'app_type'
-        }
-
-        mock {
-            dimension = 'mockable'
-        }
-
-        real {
-            dimension = 'mockable'
         }
     }
 

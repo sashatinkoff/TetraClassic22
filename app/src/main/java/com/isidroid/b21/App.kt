@@ -5,7 +5,6 @@ import androidx.hilt.work.HiltWorkerFactory
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import androidx.work.Configuration
-import com.isidroid.b21.data.InboxWorker
 import com.isidroid.b21.utils.NotificationsChannels
 import javax.inject.Inject
 
