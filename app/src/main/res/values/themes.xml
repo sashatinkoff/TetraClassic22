@@ -2,8 +2,14 @@
     <!-- Base application theme. -->
 
     <style name="BaseAppTheme" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="alertDialogTheme">@style/YDialog</item>
 
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
         <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
@@ -30,10 +36,5 @@
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
-    </style>
-
-    <style name="AppTheme" parent="BaseAppTheme">
-        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
-
     </style>
 </resources>
