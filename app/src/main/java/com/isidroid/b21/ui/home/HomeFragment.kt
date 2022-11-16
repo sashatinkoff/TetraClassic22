@@ -18,20 +18,17 @@ import java.io.IOException
 
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {
-    private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
     private val args: HomeFragmentArgs by navArgs()
     private val viewModel by viewModels<HomeViewModel>()
-    private val documentsContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
-        val file = File.createTempFile("tmp", "txt")
 
-        viewModel.createAndSave(it)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = FragmentHomeBinding.inflate(layoutInflater)
+        return binding.root
     }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View = binding.root
 
     override fun onReady() {
-        binding.button.setOnClickListener { documentsContract.launch(null) }
     }
-
-
 }

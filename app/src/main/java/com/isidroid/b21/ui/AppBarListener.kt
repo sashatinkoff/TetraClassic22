@@ -3,6 +3,7 @@ package com.isidroid.b21.ui
 import androidx.core.view.ViewCompat
 import androidx.navigation.NavController
 import com.google.android.material.appbar.MaterialToolbar
+import com.isidroid.core.ext.visible
 
 
 /**
@@ -12,7 +13,10 @@ import com.google.android.material.appbar.MaterialToolbar
 interface AppBarListener {
     fun createToolbar(toolbar: MaterialToolbar, navController: NavController) {
         ViewCompat.setElevation(toolbar, 0f)
+        toolbar.visible(false)
         toolbar.menu.clear()
         toolbar.navigationIcon = null
+        toolbar.post { toolbar.subtitle = null }
+        toolbar.setNavigationOnClickListener { navController.popBackStack() }
     }
 }
