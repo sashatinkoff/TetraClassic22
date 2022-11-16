@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/fragmentHome"
         android:name="com.isidroid.b21.ui.home.HomeFragment"
-        android:label="@string/navigation_label_home"
         tools:layout="@layout/fragment_home">
 
         <deepLink app:uri="staging.getweho.app/activate?key={key}" />
