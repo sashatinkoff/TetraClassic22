@@ -100,7 +100,7 @@ android {
 }
 
 dependencies {
-    api project(path: ':core')
+    api project(path: ':library:core')
 
     // google
     implementation "androidx.activity:activity-ktx:$google.activity_ktx"
