@@ -5,7 +5,9 @@ import androidx.hilt.work.HiltWorkerFactory
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import androidx.work.Configuration
+import com.isidroid.b21.data.source.settings.Settings
 import com.isidroid.b21.utils.NotificationsChannels
+import com.isidroid.b21.utils.TimberTree
 import javax.inject.Inject
 
 @HiltAndroidApp
@@ -17,8 +19,10 @@ class App : Application(), Configuration.Provider  {
 
         instance = this
         NotificationsChannels(this)
-//        InboxWorker.schedule(this)
-        Timber.plant(Timber.DebugTree())
+        Timber.plant(TimberTree())
+
+        Settings.init(this)
+        Settings.onLaunch()
     }
 
     override fun getWorkManagerConfiguration() = Configuration.Builder()
