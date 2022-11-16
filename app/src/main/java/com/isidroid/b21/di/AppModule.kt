@@ -1,8 +1,11 @@
 package com.isidroid.b21.di
 
 import android.content.Context
+import com.isidroid.b21.data.repository.RickMortyRepositoryImpl
 import com.isidroid.b21.data.repository.SessionRepositoryImpl
 import com.isidroid.b21.data.source.local.AppDatabase
+import com.isidroid.b21.data.source.remote.api.ApiRickMorty
+import com.isidroid.b21.domain.repository.RickMortyRepository
 import com.isidroid.b21.domain.repository.SessionRepository
 import dagger.Module
 import dagger.Provides
@@ -22,4 +25,9 @@ object AppModule {
     @Singleton
     @Provides
     fun provideSessionRepository(): SessionRepository = SessionRepositoryImpl()
+
+    @Singleton
+    @Provides
+    fun provideRickMortyRepository(apiRickMorty: ApiRickMorty): RickMortyRepository = RickMortyRepositoryImpl(apiRickMorty)
+
 }
