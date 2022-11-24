@@ -99,6 +99,7 @@ android {
     }
 }
 
+
 dependencies {
     api project(path: ':library:core')
 
@@ -152,4 +153,9 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-core:$test.espresso_core"
     androidTestImplementation "junit:junit:$test.junit"
     testImplementation "androidx.test.ext:junit:$test.junit_ext"
+
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"
+    testImplementation "org.mockito:mockito-core:4.0.0"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
 }

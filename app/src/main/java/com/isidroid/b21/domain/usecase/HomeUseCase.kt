@@ -16,7 +16,6 @@ class HomeUseCase @Inject constructor(private val rickMortyRepository: RickMorty
         emit(ResultData.Success(result))
     }.flowOn(Dispatchers.IO)
 
-
     fun loadCharacter(id: Int) = flow {
         val result = rickMortyRepository.loadCharacter(id)
         emit(ResultData.Success(result))
