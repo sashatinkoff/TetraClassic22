@@ -82,7 +82,7 @@ object NetworkModule {
     fun provideApiRickMorty(interceptor: AuthInterceptor) = api(
         baseUrl = "https://rickandmortyapi.com/api/",
         cl = ApiRickMorty::class.java,
-        logLevel = HttpLoggingInterceptor.Level.BODY,
+        logLevel = HttpLoggingInterceptor.Level.BASIC,
         authInterceptor = interceptor
     )
 }

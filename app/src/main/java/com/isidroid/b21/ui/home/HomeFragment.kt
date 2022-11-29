@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isInvisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -22,6 +23,11 @@ class HomeFragment : BindFragment(), HomeView {
 
     private val args: HomeFragmentArgs by navArgs()
     private val viewModel by viewModels<HomeViewModel>()
+    private val documentContract = registerForActivityResult(ActivityResultContracts.GetContent()){
+        it ?: return@registerForActivityResult
+        viewModel.upload(requireActivity(), it)
+    }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentHomeBinding.inflate(layoutInflater)
@@ -33,7 +39,7 @@ class HomeFragment : BindFragment(), HomeView {
             buttonCharacter.enable(false)
             button.setOnClickListener {
                 progressBar.visible(true)
-                viewModel.getCharacters()
+                documentContract.launch("video/*")
             }
         }
     }

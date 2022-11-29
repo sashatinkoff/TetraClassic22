@@ -1,5 +1,9 @@
 package com.isidroid.b21.domain.usecase
 
+import android.content.Context
+import android.net.Uri
+import androidx.core.net.toFile
+import androidx.documentfile.provider.DocumentFile
 import com.isidroid.b21.domain.repository.RickMortyRepository
 import com.isidroid.core.utils.ResultData
 import kotlinx.coroutines.Dispatchers
@@ -20,4 +24,9 @@ class HomeUseCase @Inject constructor(private val rickMortyRepository: RickMorty
         val result = rickMortyRepository.loadCharacter(id)
         emit(ResultData.Success(result))
     }.flowOn(Dispatchers.IO)
+
+    fun upload(context: Context, uri: Uri) = flow {
+        rickMortyRepository.upload(context, uri)
+        emit(ResultData.Success(0))
+    }
 }

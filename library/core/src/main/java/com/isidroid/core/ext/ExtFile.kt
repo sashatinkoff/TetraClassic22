@@ -28,31 +28,3 @@ fun File.copyToPublicFolder(context: Context, targetDisplayName: String, destUri
 
     return true
 }
-
-fun DocumentFile.readText(context: Context): String? {
-    val outputStream = tryCatch { context.contentResolver.openInputStream(uri) } ?: return null
-    var content: String? = null
-    try {
-        val reader = BufferedReader(outputStream.reader())
-
-        reader.use { reader -> content = reader.readText() }
-    } catch (_: Throwable) {
-    } finally {
-        outputStream.close()
-    }
-
-    return content
-}
-
-fun DocumentFile.copy(context: Context, file: File): Boolean {
-    val inputStream = tryCatch { context.contentResolver.openInputStream(uri) } ?: return false
-    var result = false
-    try {
-        file.outputStream().use { inputStream.copyTo(it) }
-        result = true
-    } catch (_: Throwable) {
-    } finally {
-        inputStream.close()
-    }
-    return result
-}
