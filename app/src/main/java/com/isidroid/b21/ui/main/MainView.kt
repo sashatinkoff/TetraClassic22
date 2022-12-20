@@ -9,5 +9,4 @@ import com.isidroid.b21.data.source.settings.Settings
 
 interface MainView {
     fun updateStatusBarColor(@ColorRes colorRes: Int = R.color.md_theme_light_background, isLightStatusBarIcons: Boolean = true)
-    fun navigateTo(action: NavDirections, optionsBuilder: ((NavOptions.Builder) -> Unit)? = null)
 }

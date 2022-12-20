@@ -16,5 +16,14 @@
             android:name="key"
             app:argType="string" />
 
+        <action
+            android:id="@+id/openDetails"
+            app:destination="@id/fragmentDetails" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/fragmentDetails"
+        android:name="com.isidroid.b21.ui.DetailsFragment"
+        android:label="Details" />
 </navigation>

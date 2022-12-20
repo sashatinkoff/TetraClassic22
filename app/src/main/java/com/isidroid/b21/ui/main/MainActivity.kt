@@ -11,16 +11,17 @@ import androidx.navigation.NavOptions
 import com.isidroid.b21.R
 import com.isidroid.b21.databinding.ActivityMainBinding
 import com.isidroid.b21.ui.AppBarListener
+import com.isidroid.b21.ui.NavigationListener
 import com.isidroid.core.ext.findNavController
 import com.isidroid.b21.utils.base.BindActivity
 import com.isidroid.core.ext.color
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BindActivity(), MainView, AppBarListener {
+class MainActivity : BindActivity(), MainView, AppBarListener, NavigationListener {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<MainViewModel>()
-    private val navController by lazy { findNavController(R.id.nav_host_fragment) }
+    override val navController by lazy { findNavController(R.id.nav_host_fragment) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
