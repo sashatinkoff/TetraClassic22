@@ -30,5 +30,6 @@ class HomeFragment : BindFragment(), HomeView {
     }
 
     override fun onReady() {
+        viewModel.listen()
     }
 }

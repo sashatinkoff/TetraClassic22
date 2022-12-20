@@ -133,6 +133,10 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$network.okhttp"
     implementation "com.squareup.okio:okio:$network.okio"
     implementation "com.squareup.retrofit2:retrofit:$network.retrofit"
+    implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    implementation ('io.socket:socket.io-client:2.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
 
     // firebase
     implementation firebase.analytics

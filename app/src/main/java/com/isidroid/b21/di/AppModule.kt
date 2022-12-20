@@ -2,8 +2,10 @@ package com.isidroid.b21.di
 
 import android.content.Context
 import com.isidroid.b21.data.repository.SessionRepositoryImpl
+import com.isidroid.b21.data.repository.WebSocketRepositoryImpl
 import com.isidroid.b21.data.source.local.AppDatabase
 import com.isidroid.b21.domain.repository.SessionRepository
+import com.isidroid.b21.domain.repository.WebSocketRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,4 +24,8 @@ object AppModule {
     @Singleton
     @Provides
     fun provideSessionRepository(): SessionRepository = SessionRepositoryImpl()
+
+    @Singleton
+    @Provides
+    fun provideWebSocketRepository(): WebSocketRepository = WebSocketRepositoryImpl()
 }
