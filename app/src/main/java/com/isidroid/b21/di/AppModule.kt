@@ -1,8 +1,11 @@
 package com.isidroid.b21.di
 
 import android.content.Context
+import com.isidroid.b21.data.repository.LiveJournalRepositoryImpl
 import com.isidroid.b21.data.repository.SessionRepositoryImpl
 import com.isidroid.b21.data.source.local.AppDatabase
+import com.isidroid.b21.data.source.remote.api.ApiLiveJournal
+import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.domain.repository.SessionRepository
 import dagger.Module
 import dagger.Provides
@@ -22,4 +25,9 @@ object AppModule {
     @Singleton
     @Provides
     fun provideSessionRepository(): SessionRepository = SessionRepositoryImpl()
+
+    @Singleton
+    @Provides
+    fun provideLiveJournalRepository(api: ApiLiveJournal): LiveJournalRepository = LiveJournalRepositoryImpl(api)
+
 }

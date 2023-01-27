@@ -142,6 +142,7 @@ dependencies {
 
     // tools
     implementation "com.github.bumptech.glide:glide:$tools.glide"
+    implementation 'org.jsoup:jsoup:1.15.3'
 
     // enable it for using scalable images
 //    implementation "com.github.chrisbanes:PhotoView:"tools.photoview

@@ -1,20 +1,15 @@
 package com.isidroid.b21.ui.home
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.documentfile.provider.DocumentFile
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
-import java.io.File
-import java.io.IOException
 
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {
@@ -30,5 +25,19 @@ class HomeFragment : BindFragment(), HomeView {
     }
 
     override fun onReady() {
+        viewModel.create()
+    }
+
+    override fun onCreateViewModel() {
+        viewModel.viewState.observe(this) { state ->
+            when (state) {
+                is State.OnError -> showError(state.t)
+                is State.OnContent -> {
+                    val imageGetter = GlideImageGetter(binding.textView)
+                    binding.textView.text = HtmlCompat.fromHtml(state.post.html, HtmlCompat.FROM_HTML_MODE_LEGACY, imageGetter, null)
+//                    binding.webView.loadData(state.text.orEmpty(), "text/html", "utf-8")
+                }
+            }
+        }
     }
 }

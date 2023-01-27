@@ -20,6 +20,7 @@ class AuthInterceptor(
             accessToken = token
         ).build()
 
+
         val response = chain.proceed(request)
 
         return when (response.code) {
@@ -45,11 +46,15 @@ class AuthInterceptor(
     }
 
     private fun requestBuilder(originalRequest: Request, accessToken: String?): Request.Builder {
+        val cookie = ""
+
         val builder = originalRequest.newBuilder()
             .addHeader("App-Version", BuildConfig.VERSION_NAME)
-            .addHeader("User-Agent", "AndroidOS")
+            .addHeader("Cookie", cookie)
 
-        builder.addHeader("Accept", "application/json")
+//            .addHeader("User-Agent", "AndroidOS")
+
+//        builder.addHeader("Accept", "application/json")
         val skipAuth = originalRequest.headers.any { it.first == "skip_auth" }
 
         if (!skipAuth) authorizeCall(builder, accessToken)
@@ -57,6 +62,6 @@ class AuthInterceptor(
     }
 
     private fun authorizeCall(builder: Request.Builder, accessToken: String?) {
-        accessToken?.let { builder.addHeader(HEADER_AUTH, "Bearer $it") }
+//        accessToken?.let { builder.addHeader(HEADER_AUTH, "Bearer $it") }
     }
 }

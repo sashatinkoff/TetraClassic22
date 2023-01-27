@@ -4,7 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.isidroid.b21.data.source.remote.AuthInterceptor
 import com.isidroid.b21.data.source.remote.DateDeserializer
-import com.isidroid.b21.data.source.remote.api.ApiTest
+import com.isidroid.b21.data.source.remote.api.ApiLiveJournal
 import com.isidroid.b21.domain.repository.SessionRepository
 import dagger.Module
 import dagger.Provides
@@ -79,9 +79,10 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiReports(interceptor: AuthInterceptor) = api(
-        cl = ApiTest::class.java,
-        logLevel = HttpLoggingInterceptor.Level.BODY,
+    fun provideAApiLIveJournal(interceptor: AuthInterceptor) = api(
+        baseUrl = "https://www.livejournal.com/",
+        cl = ApiLiveJournal::class.java,
+        logLevel = HttpLoggingInterceptor.Level.BASIC,
         authInterceptor = interceptor
     )
 }
