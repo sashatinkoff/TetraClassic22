@@ -26,6 +26,8 @@ class MainActivity : BindActivity(), MainView, AppBarListener {
         installSplashScreen()
             .setKeepOnScreenCondition { viewModel.isInitInProgress }
 
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         updateStatusBarColor()

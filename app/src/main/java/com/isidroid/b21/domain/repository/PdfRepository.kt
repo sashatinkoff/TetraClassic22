@@ -5,6 +5,12 @@ import android.net.Uri
 import java.util.Date
 
 interface PdfRepository {
-    suspend fun create(context: Context, uri: Uri)
-    suspend fun create(context: Context, uri: Uri, start: Date, end: Date, pdfFileName: String)
+    suspend fun create(context: Context, uri: Uri, listener: Listener)
+    suspend fun create(context: Context, uri: Uri, start: Date, end: Date, pdfFileName: String, listener: Listener)
+
+    interface Listener {
+        suspend fun startPdf(fileName: String)
+        suspend fun downloadImage(url: String, title: String?)
+        suspend fun pdfCompleted(fileName: String)
+    }
 }

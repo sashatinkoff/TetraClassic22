@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 3,
-    "identityHash": "084d55264dec5d55b054e1eb482b3b1c",
+    "identityHash": "817fc7aa828804ffd966a05ce9cad728",
     "entities": [
       {
         "tableName": "sessions",
@@ -26,7 +26,7 @@
       },
       {
         "tableName": "Post",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `createdAt` INTEGER, `url` TEXT NOT NULL, `html` TEXT, `text` TEXT, `title` TEXT, `getByUrl` TEXT NOT NULL, `isDownloaded` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `createdAt` INTEGER, `url` TEXT NOT NULL, `html` TEXT, `text` TEXT, `title` TEXT, `getByUrl` TEXT NOT NULL, `isDownloaded` INTEGER NOT NULL, `source` TEXT NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -75,6 +75,12 @@
             "columnName": "isDownloaded",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -100,7 +106,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '084d55264dec5d55b054e1eb482b3b1c')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '817fc7aa828804ffd966a05ce9cad728')"
     ]
   }
 }

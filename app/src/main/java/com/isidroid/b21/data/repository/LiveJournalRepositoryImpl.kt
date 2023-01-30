@@ -88,13 +88,15 @@ class LiveJournalRepositoryImpl(
                 html = contentHtml,
                 text = contentText,
                 isDownloaded = true,
-                getByUrl = getByUrl
+                getByUrl = getByUrl,
+                source = "LiveJournal"
             )
         } catch (t: Throwable) {
             Post(
                 id = id,
                 url = url,
-                getByUrl = getByUrl
+                getByUrl = getByUrl,
+                source = "LiveJournal"
             )
         }
 

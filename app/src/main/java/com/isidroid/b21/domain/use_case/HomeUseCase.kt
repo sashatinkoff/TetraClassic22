@@ -7,7 +7,6 @@ import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.domain.repository.PdfRepository
 import com.isidroid.core.ext.date
 import kotlinx.coroutines.flow.flow
-import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -23,6 +22,7 @@ class HomeUseCase @Inject constructor(
     fun start() = flow {
         isRunning = true
         var url = "https://fixin.livejournal.com/385.html"
+//        url = "https://fixin.livejournal.com/2310772.html"
         val deadline = "2021-01-01".date
 
         while (true) {
@@ -47,7 +47,7 @@ class HomeUseCase @Inject constructor(
         }
     }
 
-    fun liveinternet() = flow {
+    fun liveInternet() = flow {
         liveJournalRepository.loadLiveInternet()
         emit(true)
     }
@@ -57,14 +57,29 @@ class HomeUseCase @Inject constructor(
     }
 
     fun createPdf(uri: Uri) = flow {
-        pdfRepository.create(context, uri)
+        pdfRepository.create(context, uri, object : PdfRepository.Listener {
+            override suspend fun startPdf(fileName: String) {
+                emit(Result.StartPdf(fileName))
+            }
+
+            override suspend fun downloadImage(url: String, title: String?) {
+                emit(Result.DownloadImage(url, title))
+            }
+
+            override suspend fun pdfCompleted(fileName: String) {
+                emit(Result.PdfCompleted(fileName))
+            }
+        })
         emit(true)
     }
 
     sealed interface Result {
         data class OnPostFoundLocal(val post: Post) : Result
         data class OnLoading(val url: String) : Result
-        data class OnPostSaved(val post: Post)
+        data class OnPostSaved(val post: Post) : Result
+        data class StartPdf(val fileName: String) : Result
+        data class DownloadImage(val url: String, val title: String?) : Result
+        data class PdfCompleted(val fileName: String) : Result
     }
 }
 

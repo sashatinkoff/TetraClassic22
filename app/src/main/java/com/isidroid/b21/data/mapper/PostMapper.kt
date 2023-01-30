@@ -20,7 +20,8 @@ object PostMapper {
             text = document.text(),
             title = response.title.data,
             getByUrl = response.guid.data,
-            isDownloaded = true
+            isDownloaded = true,
+            source = "liveInternet"
         )
     }
 }

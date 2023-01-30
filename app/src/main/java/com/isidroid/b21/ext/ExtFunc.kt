@@ -17,7 +17,7 @@ fun bitmapToByteArray(bitmap: Bitmap, width: Float, height: Float): ByteArray? {
     return try {
         val max = max(width, height).toInt()
         val stream = ByteArrayOutputStream();
-        scaleToMaxSize(bitmap, max / 3, false).compress(Bitmap.CompressFormat.JPEG, 70, stream);
+        scaleToMaxSize(bitmap, max / 2, false).compress(Bitmap.CompressFormat.PNG, 100, stream);
         val byteArray = stream.toByteArray();
         bitmap.recycle()
         byteArray
@@ -44,7 +44,7 @@ fun Bitmap.saveToFile(dest: File): Boolean {
     return try {
         dest.createNewFile()
         val bos = ByteArrayOutputStream()
-        compress(Bitmap.CompressFormat.JPEG, 100, bos)
+        compress(Bitmap.CompressFormat.PNG, 100, bos)
 
         val fos = FileOutputStream(dest)
         fos.write(bos.toByteArray())

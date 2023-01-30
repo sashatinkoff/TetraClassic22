@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
+import kotlin.math.log
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
@@ -19,6 +20,7 @@ class HomeViewModel @Inject constructor(
     private val _viewState = MutableLiveData<State>()
     val viewState: LiveData<State> get() = _viewState
 
+    private val logs = mutableListOf<String>()
 
     fun create() {
         viewModelScope.launch {
@@ -29,10 +31,10 @@ class HomeViewModel @Inject constructor(
                     _viewState.value = State.OnError(it)
                 }
                 .collect {
-                    _viewState.value = when (it) {
-                        is HomeUseCase.Result.OnLoading -> State.OnLoading(it.url)
-                        is HomeUseCase.Result.OnPostFoundLocal -> State.OnPostFoundLocal(it.post)
-                        is HomeUseCase.Result.OnPostSaved -> State.OnContent(it.post)
+                    when (it) {
+                        is HomeUseCase.Result.OnLoading -> {}
+                        is HomeUseCase.Result.OnPostFoundLocal -> showLogs("${it.post.title} in local!")
+                        is HomeUseCase.Result.OnPostSaved -> showLogs("${it.post.title} saved")
                         else -> State.Empty
                     }
                 }
@@ -49,18 +51,32 @@ class HomeViewModel @Inject constructor(
                 .flowOn(Dispatchers.IO)
                 .catch { Timber.e(it) }
                 .collect {
-                    _viewState.value = State.OnPdfCreated
+                    when (it) {
+                        is HomeUseCase.Result.StartPdf -> showLogs("start pdf ${it.fileName}")
+                        is HomeUseCase.Result.DownloadImage -> showLogs("download image ${it.url} for ${it.title}")
+                        is HomeUseCase.Result.PdfCompleted -> showLogs("pdf ${it.fileName} created")
+                    }
                 }
 
         }
     }
 
-    fun liveinternet() {
+    fun liveInternet() {
         viewModelScope.launch {
-            useCase.liveinternet()
+            useCase.liveInternet()
                 .flowOn(Dispatchers.IO)
                 .catch { Timber.e(it) }
-                .collect { _viewState.value = State.OnLiveInternet }
+                .collect { showLogs("LiveInternet completely saved") }
         }
+    }
+
+    private fun showLogs(event: String) {
+        logs.add(0, event)
+
+        val limited = logs.take(50)
+        logs.clear()
+        logs.addAll(limited)
+
+        _viewState.value = State.OnEvent(logs)
     }
 }

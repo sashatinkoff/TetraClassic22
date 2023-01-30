@@ -15,5 +15,8 @@ data class Post(
     val title: String? = null,
 
     val getByUrl: String = "",
-    val isDownloaded: Boolean = false
-)
+    val isDownloaded: Boolean = false,
+    val source: String
+) {
+    val isLiveJournal: Boolean get() = source == "LiveJournal"
+}
