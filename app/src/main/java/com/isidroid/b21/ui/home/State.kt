@@ -11,4 +11,5 @@ sealed class State {
 
 
     object Empty : State()
+    object OnPdfCreated: State()
 }

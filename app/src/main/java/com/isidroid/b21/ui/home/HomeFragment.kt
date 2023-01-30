@@ -4,23 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.CookieManager
-import android.webkit.WebChromeClient
-import android.webkit.WebSettings
-import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.text.HtmlCompat
-import androidx.documentfile.provider.DocumentFile
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.isidroid.b21.App
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.domain.model.Post
 import com.isidroid.b21.utils.base.BindFragment
-import com.isidroid.core.ext.copy
-import com.isidroid.core.ext.copyToPublicFolder
 import dagger.hilt.android.AndroidEntryPoint
-import java.io.File
 
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {
@@ -29,9 +20,9 @@ class HomeFragment : BindFragment(), HomeView {
 
     private val args: HomeFragmentArgs by navArgs()
     private val viewModel by viewModels<HomeViewModel>()
-    private val contract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
-        val file = File(App.instance.cacheDir, "download_file.html")
-        file.copyToPublicFolder(requireContext(), "download_file.html", it!!)
+
+    private val documentPdfContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
+        viewModel.createPdf(it!!)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -43,6 +34,7 @@ class HomeFragment : BindFragment(), HomeView {
         with(binding) {
             button.setOnClickListener { viewModel.create() }
             buttonStop.setOnClickListener { viewModel.stop() }
+            buttonPdf.setOnClickListener { documentPdfContract.launch(null) }
         }
     }
 
@@ -54,6 +46,7 @@ class HomeFragment : BindFragment(), HomeView {
                 State.Empty -> {}
                 is State.OnLoading -> onLoading(state.url)
                 is State.OnPostFoundLocal -> onPostFoundLocal(state.post)
+                State.OnPdfCreated -> binding.textView.text = "PDF created"
             }
         }
     }

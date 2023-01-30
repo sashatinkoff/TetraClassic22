@@ -6,7 +6,7 @@
     <color name="md_theme_light_onPrimaryContainer">#002019</color>
     <color name="md_theme_light_secondary">#58605D</color>
     <color name="md_theme_light_onSecondary">#FFFFFF</color>
-    <color name="md_theme_light_secondaryContainer">#DDE4E0</color>
+    <color name="md_theme_light_secondaryContainer">#3F51B5</color>
     <color name="md_theme_light_onSecondaryContainer">#161D1B</color>
     <color name="md_theme_light_tertiary">#566067</color>
     <color name="md_theme_light_onTertiary">#FFFFFF</color>
