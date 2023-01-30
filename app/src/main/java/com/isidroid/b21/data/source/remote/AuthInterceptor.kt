@@ -1,8 +1,10 @@
 package com.isidroid.b21.data.source.remote
 
+import com.google.gson.Gson
 import com.isidroid.b21.BuildConfig
 import com.isidroid.b21.data.source.settings.Settings
 import com.isidroid.b21.domain.repository.SessionRepository
+import com.isidroid.core.ext.fromJson
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
@@ -10,7 +12,8 @@ import okhttp3.Response
 private const val HEADER_AUTH = "Authorization"
 
 class AuthInterceptor(
-    private val sessionRepository: SessionRepository? = null
+    private val sessionRepository: SessionRepository? = null,
+    private val gson: Gson
 ) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val token = Settings.accessToken
@@ -46,15 +49,11 @@ class AuthInterceptor(
     }
 
     private fun requestBuilder(originalRequest: Request, accessToken: String?): Request.Builder {
-        val cookie = ""
-
         val builder = originalRequest.newBuilder()
             .addHeader("App-Version", BuildConfig.VERSION_NAME)
-            .addHeader("Cookie", cookie)
 
-//            .addHeader("User-Agent", "AndroidOS")
 
-//        builder.addHeader("Accept", "application/json")
+
         val skipAuth = originalRequest.headers.any { it.first == "skip_auth" }
 
         if (!skipAuth) authorizeCall(builder, accessToken)

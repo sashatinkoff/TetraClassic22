@@ -1,9 +1,11 @@
 package com.isidroid.b21.di
 
+import android.webkit.CookieManager
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.isidroid.b21.data.source.remote.AuthInterceptor
 import com.isidroid.b21.data.source.remote.DateDeserializer
+import com.isidroid.b21.data.source.remote.LocalCookieJar
 import com.isidroid.b21.data.source.remote.api.ApiLiveJournal
 import com.isidroid.b21.domain.repository.SessionRepository
 import dagger.Module
@@ -31,11 +33,14 @@ object NetworkModule {
         writeTimeOut: Long = 60
     ): OkHttpClient {
         val builder = OkHttpClient().newBuilder()
+//            .cookieJar(LocalCookieJar())
             .readTimeout(readTimeOut, TimeUnit.SECONDS)
             .writeTimeout(writeTimeOut, TimeUnit.SECONDS)
 
         authInterceptor?.let { builder.addInterceptor(it) }
         builder.addInterceptor(logger(cl = cl, logLevel = logLevel))
+
+        CookieManager.getInstance().setAcceptCookie(true)
 
         return builder.build()
     }
@@ -45,7 +50,7 @@ object NetworkModule {
             .apply { level = logLevel }
 
     @Provides
-    fun provideAuthInterceptor(sessionRepository: SessionRepository) = AuthInterceptor(sessionRepository)
+    fun provideAuthInterceptor(sessionRepository: SessionRepository, gson: Gson) = AuthInterceptor(sessionRepository, gson)
 
     @Singleton
     @Provides
@@ -82,7 +87,7 @@ object NetworkModule {
     fun provideAApiLIveJournal(interceptor: AuthInterceptor) = api(
         baseUrl = "https://www.livejournal.com/",
         cl = ApiLiveJournal::class.java,
-        logLevel = HttpLoggingInterceptor.Level.BASIC,
+        logLevel = HttpLoggingInterceptor.Level.HEADERS,
         authInterceptor = interceptor
     )
 }

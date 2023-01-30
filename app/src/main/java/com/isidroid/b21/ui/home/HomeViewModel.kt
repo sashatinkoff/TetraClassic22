@@ -35,7 +35,18 @@ class HomeViewModel @Inject constructor(
                     Timber.e(it)
                     _viewState.value = State.OnError(it)
                 }
-                .collect { _viewState.value = State.OnContent(it) }
+                .collect {
+                    _viewState.value = when (it) {
+                        is HomeUseCase.Result.OnLoading -> State.OnLoading(it.url)
+                        is HomeUseCase.Result.OnPostFoundLocal -> State.OnPostFoundLocal(it.post)
+                        is HomeUseCase.Result.OnPostSaved -> State.OnContent(it.post)
+                        else -> State.Empty
+                    }
+                }
         }
+    }
+
+    fun stop() {
+        useCase.stop()
     }
 }

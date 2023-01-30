@@ -1,14 +1,19 @@
 package com.isidroid.b21.domain.model
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import java.util.Date
 
+@Entity(indices = [Index(value = ["getByUrl"])])
 data class Post(
-    val id: String,
-    val createdAt: Date,
+    @PrimaryKey val id: String,
+    val createdAt: Date? = null,
     val url: String,
-    val html: String,
-    val text: String,
-    val title: String?,
+    val html: String? = null,
+    val text: String? = null,
+    val title: String? = null,
 
-    val getByUrl: String = ""
+    val getByUrl: String = "",
+    val isDownloaded: Boolean = false
 )
