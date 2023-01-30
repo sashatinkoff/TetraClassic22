@@ -2,6 +2,7 @@ package com.isidroid.b21.domain.use_case
 
 import android.content.Context
 import android.net.Uri
+import com.isidroid.b21.data.source.local.AppDatabase
 import com.isidroid.b21.domain.model.Post
 import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.domain.repository.PdfRepository
@@ -15,6 +16,7 @@ class HomeUseCase @Inject constructor(
     private val context: Context,
     private val liveJournalRepository: LiveJournalRepository,
     private val pdfRepository: PdfRepository,
+    private val appDatabase: AppDatabase
 ) {
     @Volatile
     private var isRunning = false
@@ -22,6 +24,9 @@ class HomeUseCase @Inject constructor(
     fun start() = flow {
         isRunning = true
         var url = "https://fixin.livejournal.com/385.html"
+        url = liveJournalRepository.nextPostUrl("2033243")
+
+
 //        url = "https://fixin.livejournal.com/2310772.html"
         val deadline = "2021-01-01".date
 
@@ -30,7 +35,7 @@ class HomeUseCase @Inject constructor(
 
             val dbPost = liveJournalRepository.findPostByUrl(url)
 
-            if (dbPost != null) {
+            if (dbPost?.isDownloaded == true) {
                 emit(Result.OnPostFoundLocal(dbPost))
                 url = liveJournalRepository.nextPostUrl(dbPost.id)
                 continue
@@ -69,7 +74,35 @@ class HomeUseCase @Inject constructor(
             override suspend fun pdfCompleted(fileName: String) {
                 emit(Result.PdfCompleted(fileName))
             }
+
+            override suspend fun onPostSavedInPdf(post: Post, fileName: String) {
+                emit(Result.PostSavedInPdf(post, fileName))
+            }
         })
+        emit(true)
+    }
+
+    fun stats(logs: MutableList<String>, event: String) = flow {
+        val liveJournalCount = appDatabase.postDao.countBySource("LiveJournal")
+        val liveInternetCount = appDatabase.postDao.countBySource("liveInternet")
+        val liveJournalDownloaded = appDatabase.postDao.countBySourceDownloaded("LiveJournal")
+
+        logs.add(0, event)
+
+        val limited = logs.distinct().take(50)
+
+        emit(
+            Result.Stats(
+                liveJournalCount = liveJournalCount,
+                liveInternetCount = liveInternetCount,
+                liveJournalDownloaded = liveJournalDownloaded,
+                logs = limited
+            )
+        )
+    }
+
+    fun deleteLiveInternet() = flow {
+        appDatabase.postDao.deleteLiveInternet()
         emit(true)
     }
 
@@ -80,6 +113,8 @@ class HomeUseCase @Inject constructor(
         data class StartPdf(val fileName: String) : Result
         data class DownloadImage(val url: String, val title: String?) : Result
         data class PdfCompleted(val fileName: String) : Result
+        data class Stats(val liveJournalCount: Int, val liveInternetCount: Int, val logs: List<String>, val liveJournalDownloaded: Int) : Result
+        data class PostSavedInPdf(val post: Post, val fileName: String) : Result
     }
 }
 

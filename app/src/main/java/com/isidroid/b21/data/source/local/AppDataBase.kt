@@ -20,6 +20,7 @@ import com.isidroid.b21.domain.model.Session
 @TypeConverters(RoomConverters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun sessionDao(): SessionDao
+
     abstract val postDao: PostDao
 
     companion object {

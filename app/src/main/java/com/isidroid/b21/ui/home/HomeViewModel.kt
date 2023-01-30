@@ -5,20 +5,23 @@ import androidx.lifecycle.*
 import com.isidroid.b21.domain.use_case.HomeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.inject.Inject
-import kotlin.math.log
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val useCase: HomeUseCase,
-    private val state: SavedStateHandle
 ) : ViewModel() {
-    private val _viewState = MutableLiveData<State>()
-    val viewState: LiveData<State> get() = _viewState
+    private val _viewState = MutableStateFlow<State>(State.Empty)
+    val viewState = _viewState.asStateFlow()
+
+    private val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+    private val monthDateFormat = SimpleDateFormat("MMMM yyyy", Locale.getDefault())
+    private val statDateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
 
     private val logs = mutableListOf<String>()
 
@@ -33,8 +36,8 @@ class HomeViewModel @Inject constructor(
                 .collect {
                     when (it) {
                         is HomeUseCase.Result.OnLoading -> {}
-                        is HomeUseCase.Result.OnPostFoundLocal -> showLogs("${it.post.title} in local!")
-                        is HomeUseCase.Result.OnPostSaved -> showLogs("${it.post.title} saved")
+                        is HomeUseCase.Result.OnPostFoundLocal -> showLogs(monthDateFormat.format(it.post.createdAt!!))
+                        is HomeUseCase.Result.OnPostSaved -> showLogs("${it.post.title} ${dateFormat.format(it.post.createdAt!!)} saved")
                         else -> State.Empty
                     }
                 }
@@ -55,6 +58,7 @@ class HomeViewModel @Inject constructor(
                         is HomeUseCase.Result.StartPdf -> showLogs("start pdf ${it.fileName}")
                         is HomeUseCase.Result.DownloadImage -> showLogs("download image ${it.url} for ${it.title}")
                         is HomeUseCase.Result.PdfCompleted -> showLogs("pdf ${it.fileName} created")
+                        is HomeUseCase.Result.PostSavedInPdf -> showLogs("${it.post.title} saved in ${it.fileName}")
                     }
                 }
 
@@ -71,12 +75,17 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun showLogs(event: String) {
-        logs.add(0, event)
+        if(logs.contains(event))
+            return
 
-        val limited = logs.take(50)
-        logs.clear()
-        logs.addAll(limited)
-
-        _viewState.value = State.OnEvent(logs)
+        viewModelScope.launch {
+            useCase.stats(logs, event)
+                .flowOn(Dispatchers.IO)
+                .catch { _viewState.value = State.OnError(it) }
+                .collect {
+                    _viewState.value = State.OnStats(it.liveInternetCount, it.liveJournalCount, updatedAt = statDateFormat.format(Date()), it.liveJournalDownloaded)
+                    _viewState.value = State.OnEvent(it.logs)
+                }
+        }
     }
 }

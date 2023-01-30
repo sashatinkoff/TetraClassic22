@@ -2,6 +2,7 @@ package com.isidroid.b21.domain.repository
 
 import android.content.Context
 import android.net.Uri
+import com.isidroid.b21.domain.model.Post
 import java.util.Date
 
 interface PdfRepository {
@@ -12,5 +13,6 @@ interface PdfRepository {
         suspend fun startPdf(fileName: String)
         suspend fun downloadImage(url: String, title: String?)
         suspend fun pdfCompleted(fileName: String)
+        suspend fun onPostSavedInPdf(post: Post, fileName: String)
     }
 }

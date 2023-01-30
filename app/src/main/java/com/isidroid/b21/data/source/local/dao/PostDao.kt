@@ -26,4 +26,13 @@ interface PostDao {
 
     @Query("SELECT * FROM post WHERE createdAt BETWEEN :start AND :end ORDER BY createdAt")
     fun filterByDate(start: Date, end: Date): List<Post>
+
+    @Query("SELECT COUNT() FROM post WHERE source = :source")
+    fun countBySource(source: String): Int
+
+    @Query("SELECT COUNT() FROM post WHERE source = :source AND isDownloaded = '1'")
+    fun countBySourceDownloaded(source: String): Int
+
+    @Query("DELETE FROM post WHERE source = 'liveInternet'")
+    fun deleteLiveInternet()
 }

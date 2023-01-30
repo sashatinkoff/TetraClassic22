@@ -17,6 +17,7 @@ import org.jsoup.Jsoup
 import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 class LiveJournalRepositoryImpl(
     private val gson: Gson,
@@ -25,21 +26,28 @@ class LiveJournalRepositoryImpl(
 ) : LiveJournalRepository {
     private val postDao: PostDao by lazy { appDatabase.postDao }
 
-    override suspend fun postHtml(url: String): Post {
-        val cookies: HashMap<String, String> = HashMap()
+    override suspend fun postHtml(url: String, attempt: Int): Post {
+        try {
+            val cookies: HashMap<String, String> = HashMap()
 
-        getCookie(gson).forEach {
-            cookies[it.name] = it.value
+            getCookie(gson).forEach {
+                cookies[it.name] = it.value
+            }
+
+            val html = Jsoup.connect(url)
+                .cookies(cookies)
+                .ignoreHttpErrors(true)
+                .ignoreContentType(true)
+                .timeout(60_000)
+                .execute()
+                .body()
+
+            return parsePost(html, getByUrl = url)
+        } catch (t: Throwable) {
+            if(attempt >= 10) throw t
+
+            return postHtml(url, attempt + 1)
         }
-
-        val html = Jsoup.connect(url)
-            .cookies(cookies)
-            .ignoreHttpErrors(true)
-            .ignoreContentType(true)
-            .execute()
-            .body()
-
-        return parsePost(html, getByUrl = url)
     }
 
     override suspend fun nextPostUrl(postId: String, isNext: Boolean): String {
@@ -53,6 +61,8 @@ class LiveJournalRepositoryImpl(
     override suspend fun parsePost(html: String, getByUrl: String): Post {
 //        val file = File(App.instance.cacheDir, "download_file.html")
 //        file.bufferedWriter().use { out -> out.write(html) }
+
+        Timber.i("$getByUrl")
 
         val document = Jsoup.parse(html)
         val url = document.getElementsByTag("meta").firstOrNull { it.attr("property") == "og:url" }?.attr("content")!!

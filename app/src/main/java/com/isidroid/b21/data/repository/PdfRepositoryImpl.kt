@@ -12,13 +12,11 @@ import com.isidroid.b21.ext.bitmapToByteArray
 import com.isidroid.b21.ext.saveToFile
 import com.isidroid.core.ext.addMonths
 import com.isidroid.core.ext.md5
-import com.isidroid.core.ext.string
 import com.isidroid.core.ext.tryCatch
 import com.itextpdf.text.*
 import com.itextpdf.text.pdf.BaseFont
 import com.itextpdf.text.pdf.PdfWriter
 import org.jsoup.Jsoup
-import timber.log.Timber
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -150,6 +148,8 @@ class PdfRepositoryImpl(
 
             if (post.isLiveJournal)
                 document.add(Paragraph("\n"))
+
+            listener.onPostSavedInPdf(post, fileName)
         }
 
         listener.pdfCompleted(fileName)

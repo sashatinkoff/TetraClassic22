@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.navArgs
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {
@@ -41,11 +45,16 @@ class HomeFragment : BindFragment(), HomeView {
     }
 
     override fun onCreateViewModel() {
-        viewModel.viewState.observe(this) { state ->
-            when (state) {
-                is State.OnError -> showError(state.t)
-                State.Empty -> {}
-                is State.OnEvent -> onEvent(state.logs)
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                viewModel.viewState.collect { state ->
+                    when (state) {
+                        is State.OnError -> binding.statusTextView.text = "${state.t}"
+                        State.Empty -> {}
+                        is State.OnEvent -> onEvent(state.logs)
+                        is State.OnStats -> onStats(state.liveJournalCount, state.liveInternetCount, state.updatedAt, state.liveJournalDownloaded)
+                    }
+                }
             }
         }
     }
@@ -56,6 +65,16 @@ class HomeFragment : BindFragment(), HomeView {
                 append("- $s")
                 append("\n")
             }
+        }
+    }
+
+    override fun onStats(liveJournalCount: Int, liveInternetCount: Int, updatedAt: String, liveJournalDownloaded: Int) {
+        binding.statusTextView.text = buildString {
+            append(updatedAt)
+            append("\n")
+            append("liveJournalCount=$liveJournalCount/$liveJournalDownloaded")
+            append("\n")
+            append("liveInternetCount=$liveInternetCount")
         }
     }
 
