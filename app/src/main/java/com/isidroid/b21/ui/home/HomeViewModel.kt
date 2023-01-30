@@ -45,7 +45,6 @@ class HomeViewModel @Inject constructor(
 
     fun createPdf(uri: Uri) {
         viewModelScope.launch {
-
             useCase.createPdf(uri)
                 .flowOn(Dispatchers.IO)
                 .catch { Timber.e(it) }
@@ -53,6 +52,15 @@ class HomeViewModel @Inject constructor(
                     _viewState.value = State.OnPdfCreated
                 }
 
+        }
+    }
+
+    fun liveinternet() {
+        viewModelScope.launch {
+            useCase.liveinternet()
+                .flowOn(Dispatchers.IO)
+                .catch { Timber.e(it) }
+                .collect { _viewState.value = State.OnLiveInternet }
         }
     }
 }

@@ -13,6 +13,7 @@ import com.isidroid.b21.ext.saveToFile
 import com.isidroid.core.ext.addMonths
 import com.isidroid.core.ext.md5
 import com.isidroid.core.ext.string
+import com.isidroid.core.ext.tryCatch
 import com.itextpdf.text.*
 import com.itextpdf.text.pdf.BaseFont
 import com.itextpdf.text.pdf.PdfWriter
@@ -30,7 +31,7 @@ class PdfRepositoryImpl(
 
     override suspend fun create(context: Context, uri: Uri) {
         var date: Date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-            .parse("2005-01-01 01:00:00")!!
+            .parse("2000-01-01 01:00:00")!!
         val yearFormat = SimpleDateFormat("yyyyy", Locale.getDefault())
 
         while (true) {
@@ -61,10 +62,6 @@ class PdfRepositoryImpl(
             "${pdfFileName}_${format(start)}"
         }
 
-
-        Timber.i("create ${start.string}-${end.string}, fileName=$fileName")
-
-
         val textSize = 9f
 
         val baseFont = BaseFont.createFont("/assets/font.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED)
@@ -91,16 +88,23 @@ class PdfRepositoryImpl(
         posts.forEach { post ->
             val imageInsertion = "image_insertion_${UUID.randomUUID()}"
             val date = dateFormat.format(post.createdAt!!)
-            var content = post.html!!
+
+            var content = post.html.orEmpty()
+                .replace("<html>\n", "").replace("</html>\n", "")
+                .replace("<body>\n", "").replace("</body>\n", "")
+                .replace("<head>\n", "").replace("</head>\n", "")
+                .replace("<html>", "").replace("</html>", "")
+                .replace("<body>", "").replace("</body>", "")
+                .replace("<head>", "").replace("</head>", "")
+
+                .replace("<p>", "").replace("</p>", "")
+                .replace("<strong>", "").replace("</strong>", "")
+
                 .replace("<br><br>", "")
                 .replace("<br />", "\n")
                 .replace("<br>", "\n")
-                .replace("<p>", "")
-                .replace("</p>", "")
                 .replace("<a name=\"cutid1\"></a>", "\n")
                 .replace("&nbsp;", " ")
-                .replace("<strong>", "")
-                .replace("</strong>", "")
 
             content = "/\\s+/g".toRegex().replace(content, "\n")
 
@@ -127,7 +131,7 @@ class PdfRepositoryImpl(
                 content = content.replace("$element", element.attr("href"))
             }
 
-            document.add(Paragraph("$date, ${post.url}", fontMedium))
+            document.add(Paragraph("$date, ${post.url} ${post.id}", fontMedium))
 
             val content2 = content.split(imageInsertion)
             content2.forEachIndexed { index, text ->
@@ -139,10 +143,12 @@ class PdfRepositoryImpl(
                     val bitmap = if (file.exists()) {
                         BitmapFactory.decodeFile(file.absolutePath)
                     } else {
-                        val body = apiLiveJournal.downloadFile(url).execute().body()
-                        val outputStream = body?.byteStream()
-                        BitmapFactory.decodeStream(outputStream)
-                            .also { it.saveToFile(file) }
+                        tryCatch {
+                            val body = apiLiveJournal.downloadFile(url).execute().body()
+                            val outputStream = body?.byteStream()
+                            BitmapFactory.decodeStream(outputStream)
+                                .also { it.saveToFile(file) }
+                        }
                     }
 
                     if (bitmap != null) {
@@ -153,7 +159,7 @@ class PdfRepositoryImpl(
             }
 
 
-            document.add(Paragraph("\n\n"))
+            document.add(Paragraph("\n"))
         }
 
         document.close()

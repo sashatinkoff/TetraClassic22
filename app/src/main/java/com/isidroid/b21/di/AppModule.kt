@@ -36,7 +36,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideLiveJournalRepository(gson: Gson, appDatabase: AppDatabase): LiveJournalRepository = LiveJournalRepositoryImpl(gson, appDatabase)
+    fun provideLiveJournalRepository(gson: Gson, appDatabase: AppDatabase, context: Context): LiveJournalRepository = LiveJournalRepositoryImpl(gson, appDatabase, context)
 
     @Singleton
     @Provides

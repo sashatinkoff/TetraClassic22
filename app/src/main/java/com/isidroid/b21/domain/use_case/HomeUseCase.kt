@@ -5,6 +5,7 @@ import android.net.Uri
 import com.isidroid.b21.domain.model.Post
 import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.domain.repository.PdfRepository
+import com.isidroid.core.ext.date
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 import javax.inject.Inject
@@ -21,14 +22,13 @@ class HomeUseCase @Inject constructor(
 
     fun start() = flow {
         isRunning = true
-        var url = "https://fixin.livejournal.com/1196017.html"
+        var url = "https://fixin.livejournal.com/385.html"
+        val deadline = "2021-01-01".date
 
         while (true) {
             if (!isRunning) break
 
             val dbPost = liveJournalRepository.findPostByUrl(url)
-
-            Timber.i("findPostByUrl $url, dbPost=${dbPost != null}")
 
             if (dbPost != null) {
                 emit(Result.OnPostFoundLocal(dbPost))
@@ -41,7 +41,15 @@ class HomeUseCase @Inject constructor(
             emit(Result.OnPostSaved(post))
 
             url = liveJournalRepository.nextPostUrl(post.id)
+
+            if (post.createdAt?.after(deadline) == true)
+                break
         }
+    }
+
+    fun liveinternet() = flow {
+        liveJournalRepository.loadLiveInternet()
+        emit(true)
     }
 
     fun stop() {
@@ -50,9 +58,6 @@ class HomeUseCase @Inject constructor(
 
     fun createPdf(uri: Uri) = flow {
         pdfRepository.create(context, uri)
-
-
-
         emit(true)
     }
 

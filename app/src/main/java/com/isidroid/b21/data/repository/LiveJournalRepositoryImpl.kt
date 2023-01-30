@@ -1,20 +1,27 @@
 package com.isidroid.b21.data.repository
 
+import android.content.Context
 import androidx.core.net.toUri
 import com.google.gson.Gson
+import com.isidroid.b21.data.mapper.PostMapper
 import com.isidroid.b21.data.source.local.AppDatabase
 import com.isidroid.b21.data.source.local.dao.PostDao
 import com.isidroid.b21.data.source.remote.getCookie
+import com.isidroid.b21.data.source.remote.response.RssDocumentResponse
 import com.isidroid.b21.domain.model.Post
 import com.isidroid.b21.domain.repository.LiveJournalRepository
+import com.isidroid.b21.ext.assetsFileContent
+import com.isidroid.core.ext.fromJson
 import com.isidroid.core.ext.tryCatch
 import org.jsoup.Jsoup
+import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 
 class LiveJournalRepositoryImpl(
     private val gson: Gson,
-    private val appDatabase: AppDatabase
+    private val appDatabase: AppDatabase,
+    private val context: Context
 ) : LiveJournalRepository {
     private val postDao: PostDao by lazy { appDatabase.postDao }
 
@@ -101,4 +108,47 @@ class LiveJournalRepositoryImpl(
 
     override suspend fun findPostById(id: String): Post? = postDao.findById(id)
     override suspend fun findPostByUrl(url: String): Post? = postDao.findByUrl(url) ?: postDao.findByGetByUrl(url)
+
+    override suspend fun loadLiveInternet() {
+        val files = arrayOf(
+            "00.winter_2003",
+            "01._spring_2003",
+            "02._summer_2003",
+            "03._autumn_2003",
+            "04._winter_2004",
+            "05._spring_2004",
+            "06._summer_2004",
+            "07.autumn_2004",
+            "08.winter_2005",
+            "09.spring_2005",
+            "10.summer_2005",
+//            "11.autumn_2005",
+            "12.winter_2006",
+            "13.spring_2006",
+            "14.summer_2006",
+            "15.autumn_2006",
+            "16.winter_2007",
+            "17.spring_2007-1",
+            "18.spring_2007",
+            "19.summer_2007-1",
+            "20.summer_2007",
+            "21.autumn_2007-1",
+            "22.autumn_2007",
+            "23.winter_2008-1",
+            "24.winter_2008",
+            "25.spring_2008",
+            "26.summer_2008",
+            "27.autumn_2008",
+            "28.winter_2009"
+        )
+
+        files.forEachIndexed { filePosition, fileName ->
+            val file = "$fileName.txt"
+            val json = file.assetsFileContent(context)
+            val data = gson.fromJson<RssDocumentResponse>(json)
+
+            val posts = data.rss.channel.items.map { PostMapper.transformNetwork(it) }
+            postDao.insert(*posts.toTypedArray())
+        }
+    }
 }

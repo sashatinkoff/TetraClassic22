@@ -1,5 +1,6 @@
 package com.isidroid.b21.ext
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Matrix
 import androidx.navigation.NavController
@@ -55,3 +56,5 @@ fun Bitmap.saveToFile(dest: File): Boolean {
         false
     }
 }
+
+fun String.assetsFileContent(context: Context) = context.assets.open(this).bufferedReader().use { it.readText() }

@@ -32,9 +32,13 @@ class HomeFragment : BindFragment(), HomeView {
 
     override fun createForm() {
         with(binding) {
-            button.setOnClickListener { viewModel.create() }
+            button.setOnClickListener {
+                binding.textView.text = ""
+                viewModel.create()
+            }
             buttonStop.setOnClickListener { viewModel.stop() }
             buttonPdf.setOnClickListener { documentPdfContract.launch(null) }
+            buttonLiveinternet.setOnClickListener { viewModel.liveinternet() }
         }
     }
 
@@ -47,6 +51,7 @@ class HomeFragment : BindFragment(), HomeView {
                 is State.OnLoading -> onLoading(state.url)
                 is State.OnPostFoundLocal -> onPostFoundLocal(state.post)
                 State.OnPdfCreated -> binding.textView.text = "PDF created"
+                State.OnLiveInternet -> binding.textView.text = "Liveinternet"
             }
         }
     }

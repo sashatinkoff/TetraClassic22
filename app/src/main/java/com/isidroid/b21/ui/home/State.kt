@@ -12,4 +12,5 @@ sealed class State {
 
     object Empty : State()
     object OnPdfCreated: State()
+    object OnLiveInternet: State()
 }

@@ -1,0 +1,3158 @@
+﻿{
+    "rss": {
+        "channel": {
+            "title": {
+                "__cdata": "fixin"
+            },
+            "link": "https://www.liveinternet.ru/users/fixin/",
+            "description": {
+                "__cdata": "Дневник fixin :: LiveInternet"
+            },
+            "generator": "LiveInternet / LiveInternet.ru",
+            "updatePeriod": {
+                "__prefix": "sy",
+                "__text": "hourly"
+            },
+            "updateFrequency": {
+                "__prefix": "sy",
+                "__text": "1"
+            },
+            "language": "ru",
+            "copyright": "fixin",
+            "image": {
+                "url": "https://i.li.ru/av/799/34799_2136489.jpg",
+                "title": "",
+                "link": "https://www.liveinternet.ru/users/fixin/"
+            },
+            "item": [
+                {
+                    "title": {
+                        "__cdata": "О роботах пылесосах будущего"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58792476/"
+                    },
+                    "description": {
+                        "__cdata": "Проблемы современных роботов пылесосов в том что они слишком большие.<br /> В будущем робот пылесос будет состоять из множества маленьких сборщиков-протирщиков мусора, которые будут бегать по офису, уворачиваясь от ног...<br /> В колонках играет: <i>Rihanna -  SOS (Rescue Me) {mp3SHARE ru - rihanna - sos rescue me}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 29 Nov 2007 18:41:09 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58792476/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58792476/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58792476/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Охренительные телки на собеседовании"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58784499/"
+                    },
+                    "description": {
+                        "__cdata": "http://top-3.ru/other/1/girl_on.php<br /> Охренеть, какие промежутки между ногами... ;-)<br /> гыгыгы...<br /> В колонках играет: <i>Алла Пугачевав и Владимир Кузьмин -  Две звезды {Алла Пугачевав и Владимир Кузьмин - Две звезды}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 29 Nov 2007 17:56:10 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58784499/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "7"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58784499/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58784499/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Песенка из Питер-FM"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58746142/"
+                    },
+                    "description": {
+                        "__cdata": "В питер-фм мне понравилась одна песенка про проблемы, растаманская такая. Кто-нибудь знает, что это за песенка и где ее можно скачать?<br /> В колонках играет: <i>Big World meets Gerald -  Open Your Heart {Big World meets Gerald - Open Your Heart}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 29 Nov 2007 09:59:20 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58746142/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58746142/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58746142/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Игра в длину члена"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745976/"
+                    },
+                    "description": {
+                        "__cdata": "Обычно вопрос о длине члена задают всякие пидоры, которые прикидываются девками.<br /> Но с одной точно девкой я решил сыграть в игру. У нее было три попытки угадать мою длину, а я говорил больше или меньше. Она угадала с погрешностью  до одного сантиметра! Женская интуиция, гыгыгы.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 29 Nov 2007 09:54:07 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58745976/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745976/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745976/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Опробовал кофехауз в Атриуме"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745053/"
+                    },
+                    "description": {
+                        "__cdata": "Опробовал кофехауз в атриуме - ну тот, про который писал.<br /> С помощью купона купил два кофе, потратив на все 99 руб. Официант не домогался глупыми вопросами типо \"кофе за 200\" за что был вознагражден 20 рублями на чай.<br /> Он принес штук шесть купонов, гыгыгыгы.<br /> Кстати в 19 вечера все столики в кофехаузе заняты, но внутри почему-то свободны. Там мы с девушкой и сидели. <br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 29 Nov 2007 09:18:55 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58745053/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745053/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745053/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "140"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745009/"
+                    },
+                    "description": {
+                        "__cdata": "Ноябрь уже заканчивается, а у меня в загашнике 140 подходов к бабам за этот месяц.<br /> Не 200 конечно, как в рекордный месяц, но тоже неплохо. Процесс идет.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 29 Nov 2007 09:17:24 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58745009/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "13"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745009/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58745009/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "И было мне icq-ное счастье"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58744990/"
+                    },
+                    "description": {
+                        "__cdata": "Нашел прокси socks5 для icq, которую мало кто знает, соответственно исчезли траблы, что дома не могу выйти в аську с билайна. <br /> Мне тут на работе выдели билайновский телефон, так я с него жепеэречусь к интернету и выхожу в аську.<br /> Прокся настолько удобная, что я даже на работе на ней сижу, не переключаясь на режим без прокси. Войля!<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 29 Nov 2007 09:16:42 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58744990/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58744990/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58744990/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Наша Раша и Копирайт"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58638637/"
+                    },
+                    "description": {
+                        "__cdata": "Купил в Ашане диски \"Наша раша 3, 4\".<br /> Дык ни домашним плеером ни домашним ДВД ридером не читаются.<br /> А вот на рабочем ДВД читается.<br /> Придется переписать на винт, с него на болванку, чтобы можно было дома на плеере смотреть. С одной стороны пиратство, с другой - надо же както посмотреть купленное за свои бабки кино!<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 28 Nov 2007 11:39:01 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58638637/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58638637/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58638637/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Есть предложения?"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58526089/"
+                    },
+                    "description": {
+                        "__cdata": "Торможу телку. <br /> Беру телефон.<br /> Я: Торопишься домой?<br /> О: А что, есть предложения?<br /> Я: (Вспоминая, что бабла нет) Сегодня, к сожалению нет.<br /> <br /> Вот так вот, когда есть телка, нет денег даже на кофе. Диалектика, мазафака.<br /> В колонках играет: <i> За красоту {За красоту}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 27 Nov 2007 10:39:41 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58526089/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58526089/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58526089/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Навернулась SD-карточка"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58524800/"
+                    },
+                    "description": {
+                        "__cdata": "При архивировании КПК навернулась SD-карточка, потому что у нее кончилось свободное место, в результате, когда я вставил карту в ридер, она оказалась девственно пустой. К счастью, последний раз архив карты я делал 10 дней назад. <br /> Там были только установленные программы для КПК и архивы данных этих программ. <br /> Так что все пучком.<br /> В колонках играет: <i>Unknown Artist -  Track 3 {Слезинки}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 27 Nov 2007 09:55:49 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58524800/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58524800/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58524800/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Пикап жив"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58524137/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера было плохое настроение - с утра только три, а вечером ваще нонсенс - ноль подходов.<br /> Зато сегодня утром наверстал - 4 подхода и еще один контакт. ;-)<br /> Будет кого водить в кофехауз!<br /> В колонках играет: <i>Unknown Artist -  Track 11 {О любви не говорят}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 27 Nov 2007 09:30:25 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58524137/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58524137/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58524137/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Мелодрама \"Свои дети\""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58448126/"
+                    },
+                    "description": {
+                        "__cdata": "Посмотрел вчера по РТР эту киношку, трогательный такой фильм.<br /> В начале только и говоришь главному герою \"Козел, козел, козел\", а потом в конце \"Молодец, молодец, молодец\"! ;-)<br /> Стоит посмотреть!<br /> В колонках играет: <i>Света -  Твои глаза {Света - Твои глаза}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 26 Nov 2007 17:23:05 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58448126/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58448126/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58448126/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Настелил МДФ на стенку"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58414001/"
+                    },
+                    "description": {
+                        "__cdata": "Потратил практически 6 часов на то, что застелить 2 метра стенки стеновой панелью МДФ цвета \"зеленая сосна\" (светло салатовый).<br /> 1.5 метра я повесил на рейки скобками, 0.5 метра приклеил.<br /> Научился пользоваться стандартным строительным пистолетом, долго не мог понять, как вставить в него тубус клея, потом дошло. Но расход клея дикий - одна банка на 3 МДФ панели, трандец.<br /> Половину скоб забивал неправильно - на два гвоздя, оказывается нужно было вдавить их в панель, а потом на один только гвоздь. Дошло только, когда почитал на этикетке - 100 скоб, 100 гвоздей - значит по одному гвоздю на скобу, гыгыгы.<br /> В дороге уголки поломались посредине - нужно было их ложить между панелями, придется еще раз покупать. Так что глянец наведу позже. ;-)<br /> У меня не было электролобзика, так что краевых две панели обрезал по контуру с помощью отвертки, по которой стучал молотком, на это ушло часа полтора, мазафака. ;-)<br /> Зато теперь все светло и красиво. Какое все красивое, какое все зеленое! ;-)<br /> В колонках играет: <i>М.Распутина и Ф.Киркоров -  Мечта {М.Распутина и Ф.Киркоров - Мечта}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 26 Nov 2007 10:25:48 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58414001/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "12"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58414001/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58414001/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Социнженеры жгут!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58413321/"
+                    },
+                    "description": {
+                        "__cdata": "Вот один из методов. <br /> Захватывается аська, затем пишут - привет, давно не общались, я тебя уже и не помни, ты у меня в контакт-списке, а хистори не сохранилась. Не напомнишь, если у тебя хистори сохранилась. И жертва кидает хисторь... ;-)<br /> Ну я кинул только первые 10 реплик... ;-)<br /> Правда, это действительно оказалась настоящая телка, но как заготовка для соц инженеров неплохо...<br /> В колонках играет: <i>Карина -  Вишневый ветер {Карина - Вишневый ветер}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 26 Nov 2007 10:03:27 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58413321/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58413321/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58413321/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Тупой фишинг"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58412680/"
+                    },
+                    "description": {
+                        "__cdata": "Вот что свалилось в мой ящик. Перенаправил на support@mail.ru, пусть разбираются с этими фишерами:<br /> <br /> <blockquote> <br /> Здравствуйте!<br /> <br /> <br /> За последнюю неделю было произведено большое количество попыток несанкционированного доступа к Вашему почтовому ящику.<br /> Для того чтобы наша служба поддержки смогла предоставить дополнительные средства для обеспечения безопасности вашего<br /> почтового ящика, нам необходимо удостовериться, что в системе находитесь вы, а не другой пользователь под вашим именем.<br /> <br /> Более подробная информация по данному вопросу и форма для подтверждения ваших прав на этот п/я находится по адресу:<br />  <br /> <br /> http:///cln2863/a434236ez7536c66.hocomua.ru/Sp3CHp8NmwiiFJLfY-g5/89751db02a0f81a577dc9e55f5a5b045/JF1PiVeN9aXcpwvVxCU-2wbHoPV-L1Q3FDbTX7kXTWFm3BaC2NIFjw5HNYcKtdx6_iGN-ERWlBBz6T-lUttiPbIHvmhs3Bmn5OCy8dtXaA0wYVrt8W5XvgQkGzxD3YnqNWFP<br /> <br /> <br /> Чтобы заполнить форму достаточно просто нажать на ссылку или скопировать её в окно вашего браузера.<br /> В случае если ваши данные окажутся не верными Администрация Mail.Ru будет в праве заблокировать ваш почтовый ящик.<br /> Так как будет предполагаться, что ящик используется злоумышленником завладевшим вашим паролем.<br /> <br /> Служба поддержки пользователей Mail.Ru<br />  </blockquote><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 26 Nov 2007 09:40:45 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58412680/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58412680/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58412680/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Новый этап в пекабе."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58125811/"
+                    },
+                    "description": {
+                        "__cdata": "Раньше схема была:<br /> Я:Девушка! (дождаться внимания) <br /> Я:Давай познакомимся!<br /> <br /> Теперь я ее немного расширил:<br /> Я:Девушка! (дождаться внимания) <br /> Я:Давай познакомимся!<br /> Д:Нет.<br /> Я:Почему?(получить развернутый ответ)<br /> <br /> В общем работаю в основном по этой схеме, хотя вместо \"Почему\" чаще говорю \"А чего так?\""
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 23 Nov 2007 18:04:40 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58125811/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58125811/"
+                    },
+                    "category": {
+                        "__cdata": "Девушки"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58125811/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Разобрался как искать телефоны!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58121684/"
+                    },
+                    "description": {
+                        "__cdata": "Для Яндекса:<br /> <br /> (!926 /+1 !219 /+1 !16 /+1 !03 /+1)//1<br /> ! - обозначает отключить морфологию, ну его можно не использовать, т.к. цифры не подвержены морфологии.<br /> /+1 - обозначает минимальное расстояние между словами<br /> //1 - обозначает, что нужно использовать точное соответствие.<br /> <br /> http://help.yandex.ru/search/?id=481939#context<br /> <br /> В общем теперь можно искать только то, что нужно!<br /> В колонках играет: <i>Монокини -  Ветер {Монокини - Ветер}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 23 Nov 2007 17:26:32 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58121684/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58121684/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58121684/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "PIM достиг некоторого функционала"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58088580/"
+                    },
+                    "description": {
+                        "__cdata": "По крайней мере им можно уже сейчас пользоваться для ведения списка задач, что я сейчас и делаю.<br /> Можно делить задачи по категориям (причем иерархия категорий - это сеть, т.е. каждая категория может иметь несколько родителей, но без циклов).<br /> Что касается дат, у каждой задачи есть пока дата актуальности, и отбор есть по дате актуальности (больше, меньше заданной даты).<br /> Можно отбирать открытые и закрытые задачи, искать задачи по вхождению подстроки, рассматривать дерево категорий задач.<br /> <br /> Жду ваших мыслей по дальнейшему совершенствованию PIM.<br /> Пока хочу заняться добавлением в PIM контактов, привязки их к задачам.<br /> <br /> Вот несколько скриншотов PIM.<br /> <br /> <img src=\"http://img1.liveinternet.ru/images/attach/b/3/9/329/9329186_gruppovoy_redaktor_kategoriy.JPG\" width=\"699\" height=\"385\" alt=\" (699x385, 54Kb)\" /><br /> <img src=\"http://img0.liveinternet.ru/images/attach/b/3/9/329/9329197_otbor_zakruytuyh_zadach_i_po_kategorii.JPG\" width=\"699\" height=\"385\" alt=\" (699x385, 51Kb)\" /><br /> <img src=\"http://img1.liveinternet.ru/images/attach/b/3/9/329/9329266_otbor_otkruytuyh_zadach__otbor_po_kategorii.JPG\" width=\"700\" height=\"386\" alt=\" (700x386, 39Kb)\" /><br /> <img src=\"http://img1.liveinternet.ru/images/attach/b/3/9/329/9329295_otbor_otkruytuyh_zadach.JPG\" width=\"699\" height=\"384\" alt=\" (699x384, 54Kb)\" /><br /> <img src=\"http://img0.liveinternet.ru/images/attach/b/3/9/329/9329316_otbor_po_date_aktualnosti_zadachi.JPG\" width=\"699\" height=\"384\" alt=\" (699x384, 41Kb)\" /><br /> <img src=\"http://img0.liveinternet.ru/images/attach/b/3/9/329/9329324_Otbor_po_naimenovaniyu_zadachi.JPG\" width=\"699\" height=\"592\" alt=\" (699x592, 90Kb)\" /><br /> <img src=\"http://img0.liveinternet.ru/images/attach/b/3/9/329/9329404_prosmotr_i_vvod_dannuyh_v_vebstranicu_spisok_sohranennuyh_vebstranic.JPG\" width=\"699\" height=\"514\" alt=\" (699x514, 77Kb)\" /><br /> <img src=\"http://img1.liveinternet.ru/images/attach/b/3/9/329/9329427_Soderzhanie_redaktiruetsya_kak_HTML_tekst.JPG\" width=\"700\" height=\"554\" alt=\" (700x554, 66Kb)\" />"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 23 Nov 2007 11:44:26 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58088580/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58088580/"
+                    },
+                    "enclosure": [
+                        {
+                            "_url": "http://img1.liveinternet.ru/images/attach/b/3/9/329/9329186_gruppovoy_redaktor_kategoriy.JPG",
+                            "_type": "image/jpeg",
+                            "_width": "699",
+                            "_height": "385",
+                            "_length": "0"
+                        },
+                        {
+                            "_url": "http://img0.liveinternet.ru/images/attach/b/3/9/329/9329197_otbor_zakruytuyh_zadach_i_po_kategorii.JPG",
+                            "_type": "image/jpeg",
+                            "_width": "699",
+                            "_height": "385",
+                            "_length": "0"
+                        },
+                        {
+                            "_url": "http://img1.liveinternet.ru/images/attach/b/3/9/329/9329266_otbor_otkruytuyh_zadach__otbor_po_kategorii.JPG",
+                            "_type": "image/jpeg",
+                            "_width": "700",
+                            "_height": "386",
+                            "_length": "0"
+                        },
+                        {
+                            "_url": "http://img1.liveinternet.ru/images/attach/b/3/9/329/9329295_otbor_otkruytuyh_zadach.JPG",
+                            "_type": "image/jpeg",
+                            "_width": "699",
+                            "_height": "384",
+                            "_length": "0"
+                        },
+                        {
+                            "_url": "http://img0.liveinternet.ru/images/attach/b/3/9/329/9329316_otbor_po_date_aktualnosti_zadachi.JPG",
+                            "_type": "image/jpeg",
+                            "_width": "699",
+                            "_height": "384",
+                            "_length": "0"
+                        },
+                        {
+                            "_url": "http://img0.liveinternet.ru/images/attach/b/3/9/329/9329324_Otbor_po_naimenovaniyu_zadachi.JPG",
+                            "_type": "image/jpeg",
+                            "_width": "699",
+                            "_height": "592",
+                            "_length": "0"
+                        },
+                        {
+                            "_url": "http://img0.liveinternet.ru/images/attach/b/3/9/329/9329404_prosmotr_i_vvod_dannuyh_v_vebstranicu_spisok_sohranennuyh_vebstranic.JPG",
+                            "_type": "image/jpeg",
+                            "_width": "699",
+                            "_height": "514",
+                            "_length": "0"
+                        },
+                        {
+                            "_url": "http://img1.liveinternet.ru/images/attach/b/3/9/329/9329427_Soderzhanie_redaktiruetsya_kak_HTML_tekst.JPG",
+                            "_type": "image/jpeg",
+                            "_width": "700",
+                            "_height": "554",
+                            "_length": "0"
+                        }
+                    ],
+                    "category": [
+                        {
+                            "__cdata": "1С"
+                        },
+                        {
+                            "__cdata": "Органайзер"
+                        }
+                    ],
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58088580/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Забавная статистика сайта i2i.ru"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58086414/"
+                    },
+                    "description": {
+                        "__cdata": "По плану актуализировал там анкету (нужно делать раз в 6 месяцев).<br /> Вот статистика:<br /> <br /> Ваша анкета впервые опубликована 13.02.2002 <br /> Ваша анкета просмотрена 86 раз<br /> В последний раз вы здесь были 14.07.2006 <br /> <br /> На сайте сейчас 10 пользователей<br /> Со дня Вашего последнего посещения на сайте зарегистрировано 310 новых пользователей<br /> <br /> Т.е. за один год добавлено всего 310 пользователей. Круть!<br /> В колонках играет: <i> Track 7 {07 - Письмо маме}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 23 Nov 2007 10:58:44 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58086414/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58086414/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58086414/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Событие, однако!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58086052/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня впервые в истории моего общения с интернетом девка сама написала мне предложение познакомиться в системе знакомств mamba.ru.<br /> <br /> Что это? Пятна на солнце? Или развод?<br /> В колонках играет: <i> Track 5 {05 - Здравствуйте !}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 23 Nov 2007 10:50:55 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58086052/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "5"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58086052/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58086052/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "О черном списке баб"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58084639/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня девушка дает мне свой номер и приговаривает - ну если надоешь, занесу тебя в черный список, ладно, бери номер, звони. ;-)<br /> В колонках играет: <i>МИХАИЛ КРУГ -  Каторжанская цыганочка {06. Каторжанская цыганочка}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 23 Nov 2007 10:14:31 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58084639/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58084639/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58084639/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "О Вавилове..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58084616/"
+                    },
+                    "description": {
+                        "__cdata": "Посмотрел вчера документальный фильм про Вавилова. Его приговорили к расстрелу, но потом хотели посадить в шарашку. Однако началась война и он затерялся под саратовом, короче умер в камере от голода. Мрак, конечно.<br /> Так вот, Вавилов после приговора написал план, что если ему дадут пожить год, он сможет при интенсивном труде закончить такие-то научные исследования. <br /> Это заставило меня задуматься, а что я могу предложить за это время?<br /> Предложить не расстреливать меня до тех пор, пока найдется хоть одна баба, которая хочет со мной на халяву потрахаться? Интересно сколько проживу?<br /> Или сказать, что за год сидения в камере закончу свой PIM? гыгыгыгы...<br /> Интересные мыслишки возникают...<br /> В колонках играет: <i>МИХАИЛ КРУГ -  Постой душа {05. Постой душа}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 23 Nov 2007 10:13:57 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58084616/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58084616/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58084616/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Железнодорожники-мазафакеры"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58083363/"
+                    },
+                    "description": {
+                        "__cdata": "Ну что им сложно что ли после того, как скажут \"Следующая остановка - Новогиреево\", добавить \"Поезд не останавливается на таких-то таких станциях\". А то народ стоит и гадает, остановится поезд или нет... Сцуки!<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 23 Nov 2007 09:35:14 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post58083363/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58083363/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post58083363/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Интересно, а чукотские женщины давать будут на этом празднике жизни?"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57986439/"
+                    },
+                    "description": {
+                        "__cdata": "Пришел спам, вот думаю, женщины туда включены или нет:<br /> <blockquote> <br /> <br /> Экзотическая Новогодняя ночь в чуме!<br /> 31  декабря - 01 января<br /> <br />         Настоящий поселок оленеводов!<br />         Олени и шаманы, хоровод вокруг огромного костра, саамские танцы и пляски.<br />         Поздравление Деда Мороза, игровое развлекательное шоу, национальные лапландские игры. Катание на собачей упряжке.<br />         Новогодний банкет в чуме - оленина по-саамски, шашлык, семга на гриле, закуски, шампанское и водка.  «Чумовая дискотека». <br />         Все включено!!<br /> <br /> Комфортабельный автобус привезет Вас на праздник и обратно!<br /> Настоящая деревня оленеводов на 8 км Новорижского шоссе<br /> <br />  </blockquote><br /> В колонках играет: <i> 181 Ой, на горі високій {181 Ой, на горі високій}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 13:13:34 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57986439/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57986439/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57986439/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "СМСки с Пчелайна!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57977770/"
+                    },
+                    "description": {
+                        "__cdata": "С Билайна опять можно отправлять СМСки! ;-)<br /> В колонках играет: <i>Сектор газа -  Ява {mp3SHARE ru - sektor gaza - yava}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 11:49:11 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57977770/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57977770/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57977770/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Новый кабинет"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57976596/"
+                    },
+                    "description": {
+                        "__cdata": "Нас перевели в новый кабинет - тут тесновато. Пока еще нет мусорки.<br /> Шкаф один, тумбочек нет, зато стены свободны, думаю раскрутить начальство, чтобы оно полки понавешало, чтобы хоть туда можно было вещи поскладывать. ;-) .<br /> В колонках играет: <i>Сектор газа -  Демобилизация {sektor gaza - demobilizaciya}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 11:24:33 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57976596/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57976596/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57976596/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Старый импотент Пал Палыч"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57976192/"
+                    },
+                    "description": {
+                        "__cdata": "Смотрю \"Кадетство\", там психолог романова сама раздвинула ноги перед полковником Пал Палычем, а Пал Палыч возьми, обидься на нее и брось. Обидно психологине, аж рыдает, гыгыгы...<br /> <br /> Кстати, там еще прикол, у Трофима есть баб-лист, так у него такой же счетчик, как у меня. У меня 76 в 32 года, у него 76 в 18. Жжошь, Трофим! ;-)<br /> В колонках играет: <i> Track 10 {10 - Падал снег}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 11:16:12 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57976192/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57976192/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57976192/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Перерождение избирательного права"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57975091/"
+                    },
+                    "description": {
+                        "__cdata": "Вот помню у какого-то фантаста избирательное право заключалось в том, что человек на компьютере распределял бюджет государства - военным столько-то врачам столько-то...<br /> <br /> Думаю, еще некоторое время и можно будет прийти к тому же самому - народ будет голосовать не за партии, а по пунктам программы.<br /> <br /> Легализация порно - да, легализация наркотиков - да, легализ оружия - нет... ;-)<br /> В колонках играет: <i> Track 18 {05 - Маравихер 2}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 10:52:00 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57975091/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57975091/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57975091/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Патриоты"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57974997/"
+                    },
+                    "description": {
+                        "__cdata": "Вчерась игрался в игру \"Patriots\", такой незамысловатый шутер про постядерную войну с терорристами в америке. Купил его в ашане за 39 рублей на распродаже.<br /> Ничего такой, только быстро убивают. ;-)<br /> А после убийства нужно ждать секунд 15, пока загрузятся данные игрушки... ;-)<br /> В колонках играет: <i> Track 12 {04 - Кольщик}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 10:50:15 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57974997/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57974997/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57974997/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Быдло хочет царя"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973800/"
+                    },
+                    "description": {
+                        "__cdata": "Все эти стенания \"Хочу Путина на вечныя президенты\" так напоминают тоску серых масс по царю. Ну да мне все равно, я страшно далек от политики. ;-)<br /> Потому что политика далека от моих интересов по легализации проституток и наркотиков. ;-)<br /> В колонках играет: <i> Track 9 {09. Track 9}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 10:19:56 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57973800/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973800/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973800/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "В России - Ренессанс проституции"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973729/"
+                    },
+                    "description": {
+                        "__cdata": "В книжке \"История проституции\" написано что в России ренессанс проституции.<br /> Еще мне понравилась фраза \"полиция устала следить за проститутками и облегченно вздохнула, когда с них сняли это тяжелое бремя\". ;-)<br /> В колонках играет: <i> Track 8 {08. Track 8}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 10:17:58 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57973729/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973729/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973729/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Об убирающихся сиденьях в метро"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973609/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня кажись понял, почему в час пик не пускают вагоны с поднятыми сиденьями.<br /> Народ просто не успеет выйти-зайти.<br /> Поэтому в час пик нужно пускать вагоны вообще без сидений, НО - нужно сделать в два раза больше дверей, т.е. практически вагон будет целиком открываться с одной стороны... Я посмотрел - пространство для врезки дополнительных дверей есть.<br /> <br /> То же касается и электричек - там ваще ЖОПА по утрам...<br /> В колонках играет: <i> Track 8 {08. Track 8}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 10:15:09 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57973609/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973609/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973609/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Арбат-престиж о верности"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973467/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера в Арабат-престиже на курском дали журнал ихний.<br /> Там была статья о верности мужчин, дык там написано, что неверность полезна для психического и физического здоровья мужчины. Т.е. абсолютно верные мужья так же опасны, как и бабники.<br /> А вот в книжке про историю проституции почитал, что проститутки не страдают опущением матки и прочими женскими болезнями. Если бы не опасность венерических заболеваний, то проституцию можно было бы рекомендовать как профилактическое средство от женских болячек.<br /> Вот я сопоставляю этих два факта и думаю! ;-)<br /> В колонках играет: <i> Track 7 {07. Track 7}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 10:11:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57973467/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "18"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973467/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973467/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Тащил МДФ"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973369/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера купил две упаковки салатового стенового МДФ 15 см шириной (хочу сделать маленький ремонтик), нужен именно такой МДФ, нашел его только в компании Профиль-лайн. Все рынки облазил, такого нет. Всего стоит гдето 1200 рублей.<br /> Склад у них на Нагатинской, по схеме нашел его с трудом, прихожу, меня спрашивают - вы на чем приехали.<br /> Я грю - на своих двоих.<br /> Мне говорят - тяжело будет. Я грю - знаю, в накладной написано 40 кг, как мешок картошки. Попробовал на плечо - вроде не тяжело. Ну донес метров 150 до Варшавского шоссе, сначала было не тяжело, а потом тяжко - плечо натер, блин, надо было чего подложить. <br /> Ну метро я сразу отмел - длина 260 см. Торможу такси, сговорились от нагатинской до Курского довести за 550 рублей (как думаете, облапошили меня по такой цене?).<br /> Водила положил в салон эти доски.<br /> Подвез на курском почти к подъезду, я по проездному прошел на перрон, положил доски на весь тамбур.<br /> Народ ходит на автопилоте - под ноги не смотрит, пришлось всем говорить - не споткнитесь, а то буквально все спотыкаются.<br /> Короче, довез благополучно.<br /> А так доставка стоила бы 1200 рублей... Нах-нах!<br /> В колонках играет: <i> Track 5 {05. Track 5}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 10:09:04 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57973369/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973369/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57973369/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Обрезал рекламу"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57971908/"
+                    },
+                    "description": {
+                        "__cdata": "В свежую компьютерру вложили стикер с рекламой микрософт. Там нарисован человек, обламывающий инопланетянина в бараний рог и надпись \"Устранить угрозы проще простого\", а ниже название рекламируемого файерволла. Стикер мне понравился, название файерволла обрезал, получилась неплохая психологическая установка. ;-)<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 09:25:41 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57971908/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57971908/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57971908/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Маркировка МДФ"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57971808/"
+                    },
+                    "description": {
+                        "__cdata": "Я вот тут подумал, почему бы каждый лист МДФ(или ПФХ) не маркировать с обратной стороны, чтобы там было написана контактная информация производителя и конкретный артикул(вид) цвета.<br /> Таким образом, если у кого-то возникнет потребность подобрать на замену (или добрать необходимое количество), он будет знать и производителя и номер модели МДФ. Полезно, когда идет ремонт стены, не хватает нескольких панелей, а точную модель и производителя не знаешь...<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 22 Nov 2007 09:22:17 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57971808/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57971808/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57971808/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Тупой развод"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57789390/"
+                    },
+                    "description": {
+                        "__cdata": "Какая то телка стучалась в скайп, прислала три профессиональные фотки, слямзленные с какого-то сайта. Попросила фотку моего члена, написала что хочет трахаться. Ну неужели я лох поддаться на такой тупой развод?!<br /> В колонках играет: <i> Track 15 {14 - Чай с баранками}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 20 Nov 2007 18:17:26 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57789390/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "7"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57789390/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57789390/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Проституция как блюститель морали"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57646412/"
+                    },
+                    "description": {
+                        "__cdata": "Читаю книжку \"История проституция\", запоем, интересно.<br /> Оказывается, сколько не было попыток ликвидировать проституцию, все они провалились. Даже смертная казнь не ликвидировала эту профессию.<br /> А все почему?<br /> Потому что когда ликвидируется проституция, начинается блядство, а это угроза общественной морали.<br /> Поэтому сейчас проституция и запрещена по закону, т.к. российские девушки достаточно доступны и без денег. А стоит им немного завинтить свои пояса верности и проституцию придется легализировать, иначе просто бабам будет страшно по улицам ходить. ;-)<br /> В колонках играет: <i>Михаил Круг -  Мадам {Михаил Круг - Мадам}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 19 Nov 2007 12:39:45 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57646412/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "13"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57646412/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57646412/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Альтернатива Active Sync"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57353812/"
+                    },
+                    "description": {
+                        "__cdata": "Многих уже достала эта убогая система Active Sync.<br /> К тому же программисты предпочли бы работать с контактами и задачами как с отдельными файлами на USB устройстве, а не как с базой данных - всетаки с файлами работать проще.<br /> <br /> Поэтому когда я напишу свой PIM, я буду выгружать контакты и задачи в папочку на SD-карточку КПК. Любой контакт можно будет найти как обычный вордовский файл через команду Поиск, которая ищет по подстроке. <br /> <br /> Имя контакта будет задано так К_Иванов Иван Иванович.<br /> Если нужны все контакты, я набираю в поиске К_....<br /> <br /> Ну что то типо этого. Конечно, это не обеспечивает мне отрисовки календаря для встреч, агенды для задач и прочей фигни, но зато дешево и сердито. ;-)<br /> <br /> По крайней мере для контактов.<br /> Для задач сортировку по дате файла можно юзать как сортировку по времени планирования задачи... ;-) Или можно время в наименование задачи ставить...<br /> Такая мысля...<br /> В колонках играет: <i>Михаил Круг -  слава ! {Михаил Круг - Прокурору зеленому - слава !}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 16 Nov 2007 14:33:19 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57353812/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57353812/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57353812/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "PIM потихоньку кропаю"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57353414/"
+                    },
+                    "description": {
+                        "__cdata": "Вот выкладываю форму списка задач.<br /> <br /> Кнопка \"отбор\" прячет показывает панель отбора. Эта панель реализована через вложенную форму, т.е. ее можно использовать и в отчетах для отбора задач, например. Это для 1С80 высший пилотаж, т.к. вложенных форм там не предусмотренно - я их эмулирую, написал специальную библиотеку для вставки одной формы в другую.<br /> <br /> Кнопка \"Иерархия\" показывает/прячет дерево иерархий, задачи можно рассматривать по иерархии категорий или по иерархии проектов. Одна задача может входить в несколько проектов и сама являться проектом.<br /> <br /> На данный момент реализовано:<br /> 1. Можно завершать и отменять завершение одной или нескольких задач сразу.<br /> 2. Хранится дата создания задачи и прочих объектов в регистре.<br /> 3. Работает отбор по подстроке (Имя) и по открытым-закрытым задачам.<br /> 4. Можно назначать категории в форме задачи, хочу еще чтобы можно было выделить несколько задач и назначать категории оптом, причем если какая-то категория разная, она может не меняться.<br /> <br /> Хочу ввести дату актуальности задачи - т.е. дату, с которой задачу нужно рассматривать. Это сразу превратит задачи в рабочий инструмент даже на таком уровне.<br /> <br /> Т.е. у каждой задачи есть дата актуальности, если я не успеваю сделать, переношу дату на будущее и т.п. Есть и просроченные задачи, которые я должен уделить особое внимаение. В аутлуке я для этого юзаю \"Дату начала\", но по смыслу это не дата начала, т.к. постоянно может переноситься, особенно для периодических задач, которые нужно делать раз в месяц....<br /> <br /> Текст содержания хранится в HTML формате, т.е. можно выделять жирным шрифтом и т.п. МОжно по идее вставлять картинки, но они имеют абсолютный путь...<br /> <br /> Первоначально задачи я залил из Аутлука.<br /> В колонках играет: <i>Михаил Круг -  слава ! {Михаил Круг - Прокурору зеленому - слава !}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a><br /> <img src=\"http://img0.liveinternet.ru/images/attach/b/3/8/582/8582169_00000093.jpg\" width=\"700\" height=\"343\" alt=\" (700x343, 39Kb)\" />"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 16 Nov 2007 14:27:51 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57353414/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57353414/"
+                    },
+                    "enclosure": {
+                        "_url": "http://img0.liveinternet.ru/images/attach/b/3/8/582/8582169_00000093.jpg",
+                        "_type": "image/jpeg",
+                        "_width": "700",
+                        "_height": "343",
+                        "_length": "0"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57353414/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "О проституции в эпоху коммунизма"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57349679/"
+                    },
+                    "description": {
+                        "__cdata": "Интересно, а в кого превратятся клиенты проституток при коммунизме? <br /> Когда не будет денег?<br /> В маньяков? Ведь они не смогут купить шлюх, придется только насиловать.<br /> А проститутки в кого превратятся? В блядей, которые будут давать всем просто так?<br /> <br /> Гыгыгы.<br /> Хотя сдается мне древнейшая профессия переживет любой строй, в том числе и коммунистический....<br /> В колонках играет: <i>Михаил Круг -  Летний день {Михаил Круг - Летний день}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 16 Nov 2007 13:29:56 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57349679/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "29"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57349679/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57349679/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "За КПРФ голосовать не пойду - они против проституции"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57342234/"
+                    },
+                    "description": {
+                        "__cdata": "http://forum.kprf.ru/viewtopic.php?p=359794#359794 (тема закрыта)<br /> <br /> В общем так сложилось, что КПРФ хочет превратить человека в винтик, т.к. для них государство превыше человека. Соответственно проституция и свобода государству только мешают. Ну их на хер, этих \"товарищей\"...<br /> В колонках играет: <i>Unknown Artist -  Track 11 {О любви не говорят}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 16 Nov 2007 10:57:57 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57342234/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "9"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57342234/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57342234/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Как сливать чай..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57339924/"
+                    },
+                    "description": {
+                        "__cdata": "У нас в офисе до сортира метров 30.<br /> Недопитый чай сливать из кружки лень.<br /> Короче, зато у нас до фига пластиковых стаканов. <br /> Раньше я сливал чай в одну большую кружку - он оттуда испарялся, но чашка выглядела ужасно.<br /> Теперича я сливаю чай в пластиковый стакан, а когда иду в сортир, захватываю эти стаканы - все сухо и комфортно. Эврика!<br /> В колонках играет: <i>Турбомода -  Улицы центральные {Турбомода - Улицы центральные}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 16 Nov 2007 09:54:34 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57339924/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57339924/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57339924/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Инвертированные пекабки"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57339874/"
+                    },
+                    "description": {
+                        "__cdata": "Раз есть люди, которые часто знакомятся (пикаперы), то есть и девушки с которыми часто знакомятся. ;-)<br /> Сегодня я такую встретил.<br /> Она сказала, что я пятый который к ней подходит за сегодня.<br /> Я спросил - а что, так каждый день или только сегодня.<br /> Она сказала, что всегда.<br /> Причем не фотомодель, а обычная телка, что еще раз доказывает принцип \"не родись красивой\".<br /> Я спросил: \"Всех отшила\". Она сказала, что да.<br /> Короче, я ей сказал, что она где-то двухтысячная за два года. ;-) <br /> На том и разбежались.<br /> В колонках играет: <i>Турбомода -  Улицы центральные {Турбомода - Улицы центральные}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 16 Nov 2007 09:53:04 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57339874/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57339874/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57339874/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Не нашел, как искать поисковиком"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57286159/"
+                    },
+                    "description": {
+                        "__cdata": "Вот например ищу телефон 926 503 34 08, т.е. по идее мне нужно сформулировать запрос, чтобы подряд шли слова 926 503 34 08 все остальное не нужно.<br /> Но ни в яндексе ни в рамблере не нашел для этого команд...<br /> Телефон только что взял из головы. гыгыгы...<br /> В колонках играет: <i>Комиссар -  Туман {Комиссар - Туман}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 15 Nov 2007 13:40:16 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57286159/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57286159/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57286159/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Сегодня помог человеку"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57283081/"
+                    },
+                    "description": {
+                        "__cdata": "Ему в электричке стало плохо, он начал пропихиваться к двери, где воздух посвежее. Я помог растолкать народ, а потом, когда он потерял сознание, держал его, чтобы не упал. Хотели вызвать скорую, но он очухался. Я бы на его месте вышел в Новогиреево и по морозу бы дошел до метро, но он поехал дальше...<br /> В колонках играет: <i>Комбинация -  Бухгалтер {Комбинация - Бухгалтер}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 15 Nov 2007 09:55:45 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57283081/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57283081/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57283081/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Девственницы меня забанили"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57283076/"
+                    },
+                    "description": {
+                        "__cdata": "За то, что я возразил модератору насчет его инициативы удалять сообещения, написаные на сленге подонков. Такие вот дела...<br /> Оскорбил честь целок...<br /> В колонках играет: <i>Комбинация -  Бухгалтер {Комбинация - Бухгалтер}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 15 Nov 2007 09:55:19 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57283076/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57283076/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57283076/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Острый ум"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57237047/"
+                    },
+                    "description": {
+                        "__cdata": "Одна девушка сказала, что у меня острый ум и я могу сочинять репризы для юмористов.<br /> Гы.... Сменить что ли профессию?<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 14 Nov 2007 12:12:12 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57237047/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57237047/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57237047/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Делать ребенка или не делать?"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236956/"
+                    },
+                    "description": {
+                        "__cdata": "Есть возможность продлить свой род еще одним ребенком.<br /> Вот думая - продлять или не продлять?<br /> С одной стороны приятно, с другой - девушка в далеком Калининграде.... <br /> Думаю... <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/spinner.gif\" border=\"0\" width=\"27\" height=\"20\" /><br /> Текущее настроение: <img style=\"margin:0px;\" src=\"//i.li.ru//images/smilies/oct/treadmill.gif\" border=\"0\" width=\"50\" height=\"50\" /><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 14 Nov 2007 12:11:30 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57236956/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "7"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236956/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236956/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Отказала булочница, отказала стрелочница."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236802/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера мне отказала девушка из фотосалона и девушка из Евросети.<br /> Прямо засада...<br /> Не любят меня пролетарки.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 14 Nov 2007 12:10:06 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57236802/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236802/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236802/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Лоханулся"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236693/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера делал в фотосалоне фотки на паспорт.<br /> Лоханулся - она спросила, сколько фоток делать, а я сказал, сколько обычно.<br /> А мог бы целый лист формата А4 фоток получить бы - серавно она на А4 печатала, получилось только 5 фоток формата на паспорт....<br /> Брыыы......<br /> В следущий раз за 120 рублей получу целый лист....<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 14 Nov 2007 12:09:22 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57236693/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236693/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57236693/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Даешь аборты!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57235433/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера по каналу 2х2 с наслаждением смотрел сериал \"Южный Парк\".<br /> Знаете, как будто повеяло свежим дыханием свободы - я будто бы перенесся в будущее, где на самом деле будет свобода слова и видео - можно будет говорить что угодно..<br /> <br /> Короче там у чувака умирает друг, спасти его могут только стволовые клетки, которые получают из абортированных человеческих зародышей. А исследование стволовых клеток в Америке запрещены, типо неэтичные.<br /> <br /> Ну и он разворачивает с особым цинизмом компанию за легализацию исследований, добивается ее, потом пропогандирует аборты, чтобы собрать побольше зародышей...<br /> <br /> Короче, здоровый цинизм так и прет...<br /> <br /> Еще понравилось в этом же мульте издевательство над богом: бог специально тебе что то дает, а потом отнимает, чтобы ты плакал, а он чуствовал себя сильным.<br /> <br /> Ваще не ожидал от пиндосов таких сильных мультфильмов, зачет!<br /> В колонках играет: <i> 077 НА ВЕСІЛЛІ {077 НА ВЕСІЛЛІ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 14 Nov 2007 11:50:32 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57235433/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "5"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57235433/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57235433/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Программа \"Моя цена\""
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57234382/"
+                    },
+                    "description": {
+                        "__cdata": "Один интернет-магазин духов ввел программу \"Моя цена\" - т.е. если найдете дешевле, мы вам продадим по этой цене.<br /> <br /> Я зашел на Яндекс-Маркет, нашел дешевле на 150 рублей и скинул им ссылку.<br /> <br /> Вот что мне ответили:<br /> <br /> Извините, к сожалению мы не можем продать Вам DKNY Be Delicious Shine туалетные духи 30ml (жен.) - от Donna Karan по указанной Вами цене 1316руб.<br /> <br /> Такие вот дела бывают.<br /> Аромат кстати, оболденный.<br /> В колонках играет: <i> 087 СПІЙМАЮ СТРЕКОЗУ {087 СПІЙМАЮ СТРЕКОЗУ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 14 Nov 2007 11:24:30 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57234382/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "10"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57234382/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57234382/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Пробка в метро"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57230998/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня поезда в метро на рыжей ветке ходили с большими перерывами.<br /> Я уехал где-то на восьмой электричке. СЛава богу, никто на рельсы не упал.<br /> Народ неальтруистический - расступились бы, выпуская пассажиров, больше бы влезло, так норовят залезть, мешая выходу... Быдлос... Меня покоробило такое поведение и я расталкивал народ, пропуская выходящих...<br /> <br /> Кто то щелках фотиком все это безобразие...<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 14 Nov 2007 09:50:32 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57230998/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57230998/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57230998/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Сон про машину"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57230950/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня мне приснилось, что я купил себе автомобиль на распродаже в супермаркете типо Ашана за 5 тысяч рублей.<br /> Распаковываю, а там правый руль, гыгыгы... <br /> Ну проехал я на нем немного, движок заглох. Что такое - смотрю, бензин кончился...<br /> такой вот сон.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 14 Nov 2007 09:49:06 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57230950/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57230950/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57230950/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Лепота с выньампом"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57134220/"
+                    },
+                    "description": {
+                        "__cdata": "На мисте мне подсказали, что в Winamp есть клавиши для горячего переключения треков, которые работают в любом приложении. Красота!<br /> В колонках играет: <i> Track 12 {04 - Кольщик}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 13 Nov 2007 13:56:06 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57134220/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57134220/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57134220/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Немецкие интим шопы..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57043239/"
+                    },
+                    "description": {
+                        "__cdata": "В отличии от совковых за прозрачным стеклом гордо демонстрируют миру свой товар, в чем убедился мой кореш, побывавший в немеччине.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a><br /> <img src=\"http://img1.liveinternet.ru/images/attach/b/3/8/277/8277667_00000092.jpg\" width=\"352\" height=\"698\" alt=\" (352x698, 40Kb)\" />"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 18:02:39 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57043239/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57043239/"
+                    },
+                    "enclosure": {
+                        "_url": "http://img1.liveinternet.ru/images/attach/b/3/8/277/8277667_00000092.jpg",
+                        "_type": "image/jpeg",
+                        "_width": "352",
+                        "_height": "698",
+                        "_length": "0"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57043239/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Германские телки файные"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57040241/"
+                    },
+                    "description": {
+                        "__cdata": "Вот таких телок наблюдал в Германии один мой калининградский кент.<br /> Ну и кто сказал, что телки в немеччине уродливы?<br /> Или это не немки?<br /> В колонках играет: <i>Алекс Рослов vs Евгений Крылатов -  Лиловый шар (Remix like Rammstein) {violet}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a><br /> <img src=\"http://img0.liveinternet.ru/images/attach/b/3/8/273/8273812_00000091.jpg\" width=\"699\" height=\"525\" alt=\" (699x525, 129Kb)\" />"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 17:34:53 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57040241/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57040241/"
+                    },
+                    "enclosure": {
+                        "_url": "http://img0.liveinternet.ru/images/attach/b/3/8/273/8273812_00000091.jpg",
+                        "_type": "image/jpeg",
+                        "_width": "699",
+                        "_height": "525",
+                        "_length": "0"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57040241/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Загадка мироздания"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57039944/"
+                    },
+                    "description": {
+                        "__cdata": "Интересно, почему проститутки на сайтах системы мамба (izi.ru, jdu.ru, etc) так часто меняют анкеты, т.е. удаляют старые?<br /> Непонятки.<br /> В колонках играет: <i>Алекс Рослов vs Евгений Крылатов -  Лиловый шар (Remix like Rammstein) {violet}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 17:31:56 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57039944/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57039944/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57039944/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Кениг на РТР?"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57017035/"
+                    },
+                    "description": {
+                        "__cdata": "В последнее время по РТР в качестве заставки показывают какие-то часы, потом камера отъезжает.<br /> Сдается мне что это часы с острова Канта в кениге, если мне не изменяет мой глазомер? Че скажете, орлы?<br /> В колонках играет: <i>Марк Винокуров -  Юлька {028 Yul'ka (Mark Vinokurov)}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 13:27:24 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57017035/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57017035/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57017035/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Эрекция электората."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57016207/"
+                    },
+                    "description": {
+                        "__cdata": "Получается, что в россии электорат всегда не соответствует эректорату.<br /> Электорат - это кто? Бабки и старикашки-пенсионеры. Оттого все партии ориентируются на эту колду, в результате чего страдает эректорат? Как же не страдает - проституция, порнография, наркотики и оружие не легализированы. Потому эректорат и страдает.<br /> В колонках играет: <i>Волк -  Фомочка, Отмычка {026 Fomochka, Otmychka (Volk)}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 13:20:42 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57016207/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57016207/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57016207/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Идея родилась неплохая"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57006386/"
+                    },
+                    "description": {
+                        "__cdata": "Гы, предлагаю алисоманам снять документальный фильм \"Гостья из будущего на полпути к 2084у\". ;-)<br /> Интересно будет посмотреть. ;-)<br /> В колонках играет: <i>МИХАИЛ КРУГ -  Чай с баранками {16. Чай с баранками}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 11:23:36 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57006386/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57006386/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57006386/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Праздник на улице алисоманов..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57006311/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера смотрел не помню по какому каналу рассказ про исполнительницу роли Алисы в фильме \"Гостья из будущего\". Прикольно, тетка счас лет 35, с дочкой везде шляется, не замужняя (наверно так модно в Москве), тараканов в башке наверно немеряно.<br /> <br /> Жаль что она не снялась в \"Авария - дочь мента\", как ей предлагали, там такие откровенные сцены были. ;-) Гыгыгыгы...<br /> <br /> Вот предлагал же я гусевой - сними свое тело на домашнюю камеру, потом когда старухой будешь, поздно будет. Не, она романтик, мда... Думаю, не зря естественный отбор отшелушивает романтиков - ибо не приспособлены они к этому миру, все их помыслы о другом....<br /> В колонках играет: <i>МИХАИЛ КРУГ -  Морозовский городок {15. Морозовский городок}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 11:21:49 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57006311/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "12"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57006311/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57006311/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Простудился..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57002245/"
+                    },
+                    "description": {
+                        "__cdata": "Уже вторые выходные отдаюсь борьбе с простудой - валяюсь дома в ванной и под одеялом. Блин, чето зима нанесла серьезный удар по имунетету, но мы умеем держать удар, не лыком шиты! ;-)<br /> В колонках играет: <i> 160 ВАСИЛЮ, ВАСИЛЮ {160 ВАСИЛЮ, ВАСИЛЮ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 09:18:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57002245/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57002245/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57002245/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Читаю \"Гламурные подонки\" полесского"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57002069/"
+                    },
+                    "description": {
+                        "__cdata": "Нехилый такой детективчик, да еще свеженаписанный, одно упоминание фильма \"9-й роты\" говорит о свежеизданном...<br /> Прикиньте, чувак полюбил маму и дочку одновременно. Трандец...<br /> Не, все таки неплохо быть миллиардером в россии. ;-)<br /> Интересно, а сам аффтар - миллиардер (действие в книге идет типо про автора) или просто прикидывается, в книжке есть е-мэйл аффтара, может написать ему? ;-)<br /> Читается легко и на ура!<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 09:11:11 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57002069/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57002069/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57002069/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Жаль, на выборах нет радикалов..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57001817/"
+                    },
+                    "description": {
+                        "__cdata": "Перевелись радикалы в России. ;-)<br /> Некому продвигать легализацию оружия, проституции, порнографии...<br /> Не за кого голосовать на выборах - все послушные и консервативные, ориентируются на эректорат - пенсионеров!<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 09:00:11 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57001817/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57001817/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57001817/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "КПРФ жжот... (о легалайзе проституции)"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57001768/"
+                    },
+                    "description": {
+                        "__cdata": "http://forum.kprf.ru/viewtopic.php?p=358350#358350<br /> Здесь развернулась дискусия об отношении КПРФ к легализации проституции. Гыгыгы...<br /> <br /> <br /> Гражданская сила по-моему адекватна в этом вопросе:<br /> http://www.gr-sila.ru/forum.html?comments=644§ion=1<br /> <br /> \"to Сергей<br /> Наша партия занимает рациональную позицию по данному вопросу. Если это явление существует, значит оно должно быть введено в рамки закона, как во многих цивилизованных странах. Для начала можно провести эксперимент в нескольких регионах, объективно оценить результаты и потом уже принять окончательное решение. Конечно, лучше, чтобы проституция была как-то организована государством, женщины защищены законом, обеспечены медицинским обслуживанием, а не находилась под крышами коррумпированных сотрудников милиции и бандитов. \"<br /> <br /> <br /> На яблоке пока ничего конкретного не сказали:<br /> http://forums.yabloko.ru/index.php?showtopic=6312&st=0&gopid=80943&<br /> Не могу и не собираюсь отвечать \"за партию\", но ИМХО эта проблема не в списке актуальных и серьезно обсуждаемых партией, не думаю, чтоб существовало выработанное и утвержденное мнение по этому вопросу.<br /> <br /> <br /> Я вот подумал, может создать \"Партию легализации проституции и порнографии\" по образцу \"Партии любителей пива\"? Нужно узнать, что нужно, чтобы создать партию. Хотя раз до сих пор нет \"Партии легализации конопли\", думаю создать такую партию не дадут. Дерьмократия, гыгыгы..<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Mon, 12 Nov 2007 08:57:14 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post57001768/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57001768/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post57001768/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Стрелка со старушкой"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56672848/"
+                    },
+                    "description": {
+                        "__cdata": "Давеча встретился с женщиной, доехали в метро до третьяковки, хотели зайти в шоколадницу, но там все было занято (19.00), пошли в мой любимый кофехауз.<br /> Я взял экспрессо конпана средний, она средний капучино класси - все вместе 99 руб.<br /> Ну начали болтать то да се.<br /> В конце спрашиваю - будет продолжение?<br /> Она говорит - нет, хотела просто поговорить.<br /> Я грю - точно нет? Она грит - ну скорее всего да.<br /> Я грю - ну позвоню тогда позже, ты пока думай.<br /> Она грит, что ей 41 и я молод для нее, офигеть, а на вид не столько. Вот что аэробика с человеком делает.<br /> Предложила разделить расходы, но я по флаеру ходил, не буду же я с нее 50 рублей просить.<br /> На чай не было десяток, положил сотку, вместе пошли в метро на разные ветки.<br /> В колонках играет: <i>Сектор газа -  Демобилизация {sektor gaza - demobilizaciya}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 09 Nov 2007 13:51:17 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56672848/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56672848/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56672848/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Разговор с мужем"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56650689/"
+                    },
+                    "description": {
+                        "__cdata": "Звоню вчера одной телке, с ней не шатко не валко - то хорошо пообщаемся, то не берет трубу.<br /> Подымает мужик.<br /> Я: Здрасьте.<br /> М: Вам кого.<br /> Я: Мне Юлю.<br /> М: Не звоните ей больше.<br /> Я: Почему?<br /> М: У нее семья, а вы ее достаете.<br /> Я: Гм, ну я не знал, что у нее семья. Ладно.<br /> <br /> Надо же, попалил девку. Не понимаю эту тупую женскую логику - одной смски было бы достаточно, чтобы я ей больше не звонил, так нет же дождалась, когда я попалю ее, нарвавшись на мужа. Я ж не знал, что она замужняя телка? А может это не муж был, гыгыгы... ;-)<br /> В колонках играет: <i>163 ШІДА -  РИДА {163 ШІДА-РИДА}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 09 Nov 2007 10:26:59 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56650689/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56650689/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56650689/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Убогие почтовые ящики убогих партий."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56649490/"
+                    },
+                    "description": {
+                        "__cdata": "партиям:<br /> <br /> Писать бесполезно, их ящики переполнены.<br /> Мрак, у партии не хватает места для почтового ящика.<br /> Взяли бы себе аккаунт на гугле чтоли, гыгыгы....<br /> <br /> pss@nasled.ru (Наследие) - ну эти на бога уповают, а сами плошают.<br /> apr@hotbox.ru (Аграрники) - ну эти понятно, они только с навозом могут<br /> В колонках играет: <i>Сектор газа -  Ява {mp3SHARE ru - sektor gaza - yava}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 09 Nov 2007 10:02:08 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56649490/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56649490/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56649490/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Игры в демократию."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56649325/"
+                    },
+                    "description": {
+                        "__cdata": "Решил узнать, есть ли хоть одна партия, за которую я бы мог проголосовать.<br /> Для этого я сходил на сайты партий, участвующих в выборах и задал вопрос:<br /> <br /> \"Как ваша партия относится к легализации проституции?<br /> Хочу знать ответ на этот вопрос, прежде чем голосовать.\"<br /> <br /> Вот список сайтов партий, где я побывал (на всех партиях я побывал):<br /> <br /> http://www.gr-sila.ru/forum.html?comments=644&section=1<br /> форум без регистрации. <br /> <br /> http://forums.yabloko.ru/index.php?showtopic=6312 <br /> зарегистрировался, активизировал, создал топик.<br /> <br /> http://www.pp-pss.ru/main.php<br /> мылом, форума нет.<br /> <br /> apr@hotbox.ru<br /> Темы в форуме не создаются - мылом.<br /> <br /> info@greenparty.ru<br /> Зеленые - глючит форум - ошибки при создании тем, задал мылом<br /> <br /> info@patriot-rus.ru<br /> Форум в разработке. Вопрос задал мылом.<br /> <br /> http://www.patriotparty.ru/ - нет никаких контактов на сайте. Не странно ли?<br /> <br /> dpr@demparty.ru - задал мылом, форума нет.<br /> <br /> priemnaya@spravedlivo.ru - форума нет, задал мылом<br /> <br /> hotline@ldpr.ru subject=Горячая линия, Жириновскому В.В. <br /> форума нет, задал мылом.<br /> .<br /> <br /> www.sps.ru - сайт не открывается.<br /> <br /> centrpr@edinros.ru -форума нет, мылом задал.<br /> <br /> http://forum.kprf.ru/profile.php - форум с активацией записи <br /> info@kprf.ru - задал параллельно мылом.<br /> http://forum.kprf.ru/viewtopic.php?p=357441#357441 - ветка с топиком<br /> <br /> http://www.partia-nv.ru/forums/index.php - не дождался активации<br /> priem@partia-nv.ru задал параллельно мылом.<br /> <br /> Что удивляет - так это то, что у некоторых партий или сайт вообще не открывается, или нет форума, а если форум и есть то или убогий или глючный. Неужели пользователи интернета совсем не интересуются политикой, чтобы не привлекать их форумами.<br /> <br /> Хотя конечно есть и исключения. ;-)<br /> У единоросов ваще нет форума, трандец. ;-)<br /> <br /> Подождем ответа, узнаем, как партии относятся к простым избирателям. Хотя мне кажется, что воля народа хрен дойдет до партий... Демократия умерла, превратившись в фуфел...<br /> <br /> В колонках играет: <i> 160 ВАСИЛЮ, ВАСИЛЮ {160 ВАСИЛЮ, ВАСИЛЮ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 09 Nov 2007 09:58:12 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56649325/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56649325/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56649325/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Ажиотаж вокруг выборов"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56418903/"
+                    },
+                    "description": {
+                        "__cdata": "Не понимаю, как можно голосовать, не разбираясь в текущей политической ситуации.<br /> Я например, не ориентируюсь, поэтому голосовать не буду, хоть и гражданин.<br /> Вот, если бы какая партия заявила что легализует проституцию, я бы пошел за нее голосовать не глядя.<br /> В колонках играет: <i>Rihanna -  SOS (Rescue Me) {mp3SHARE ru - rihanna - sos rescue me}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 07 Nov 2007 13:04:15 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56418903/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "23"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56418903/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56418903/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "nadzor.pk.ru - под трояном"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56410753/"
+                    },
+                    "description": {
+                        "__cdata": "Надо же, на сайте nadzor.pk.ru, где раньше была тема про порно, висит троян.... бр...<br /> В колонках играет: <i>Скрябін -  Старі Фотографії {Скрябин-стари фотографии}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 07 Nov 2007 12:02:00 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56410753/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56410753/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56410753/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Суки билайнеры!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56402394/"
+                    },
+                    "description": {
+                        "__cdata": "Этот опсос опять отключил отправку смс-сообщений со своего сайта.<br /> Я позвонил в техподдержку 0611, действительно, нельзя отправлять... <br /> Твою мать....<br /> В колонках играет: <i> 160 ВАСИЛЮ, ВАСИЛЮ {160 ВАСИЛЮ, ВАСИЛЮ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 07 Nov 2007 09:33:47 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56402394/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56402394/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56402394/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Пристал к бабушке..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56401959/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера еду в метро на эскалаторе.<br /> У меня принцип - если сверху или снизу едет телка, надо подкатить.<br /> Снизу едет, причесон вроде ничего, одежка тоже.<br /> Грю: \"Девушка\".<br /> Она шарахается, в ужасе делает шаг вперед по эскалатору, потом видимо удивляется, чего это она испугалась поворачивается, спрашивает \"Что\".<br /> Я смотрю, а это женщина лет 45. Фу....<br /> \"Ничего\" говорю и спокойно еду дальше.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 07 Nov 2007 09:21:29 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56401959/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "9"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56401959/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56401959/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Опиум для народа не пройдет!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56401779/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня в метро вахтерша, что стоит на турникетах, обсирала свидетельницу иеговы, которая подошла к ней с \"душеспасительной беседой\". Она в лучших традициях марксизма-ленинизма завернула ей лекцию, что религия паразитирует на страхе смерти и т.п.<br /> Гы, пока в стране росейской такие бабки есть я знаю, что опиум для народа не пройдет!<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 07 Nov 2007 09:16:03 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56401779/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56401779/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56401779/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Этимология тамбовского волка"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56367212/"
+                    },
+                    "description": {
+                        "__cdata": "Наверное \"тамбовский волк тебе товарищ\" пошло от тамбовского крестьянского восстнания в годы продразверстки, которое было жестоко подавлено... Чего только не узнаешь из истории, глядя в голубой ящик.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 22:46:18 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56367212/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56367212/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56367212/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "О растреле царя"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56366607/"
+                    },
+                    "description": {
+                        "__cdata": "Я вот тут давеча посмотрел фильм про растрел царской семьи.<br /> Лично мне этот растрел по барабану - они мне не братья и не сваты.<br /> Мало ли детей и женщин поубивали за историю человечества.<br /> <br /> Интересно другое. Что в советских учебниках истории писали про расстрел царя? Хоть убейте не помню.<br /> Варианты:<br /> 1. Царя растреляли, про семью молчок.<br /> 2. Царя растреляли с семьей. Тогда как мотивировали?<br /> <br /> Забавно, ведь если они смогли мотивировать, то это шедевр идеологии, которым гордился бы сам Геббельс.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 22:41:20 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56366607/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56366607/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56366607/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Полный прозвон списка"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56365344/"
+                    },
+                    "description": {
+                        "__cdata": "Вот выдался свободный вечер, полностью прозвонил список.<br /> <br /> Короче, еще одну телку вычеркнул:<br /> Я:Привет, это сергей.<br /> О:Думаю, тебе больше сюда не нужно звонить.<br /> Я:Почему.<br /> (бросила трубу)<br /> <br /> В общем всех троих вычеркнутых смсками поблагодарил за сэкономленное время. ;-)<br /> <br /> Одна девка почти готова была ко мне поехать, но не хочет в такую даль. Я предложил ей остаться в москве как-нибудь, обещала подумать.<br /> <br /> В общем длинных диалогов не получилось, так вкратце с телками пяти пообщался.<br /> <br /> Тут как в бухгалтерии главное систематичность. Вода камень точит. Вот девки или начинают общаться или в минуса уходят. Жаль только, что сразу не говорят в этом случае, что не хотят общаться - только время на  них тратишь.<br /> <br /> Я таких заношу в правую треть списка и раз в месяц прозваниваю с других телефонов. Надо же учить людей отказывать. ;-) В этом мой долг перед обществом. ;-)<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 22:31:24 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56365344/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "5"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56365344/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56365344/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Чем хороши свободные вечера"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56350159/"
+                    },
+                    "description": {
+                        "__cdata": "Если вечер свободен и нету дел, можно прозвонить кол-лист и навешать бабам на уши лапши. Это гораздо эффективнее, чем общаться с ними на стрелки. Зацепить бабу минут на 30 непринужденной беседы - и она готова или отдаться или послать на хер. ;-)<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 20:30:20 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56350159/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56350159/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56350159/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Игромир 2007"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56350047/"
+                    },
+                    "description": {
+                        "__cdata": "Игромир 2007 я не посетил, т.к. 4 ноября валялся дома с головной болью весь день в постели (не подумайте, что с Мадонной), скорее с простудой. Голова прошла без таблеток... Ох уж эти переходные периоды.<br /> Думал, если после обеда приду в себя, то прозвоню колл-лист, но не срослось....<br /> Зато организм набрался сил на новые подвиги на трудовом и сексуальном фронте.<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 20:29:13 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56350047/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56350047/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56350047/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Репорт за сегодня..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56349828/"
+                    },
+                    "description": {
+                        "__cdata": "С утра 3 подхода, с вечера 3 подхода и еще 1 визитка.<br /> Визитку вручил замужней даме, убедил ее, что вдруг ей понадобится. ;-)<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 20:27:17 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56349828/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56349828/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56349828/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "-2 за вечер"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56349671/"
+                    },
+                    "description": {
+                        "__cdata": "Сегодня я вычеркнул из кол-листа двух телок.<br /> Они заморозились прийти ко мне попить чаю, хотя живут рядом.<br /> Одна сказала: \"Я не такая, я хорошая, ты плохо обо мне думаешь\".<br /> Другая тоже ступила, что типо не ходит в первый раз...<br /> <br /> Окей, балласт за борт, спасибо что съэкономили время - до встречи еще дело не дошло. <br /> <br /> К тому же это тетки за 35, не очень то и хотелось, ищите себе идиотов, которые впали в конфетно-букетный период своего развития, гыгыгы. ;-) <br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 20:25:53 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56349671/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56349671/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56349671/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Малолетние динамистки"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56307430/"
+                    },
+                    "description": {
+                        "__cdata": "Вчера покупал мороженое, а передо мной стояло две девочки столь нежного возраста, что пикапить их у меня язык не поднялся (14 лет), уродливые правда по-тинейджерски.<br /> <br /> И одна другой грит:\"Подкатывает тут ко мне один, грит давай познакомимся, давай телефон. Я не даю, грю - дай ты мне свой, а у него не на чем записать. Ну он достает чирик (10 рублей) и на нем чиркает свой номер, на всю бумажку. Ну я тут же это чирик отнесла к автомату и положила Серому (своему парню) на счет.\"<br /> <br /> Я не по-детски ржал над этим. Вот в чем польза дешевых бумажек формата АХ, распечатаных на лазерном принтере. Они никакому Серому в пользу не пойдуТ, даже попу ими не подтерешь... гыгыгыгы....<br /> В колонках играет: <i>Сектор газа -  Демобилизация {sektor gaza - demobilizaciya}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 15:02:04 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56307430/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56307430/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56307430/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Батарейка Крона"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56283890/"
+                    },
+                    "description": {
+                        "__cdata": "Как-то забыл выключить гитарный тюнер. Ну и мощная алкалайновская батарейка разрядилась. Так что пошел я в магазин  и купил самую дешевую батарейку за 25 рублей в форм-факторе Крона. Так что после двухнедельного перерыва опять настроил и начал щупать гитару.<br /> В колонках играет: <i>Анатолий Могилевский -  Осень {022 Osen' (Anatolii Mogilevskii)}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 11:26:33 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56283890/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56283890/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56283890/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Обнаружил проблему в пекабе..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56279249/"
+                    },
+                    "description": {
+                        "__cdata": "Моя проблема в пекабе в том, что я слишком быстро отказываюсь.<br /> Нет, так нет.<br /> Тут на досуге решил подобивать телок, оказывается, нет еще не значит НЕТ. ;-)<br /> Пока исследую тему, когда исследую окончательно, доложу.<br /> <br /> Из заготовок:<br /> Я: Девушка, давай познакомимся.<br /> Д: Нет.<br /> Я: Че, не нравлюсь?<br /> Д: Нет, ты урод.<br /> Я: Так это потому что ты меня по одежке встречаешь, а ты представь меня голым.... (после паузы)... как я тебя представляю... ;-)<br /> В колонках играет: <i>Воровайки -  Не Воровка, Не Шалава {mp3SHARE ru - vorovayki - ne vorovka ne shalava}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 10:06:29 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56279249/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "5"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56279249/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56279249/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Телка отказала..."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56278943/"
+                    },
+                    "description": {
+                        "__cdata": "В пятницу после работы пошел с телкой на \"Нулевой километр\".<br /> Она чуть опоздала, потому мы опоздали на 10 минут в кино, пришлось на ходу заплатить и за нее - некогда было с нее требовать 170 рублей на билет. ;-)<br /> <br /> А потом пошли посидеть за столиками, тут уж я за нее не платил.<br /> Короче, телка сказала, что решила еще накануне вечером, что в постель со мной не пойдет (когда я предложил ей провести ночь вместе). Я спросил, хуле тогда она не сказала это мне вечером, встал из-за стола и свалил...<br /> <br /> Надо было стребовать у нее деньги за кино, проявить наглость... а если бы отказала, то подсесть и за сиськи подергать на 170 рублей... ;-) Ну да ладно, фиг с ней...<br /> А ведь я развел эту телку на ночной разговор, целых 45 минут флиртовал с ней ночью и думал, что все на мази, она аж пищала по телефону, мазафака.<br /> <br /> Перед стрелкой с ней, ожидая ее, встретил свою бывшую (которую трахал уже), которая свалила в туман. Помахали друг другу ручкой. Я думал, это хороший знак, а оказывается, плохой, Гыгыггы.... И это при том, что встретить кого-то в Москве случайно ужасно трудно... ;-)<br /> В колонках играет: <i>Воровайки -  Хоп, Мусорок {mp3SHARE ru - vorovayki - hop musorok}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 06 Nov 2007 09:59:10 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post56278943/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "7"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56278943/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post56278943/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Аукцион с велокатом продолжается"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55863899/"
+                    },
+                    "description": {
+                        "__cdata": "Покупатель vfrostov покупал чисто для стеба.<br /> Короче, пришлось перевыставить аукцион еще раз.<br /> Покупайте, а то он стоит в коридоре, могут поломать... ;-)<br /> <br /> http://molotok.ru/show_item.php?item=264101416<br /> В колонках играет: <i>Unknown Artist -  Track 2 {Киевлянка}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Fri, 02 Nov 2007 17:40:33 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55863899/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "3"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55863899/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55863899/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Надо же, тему про порнографию прикрыли"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55705462/"
+                    },
+                    "description": {
+                        "__cdata": "Мекка и отдушина всех борцов против 242-й статьи УК закрыта:<br /> http://law.vl.ru/forum/viewtopic.php?t=36&postdays=0&postorder=asc&start=1200<br /> <br /> Вот так вот, потихоньку перекрывают кислород свободы.<br /> И главное, альтернативы нет, разве что на сайт облаков сдодить<br /> www.oblaka.nu<br /> В колонках играет: <i> exit {exit}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 01 Nov 2007 17:13:35 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55705462/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "18"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55705462/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55705462/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "258 за октябрь"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55671739/"
+                    },
+                    "description": {
+                        "__cdata": "Рапортую за очередной месяц:<br /> <br /> 238 отказов<br /> 13 контактов<br /> 5 визиток<br /> 2 раза просто долго пообщались<br /> <br /> Господа, это рекорд, боюсь не превзойду.<br /> И это при том, что никаких специальных акций не было, просто по ходу жизни....<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Thu, 01 Nov 2007 09:21:46 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55671739/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "9"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55671739/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55671739/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Стих о!"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55611190/"
+                    },
+                    "description": {
+                        "__cdata": "Я помню страшную минуту<br /> Я снял с панели проституту<br /> Повел ее домой ебать<br /> Она упала под кровать<br /> Склонившись, лезу в закоулки<br /> О боже мой, какие булки!<br /> Быстрей с себя снимаю брюки<br /> Тяну к ней жадно свои руки<br /> И в этот миг раздался звон<br /> Проснулся - это был лишь сон!<br /> В колонках играет: <i> 150 ГАРБУЗ {150 ГАРБУЗ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 18:18:22 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55611190/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55611190/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55611190/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Молодая Ленка"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604956/"
+                    },
+                    "description": {
+                        "__cdata": "Одна из девушек, телефон которой я потерял, сказала что она Ленка. Молодая такая, веселая.<br /> Именно так я ее и записал.<br /> Прости, Ленка, я не позвоню, склероз....<br /> В колонках играет: <i> 150 ГАРБУЗ {150 ГАРБУЗ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 17:26:40 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55604956/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604956/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604956/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "О сексуальных манияках...."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604890/"
+                    },
+                    "description": {
+                        "__cdata": "Звоню недавно телочке:<br /> - Это из службы проверки здоровья молодых симпатичных девушек (загробным голосом). До 23 часов осталось 5 минут, через пять минут вы должны спать, иначе к вам придет ужасный и коварный сексуальный маньяк.<br /> - (Смех) А этого маньяка не Сергей зовут?<br /> - Мы вас предупредили, ложитесь спать, берегите здоровье!<br /> <br /> ;-)<br /> <br /> Класный замут. Посоветуйте еще чего такого... Все же прикольнее чем просто напоминать о себе классическим \"Как дела\", когда нет времени встретиться.<br /> В колонках играет: <i> 150 ГАРБУЗ {150 ГАРБУЗ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 17:25:54 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55604890/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "4"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604890/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604890/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Гребаный Распекай"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604696/"
+                    },
+                    "description": {
+                        "__cdata": "Мало того что у этой блинной ложка варенья стоит столько же, сколько и блин (27 рублей), так еще по утрам нету сдачи со стольника!!! Прикиньте, речь о стольнике а не о штуке или пятиштуки. Начальство их видимо не в ус не дует... трандец...<br /> <br /> Остался недавно без блинов из-за того, что у них не было мелочи. В следующий раз напишу жалобу в жалобную их книгу, мазафакеров.<br /> <br /> И это в то время, как я купил и принес на работу маленькую баночку варенья, чтобы не покупать его у этих разбойников с большой дороги...<br /> В колонках играет: <i> 150 ГАРБУЗ {150 ГАРБУЗ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 17:23:49 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55604696/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604696/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55604696/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Чай за 1000 рублей."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55580073/"
+                    },
+                    "description": {
+                        "__cdata": "Приснилось мне, что пошли мы с телкой в Кениге на диско, когда я туда из Моськи прилетел.<br /> На улице ее подцепил, пошли в клуб.<br /> А там раздача, типо как в столовой.<br /> <br /> Она себе навыбирала, заплатила ест, а я че то замешкался. Подхожу, смотрю на цены и фигею.<br /> <br /> Чай стоит 1000 рублей, офигеть, и на ценнике расписан состав: кипяток 0.2 литра = 200 рублей, заварка =800 рублей.<br /> <br /> Я фигею...<br /> В колонках играет: <i> 148 ВИП'ЄМО ЗА ГАЛЮ, ВИП'ЄМО ЗА МИКОЛУ {148 ВИП'ЄМО ЗА ГАЛЮ, ВИП'ЄМО ЗА МИКОЛУ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 12:45:31 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55580073/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "2"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55580073/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55580073/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Телефон мечты"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55577073/"
+                    },
+                    "description": {
+                        "__cdata": "я бы взял такой мобильный, чтобы: <br /> 1. велся журнал звонков (и синхронизировался с компом). <br /> 2. автозапись всех звонков на флешку (и когда работает диктофон не пипикало). <br /> 3. ЧТобы поддерживались все команды нормального модема, в частности автонабор номера с компа. <br /> <br /> Но таких в природе пока еще не существует.<br /> В колонках играет: <i> 139 КАРІ ОЧІ ЧОРНІ БРОВИ {139 КАРІ ОЧІ ЧОРНІ БРОВИ}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 12:15:41 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55577073/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "6"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55577073/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55577073/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Миссия."
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55571596/"
+                    },
+                    "description": {
+                        "__cdata": "Когда читаю \"Миссия нашей компании состоит в ....\" внутренне содрогаюсь.<br /> http://www.1cbit.ru/50/ ;-)<br /> В колонках играет: <i> 170 Кухарка {170 Кухарка}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 10:35:59 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55571596/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55571596/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55571596/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Иногда из телевизора узнаешь забавные вещи"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55570319/"
+                    },
+                    "description": {
+                        "__cdata": "Например что секс-символ моего детства Наталья Сенчукова вышла за солиста группы \"Дюна\", который поет \"Привет с большого бодуна\".<br /> А актриса, которая играет Мэри Поппинс, еще жива, неплохо выглядит, но немного тронулась в буддизм.<br /> В колонках играет: <i>White Hot Ice -  Растаман {mp3SHARE ru - white hot ice - rastaman}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 10:02:32 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55570319/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "5"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55570319/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55570319/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Распиздяй"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55569550/"
+                    },
+                    "description": {
+                        "__cdata": "Потерял два из таких трудом добытых контакта - записал на бумажку и посеял. Трандец... ;-)<br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Wed, 31 Oct 2007 09:40:02 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55569550/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "0"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55569550/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55569550/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Редкое слово"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55499991/"
+                    },
+                    "description": {
+                        "__cdata": "Надоже, почему то слово Блондючка в инете употребили только один раз. Странно...<br /> В колонках играет: <i> 190 Ламбада у селі {190 Ламбада у селі}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 30 Oct 2007 17:11:44 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55499991/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "1"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55499991/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55499991/rss"
+                    }
+                },
+                {
+                    "title": {
+                        "__cdata": "Кофехауз в Атриуме"
+                    },
+                    "link": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55491071/"
+                    },
+                    "description": {
+                        "__cdata": "Граждане, офигеть!<br /> Сколько раз я проходил МИМО пафосных столико на первом этаже Атриума, у фонтана.<br /> А оказывается, это столики КОФЕХАУЗА, т.е. самые дешевые столики в Атриуме, но выглядят офигенно. А народ стремается там сидеть, ибо думает что это Ресторан.<br /> Трандец....<br /> Удивительно рядом, теперь я знаю куда водить выгуливать СЖОВ! ;-)<br /> В колонках играет: <i> 190 Ламбада у селі {190 Ламбада у селі}</i><br /> <br /> <a href=\"http://www.liveinternet.ru/download/\"><smallfont>LI 5.09.15</smallfont></a>"
+                    },
+                    "pubDate": {
+                        "__cdata": "Tue, 30 Oct 2007 15:32:02 +0300"
+                    },
+                    "comments": [
+                        {
+                            "__cdata": "https://www.liveinternet.ru/users/fixin/post55491071/"
+                        },
+                        {
+                            "__prefix": "slash",
+                            "__text": "7"
+                        }
+                    ],
+                    "guid": {
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55491071/"
+                    },
+                    "commentRss": {
+                        "__prefix": "wfw",
+                        "__cdata": "https://www.liveinternet.ru/users/fixin/post55491071/rss"
+                    }
+                }
+            ]
+        },
+        "_xmlns:content": "http://purl.org/rss/1.0/modules/content/",
+        "_xmlns:wfw": "http://wellformedweb.org/CommentAPI/",
+        "_xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "_xmlns:atom": "http://www.w3.org/2005/Atom",
+        "_xmlns:sy": "http://purl.org/rss/1.0/modules/syndication/",
+        "_xmlns:slash": "http://purl.org/rss/1.0/modules/slash/",
+        "_version": "2.0"
+    }
+}

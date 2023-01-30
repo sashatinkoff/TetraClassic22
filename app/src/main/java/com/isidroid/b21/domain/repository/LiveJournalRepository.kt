@@ -9,4 +9,6 @@ interface LiveJournalRepository {
 
     suspend fun findPostById(id: String): Post?
     suspend fun findPostByUrl(url: String): Post?
+
+    suspend fun loadLiveInternet()
 }
