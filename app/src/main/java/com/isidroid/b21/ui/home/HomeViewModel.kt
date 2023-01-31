@@ -1,6 +1,7 @@
 package com.isidroid.b21.ui.home
 
 import android.net.Uri
+import androidx.core.net.toUri
 import androidx.lifecycle.*
 import com.isidroid.b21.domain.use_case.HomeUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -56,9 +57,9 @@ class HomeViewModel @Inject constructor(
                 .collect {
                     when (it) {
                         is HomeUseCase.Result.StartPdf -> showLogs("start pdf ${it.fileName}")
-                        is HomeUseCase.Result.DownloadImage -> showLogs("download image ${it.url} for ${it.title}")
+                        is HomeUseCase.Result.DownloadImage -> showLogs("download image ${it.url.toUri().host} for ${it.title}")
                         is HomeUseCase.Result.PdfCompleted -> showLogs("pdf ${it.fileName} created")
-                        is HomeUseCase.Result.PostSavedInPdf -> showLogs("${it.post.title} saved in ${it.fileName}")
+                        is HomeUseCase.Result.PostSavedInPdf -> showLogs("${monthDateFormat.format(it.post.createdAt!!)} saved in ${it.fileName}")
                     }
                 }
 
@@ -85,7 +86,7 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun showLogs(event: String) {
-        if(logs.contains(event))
+        if (logs.contains(event))
             return
 
         viewModelScope.launch {
