@@ -1,5 +1,6 @@
 package com.isidroid.b21.domain.repository
 
+import android.net.Uri
 import com.isidroid.b21.domain.model.Post
 
 interface LiveJournalRepository {
@@ -11,4 +12,5 @@ interface LiveJournalRepository {
     suspend fun findPostByUrl(url: String): Post?
 
     suspend fun loadLiveInternet()
+    suspend fun saveToJson(uri: Uri)
 }

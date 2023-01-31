@@ -27,6 +27,11 @@ class HomeFragment : BindFragment(), HomeView {
         viewModel.createPdf(it!!)
     }
 
+    private val saveJsonContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
+        binding.textView.text = ""
+        viewModel.saveLjJson(it!!)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentHomeBinding.inflate(layoutInflater)
         return binding.root
@@ -41,6 +46,7 @@ class HomeFragment : BindFragment(), HomeView {
             buttonStop.setOnClickListener { viewModel.stop() }
             buttonPdf.setOnClickListener { documentPdfContract.launch(null) }
             buttonLiveinternet.setOnClickListener { viewModel.liveInternet() }
+            buttonLiveJournalJson.setOnClickListener { saveJsonContract.launch(null) }
         }
     }
 

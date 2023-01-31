@@ -24,7 +24,7 @@ class HomeUseCase @Inject constructor(
     fun start() = flow {
         isRunning = true
         var url = "https://fixin.livejournal.com/385.html"
-        url = liveJournalRepository.nextPostUrl("2033243")
+//        url = liveJournalRepository.nextPostUrl("2033243")
 
 
 //        url = "https://fixin.livejournal.com/2310772.html"
@@ -103,6 +103,11 @@ class HomeUseCase @Inject constructor(
 
     fun deleteLiveInternet() = flow {
         appDatabase.postDao.deleteLiveInternet()
+        emit(true)
+    }
+
+    fun saveLjJson(uri: Uri) = flow {
+        liveJournalRepository.saveToJson(uri)
         emit(true)
     }
 

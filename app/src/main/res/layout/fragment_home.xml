@@ -59,14 +59,22 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLiveJournalJson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:text="Save LJ Json"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonLiveinternet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:text="Liveinternet"
             app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintEnd_toStartOf="@+id/buttonPdf"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonPdf"

@@ -74,6 +74,16 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun saveLjJson(uri: Uri) {
+        viewModelScope.launch {
+            useCase
+                .saveLjJson(uri)
+                .flowOn(Dispatchers.IO)
+                .catch { Timber.e(it) }
+                .collect { showLogs("Lj saved in json") }
+        }
+    }
+
     private fun showLogs(event: String) {
         if(logs.contains(event))
             return

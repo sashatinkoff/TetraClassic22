@@ -1,7 +1,9 @@
 package com.isidroid.b21.data.repository
 
 import android.content.Context
+import android.net.Uri
 import androidx.core.net.toUri
+import androidx.documentfile.provider.DocumentFile
 import com.google.gson.Gson
 import com.isidroid.b21.data.mapper.PostMapper
 import com.isidroid.b21.data.source.local.AppDatabase
@@ -11,13 +13,12 @@ import com.isidroid.b21.data.source.remote.response.RssDocumentResponse
 import com.isidroid.b21.domain.model.Post
 import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.ext.assetsFileContent
-import com.isidroid.core.ext.fromJson
-import com.isidroid.core.ext.tryCatch
+import com.isidroid.core.ext.*
 import org.jsoup.Jsoup
 import timber.log.Timber
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 class LiveJournalRepositoryImpl(
     private val gson: Gson,
@@ -44,7 +45,7 @@ class LiveJournalRepositoryImpl(
 
             return parsePost(html, getByUrl = url)
         } catch (t: Throwable) {
-            if(attempt >= 10) throw t
+            if (attempt >= 10) throw t
 
             return postHtml(url, attempt + 1)
         }
@@ -161,6 +162,30 @@ class LiveJournalRepositoryImpl(
 
             val posts = data.rss.channel.items.map { PostMapper.transformNetwork(it) }
             postDao.insert(*posts.toTypedArray())
+        }
+    }
+
+    override suspend fun saveToJson(uri: Uri) {
+        var date: Date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+            .parse("2000-01-01 01:00:00")!!
+        val yearFormat = SimpleDateFormat("yyyyy", Locale.getDefault())
+
+        while (true) {
+            val startDate = date
+            val endDate = Date(date.addMonths(12).time - 1L)
+
+            val posts = postDao.filterByDate(startDate, endDate).filter { it.isDownloaded }
+            if (posts.isNotEmpty()) {
+                val json = gson.toJson(posts)
+                val file = File(context.cacheDir, "${UUID.randomUUID()}")
+                file.saveString(json)
+
+                file.copyToPublicFolder(context, targetDisplayName = "diary_${yearFormat.format(startDate)}.json", destUri = uri)
+            }
+
+            date = endDate
+
+            if (yearFormat.format(date).toInt() > 2020) break
         }
     }
 }
