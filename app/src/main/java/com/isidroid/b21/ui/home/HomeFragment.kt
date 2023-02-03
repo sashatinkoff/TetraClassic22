@@ -29,6 +29,9 @@ class HomeFragment : BindFragment(), HomeView {
         return binding.root
     }
 
-    override fun onReady() {
+    override fun createForm() {
+        with(binding){
+            button.setOnClickListener { viewModel.start() }
+        }
     }
 }
