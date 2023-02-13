@@ -69,25 +69,7 @@ abstract class CoreBindFullscreenDialogFragment() : AppCompatDialogFragment(), B
         createBaseView()
     }
 
-    @CallSuper
-    open fun showError(
-        message: String?,
-        isCritical: Boolean = false,
-        buttonTitle: String? = null,
-        onButtonClick: (() -> Unit)? = null
-    ) {
-        (requireActivity() as? CoreBindActivity)
-            ?.showError(message, isCritical, buttonTitle, onButtonClick)
-    }
-
-    @CallSuper
-    open fun showError(
-        t: Throwable?,
-        isCritical: Boolean = false,
-        buttonTitle: String? = null,
-        onButtonClick: (() -> Unit)? = null
-    ) {
-        (requireActivity() as? CoreBindActivity)
-            ?.showError(t, isCritical, buttonTitle, onButtonClick)
+    open fun showError(t: Throwable) {
+        (requireActivity() as? CoreBindActivity)?.showError(t)
     }
 }

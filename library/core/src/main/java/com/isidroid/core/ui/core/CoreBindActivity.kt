@@ -17,8 +17,6 @@ import timber.log.Timber
  *
  */
 abstract class CoreBindActivity : AppCompatActivity(), BaseView, FragmentConnector {
-    private var errorDialog: AlertDialog? = null
-
     override var currentFragment: Fragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,40 +44,7 @@ abstract class CoreBindActivity : AppCompatActivity(), BaseView, FragmentConnect
     open fun onCreateViewModel() {}
 
     @CallSuper
-    open fun showError(
-        t: Throwable?,
-        isCritical: Boolean = false,
-        buttonTitle: String? = null,
-        onButtonClick: (() -> Unit)? = null
-    ) {
-        showError(
-            message = t?.message,
-            isCritical = isCritical,
-            buttonTitle = buttonTitle,
-            onButtonClick = onButtonClick
-        )
+    open fun showError(t: Throwable) {
+        Toast.makeText(this, t.message, Toast.LENGTH_LONG).show()
     }
-
-    @CallSuper
-    open fun showError(
-        message: String?,
-        isCritical: Boolean = false,
-        buttonTitle: String? = null,
-        onButtonClick: (() -> Unit)? = null
-    ) {
-        message ?: return
-
-        if (isCritical && errorDialog?.isShowing != true)
-            errorDialog = alert(
-                message = message,
-                positive = buttonTitle,
-                onPositive = { onButtonClick?.invoke() },
-                onDismiss = { errorDialog = null },
-                negativeRes = android.R.string.cancel,
-                isCancelable = false
-            )
-        else if (!isCritical)
-            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-    }
-
 }

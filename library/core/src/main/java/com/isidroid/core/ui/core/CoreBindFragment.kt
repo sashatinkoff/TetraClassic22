@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
 import androidx.navigation.fragment.NavHostFragment
 import com.isidroid.core.ext.hideSoftKeyboard
+import com.isidroid.core.ext.parent
 import com.isidroid.core.utils.FragmentConnector
 import com.isidroid.core.utils.FragmentResultListener
 import kotlinx.coroutines.launch
@@ -74,33 +75,12 @@ abstract class CoreBindFragment : Fragment(), LifecycleObserver, LifecycleOwner,
 
     open suspend fun onCreateViewModel() {}
 
-    @CallSuper
-    open fun showError(
-        message: String?,
-        isCritical: Boolean = false,
-        buttonTitle: String? = null,
-        onButtonClick: (() -> Unit)? = null
-    ) {
-        (requireActivity() as? CoreBindActivity)
-            ?.showError(message, isCritical, buttonTitle, onButtonClick)
-    }
-
-    @CallSuper
-    open fun showError(
-        t: Throwable?,
-        isCritical: Boolean = false,
-        buttonTitle: String? = null,
-        onButtonClick: (() -> Unit)? = null
-    ) {
-        (requireActivity() as? CoreBindActivity)
-            ?.showError(t, isCritical, buttonTitle, onButtonClick)
+    open fun showError(t: Throwable) {
+        (activity as? CoreBindActivity)?.showError(t)
     }
 
     private fun fragmentConnector(isResumed: Boolean) {
-        val connector =
-            parentFragment as? FragmentConnector
-                ?: (parentFragment as? NavHostFragment)?.parentFragment as? FragmentConnector
-                ?: activity as? FragmentConnector ?: return
+        val connector = (parent as? FragmentConnector) ?: (activity as? FragmentConnector) ?: return
 
         if (isResumed && !isHidden && this.isResumed) connector.onFragmentResumed(this)
         else connector.onFragmentPaused(this)

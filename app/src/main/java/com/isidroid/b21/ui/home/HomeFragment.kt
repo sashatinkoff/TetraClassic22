@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
-import androidx.navigation.fragment.navArgs
 import com.google.android.material.appbar.MaterialToolbar
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
@@ -26,10 +25,9 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
         return binding.root
     }
 
-    override fun createForm() {
-        with(binding) {
-            button.setOnClickListener { viewModel.start() }
-        }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun createToolbar(toolbar: MaterialToolbar, navController: NavController) {
@@ -37,4 +35,5 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
         toolbar.visible(true)
         toolbar.title = "Hello Sample World"
     }
+
 }

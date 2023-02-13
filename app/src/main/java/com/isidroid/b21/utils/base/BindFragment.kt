@@ -37,8 +37,8 @@ abstract class BindFragment : CoreBindFragment(), NavigationListener, StatusColo
         (activity as? MainView)?.updateProgress(isProgress)
     }
 
-    override fun showError(t: Throwable?, isCritical: Boolean, buttonTitle: String?, onButtonClick: (() -> Unit)?) {
+    override fun showError(t: Throwable) {
         updateProgress(false)
-        super.showError(t, isCritical, buttonTitle, onButtonClick)
+        super.showError(t)
     }
 }
