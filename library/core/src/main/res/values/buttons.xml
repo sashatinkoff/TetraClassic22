@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.MyApp.MaterialButton" parent="Widget.Material3.Button" >
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="Widget.MyApp.MaterialButtonOutline" parent="Widget.Material3.Button.OutlinedButton" >
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="Widget.MyApp.ElevatedButton" parent="Widget.Material3.Button.ElevatedButton" >
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="Widget.MyApp.IconButton" parent="Widget.Material3.Button.IconButton" >
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="Widget.MyApp.TextButton" parent="Widget.Material3.Button.TextButton" >
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <dimen name="button_corner_radius">8dp</dimen>
+
+</resources>

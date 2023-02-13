@@ -1,5 +1,6 @@
 package com.isidroid.core.ext
 
+import android.text.format.DateUtils
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -59,6 +60,9 @@ val String.date: Date
     }
 
 val Date.string: String
+    get() = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(this)
+
+val Date.stringDateTime: String
     get() = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(this)
 
 fun Date.diffTime(date: Date?): Int {
@@ -67,6 +71,13 @@ fun Date.diffTime(date: Date?): Int {
     val diff: Long = time - date.time
     return diff.toInt()
 }
+
+fun Date.addYear(year: Int): Date = with(Calendar.getInstance()) {
+    time = this@addYear
+    add(Calendar.YEAR, year)
+    time
+}
+
 
 val Date.startDay: Date
     get() = with(Calendar.getInstance()) {
@@ -77,3 +88,11 @@ val Date.startDay: Date
         set(Calendar.MILLISECOND, 0)
         time
     }
+
+val Date.endDay: Date
+    get() {
+        val ts = startDay.addDays(1).time - 1
+        return Date(ts)
+    }
+
+val Date.isToday get() = DateUtils.isToday(time)

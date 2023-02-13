@@ -1,4 +1,4 @@
-package com.isidroid.b21.ui
+package com.isidroid.core.ui
 
 import androidx.core.view.ViewCompat
 import androidx.navigation.NavController

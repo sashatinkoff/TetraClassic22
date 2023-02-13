@@ -6,15 +6,16 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk build_versions.compile_sdk
 
     defaultConfig {
-        minSdk 21
-        targetSdk 32
+        minSdk build_versions.min_sdk
+        targetSdk build_versions.target_sdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
+
 
     buildTypes {
         release {
@@ -36,17 +37,22 @@ android {
 }
 
 dependencies {
-    // google
-    implementation "androidx.appcompat:appcompat:$google.app_compat"
-    implementation "androidx.core:core-ktx:$google.core_ktx"
-    implementation "com.google.code.gson:gson:$google.gson"
-    implementation "androidx.navigation:navigation-fragment-ktx:$google.navigation_fragment"
-    implementation "androidx.navigation:navigation-ui-ktx:$google.navigation_ui_ktx"
-    implementation "com.google.android.material:material:$google.material"
-    implementation "com.google.dagger:hilt-android:$google.hilt"
+    api "androidx.appcompat:appcompat:$google.app_compat"
+    api "androidx.core:core-ktx:$google.core_ktx"
+    api "com.google.code.gson:gson:$google.gson"
+    api "androidx.navigation:navigation-fragment-ktx:$google.navigation_fragment"
+    api "androidx.navigation:navigation-ui-ktx:$google.navigation_ui_ktx"
+    api "com.google.android.material:material:$google.material"
+    api "com.google.dagger:hilt-android:$google.hilt"
 
     kapt "com.google.dagger:hilt-compiler:$google.hilt_compiler"
 
+    api "com.squareup.retrofit2:converter-gson:$network.converter_gson"
+    api "com.squareup.okhttp3:logging-interceptor:$network.logging"
+    api "com.squareup.okhttp3:okhttp:$network.okhttp"
+    api "com.squareup.okio:okio:$network.okio"
+    api "com.squareup.retrofit2:retrofit:$network.retrofit"
+
     // tools
-    implementation "com.jakewharton.timber:timber:$tools.timber"
+    api "com.jakewharton.timber:timber:$tools.timber"
 }

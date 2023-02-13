@@ -1,4 +1,4 @@
-package com.isidroid.core.ui
+package com.isidroid.core.ui.core
 
 import android.app.Dialog
 import android.graphics.Color

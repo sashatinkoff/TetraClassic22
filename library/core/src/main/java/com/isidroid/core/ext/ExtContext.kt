@@ -1,17 +1,15 @@
 package com.isidroid.core.ext
 
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.res.Resources
-import android.os.Parcelable
 import android.util.DisplayMetrics
 import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
+import java.io.File
+import java.util.*
 import kotlin.math.roundToInt
 
-fun screenWidthPx() = Resources.getSystem().displayMetrics.widthPixels
-fun screenHeightPx() = Resources.getSystem().displayMetrics.heightPixels
 
 fun Context.dpToPx(dp: Int) =
     with(resources.displayMetrics) { (dp * (xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt() }
@@ -27,8 +25,13 @@ fun Context.hasPermission(name: String) =
 
 fun Context.hasAllPermissions(vararg perms: String) = perms.all { hasPermission(it) }
 
-fun Intent.putExtra(key: String, value: List<Parcelable>?) =
-    apply {
-        value ?: return@apply
-        putExtra(key, value.toTypedArray())
-    }
+fun Context.createTempFile(
+    prefix: String = UUID.randomUUID().toString(),
+    suffix: String,
+    deleteOnExit: Boolean = false
+): File = File.createTempFile(prefix, ".$suffix", cacheDir).apply {
+    createNewFile()
+
+    if (deleteOnExit)
+        deleteOnExit()
+}

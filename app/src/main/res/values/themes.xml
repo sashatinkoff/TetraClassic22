@@ -3,10 +3,52 @@
 
     <style name="BaseAppTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="alertDialogTheme">@style/YDialog</item>
+        <item name="materialAlertDialogTheme">@style/YDialog</item>
 
-        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
 
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Optional: set to transparent if your app is drawing behind the status bar. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Optional: set the status bar light and content dark. -->
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+
+        <item name="materialButtonStyle">@style/Widget.MyApp.MaterialButton</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MyApp.MaterialButtonOutline</item>
+
+        <!-- Typography -->
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.MyApp.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.MyApp.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.MyApp.HeadlineSmall</item>
+
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MyApp.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MyApp.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MyApp.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MyApp.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MyApp.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MyApp.Headline6</item>
+
+        <item name="textAppearanceBody1">@style/TextAppearance.MyApp.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MyApp.Body2</item>
+
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.MyApp.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.MyApp.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.MyApp.BodySmall</item>
+
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.MyApp.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.MyApp.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.MyApp.DisplaySmall</item>
+
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.MyApp.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.MyApp.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.MyApp.LabelSmall</item>
+
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.MyApp.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.MyApp.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.MyApp.TitleSmall</item>
     </style>
 
     <style name="AppTheme" parent="BaseAppTheme">

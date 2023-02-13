@@ -3,9 +3,9 @@ package com.isidroid.core.ext
 import android.app.Activity
 import android.content.Context
 import android.view.View
-import android.view.WindowManager
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -74,12 +74,12 @@ fun Context?.alert(
     return result
 }
 
-fun Activity.updateStatusBarColorExt(color: Int) {
-    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-    window.statusBarColor = color( color)
-}
-
 fun FragmentActivity.findNavController(@IdRes viewId: Int): NavController {
     val navHostFragment = supportFragmentManager.findFragmentById(viewId) as NavHostFragment
+    return navHostFragment.navController
+}
+
+fun Fragment.findNavController(@IdRes viewId: Int): NavController {
+    val navHostFragment = childFragmentManager.findFragmentById(viewId) as NavHostFragment
     return navHostFragment.navController
 }

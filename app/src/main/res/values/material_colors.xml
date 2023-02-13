@@ -27,6 +27,7 @@
     <color name="md_theme_light_inverseSurface">#303030</color>
     <color name="md_theme_light_inverseOnSurface">#F2F0EF</color>
     <color name="md_theme_light_inversePrimary">#AACEC1</color>
+
     <color name="md_theme_dark_primary">#AACEC1</color>
     <color name="md_theme_dark_onPrimary">#15362D</color>
     <color name="md_theme_dark_primaryContainer">#2C4D43</color>

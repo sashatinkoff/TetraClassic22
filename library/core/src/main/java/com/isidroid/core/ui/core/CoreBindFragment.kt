@@ -1,16 +1,15 @@
-package com.isidroid.core.ui
+package com.isidroid.core.ui.core
 
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.CallSuper
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.*
 import androidx.navigation.fragment.NavHostFragment
 import com.isidroid.core.ext.hideSoftKeyboard
 import com.isidroid.core.utils.FragmentConnector
 import com.isidroid.core.utils.FragmentResultListener
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 /**
@@ -18,7 +17,7 @@ import timber.log.Timber
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwner, BaseView, FragmentConnector, FragmentResultListener {
+abstract class CoreBindFragment : Fragment(), LifecycleObserver, LifecycleOwner, BaseView, FragmentConnector, FragmentResultListener {
     override var currentFragment: Fragment? = null
 
     @CallSuper
@@ -26,7 +25,8 @@ abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwne
         super.onCreate(savedInstanceState)
         Timber.tag("fragment_lifecycle").i("onCreate ${javaClass.simpleName} act=${requireActivity().javaClass.simpleName}")
         lifecycle.addObserver(this)
-        onCreateViewModel()
+
+        createViewModel()
     }
 
     @CallSuper
@@ -64,7 +64,15 @@ abstract class CoreBindFragment() : Fragment(), LifecycleObserver, LifecycleOwne
         requireActivity().hideSoftKeyboard()
     }
 
-    open fun onCreateViewModel() {}
+    private fun createViewModel() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                onCreateViewModel()
+            }
+        }
+    }
+
+    open suspend fun onCreateViewModel() {}
 
     @CallSuper
     open fun showError(

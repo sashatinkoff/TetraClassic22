@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.MyApp.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge" />
+    <style name="TextAppearance.MyApp.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium" />
+    <style name="TextAppearance.MyApp.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall" />
+
+    <style name="TextAppearance.MyApp.Headline1" parent="TextAppearance.MaterialComponents.Headline1" />
+    <style name="TextAppearance.MyApp.Headline2" parent="TextAppearance.MaterialComponents.Headline2" />
+    <style name="TextAppearance.MyApp.Headline3" parent="TextAppearance.MaterialComponents.Headline3" />
+    <style name="TextAppearance.MyApp.Headline4" parent="TextAppearance.MaterialComponents.Headline4" />
+    <style name="TextAppearance.MyApp.Headline5" parent="TextAppearance.MaterialComponents.Headline5" />
+    <style name="TextAppearance.MyApp.Headline6" parent="TextAppearance.MaterialComponents.Headline6" />
+
+    <style name="TextAppearance.MyApp.Body1" parent="TextAppearance.MaterialComponents.Body1" />
+    <style name="TextAppearance.MyApp.Body2" parent="TextAppearance.MaterialComponents.Body2" />
+
+    <style name="TextAppearance.MyApp.BodyLarge" parent="TextAppearance.Material3.BodyLarge" />
+    <style name="TextAppearance.MyApp.BodyMedium" parent="TextAppearance.Material3.BodyMedium" />
+    <style name="TextAppearance.MyApp.BodySmall" parent="TextAppearance.Material3.BodySmall" />
+
+    <style name="TextAppearance.MyApp.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge" />
+    <style name="TextAppearance.MyApp.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium" />
+    <style name="TextAppearance.MyApp.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall" />
+
+    <style name="TextAppearance.MyApp.LabelLarge" parent="TextAppearance.Material3.LabelLarge" />
+    <style name="TextAppearance.MyApp.LabelMedium" parent="TextAppearance.Material3.LabelMedium" />
+    <style name="TextAppearance.MyApp.LabelSmall" parent="TextAppearance.Material3.LabelSmall" />
+
+    <style name="TextAppearance.MyApp.TitleLarge" parent="TextAppearance.Material3.TitleLarge" />
+    <style name="TextAppearance.MyApp.TitleMedium" parent="TextAppearance.Material3.TitleMedium" />
+    <style name="TextAppearance.MyApp.TitleSmall" parent="TextAppearance.Material3.TitleSmall" />
+</resources>

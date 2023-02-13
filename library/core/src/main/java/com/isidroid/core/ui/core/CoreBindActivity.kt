@@ -1,6 +1,7 @@
-package com.isidroid.core.ui
+package com.isidroid.core.ui.core
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AlertDialog
@@ -23,6 +24,10 @@ abstract class CoreBindActivity : AppCompatActivity(), BaseView, FragmentConnect
     override fun onCreate(savedInstanceState: Bundle?) {
         Timber.tag("activity_lifecycle").i("${javaClass.simpleName} onCreate")
         super.onCreate(savedInstanceState)
+    }
+
+    override fun onPostCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onPostCreate(savedInstanceState, persistentState)
         createBaseView()
         onCreateViewModel()
     }

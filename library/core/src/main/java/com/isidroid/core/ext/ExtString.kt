@@ -67,3 +67,5 @@ fun String.saveContentToFile(context: Context, targetDisplayName: String, destUr
 
     return true
 }
+
+fun String.capitalize() = trim().lowercase().replaceFirstChar { it.uppercase() }
