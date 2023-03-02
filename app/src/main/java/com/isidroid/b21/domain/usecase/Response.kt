@@ -7,6 +7,7 @@ data class Response(@SerializedName("messages") val messages: List<MessageRespon
     data class MessageResponse(
         @SerializedName("id") val id: String,
         @SerializedName("date") val date: Date,
+        @SerializedName("date_unixtime") val timestamp: Long,
         @SerializedName("text_entities") val textEntities: List<TextEntity>,
         @SerializedName("photo") val photo: String?
     )

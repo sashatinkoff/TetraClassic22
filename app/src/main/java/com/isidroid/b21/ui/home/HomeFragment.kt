@@ -21,13 +21,6 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
     private val binding get() = _binding!!
 
     private val viewModel by viewModels<HomeViewModel>()
-    private val documentsContractWriter = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
-//        viewModel.createAndSave(it)
-    }
-
-    private val documentsContractReader = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
-        viewModel.read(it)
-    }
 
     private val documentPdfContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
         viewModel.createPdf(it!!, name = binding.input.text.toString())

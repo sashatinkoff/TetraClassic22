@@ -51,7 +51,7 @@ object NetworkModule {
     @Provides
     fun provideGson(): Gson = GsonBuilder()
         .setLenient()
-        .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZZ")
+        .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
         .registerTypeAdapter(Date::class.java, DateDeserializer())
         .create()
 

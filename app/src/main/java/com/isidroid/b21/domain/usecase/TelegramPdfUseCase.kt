@@ -7,6 +7,7 @@ import android.graphics.Matrix
 import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
 import com.google.gson.Gson
+import com.isidroid.core.ext.copy
 import com.isidroid.core.ext.fromJson
 import com.isidroid.core.ext.readText
 import com.isidroid.core.ext.tryCatch
@@ -17,6 +18,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 import java.io.ByteArrayOutputStream
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -53,13 +55,20 @@ class TelegramPdfUseCase @Inject constructor(
             pdfFolder = documentFile.createDirectory("pdf")!!
         }
 
+        val existsFile = pdfFolder.findFile("$name.pdf")
+
+        if (existsFile?.exists() == true) {
+            existsFile.delete()
+        }
+
         val createFile = pdfFolder.createFile("text/pdf", "$name.pdf")
         val fos = context.contentResolver.openOutputStream(createFile!!.uri)
 
         val document = Document()
-        PdfWriter.getInstance(document, fos)
+        val pdfWriter = PdfWriter.getInstance(document, fos)
+        document.pageSize = PageSize.A4
+
         document.open()
-        document.pageSize = PageSize.A4;
         document.addCreationDate();
 
 
@@ -68,54 +77,52 @@ class TelegramPdfUseCase @Inject constructor(
         val response = gson.fromJson<Response>(json)
         val messages = response.messages
             .filter { it.textEntities.any { it.type == "plain" } }
+            .takeLast(50)
 
-        messages.forEachIndexed { index, message ->
-            val date = dateFormat.format(message.date)
-            val text = message.textEntities.firstOrNull { it.type == "plain" }?.text.orEmpty()
-            val hashtags = message.textEntities.filter { it.type == "hashtag" }.joinToString(", ") { it.text }
 
-            document.add(Paragraph(date, fontMedium))
-            document.add(Paragraph(text, font))
+        messages
+            .forEachIndexed { index, message ->
+                val isDebug = message.id == "1101"
 
-            if (hashtags.isNotBlank()) {
-                document.add(Paragraph(hashtags, hashTagFont))
-            }
+                val date = dateFormat.format(Date(message.timestamp * 1000L))
+                val text = message.textEntities.firstOrNull { it.type == "plain" }?.text.orEmpty()
+                val hashtags = message.textEntities.filter { it.type == "hashtag" }.joinToString(", ") { it.text }
 
-            document.add(Paragraph("\n\n"))
+                document.add(Paragraph(date, fontMedium))
+                document.add(Paragraph(text, font))
 
-            if (message.photo != null) {
-                val url = message.photo.replace("photos/", "")
-                val imageFile = documentPhotoFile!!.findFile(url)
+                if (hashtags.isNotBlank()) {
+                    document.add(Paragraph(hashtags, hashTagFont))
+                }
 
-                if (imageFile != null) {
-//                    val file = File(context.cacheDir, "${imageFile.name}")
-//                    imageFile.copy(context, file)
-//
-//                    if (file.length() > 0) {
-//                        val image = Image.getInstance(file.absolutePath)
-//                        image.alignment = MIDDLE
-//                        image.isScaleToFitHeight = true
-//                        image.isScaleToFitLineWhenOverflow = true
-//
-//                        image.widthPercentage = .9f
-//
-//                        document.add(image)
-//                    }
+                if (message.photo != null) {
+                    val url = message.photo.replace("photos/", "")
+                    val imageFile = documentPhotoFile!!.findFile(url)
 
-                    val outputStream = tryCatch { context.contentResolver.openInputStream(imageFile.uri) }
-                    val bitmap = BitmapFactory.decodeStream(outputStream)
-                    if (bitmap != null) {
-                        val byteArray = bitmapToByteArray(bitmap, document.pageSize.width, document.pageSize.height)
-                        val image = Image.getInstance(byteArray)
-                        image.alignment = Image.ALIGN_MIDDLE
+                    if (imageFile != null) {
+                        val outputStream = tryCatch { context.contentResolver.openInputStream(imageFile.uri) }
+                        val bitmap = BitmapFactory.decodeStream(outputStream)
+                        if (bitmap != null) {
+                            val byteArray = bitmapToByteArray(bitmap, document.pageSize.width, document.pageSize.height)
+                            val image = Image.getInstance(byteArray)
+                            image.alignment = Image.ALIGN_MIDDLE
 
-                        byteArray?.also { document.add(image) }
+
+                            byteArray?.also {
+                                val pos = pdfWriter.getVerticalPosition(false)
+                                if (pos < image.height)
+                                    document.newPage()
+
+                                document.add(image)
+                            }
+                        }
                     }
                 }
-            }
 
-            emit(State.OnProgress(index + 1, messages.size))
-        }
+                document.add(Paragraph("\n\n"))
+
+                emit(State.OnProgress(index + 1, messages.size))
+            }
 
         document.close()
         emit(State.OnComplete)
