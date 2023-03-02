@@ -2,11 +2,12 @@ package com.isidroid.b21
 
 import android.app.Application
 import androidx.hilt.work.HiltWorkerFactory
+import androidx.work.Configuration
+import com.isidroid.b21.data.source.settings.Settings
+import com.isidroid.b21.utils.NotificationsChannels
+import com.isidroid.b21.utils.TimberTree
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
-import androidx.work.Configuration
-import com.isidroid.b21.data.InboxWorker
-import com.isidroid.b21.utils.NotificationsChannels
 import javax.inject.Inject
 
 @HiltAndroidApp
@@ -16,17 +17,14 @@ class App : Application(), Configuration.Provider  {
     override fun onCreate() {
         super.onCreate()
 
-        instance = this
         NotificationsChannels(this)
-//        InboxWorker.schedule(this)
-        Timber.plant(Timber.DebugTree())
+        Timber.plant(TimberTree())
+
+        Settings.init(this)
+        Settings.onLaunch()
     }
 
     override fun getWorkManagerConfiguration() = Configuration.Builder()
         .setWorkerFactory(workerFactory)
         .build()
-
-    companion object {
-        lateinit var instance: App
-    }
 }

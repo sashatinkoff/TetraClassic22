@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:title="@string/app_name"
-            app:titleCentered="true" />
-
         <TextView
+            android:id="@+id/textView"
+            style="?textAppearanceBodyMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="32dp"
-            android:text="Some Text happened"
-            android:textSize="18sp" />
+            android:layout_margin="16dp"
+            tools:text="Hello wolrd" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonRead"
@@ -31,11 +27,12 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button"
-            style="@style/Widget.Material3.Button"
+            style="?materialButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
             android:text="Write"
             app:elevation="16dp" />
+
     </LinearLayout>
 </layout>

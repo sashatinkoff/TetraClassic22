@@ -14,8 +14,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 object AppModule {
-    @Singleton
-    @Provides
+    @Singleton   @Provides
     fun provideAppDataBase(@ApplicationContext context: Context): AppDatabase =
         AppDatabase.getInstance(context)
 

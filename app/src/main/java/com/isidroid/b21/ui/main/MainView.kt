@@ -1,14 +1,16 @@
 package com.isidroid.b21.ui.main
 
 import androidx.annotation.ColorRes
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.navigation.NavDirections
 import com.isidroid.b21.R
-import com.isidroid.b21.data.source.settings.Settings
 
 interface MainView {
-    val popupToDestinationId: Int?
+    var topInset: Int
+    val isNightMode: Boolean
 
-    fun updateStatusBarColor(@ColorRes colorRes: Int = R.color.md_theme_light_background, isLightStatusBarIcons: Boolean = true)
-    fun navigateTo(action: NavDirections, clearBackStack: Boolean = false)
+    fun updateProgress(isProgress: Boolean)
+    fun updateStatusBarColor(
+        @ColorRes statusBarColorRes: Int = android.R.color.transparent,
+        @ColorRes navigationBarColorRes: Int = R.color.md_theme_light_primary,
+        isLightStatusBarIcons: Boolean = false
+    )
 }

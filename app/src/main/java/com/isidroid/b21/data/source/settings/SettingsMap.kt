@@ -32,17 +32,17 @@ class SettingsMap {
         }
     }
 
-    fun string(key: SettingId, defaultValue: String?) = mapString[key.name] ?: defaultValue
-    fun bool(key: SettingId, defaultValue: Boolean) = mapBool[key.name] ?: defaultValue
-    fun int(key: SettingId, defaultValue: Int) = mapInt[key.name] ?: defaultValue
-    fun long(key: SettingId, defaultValue: Long) = mapLong[key.name] ?: defaultValue
+    fun string(@SettingType key: String, defaultValue: String?) = mapString[key] ?: defaultValue
+    fun bool(@SettingType key: String, defaultValue: Boolean) = mapBool[key] ?: defaultValue
+    fun int(@SettingType key: String, defaultValue: Int) = mapInt[key] ?: defaultValue
+    fun long(@SettingType key: String, defaultValue: Long) = mapLong[key] ?: defaultValue
 
-    fun save(key: SettingId, value: Any?) {
+    fun save(@SettingType key: String, value: Any?) {
         sp.edit(commit = true) {
-            if (value is Boolean) putBoolean(key.name, value)
-            if (value is String?) putString(key.name, value)
-            if (value is Int) putInt(key.name, value)
-            if (value is Long) putLong(key.name, value)
+            if (value is Boolean) putBoolean(key, value)
+            if (value is String?) putString(key, value)
+            if (value is Int) putInt(key, value)
+            if (value is Long) putLong(key, value)
         }
 
         recreate()

@@ -1,23 +1,20 @@
 package com.isidroid.b21.domain.usecase
 
-import android.R
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
 import com.google.gson.Gson
-import com.isidroid.b21.App
 import com.isidroid.core.ext.fromJson
 import com.isidroid.core.ext.readText
 import com.isidroid.core.ext.tryCatch
-import com.isidroid.core.utils.ResultData
 import com.itextpdf.text.*
 import com.itextpdf.text.pdf.BaseFont
 import com.itextpdf.text.pdf.PdfWriter
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.flow
-import timber.log.Timber
-import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.io.InputStream
@@ -30,11 +27,11 @@ import kotlin.math.max
 
 @Singleton
 class TelegramPdfUseCase @Inject constructor(
-    private val gson: Gson
+    private val gson: Gson,
+    @ApplicationContext private val context: Context
 ) {
 
     fun create(uri: Uri) = flow {
-        val context = App.instance.applicationContext
 
         val dateFormat = SimpleDateFormat("dd MMM yyyy, HH:mm\nEEEE", Locale("ru", "RU"))
         val textSize = 10f
@@ -96,11 +93,11 @@ class TelegramPdfUseCase @Inject constructor(
                 }
             }
 
-            emit(ResultData.Success(State.OnProgress(index + 1, messages.size)))
+            emit(State.OnProgress(index + 1, messages.size))
         }
 
         document.close()
-        emit(ResultData.Success(State.OnComplete))
+        emit(State.OnComplete)
     }
 
     private fun bitmapToByteArray(bitmap: Bitmap, width: Float, height: Float): ByteArray? {
@@ -117,7 +114,6 @@ class TelegramPdfUseCase @Inject constructor(
     }
 
     private fun getBitmap(path: String, width: Float, height: Float): ByteArray? {
-        val context = App.instance
         val istr: InputStream
         val bitmap: Bitmap?
         return try {

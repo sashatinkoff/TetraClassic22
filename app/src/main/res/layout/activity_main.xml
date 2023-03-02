@@ -4,20 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="?colorSurface">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?colorSurface"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subtitleCentered="true"
+            app:subtitleTextAppearance="@style/TextAppearance.App.SubTitle"
+            app:title="Wallet"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/TextAppearance.App.Title" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:navGraph="@navigation/nav_main" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:translationZ="20dp"
+            android:visibility="gone"
+            app:hideAnimationBehavior="outward"
+            app:indicatorColor="?colorSecondary"
+            app:layout_constraintTop_toTopOf="@id/toolbar"
+            app:showAnimationBehavior="inward"
+            app:trackColor="?colorPrimary" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:backgroundTint="?colorPrimary"
+            app:itemActiveIndicatorStyle="@style/ShapeAppearance.Material3.NavigationBarView.ActiveIndicator"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

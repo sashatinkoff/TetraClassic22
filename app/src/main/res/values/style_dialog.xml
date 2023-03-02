@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="YDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <!-- Base colors -->
+        <item name="android:windowBackground">@drawable/bg_custom_dialog</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+
+        <!-- Button styles -->
+        <item name="buttonBarPositiveButtonStyle">@style/YDialogPositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/YDialogNegativeButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/YDialogNeutralButton</item>
+
+        <!-- Sizes -->
+        <item name="android:lineSpacingExtra">@dimen/dialog_line_spacing</item>
+        <item name="android:textSize">@dimen/dialog_text_size</item>
+        <item name="android:windowTitleStyle">@style/YDialogTitleTextAppearance</item>
+    </style>
+
+    <style name="YDialogButton" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">?colorOnSecondaryContainer</item>
+        <item name="android:textSize">@dimen/dialog_buttons_size</item>
+    </style>
+
+    <style name="YDialogPositiveButton" parent="YDialogButton">
+        <item name="android:textColor">?colorOnPrimaryContainer</item>
+    </style>
+
+    <style name="YDialogNegativeButton" parent="YDialogButton" >
+        <item name="android:textColor">?colorOnSecondaryContainer</item>
+    </style>
+
+    <style name="YDialogNeutralButton" parent="YDialogButton" >
+        <item name="android:textColor">?colorOnSecondaryContainer</item>
+    </style>
+
+    <style name="YDialogTitleTextAppearance" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">@dimen/dialog_title_size</item>
+        <item name="android:textColor">?colorOnSecondaryContainer</item>
+    </style>
+
+    <dimen name="dialog_line_spacing">2dp</dimen>
+    <dimen name="dialog_title_size">22sp</dimen>
+    <dimen name="dialog_text_size">16sp</dimen>
+    <dimen name="dialog_buttons_size">14sp</dimen>
+</resources>
