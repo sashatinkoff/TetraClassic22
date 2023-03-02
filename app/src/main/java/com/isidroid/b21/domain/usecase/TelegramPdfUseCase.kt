@@ -7,8 +7,8 @@ import android.graphics.Matrix
 import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
 import com.google.gson.Gson
-import com.isidroid.core.ext.copy
 import com.isidroid.core.ext.fromJson
+import com.isidroid.core.ext.json
 import com.isidroid.core.ext.readText
 import com.isidroid.core.ext.tryCatch
 import com.itextpdf.text.*
@@ -18,7 +18,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 import java.io.ByteArrayOutputStream
-import java.io.File
+import java.lang.Integer.min
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
@@ -71,19 +71,10 @@ class TelegramPdfUseCase @Inject constructor(
         document.open()
         document.addCreationDate();
 
-
-        val jsonFile = documentFile.findFile("result.json")!!
-        val json = jsonFile.readText(context)
-        val response = gson.fromJson<Response>(json)
-        val messages = response.messages
-            .filter { it.textEntities.any { it.type == "plain" } }
-            .takeLast(50)
-
+        val messages = getMessages(documentFile)
 
         messages
             .forEachIndexed { index, message ->
-                val isDebug = message.id == "1101"
-
                 val date = dateFormat.format(Date(message.timestamp * 1000L))
                 val text = message.textEntities.firstOrNull { it.type == "plain" }?.text.orEmpty()
                 val hashtags = message.textEntities.filter { it.type == "hashtag" }.joinToString(", ") { it.text }
@@ -95,18 +86,20 @@ class TelegramPdfUseCase @Inject constructor(
                     document.add(Paragraph(hashtags, hashTagFont))
                 }
 
-                if (message.photo != null) {
-                    val url = message.photo.replace("photos/", "")
+                for (photo in message.photoList.orEmpty()) {
+                    val url = photo.replace("photos/", "")
                     val imageFile = documentPhotoFile!!.findFile(url)
 
                     if (imageFile != null) {
                         val outputStream = tryCatch { context.contentResolver.openInputStream(imageFile.uri) }
                         val bitmap = BitmapFactory.decodeStream(outputStream)
                         if (bitmap != null) {
-                            val byteArray = bitmapToByteArray(bitmap, document.pageSize.width, document.pageSize.height)
+                            val width = kotlin.math.min(bitmap.width.toFloat(), document.pageSize.width)
+                            val height = kotlin.math.min(bitmap.height.toFloat(), document.pageSize.height)
+
+                            val byteArray = bitmapToByteArray(bitmap, width, height)
                             val image = Image.getInstance(byteArray)
                             image.alignment = Image.ALIGN_MIDDLE
-
 
                             byteArray?.also {
                                 val pos = pdfWriter.getVerticalPosition(false)
@@ -118,6 +111,7 @@ class TelegramPdfUseCase @Inject constructor(
                         }
                     }
                 }
+
 
                 document.add(Paragraph("\n\n"))
 
@@ -153,5 +147,33 @@ class TelegramPdfUseCase @Inject constructor(
         matrix.postScale(scale, scale)
 
         return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true)
+    }
+
+    private fun getMessages(documentFile: DocumentFile): List<Response.MessageResponse> {
+        val jsonFile = documentFile.findFile("result.json")!!
+        val json = jsonFile.readText(context)
+        val messagesResponse = gson.fromJson<Response>(json)
+        val messages = messagesResponse.messages
+
+        val dateMap = hashMapOf<Long, Response.MessageResponse>()
+        for (m in messages) {
+            if (!dateMap.containsKey(m.timestamp))
+                dateMap[m.timestamp] = m
+
+            if (m.photo != null) {
+                if (dateMap[m.timestamp]?.photoList == null)
+                    dateMap[m.timestamp]?.photoList = mutableSetOf()
+
+                dateMap[m.timestamp]?.photoList?.add(m.photo)
+            }
+
+        }
+
+        return dateMap.values.sortedBy { it.timestamp }
+            .also {
+                Timber.i("${it.last().json}")
+                Timber.i("${it.last()}")
+                Timber.i("${it.last().photoList}")
+            }
     }
 }
