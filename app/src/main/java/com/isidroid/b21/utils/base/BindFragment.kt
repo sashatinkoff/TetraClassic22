@@ -11,8 +11,10 @@ import com.isidroid.core.ext.parent
 import com.isidroid.core.ui.NavigationListener
 import com.isidroid.core.ui.StatusColorListener
 import com.isidroid.core.ui.core.CoreBindFragment
+import com.isidroid.core.utils.KeyboardVisibilityListener
+import com.isidroid.core.utils.WindowInsetListener
 
-abstract class BindFragment : CoreBindFragment(), NavigationListener, StatusColorListener {
+abstract class BindFragment : CoreBindFragment(), NavigationListener, StatusColorListener, WindowInsetListener, KeyboardVisibilityListener {
     override val statusBarColorRes: Int = android.R.color.transparent
     override val navigationBarColorRes: Int = android.R.color.transparent
     override val isLightStatusBarIcons: Boolean = (activity as? MainView)?.isNightMode != true

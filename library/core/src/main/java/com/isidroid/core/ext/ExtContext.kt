@@ -11,13 +11,6 @@ import java.util.*
 import kotlin.math.roundToInt
 
 
-fun Context.dpToPx(dp: Int) =
-    with(resources.displayMetrics) { (dp * (xdpi / DisplayMetrics.DENSITY_DEFAULT)).roundToInt() }
-
-fun Context.dpToPxf(dp: Int): Float {
-    val metrics = Resources.getSystem().displayMetrics
-    return dp * (metrics.densityDpi / 160f)
-}
 
 fun Context.color(@ColorRes color: Int) = ContextCompat.getColor(this, color)
 fun Context.hasPermission(name: String) =

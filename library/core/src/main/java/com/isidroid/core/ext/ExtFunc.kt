@@ -2,6 +2,7 @@ package com.isidroid.core.ext
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.os.Parcelable
@@ -68,7 +69,7 @@ inline fun <reified T : Parcelable> Bundle.getParcelableCompat(key: String, claz
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
         getParcelable(key, clazz)
     else
-        getParcelable<T>(key)
+        getParcelable(key)
 }
 
 inline fun <reified T : Serializable> Bundle.getSerializableCompat(key: String, clazz: Class<T>): T? {
@@ -82,7 +83,7 @@ inline fun <reified T : Parcelable> Bundle.getParcelableListCompat(key: String, 
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
         getParcelableArrayList(key, clazz)
     else
-        getParcelableArrayList<T>(key)
+        getParcelableArrayList(key)
 }
 
 inline fun <reified T : Serializable> Intent.getSerializableExtraCompat(key: String, clazz: Class<T>): T? {
@@ -104,5 +105,10 @@ inline fun <reified T : Parcelable> Intent.getParcelableArrayListExtraCompat(key
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
         getParcelableArrayListExtra(key, clazz)
     else
-        getParcelableArrayListExtra<T>(key)
+        getParcelableArrayListExtra(key)
 }
+
+val Int.dp: Int
+    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+val Int.px: Int
+    get() = (this * Resources.getSystem().displayMetrics.density).toInt()

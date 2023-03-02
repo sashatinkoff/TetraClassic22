@@ -19,6 +19,8 @@ import com.isidroid.core.ui.AppBarListener
 import com.isidroid.core.ui.BottomNavigationListener
 import com.isidroid.core.ui.NavigationListener
 import com.isidroid.core.ui.StatusColorListener
+import com.isidroid.core.utils.KeyboardVisibilityListener
+import com.isidroid.core.utils.WindowInsetListener
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -27,7 +29,12 @@ class MainActivity : BindActivity(), MainView, NavigationListener, StatusColorLi
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel by viewModels<MainViewModel>()
+    private var isKeyboardVisible = false
+        set(value) {
+            (currentFragment as? KeyboardVisibilityListener)?.onKeyboardVisibilityChanged(value)
+            field = value
+        }
+
 
     override var topInset: Int = 0
     override val isNightMode: Boolean
@@ -41,7 +48,7 @@ class MainActivity : BindActivity(), MainView, NavigationListener, StatusColorLi
     override val isLightStatusBarIcons: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen().setKeepOnScreenCondition { viewModel.isInitInProgress }
+        installSplashScreen().setKeepOnScreenCondition { false }
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         super.onCreate(savedInstanceState)
@@ -64,6 +71,13 @@ class MainActivity : BindActivity(), MainView, NavigationListener, StatusColorLi
 
                 topInset = insets.top
                 toolbar.updateLayoutParams<ViewGroup.MarginLayoutParams> { topMargin = insets.top }
+
+                if (ime > 0 && !isKeyboardVisible)
+                    isKeyboardVisible = true
+                else if (ime == 0 && isKeyboardVisible)
+                    isKeyboardVisible = false
+
+                (currentFragment as? WindowInsetListener)?.onInsetChanged(start = insets.left, top = insets.top, end = insets.right, bottom = insets.bottom)
 
                 WindowInsetsCompat.CONSUMED
             }
