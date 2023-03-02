@@ -1,20 +1,22 @@
 package com.isidroid.b21.ui.home
 
 import android.net.Uri
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.isidroid.b21.domain.usecase.State
 import com.isidroid.b21.domain.usecase.TelegramPdfUseCase
+import com.isidroid.core.ext.catchTimber
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val state: SavedStateHandle,
     private val useCase: TelegramPdfUseCase
 ) : ViewModel() {
     private val _viewState = MutableStateFlow<UiState?>(null)
@@ -64,15 +66,18 @@ class HomeViewModel @Inject constructor(
 //        }
     }
 
-    fun createPdf(uri: Uri) {
-//        viewModelScope.launch {
-//
-//            useCase.create(uri)
-//                .flowOn(Dispatchers.IO)
-//                .collect {
-//                    Timber.i("$it")
-//                }
-//
-//        }
+    fun createPdf(uri: Uri, name: String) {
+        viewModelScope.launch {
+            useCase.create(uri, name)
+                .flowOn(Dispatchers.IO)
+                .catchTimber { _viewState.value = UiState.Error(it) }
+                .collect {
+                    _viewState.value = when (it) {
+                        State.OnComplete -> UiState.Complete
+                        is State.OnProgress -> UiState.Progress(it.current, it.max)
+                    }
+                }
+
+        }
     }
 }

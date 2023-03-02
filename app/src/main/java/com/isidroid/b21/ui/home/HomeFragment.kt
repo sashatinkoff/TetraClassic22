@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
@@ -29,14 +30,12 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
     }
 
     private val documentPdfContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
-        viewModel.createPdf(it!!)
+        viewModel.createPdf(it!!, name = binding.input.text.toString())
     }
 
 
     override fun onReady() {
-        binding.button.setOnClickListener { documentsContractWriter.launch(null) }
-        binding.buttonRead.setOnClickListener { documentsContractReader.launch(null) }
-//        binding.button.setOnClickListener { documentPdfContract.launch(null) }
+        binding.button.setOnClickListener { documentPdfContract.launch(null) }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -53,5 +52,20 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
         super.createToolbar(toolbar, navController)
         toolbar.visible(true)
         toolbar.title = "Hello Sample World"
+    }
+
+    override suspend fun onCreateViewModel() {
+        viewModel.viewState.collect { state ->
+            when (state) {
+                UiState.Complete -> Toast.makeText(requireContext(), "complete", Toast.LENGTH_SHORT).show()
+                is UiState.Error -> showError(state.t)
+                is UiState.Progress -> {
+                    binding.textView.text = buildString { append("${state.current}/${state.max}") }
+                    binding.progressBar.setProgressCompat(state.current, true)
+                    binding.progressBar.max = state.max
+                }
+                else -> {}
+            }
+        }
     }
 }

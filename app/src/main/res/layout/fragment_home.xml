@@ -3,27 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            style="?textAppearanceBodyMedium"
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/progressBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            tools:text="Hello wolrd" />
+            android:indeterminate="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trackColor="?colorSurfaceVariant"
+            app:trackCornerRadius="4dp"
+            app:trackThickness="4dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonRead"
-            style="@style/Widget.Material3.Button.ElevatedButton"
+        <TextView
+            android:id="@+id/textView"
+            style="?textAppearanceLabelSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="read"
-            app:elevation="16dp" />
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar"
+            tools:text="0/2" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputEditText.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:suffixText=".pdf">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of pdf file"
+                android:text="Diary" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button"
@@ -31,8 +53,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="32dp"
-            android:text="Write"
-            app:elevation="16dp" />
+            android:layout_marginBottom="18dp"
+            android:text="Create pdf"
+            app:elevation="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
