@@ -75,10 +75,6 @@ abstract class CoreBindFragment : Fragment(), LifecycleObserver, LifecycleOwner,
 
     open suspend fun onCreateViewModel() {}
 
-    open fun showError(t: Throwable) {
-        (activity as? CoreBindActivity)?.showError(t)
-    }
-
     private fun fragmentConnector(isResumed: Boolean) {
         val connector = (parent as? FragmentConnector) ?: (activity as? FragmentConnector) ?: return
 

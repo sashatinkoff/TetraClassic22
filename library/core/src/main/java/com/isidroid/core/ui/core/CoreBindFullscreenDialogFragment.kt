@@ -12,13 +12,14 @@ import android.view.WindowManager
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatDialogFragment
 import com.isidroid.core.R
+import com.isidroid.core.ui.ErrorUiHandler
 
 /**
  * this class contains the base implementation, do not modify it.
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindFullscreenDialogFragment() : AppCompatDialogFragment(), BaseView {
+abstract class CoreBindFullscreenDialogFragment() : AppCompatDialogFragment(), BaseView, ErrorUiHandler {
     open val canceledOnTouchOutside: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,7 +70,7 @@ abstract class CoreBindFullscreenDialogFragment() : AppCompatDialogFragment(), B
         createBaseView()
     }
 
-    open fun showError(t: Throwable) {
-        (requireActivity() as? CoreBindActivity)?.showError(t)
+    override fun showError(t: Throwable?) {
+        (activity as? ErrorUiHandler)?.showError(t)
     }
 }
