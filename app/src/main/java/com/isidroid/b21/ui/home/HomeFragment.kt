@@ -1,12 +1,15 @@
 package com.isidroid.b21.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import com.google.android.material.appbar.MaterialToolbar
+import com.isidroid.b21.data.source.settings.Settings
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
 import com.isidroid.core.ext.visible
@@ -36,4 +39,14 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
         toolbar.title = "Hello Sample World"
     }
 
+    override fun createForm() {
+        binding.button.setOnClickListener {
+            Settings.theme = if (Settings.theme == AppCompatDelegate.MODE_NIGHT_NO) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+
+            val intent = requireActivity().intent
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            activity?.finish()
+            startActivity(intent)
+        }
+    }
 }

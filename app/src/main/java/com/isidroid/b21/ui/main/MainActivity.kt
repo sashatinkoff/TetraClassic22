@@ -3,29 +3,27 @@ package com.isidroid.b21.ui.main
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.ViewGroup
-import androidx.activity.viewModels
+import androidx.annotation.AttrRes
 import androidx.annotation.ColorRes
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.ui.NavigationUI
+import com.google.android.material.color.MaterialColors
 import com.isidroid.b21.R
 import com.isidroid.b21.databinding.ActivityMainBinding
 import com.isidroid.b21.utils.base.BindActivity
 import com.isidroid.core.ext.color
 import com.isidroid.core.ext.findNavController
 import com.isidroid.core.ext.visible
-import com.isidroid.core.ui.AppBarListener
-import com.isidroid.core.ui.BottomNavigationListener
-import com.isidroid.core.ui.NavigationListener
-import com.isidroid.core.ui.StatusColorListener
+import com.isidroid.core.ui.*
 import com.isidroid.core.utils.KeyboardVisibilityListener
 import com.isidroid.core.utils.WindowInsetListener
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
-class MainActivity : BindActivity(), MainView, NavigationListener, StatusColorListener, BottomNavigationListener {
+class MainActivity : BindActivity(), MainView, NavigationListener, BottomNavigationListener {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
 
@@ -35,59 +33,52 @@ class MainActivity : BindActivity(), MainView, NavigationListener, StatusColorLi
             field = value
         }
 
-
-    override var topInset: Int = 0
-    override val isNightMode: Boolean
-        get() {
-            val darkModeFlag = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-            return darkModeFlag == Configuration.UI_MODE_NIGHT_YES
-        }
     override val navController by lazy { findNavController(R.id.nav_host_fragment) }
-    override val statusBarColorRes: Int = android.R.color.transparent
-    override val navigationBarColorRes: Int = android.R.color.transparent
-    override val isLightStatusBarIcons: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen().setKeepOnScreenCondition { false }
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         super.onCreate(savedInstanceState)
+        updateStatusBarColor()
+
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        createWindowInset()
         createBaseView()
         onCreateViewModel()
 
+        navController.addOnDestinationChangedListener { controller, _, _ ->
+            Timber.i("navigationBackQueue=${controller.backQueue.mapNotNull { it.destination.label }}")
+        }
+    }
+
+    private fun createWindowInset() {
         with(binding) {
             ViewCompat.setOnApplyWindowInsetsListener(constraintLayout) { view, insets ->
                 val ime = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom
 
-                val insets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                val systemBarInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
                 view.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                    leftMargin = insets.left
-                    rightMargin = insets.right
-                    bottomMargin = if (ime > 0) ime else insets.bottom
+                    leftMargin = systemBarInsets.left
+                    rightMargin = systemBarInsets.right
+                    bottomMargin = if (ime > 0) ime else systemBarInsets.bottom
                 }
 
-                topInset = insets.top
-                toolbar.updateLayoutParams<ViewGroup.MarginLayoutParams> { topMargin = insets.top }
+                topInset = systemBarInsets.top
+                toolbar.updateLayoutParams<ViewGroup.MarginLayoutParams> { topMargin = systemBarInsets.top }
 
                 if (ime > 0 && !isKeyboardVisible)
                     isKeyboardVisible = true
                 else if (ime == 0 && isKeyboardVisible)
                     isKeyboardVisible = false
 
-                (currentFragment as? WindowInsetListener)?.onInsetChanged(start = insets.left, top = insets.top, end = insets.right, bottom = insets.bottom)
+                (currentFragment as? WindowInsetListener)?.onInsetChanged(start = systemBarInsets.left, top = systemBarInsets.top, end = systemBarInsets.right, bottom = systemBarInsets.bottom)
 
                 WindowInsetsCompat.CONSUMED
             }
         }
-
-        navController.addOnDestinationChangedListener { controller, _, _ ->
-            Timber.i("navigationBackQueue=${controller.backQueue.mapNotNull { it.destination.label }}")
-        }
-
-        updateStatusBarColor()
     }
 
     override fun createAppBar() {
@@ -113,15 +104,6 @@ class MainActivity : BindActivity(), MainView, NavigationListener, StatusColorLi
                 isLightStatusBarIcons = it.isLightStatusBarIcons
             )
         }
-    }
-
-    // StatusColorListener
-    override fun updateStatusBarColor(@ColorRes statusBarColorRes: Int, @ColorRes navigationBarColorRes: Int, isLightStatusBarIcons: Boolean) {
-        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = isLightStatusBarIcons
-        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightNavigationBars = isLightStatusBarIcons
-
-        window.navigationBarColor = color(navigationBarColorRes)
-        window.statusBarColor = color(statusBarColorRes)
     }
 
     // MainView

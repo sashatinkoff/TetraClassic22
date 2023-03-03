@@ -49,6 +49,8 @@
         <item name="textAppearanceTitleLarge">@style/TextAppearance.MyApp.TitleLarge</item>
         <item name="textAppearanceTitleMedium">@style/TextAppearance.MyApp.TitleMedium</item>
         <item name="textAppearanceTitleSmall">@style/TextAppearance.MyApp.TitleSmall</item>
+
+        <item name="color_transparent">@android:color/transparent</item>
     </style>
 
     <style name="AppTheme" parent="BaseAppTheme">
