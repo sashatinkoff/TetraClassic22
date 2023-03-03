@@ -42,9 +42,4 @@ abstract class CoreBindActivity : AppCompatActivity(), BaseView, FragmentConnect
     }
 
     open fun onCreateViewModel() {}
-
-    @CallSuper
-    open fun showError(t: Throwable) {
-        Toast.makeText(this, t.message, Toast.LENGTH_LONG).show()
-    }
 }

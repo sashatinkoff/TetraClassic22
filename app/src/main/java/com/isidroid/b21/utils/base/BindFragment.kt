@@ -8,13 +8,14 @@ import androidx.annotation.CallSuper
 import androidx.navigation.NavController
 import com.isidroid.b21.ui.main.MainView
 import com.isidroid.core.ext.parent
+import com.isidroid.core.ui.ErrorUiHandler
 import com.isidroid.core.ui.NavigationListener
 import com.isidroid.core.ui.StatusColorListener
 import com.isidroid.core.ui.core.CoreBindFragment
 import com.isidroid.core.utils.KeyboardVisibilityListener
 import com.isidroid.core.utils.WindowInsetListener
 
-abstract class BindFragment : CoreBindFragment(), NavigationListener, StatusColorListener, WindowInsetListener, KeyboardVisibilityListener {
+abstract class BindFragment : CoreBindFragment(), NavigationListener, StatusColorListener, WindowInsetListener, KeyboardVisibilityListener, ErrorUiHandler {
     override val statusBarColorRes: Int = android.R.color.transparent
     override val navigationBarColorRes: Int = android.R.color.transparent
     override val isLightStatusBarIcons: Boolean = (activity as? MainView)?.isNightMode != true
@@ -39,8 +40,8 @@ abstract class BindFragment : CoreBindFragment(), NavigationListener, StatusColo
         (activity as? MainView)?.updateProgress(isProgress)
     }
 
-    override fun showError(t: Throwable) {
+    override fun showError(t: Throwable?) {
         updateProgress(false)
-        super.showError(t)
+        (activity as? ErrorUiHandler)?.showError(t)
     }
 }

@@ -5,7 +5,7 @@ import timber.log.Timber
 import java.util.*
 
 class TimberTree : Timber.DebugTree() {
-    val logsCollector = mutableListOf<String>()
+    private val logsCollector = mutableListOf<String>()
 
     private fun skipLogTag(tag: String?): Boolean {
         var skip = false

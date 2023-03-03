@@ -11,13 +11,14 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.isidroid.core.R
+import com.isidroid.core.ui.ErrorUiHandler
 
 /**
  * this class contains the base implementation, do not modify it.
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindBottomSheetDialogFragment() : BottomSheetDialogFragment(), BaseView {
+abstract class CoreBindBottomSheetDialogFragment() : BottomSheetDialogFragment(), BaseView, ErrorUiHandler {
     protected open val noDim: Boolean = false
     protected open val fullScreenHeight: Boolean = false
 
@@ -74,8 +75,8 @@ abstract class CoreBindBottomSheetDialogFragment() : BottomSheetDialogFragment()
 
     protected open fun onCreateViewModel() {}
 
-    open fun showError(t: Throwable) {
-        (requireActivity() as? CoreBindActivity)?.showError(t)
+    override fun showError(t: Throwable?) {
+        (activity as? ErrorUiHandler)?.showError(t)
     }
 }
 
