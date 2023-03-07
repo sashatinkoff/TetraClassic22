@@ -4,6 +4,7 @@ import androidx.lifecycle.*
 import com.isidroid.b21.domain.use_case.HomeUseCase
 import com.isidroid.core.ext.catchTimber
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -16,9 +17,10 @@ class HomeViewModel @Inject constructor(
     private val _viewState = MutableStateFlow<UiState?>(null)
     val viewState = _viewState.asStateFlow()
 
-    fun start() {
+    fun makePreview(link: Array<String>) {
         viewModelScope.launch {
-            useCase.start()
+            useCase.preview(link)
+                .flowOn(Dispatchers.IO)
                 .catchTimber { }
                 .collect()
         }

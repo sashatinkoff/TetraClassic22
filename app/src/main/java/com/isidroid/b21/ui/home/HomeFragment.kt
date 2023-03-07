@@ -40,13 +40,14 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
     }
 
     override fun createForm() {
-        binding.button.setOnClickListener {
-            Settings.theme = if (Settings.theme == AppCompatDelegate.MODE_NIGHT_NO) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+    }
 
-            val intent = requireActivity().intent
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            activity?.finish()
-            startActivity(intent)
-        }
+    override fun onReady() {
+        viewModel.makePreview(
+            arrayOf(
+                "https://teachershelp.ru/symbols-of-russia-official-and-non-official/",
+                "https://www.eg.ru/showbusiness/3057082-koncert-maksim-v-nijnem-novgorode/"
+            )
+        )
     }
 }
