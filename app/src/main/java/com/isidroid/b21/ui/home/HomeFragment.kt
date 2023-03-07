@@ -45,8 +45,7 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
     override fun onReady() {
         viewModel.makePreview(
             arrayOf(
-                "https://teachershelp.ru/symbols-of-russia-official-and-non-official/",
-                "https://www.eg.ru/showbusiness/3057082-koncert-maksim-v-nijnem-novgorode/"
+                "https://www.reddit.com/r/aww/comments/11khymd/my_bonded_cats_having_an_afternoon_nap_together_oc/",
             )
         )
     }

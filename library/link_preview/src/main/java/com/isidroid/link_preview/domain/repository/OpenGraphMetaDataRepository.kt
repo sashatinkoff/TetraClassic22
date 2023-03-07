@@ -1,7 +1,7 @@
 package com.isidroid.link_preview.domain.repository
 
-import com.fresh.materiallinkpreview.models.OpenGraphMetaData
+import com.isidroid.link_preview.domain.model.LinkSourceContent
 
 interface OpenGraphMetaDataRepository {
-    suspend fun startFetchingMetadata(link: String): OpenGraphMetaData
+    suspend fun parse(url: String): LinkSourceContent?
 }

@@ -37,6 +37,7 @@ dependencies {
     api "androidx.core:core-ktx:$google.core_ktx"
     api "androidx.appcompat:appcompat:$google.app_compat"
     api "com.google.dagger:hilt-android:$google.hilt"
+    api "com.jakewharton.timber:timber:$tools.timber"
 
     kapt "com.google.dagger:hilt-compiler:$google.hilt_compiler"
 }

@@ -11,7 +11,11 @@ class HomeUseCase @Inject constructor(
     private val openGraphMetaDataRepository: OpenGraphMetaDataRepository
 ) {
     fun preview(link: Array<String>) = flow {
-        val result = link.map { openGraphMetaDataRepository.startFetchingMetadata(it) }
-        emit(result)
+        val result = link.map { openGraphMetaDataRepository.parse(it) }
+
+
+        Timber.i("$result")
+
+        emit("")
     }
 }
