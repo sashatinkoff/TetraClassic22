@@ -1,7 +1,9 @@
 package com.isidroid.link_preview.domain.repository
 
 import com.isidroid.link_preview.domain.model.LinkSourceContent
+import org.jsoup.nodes.Document
 
 interface OpenGraphMetaDataRepository {
-    suspend fun parse(url: String): LinkSourceContent?
+     fun parseFullContent(url: String): LinkSourceContent?
+     fun parseHeaderContent(url: String): LinkSourceContent?
 }

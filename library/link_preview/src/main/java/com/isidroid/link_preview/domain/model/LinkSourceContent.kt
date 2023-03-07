@@ -7,4 +7,8 @@ data class LinkSourceContent(
     val image: String,
     val siteName: String,
     val type: String
-)
+) {
+    override fun toString(): String {
+        return "LinkSourceContent(title='${title.take(50)}', description='${description.take(50)}', url='$url', image='$image', siteName='$siteName', type='$type')"
+    }
+}

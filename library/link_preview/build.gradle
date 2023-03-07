@@ -40,4 +40,10 @@ dependencies {
     api "com.jakewharton.timber:timber:$tools.timber"
 
     kapt "com.google.dagger:hilt-compiler:$google.hilt_compiler"
+
+    api "com.squareup.retrofit2:converter-gson:$network.converter_gson"
+    api "com.squareup.okhttp3:logging-interceptor:$network.logging"
+    api "com.squareup.okhttp3:okhttp:$network.okhttp"
+    api "com.squareup.okio:okio:$network.okio"
+    api "com.squareup.retrofit2:retrofit:$network.retrofit"
 }
