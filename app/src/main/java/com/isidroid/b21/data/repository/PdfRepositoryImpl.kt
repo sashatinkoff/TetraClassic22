@@ -81,7 +81,7 @@ class PdfRepositoryImpl(
         val fos = context.contentResolver.openOutputStream(createFile!!.uri)
 
         val document = Document()
-        PdfWriter.getInstance(document, fos)
+        val pdfWriter = PdfWriter.getInstance(document, fos)
         document.open()
         document.pageSize = PageSize.A4;
         document.addCreationDate();
@@ -140,8 +140,20 @@ class PdfRepositoryImpl(
                     }
 
                     if (bitmap != null) {
-                        val byteArray = bitmapToByteArray(bitmap, document.pageSize.width, document.pageSize.height)
-                        byteArray?.also { document.add(Image.getInstance(byteArray)) }
+                        val width = kotlin.math.min(bitmap.width.toFloat(), document.pageSize.width)
+                        val height = kotlin.math.min(bitmap.height.toFloat(), document.pageSize.height)
+
+                        val byteArray = bitmapToByteArray(bitmap, width, height)
+                        val image = Image.getInstance(byteArray)
+                        image.alignment = Image.ALIGN_MIDDLE
+
+                        byteArray?.also {
+                            val pos = pdfWriter.getVerticalPosition(false)
+                            if (pos < image.height)
+                                document.newPage()
+
+                            document.add(image)
+                        }
                     }
                 }
             }

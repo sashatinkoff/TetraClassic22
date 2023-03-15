@@ -165,6 +165,22 @@ class LiveJournalRepositoryImpl(
         }
     }
 
+    override suspend fun saveJsonInDatabase() {
+        var year = 2006
+        while (year < 2019) {
+            val file = "diary_0${year}.json.txt"
+            tryCatch {
+                val json = file.assetsFileContent(context)
+                val data = gson.fromJson<List<Post>>(json)
+
+                postDao.insert(*data.toTypedArray())
+            }
+
+
+            year++
+        }
+    }
+
     override suspend fun saveToJson(uri: Uri) {
         var date: Date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
             .parse("2000-01-01 01:00:00")!!

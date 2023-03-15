@@ -111,6 +111,11 @@ class HomeUseCase @Inject constructor(
         emit(true)
     }
 
+    fun saveLjDatabase() = flow {
+        liveJournalRepository.saveJsonInDatabase()
+        emit(true)
+    }
+
     sealed interface Result {
         data class OnPostFoundLocal(val post: Post) : Result
         data class OnLoading(val url: String) : Result

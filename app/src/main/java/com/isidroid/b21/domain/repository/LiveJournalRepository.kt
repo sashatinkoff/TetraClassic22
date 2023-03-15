@@ -12,5 +12,6 @@ interface LiveJournalRepository {
     suspend fun findPostByUrl(url: String): Post?
 
     suspend fun loadLiveInternet()
+    suspend fun saveJsonInDatabase()
     suspend fun saveToJson(uri: Uri)
 }

@@ -46,7 +46,10 @@ class HomeFragment : BindFragment(), HomeView {
             buttonStop.setOnClickListener { viewModel.stop() }
             buttonPdf.setOnClickListener { documentPdfContract.launch(null) }
             buttonLiveinternet.setOnClickListener { viewModel.liveInternet() }
-            buttonLiveJournalJson.setOnClickListener { saveJsonContract.launch(null) }
+            buttonLiveJournalJson.setOnClickListener {
+//                saveJsonContract.launch(null)
+                viewModel.storeLiveJournalDb()
+            }
         }
     }
 
