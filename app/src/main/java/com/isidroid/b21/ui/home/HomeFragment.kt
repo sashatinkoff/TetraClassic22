@@ -1,5 +1,9 @@
 package com.isidroid.b21.ui.home
 
+import android.annotation.SuppressLint
+import android.app.Application
+import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +14,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.navArgs
+import com.isidroid.b21.App
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
+import com.isidroid.core.ext.randomColor
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {
@@ -85,6 +92,22 @@ class HomeFragment : BindFragment(), HomeView {
             append("\n")
             append("liveInternetCount=$liveInternetCount")
         }
+    }
+
+    override fun onReady() {
+        super.onReady()
+
+        if (view2 == null) {
+            view2 = binding.root
+
+            view2?.setBackgroundColor(randomColor())
+        }
+
+    }
+
+    companion object {
+        @SuppressLint("StaticFieldLeak")
+        private var view2: View? = null
     }
 
 }
