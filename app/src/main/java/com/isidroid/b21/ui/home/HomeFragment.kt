@@ -1,27 +1,29 @@
 package com.isidroid.b21.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import com.google.android.material.appbar.MaterialToolbar
-import com.isidroid.b21.data.source.settings.Settings
 import com.isidroid.b21.databinding.FragmentHomeBinding
+import com.isidroid.b21.ui.home.adapter.Item
 import com.isidroid.b21.utils.base.BindFragment
 import com.isidroid.core.ext.visible
 import com.isidroid.core.ui.AppBarListener
+import com.isidroid.core.view.adapter.DiffCallback
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
 @AndroidEntryPoint
-class HomeFragment : BindFragment(), HomeView, AppBarListener {
+class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel by viewModels<HomeViewModel>()
+
+    private val adapter = Adapter(this)
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentHomeBinding.inflate(layoutInflater)
@@ -39,31 +41,64 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
         toolbar.title = "Hello Sample World"
     }
 
-    override fun createForm() {
-        binding.button.setOnClickListener { onReady() }
+    override fun createAdapter() {
+        binding.recyclerView.adapter = adapter
+
+        val list = (0..1).map { Item(id = it, name = UUID.randomUUID().toString().take(5), createdAt = Date()) }
+        adapter.insert(list)
     }
 
-    override fun onReady() {
-        viewModel.makePreview(
-            arrayOf(
-                "https://www.reddit.com/r/aww/comments/11khymd/my_bonded_cats_having_an_afternoon_nap_together_oc/",
-                "https://en.wikipedia.org/wiki/Mike_Tyson?useskin=vector",
-                "https://source.android.com/docs/core/display/material",
-                "https://www.nytimes.com/2023/03/06/sports/tennis/djokovic-biden-miami-open-covid-vaccine.html",
-                "https://twitter.com/rojamaibo/status/1629512888040710150",
-                "https://www.instagram.com/p/CpektdBN_aR/",
-                "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent",
-                "https://www.profinance.ru/news/2023/03/07/c8cq-sberbank-dal-prognoz-kursa-rublya-na-vtornik.html",
-                "https://www.cybersport.ru/tags/games/paradox-anonsirovala-igru-v-stile-the-sims",
-                "https://edition.cnn.com/2023/03/06/entertainment/bruce-willis-wife-dementia-paparazzi-intl-scli-wellness/index.html",
-                "https://eu.usatoday.com/story/money/small-business/2023/03/06/bill-finke-sons-fort-wright-goetta-cincinnati-ohio-northern-kentucky/11385913002/",
-                "https://www.foxnews.com/world/first-four-americans-kidnapped-mexico-been-identified",
-                "https://www.washingtonpost.com/arts-entertainment/2023/03/06/chris-rock-netflix-special-slap/",
-                "https://www.usnews.com/news/economy/articles/2023-03-06/feds-powell-jobs-dominate-economic-calendar",
-                "https://www.facebook.com/1996communitty/photos/a.159293865739624/751683083167363/",
-                "https://www.facebook.com/hashtag/givememylaback",
-                "https://www.tiktok.com/@maniraj_en3d/video/7206408135718866182"
-            )
-        )
+    override fun createForm() {
+        with(binding) {
+            buttonUpdateAll.setOnClickListener { updateAll() }
+            buttonUpdatePartiallyAll.setOnClickListener { updatePartially() }
+            buttonAdd.setOnClickListener { updateAndAdd() }
+            buttonAdd2.setOnClickListener { addMulti() }
+        }
+    }
+
+    private fun addMulti() {
+        val list = (0..1).map { Item(id = kotlin.random.Random.nextInt(200, 300), name = "multi $it", createdAt = Date()) }
+        adapter.add(list)
+    }
+
+    private fun updateAndAdd() {
+        val item = Item(id = kotlin.random.Random.nextInt(10, 100), name = "hi", createdAt = Date())
+        adapter.add(item)
+    }
+
+    private fun updatePartially() {
+        val items = adapter.list.mapIndexed { index, item ->
+            if (index % 3 == 0)
+                item.copy(name = "updatePartially", createdAt = Date())
+            else
+                item
+        }
+
+
+        adapter.insert(items, object : DiffCallback.ListComparisonPayload<Item> {
+            override fun getChangePayload(oldList: List<Item>, newList: List<Item>, oldItemPosition: Int, newItemPosition: Int): Any? {
+                return "some"
+            }
+        })
+    }
+
+    private fun updateAll() {
+        val items = adapter.list.map { it.copy(name = "updateAll", createdAt = Date()) }
+        adapter.clear().insert(items)
+    }
+
+    override fun updateTime(item: Item) {
+        item.createdAt = Date()
+        adapter.update(item, listOf(item.createdAt, "update time"))
+    }
+
+    override fun updateComplete(item: Item) {
+        val newItem = item.copy(name = "Sasha ${item.id}")
+        adapter.update(newItem)
+    }
+
+    override fun delete(item: Item) {
+        adapter.remove(item)
     }
 }

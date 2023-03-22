@@ -65,6 +65,9 @@ val Date.string: String
 val Date.stringDateTime: String
     get() = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(this)
 
+val Date.stringDateTimeSec: String
+    get() = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(this)
+
 fun Date.diffTime(date: Date?): Int {
     date ?: return -1
 
