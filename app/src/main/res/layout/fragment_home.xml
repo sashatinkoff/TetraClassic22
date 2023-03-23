@@ -45,11 +45,17 @@
             android:layout_height="wrap_content"
             android:text="Add with add" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loading" />
+
         <androidx.constraintlayout.helper.widget.Flow
             android:id="@+id/flow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="buttonUpdateAll, buttonUpdatePartiallyAll, buttonAdd, buttonAdd2, buttonAddFew"
+            app:constraint_referenced_ids="buttonUpdateAll, buttonUpdatePartiallyAll, buttonAdd, buttonAdd2, buttonAddFew, buttonLoading"
             app:flow_horizontalAlign="start"
             app:flow_horizontalBias="0"
             app:flow_maxElementsWrap="3"

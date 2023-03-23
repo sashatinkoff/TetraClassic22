@@ -1,5 +1,7 @@
 package com.isidroid.core.view.adapter
 
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
@@ -7,9 +9,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.isidroid.core.databinding.ItemEmptyBinding
 import com.isidroid.core.databinding.ItemLoadingBinding
+import timber.log.Timber
+import kotlin.random.Random
 
 abstract class CoreBindAdapterV2<T>(
-    private var hasMore: Boolean = false,
+    var hasMore: Boolean = false,
     private var hasEmpty: Boolean = false,
     private var loadingListener: LoadingListener? = null
 ) : RecyclerView.Adapter<CoreHolderV2<out ViewDataBinding, T>>(), CoreBindAdapterCallback<T> {
@@ -21,12 +25,23 @@ abstract class CoreBindAdapterV2<T>(
 
     // ==== Adapter core ====
     override fun getItemCount(): Int {
-        return if (noInternetConnection && items.isEmpty()) 1
-        else if (items.isEmpty() && !hasMore && hasEmpty && isInserted) 1
-        else {
-            var size = items.size
-            if (hasMore) size++
-            size
+        return when {
+            noInternetConnection && items.isEmpty() -> 1
+            items.isEmpty() && !hasMore && hasEmpty && isInserted -> 1
+            else -> {
+                var size = items.size
+                if (hasMore) size++
+                size
+            }
+        }
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return when {
+            position == 0 && noInternetConnection -> VIEW_TYPE_NO_INTERNET
+            position == itemCount - 1 && hasMore -> VIEW_TYPE_LOADING
+            position == 0 && items.size == 0 && hasEmpty && isInserted -> VIEW_TYPE_EMPTY
+            else -> VIEW_TYPE_NORMAL
         }
     }
 
@@ -42,12 +57,16 @@ abstract class CoreBindAdapterV2<T>(
     }
 
     override fun onBindViewHolder(holder: CoreHolderV2<out ViewDataBinding, T>, position: Int) {
-        (holder as? CoreLoadingHolderV2)?.also { loadingListener?.loadMore() }
+        (holder as? CoreLoadingHolderV2)?.also {
+            it.onLoading()
+            loadingListener?.loadMore()
+        }
         getItem(position)?.also { holder.update(it) }
     }
 
     override fun onBindViewHolder(holder: CoreHolderV2<out ViewDataBinding, T>, position: Int, payloads: MutableList<Any>) {
         super.onBindViewHolder(holder, position, payloads)
+
         if (payloads.isNotEmpty())
             getItem(position)?.also { holder.update(it, payloads) }
     }
@@ -78,7 +97,6 @@ abstract class CoreBindAdapterV2<T>(
         return oldList.getOrNull(oldItemPosition) == newList.getOrNull(newItemPosition)
     }
 
-
     // ==== Data manipulation ====
     override fun getItem(position: Int) = items.getOrNull(position)
 
@@ -91,6 +109,7 @@ abstract class CoreBindAdapterV2<T>(
     override fun reset(hasEmpty: Boolean) {
         this.noInternetConnection = false
         this.hasEmpty = hasEmpty
+        this.isInserted = false
     }
 
     override fun insert(list: List<T>, hasMore: Boolean, listComparisonPayload: DiffCallback.ListComparisonPayload<T>?) {
@@ -184,6 +203,14 @@ abstract class CoreBindAdapterV2<T>(
         listComparisonPayload: DiffCallback.ListComparisonPayload<T>?,
         listContentsComparison: DiffCallback.ListContentsComparison<T>
     ) {
+        if (this.hasMore) {
+            this.hasMore = false
+            notifyItemRemoved(itemCount + 1)
+        }
+
+        if (hasMore)
+            notifyItemInserted(itemCount)
+
         val callback = DiffCallback(
             oldList = oldList,
             newList = newList,
@@ -191,19 +218,21 @@ abstract class CoreBindAdapterV2<T>(
             listComparisonPayload = listComparisonPayload,
             listItemComparison = this,
         )
+
         val diffResult = DiffUtil.calculateDiff(callback)
         diffResult.dispatchUpdatesTo(this)
 
+        this.isInserted = true
         this.hasMore = hasMore
         this.items = newList.toMutableList()
-    }
 
+        Timber.i("dsfsdfdsf insert ${newList.map { it }}")
+    }
 
     // ==== utils ====
     override fun noInternetConnection(noConnected: Boolean) {
         this.noInternetConnection = noConnected
     }
-
 
     fun interface LoadingListener {
         fun loadMore()
@@ -213,5 +242,6 @@ abstract class CoreBindAdapterV2<T>(
         const val VIEW_TYPE_LOADING = 1
         const val VIEW_TYPE_EMPTY = 2
         const val VIEW_TYPE_NO_INTERNET = 3
+        const val VIEW_TYPE_NORMAL = 4
     }
 }

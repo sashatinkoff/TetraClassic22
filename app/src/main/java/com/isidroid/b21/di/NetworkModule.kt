@@ -56,7 +56,7 @@ object NetworkModule {
         .create()
 
     private fun <T> api(
-        baseUrl: String = "",
+        baseUrl: String = "https://google.com",
         cl: Class<T>,
         logLevel: HttpLoggingInterceptor.Level = HttpLoggingInterceptor.Level.BODY,
         authInterceptor: Interceptor? = null,

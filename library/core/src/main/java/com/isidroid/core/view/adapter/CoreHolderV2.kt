@@ -24,4 +24,5 @@ abstract class CoreHolderV2<B : ViewDataBinding, T>(protected val binding: B) : 
             binding.executePendingBindings()
     }
 
+
 }

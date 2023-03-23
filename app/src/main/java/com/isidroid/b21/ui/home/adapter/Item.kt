@@ -2,7 +2,7 @@ package com.isidroid.b21.ui.home.adapter
 
 import java.util.*
 
-data class Item(val id: Int, var name: String, var createdAt: Date) {
+data class Item(val id: Int = kotlin.random.Random.nextInt(), var name: String, var createdAt: Date = Date()) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
@@ -19,7 +19,7 @@ data class Item(val id: Int, var name: String, var createdAt: Date) {
     }
 
     override fun toString(): String {
-        return "$id=$name"
+        return "$id"
     }
 
 

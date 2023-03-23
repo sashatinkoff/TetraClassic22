@@ -13,6 +13,7 @@ import com.isidroid.b21.utils.base.BindFragment
 import com.isidroid.core.ext.visible
 import com.isidroid.core.ui.AppBarListener
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import java.util.*
 
 @AndroidEntryPoint
@@ -22,7 +23,9 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener 
 
     private val viewModel by viewModels<HomeViewModel>()
 
-    private val adapter = Adapter(this)
+    private val adapter = Adapter(this) {
+        viewModel.loadNext()
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentHomeBinding.inflate(layoutInflater)
@@ -42,7 +45,6 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener 
 
     override fun createAdapter() {
         binding.recyclerView.adapter = adapter
-
 //        val list = (0..1).map { Item(id = it, name = UUID.randomUUID().toString().take(5), createdAt = Date()) }
 //        adapter.insert(list)
     }
@@ -54,7 +56,28 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener 
             buttonAdd.setOnClickListener { add() }
             buttonAdd2.setOnClickListener { addMulti() }
             buttonAddFew.setOnClickListener { addFew() }
+            buttonLoading.setOnClickListener { loadData() }
         }
+    }
+
+    override suspend fun onCreateViewModel() {
+        viewModel.viewState.collect { state ->
+            when (state) {
+                is UiState.Data -> onData(state.items, state.hasMore)
+                else -> {}
+            }
+        }
+    }
+
+    private fun onData(items: List<Item>, hasMore: Boolean) {
+        adapter.insert(list = items, hasMore = hasMore)
+    }
+
+    private fun loadData() {
+        adapter.reset(hasEmpty = false)
+        adapter.insert(emptyList(), hasMore = true)
+
+        Timber.i("sdfsdfsdf items=${adapter.list.size}, itemCount=${adapter.itemCount}, hasMore=${adapter.hasMore}")
     }
 
     private fun addFew() {
