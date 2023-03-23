@@ -12,13 +12,14 @@ abstract class CoreBindAdapterV2<T>(
     private var hasMore: Boolean = false,
     private var hasEmpty: Boolean = false,
     private var loadingListener: LoadingListener? = null
-) : RecyclerView.Adapter<CoreHolderV2<out ViewDataBinding, T>>(), DiffCallback.ListContentsComparison<T>, DiffCallback.ListComparisonPayload<T>, DiffCallback.ListItemComparison<T> {
+) : RecyclerView.Adapter<CoreHolderV2<out ViewDataBinding, T>>(), CoreBindAdapterCallback<T> {
     private var items = mutableListOf<T>()
     private var noInternetConnection = false
     private var isInserted = false
 
     val list: List<T> get() = items
 
+    // ==== Adapter core ====
     override fun getItemCount(): Int {
         return if (noInternetConnection && items.isEmpty()) 1
         else if (items.isEmpty() && !hasMore && hasEmpty && isInserted) 1
@@ -56,98 +57,51 @@ abstract class CoreBindAdapterV2<T>(
         holder.onViewRecycled()
     }
 
-    override fun areContentsTheSame(oldList: List<T>, newList: List<T>, oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList.getOrNull(oldItemPosition) == newList.getOrNull(newItemPosition)
-    }
 
+    // ==== Creation ====
+    override fun createLoadingHolder(layoutInflater: LayoutInflater, parent: ViewGroup): CoreLoadingHolderV2<out ViewDataBinding, T> =
+        CoreLoadingHolderV2(ItemLoadingBinding.inflate(layoutInflater, parent, false))
+
+    override fun createEmptyHolder(layoutInflater: LayoutInflater, parent: ViewGroup): CoreEmptyHolderV2<out ViewDataBinding, T> =
+        CoreEmptyHolderV2(ItemEmptyBinding.inflate(layoutInflater, parent, false))
+
+    override fun createNoInternetHolder(layoutInflater: LayoutInflater, parent: ViewGroup): CoreNoInternetHolderV2<out ViewDataBinding, T> =
+        CoreNoInternetHolderV2(ItemEmptyBinding.inflate(layoutInflater, parent, false))
+
+    // ==== DiffCallback.ListComparisonPayload ====
     override fun getChangePayload(oldList: List<T>, newList: List<T>, oldItemPosition: Int, newItemPosition: Int): Any? {
         return null
     }
 
-    protected open fun createLoadingHolder(layoutInflater: LayoutInflater, parent: ViewGroup): CoreLoadingHolderV2<out ViewDataBinding, T> =
-        CoreLoadingHolderV2(ItemLoadingBinding.inflate(layoutInflater, parent, false))
+    // ==== DiffCallback.ListItemComparison ====
+    override fun areContentsTheSame(oldList: List<T>, newList: List<T>, oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList.getOrNull(oldItemPosition) == newList.getOrNull(newItemPosition)
+    }
 
-    protected open fun createEmptyHolder(layoutInflater: LayoutInflater, parent: ViewGroup): CoreEmptyHolderV2<out ViewDataBinding, T> =
-        CoreEmptyHolderV2(ItemEmptyBinding.inflate(layoutInflater, parent, false))
 
-    protected open fun createNoInternetHolder(layoutInflater: LayoutInflater, parent: ViewGroup): CoreNoInternetHolderV2<out ViewDataBinding, T> =
-        CoreNoInternetHolderV2(ItemEmptyBinding.inflate(layoutInflater, parent, false))
+    // ==== Data manipulation ====
+    override fun getItem(position: Int) = items.getOrNull(position)
 
-    fun getItem(position: Int) = items.getOrNull(position)
-    fun clear() = apply {
+    override fun clear() = apply {
         notifyItemRangeRemoved(0, items.size)
         items.clear()
         hasMore = false
     }
 
-    fun reset(hasEmpty: Boolean) {
+    override fun reset(hasEmpty: Boolean) {
         this.noInternetConnection = false
         this.hasEmpty = hasEmpty
     }
 
-    fun noInternetConnection(noConnected: Boolean = true) {
-        this.noInternetConnection = noConnected
+    override fun insert(list: List<T>, hasMore: Boolean, listComparisonPayload: DiffCallback.ListComparisonPayload<T>?) {
+        val newList = mutableListOf<T>()
+        newList.addAll(items)
+        newList.addAll(list)
+
+        insert(oldList = this.items, newList = newList, hasMore = hasMore, listComparisonPayload = listComparisonPayload, listContentsComparison = this)
     }
 
-    fun update(item: T, payload: Any? = null) {
-        val index = items.indexOf(item)
-        if (index >= 0) {
-            items[index] = item
-            if (payload != null)
-                notifyItemChanged(index, payload)
-            else
-                notifyItemChanged(index)
-        }
-    }
-
-    fun update(
-        items: List<T>,
-        listContentsComparison: DiffCallback.ListContentsComparison<T> = this,
-        listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null,
-    ) {
-        val oldList = this.items.toMutableList()
-        val newList = this.items.toMutableList()
-
-        for (item in items) {
-            val index = newList.indexOf(item)
-            if (index >= 0)
-                newList[index] = item
-            else
-                newList.add(item)
-        }
-
-        insert(
-            oldList = oldList,
-            newList = newList,
-            hasMore = this.hasMore,
-            listComparisonPayload = listComparisonPayload,
-            listContentsComparison = listContentsComparison
-        )
-    }
-
-    fun add(item: T, position: Int? = null) {
-        val newList = items.toMutableList()
-
-        if (position != null && position in 0..items.size)
-            newList.add(position, item)
-        else
-            newList.add(item)
-
-        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null, listContentsComparison = this)
-    }
-
-    fun add(list: List<T>, startPosition: Int? = null) {
-        val newList = items.toMutableList()
-
-        if (startPosition != null)
-            newList.addAll(startPosition, list)
-        else
-            newList.addAll(list)
-
-        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null, listContentsComparison = this)
-    }
-
-    fun remove(vararg items: T) {
+    override fun remove(vararg items: T) {
         val oldList = mutableListOf<T>()
         oldList.addAll(this.items)
 
@@ -169,12 +123,58 @@ abstract class CoreBindAdapterV2<T>(
         }
     }
 
-    fun insert(list: List<T>, hasMore: Boolean = false, listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null) {
-        val newList = mutableListOf<T>()
-        newList.addAll(items)
-        newList.addAll(list)
+    override fun update(items: List<T>, listContentsComparison: DiffCallback.ListContentsComparison<T>, listComparisonPayload: DiffCallback.ListComparisonPayload<T>?) {
+        val oldList = this.items.toMutableList()
+        val newList = this.items.toMutableList()
 
-        insert(oldList = this.items, newList = newList, hasMore = hasMore, listComparisonPayload = listComparisonPayload, listContentsComparison = this)
+        for (item in items) {
+            val index = newList.indexOf(item)
+            if (index >= 0)
+                newList[index] = item
+            else
+                newList.add(item)
+        }
+
+        insert(
+            oldList = oldList,
+            newList = newList,
+            hasMore = this.hasMore,
+            listComparisonPayload = listComparisonPayload,
+            listContentsComparison = listContentsComparison
+        )
+    }
+
+    override fun update(item: T, payload: Any?) {
+        val index = items.indexOf(item)
+        if (index >= 0) {
+            items[index] = item
+            if (payload != null)
+                notifyItemChanged(index, payload)
+            else
+                notifyItemChanged(index)
+        }
+    }
+
+    override fun add(list: List<T>, startPosition: Int?) {
+        val newList = items.toMutableList()
+
+        if (startPosition != null)
+            newList.addAll(startPosition, list)
+        else
+            newList.addAll(list)
+
+        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null, listContentsComparison = this)
+    }
+
+    override fun add(item: T, position: Int?) {
+        val newList = items.toMutableList()
+
+        if (position != null && position in 0..items.size)
+            newList.add(position, item)
+        else
+            newList.add(item)
+
+        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null, listContentsComparison = this)
     }
 
     private fun insert(
@@ -198,7 +198,12 @@ abstract class CoreBindAdapterV2<T>(
         this.items = newList.toMutableList()
     }
 
-    abstract fun createHolder(parent: ViewGroup, layoutInflater: LayoutInflater, viewType: Int): CoreHolderV2<out ViewDataBinding, T>
+
+    // ==== utils ====
+    override fun noInternetConnection(noConnected: Boolean) {
+        this.noInternetConnection = noConnected
+    }
+
 
     fun interface LoadingListener {
         fun loadMore()
