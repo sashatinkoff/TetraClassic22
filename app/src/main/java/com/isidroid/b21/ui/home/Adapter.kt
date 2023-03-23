@@ -8,6 +8,7 @@ import com.isidroid.b21.ui.home.adapter.Holder
 import com.isidroid.b21.ui.home.adapter.Item
 import com.isidroid.core.view.adapter.CoreBindAdapterV2
 import com.isidroid.core.view.adapter.CoreHolderV2
+import timber.log.Timber
 
 class Adapter(private val listener: Listener) : CoreBindAdapterV2<Item>() {
 
@@ -16,7 +17,9 @@ class Adapter(private val listener: Listener) : CoreBindAdapterV2<Item>() {
     }
 
     override fun areContentsTheSame(oldList: List<Item>, newList: List<Item>, oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList.getOrNull(oldItemPosition)?.name == newList.getOrNull(newItemPosition)?.name
+        val result = oldList.getOrNull(oldItemPosition)?.name == newList.getOrNull(newItemPosition)?.name
+        Timber.i("areContentsTheSame old=${oldList.getOrNull(oldItemPosition)?.name}, new=${newList.getOrNull(newItemPosition)?.name}, result=$result")
+        return result
     }
 
     interface Listener {

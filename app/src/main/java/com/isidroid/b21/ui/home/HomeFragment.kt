@@ -44,8 +44,8 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener 
     override fun createAdapter() {
         binding.recyclerView.adapter = adapter
 
-        val list = (0..1).map { Item(id = it, name = UUID.randomUUID().toString().take(5), createdAt = Date()) }
-        adapter.insert(list)
+//        val list = (0..1).map { Item(id = it, name = UUID.randomUUID().toString().take(5), createdAt = Date()) }
+//        adapter.insert(list)
     }
 
     override fun createForm() {
@@ -59,7 +59,7 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener 
 
     private fun addMulti() {
         val list = (0..1).map { Item(id = kotlin.random.Random.nextInt(200, 300), name = "multi $it", createdAt = Date()) }
-        adapter.add(list)
+        adapter.insert(list)
     }
 
     private fun updateAndAdd() {
@@ -69,14 +69,10 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener 
 
     private fun updatePartially() {
         val items = adapter.list.mapIndexed { index, item ->
-            if (index % 3 == 0)
-                item.copy(name = "updatePartially", createdAt = Date())
-            else
-                item
+            item.copy(name = "updatePartially $index", createdAt = Date())
         }
 
-
-        adapter.insert(items, object : DiffCallback.ListComparisonPayload<Item> {
+        adapter.update(items, listComparisonPayload = object : DiffCallback.ListComparisonPayload<Item> {
             override fun getChangePayload(oldList: List<Item>, newList: List<Item>, oldItemPosition: Int, newItemPosition: Int): Any? {
                 return "some"
             }

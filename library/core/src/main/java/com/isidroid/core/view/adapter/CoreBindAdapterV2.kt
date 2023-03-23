@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.isidroid.core.databinding.ItemEmptyBinding
 import com.isidroid.core.databinding.ItemLoadingBinding
+import timber.log.Timber
 
 abstract class CoreBindAdapterV2<T>(
     private var hasMore: Boolean = false,
@@ -14,7 +15,7 @@ abstract class CoreBindAdapterV2<T>(
     private var loadingListener: LoadingListener? = null
 ) : RecyclerView.Adapter<CoreHolderV2<out ViewDataBinding, T>>(), DiffCallback.ListComparison<T> {
 
-    protected val items = mutableListOf<T>()
+    private var items = mutableListOf<T>()
     private var noInternetConnection = false
     private var isInserted = false
 
@@ -82,35 +83,6 @@ abstract class CoreBindAdapterV2<T>(
         this.noInternetConnection = noConnected
     }
 
-    fun remove(item: T) {
-        val newList = items.toMutableList()
-        val isRemoved = newList.remove(item)
-        if (isRemoved)
-            insert(newList)
-    }
-
-    fun add(item: T, position: Int? = null) {
-        val newList = items.toMutableList()
-
-        if (position != null && position in 0..items.size)
-            newList[position] = item
-        else
-            newList.add(item)
-
-        insert(newList)
-    }
-
-    fun add(list: List<T>, startPosition: Int? = null) {
-        val newList = items.toMutableList()
-
-        if (startPosition != null)
-            newList.addAll(startPosition, list)
-        else
-            newList.addAll(list)
-
-        insert(newList)
-    }
-
     fun update(item: T, payload: Any? = null) {
         val index = items.indexOf(item)
         if (index >= 0) {
@@ -122,25 +94,76 @@ abstract class CoreBindAdapterV2<T>(
         }
     }
 
-    fun update(list: List<T>, listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null) {
-        insert(list, listComparisonPayload)
+    fun update(items: List<T>, listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null) {
+        val oldList = this.items.toMutableList()
+        val newList = this.items.toMutableList()
+
+        for (item in items) {
+            val index = newList.indexOf(item)
+            if (index >= 0)
+                newList[index] = item
+            else
+                newList.add(item)
+        }
+
+        Timber.i("update oldList=$oldList, newList=$newList")
+
+        insert(oldList = oldList, newList = newList, hasMore = this.hasMore, listComparisonPayload = listComparisonPayload)
     }
 
-    fun update(list: List<T>, hasPayloadUpdate: Boolean) {
-        insert(list, listComparisonPayload = object : DiffCallback.ListComparisonPayload<T> {
-            override fun getChangePayload(oldList: List<T>, newList: List<T>, oldItemPosition: Int, newItemPosition: Int): Any? {
-                return if (hasPayloadUpdate) 1 else null
-            }
-        })
+    fun add(item: T, position: Int? = null) {
+        val newList = items.toMutableList()
+
+        if (position != null && position in 0..items.size)
+            newList.add(position, item)
+        else
+            newList.add(item)
+
+        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null)
     }
 
-    open fun insert(list: List<T>, listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null) {
-        val callback = DiffCallback(oldList = items, newList = list, listComparison = this, listComparisonPayload = listComparisonPayload)
+    fun add(list: List<T>, startPosition: Int? = null) {
+        val newList = items.toMutableList()
+
+        if (startPosition != null)
+            newList.addAll(startPosition, list)
+        else
+            newList.addAll(list)
+
+        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null)
+    }
+
+    fun remove(vararg items: T) {
+        val oldList = mutableListOf<T>()
+        oldList.addAll(this.items)
+
+        for (item in items)
+            this.items.remove(item)
+
+        if (oldList.size != this.items.size) {
+            // let's pass updates to list
+
+            val callback = DiffCallback(oldList = oldList, newList = this.items, listComparison = this, listComparisonPayload = null)
+            val diffResult = DiffUtil.calculateDiff(callback)
+            diffResult.dispatchUpdatesTo(this)
+        }
+    }
+
+    fun insert(list: List<T>, hasMore: Boolean = false, listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null) {
+        val newList = mutableListOf<T>()
+        newList.addAll(items)
+        newList.addAll(list)
+
+        insert(oldList = this.items, newList = newList, hasMore = hasMore, listComparisonPayload = listComparisonPayload)
+    }
+
+    private fun insert(oldList: List<T>, newList: List<T>, hasMore: Boolean, listComparisonPayload: DiffCallback.ListComparisonPayload<T>?) {
+        val callback = DiffCallback(oldList = oldList, newList = newList, listComparison = this, listComparisonPayload = listComparisonPayload)
         val diffResult = DiffUtil.calculateDiff(callback)
         diffResult.dispatchUpdatesTo(this)
 
-        this.items.clear()
-        this.items.addAll(list)
+        this.hasMore = hasMore
+        this.items = newList.toMutableList()
     }
 
     abstract fun createHolder(parent: ViewGroup, layoutInflater: LayoutInflater, viewType: Int): CoreHolderV2<out ViewDataBinding, T>

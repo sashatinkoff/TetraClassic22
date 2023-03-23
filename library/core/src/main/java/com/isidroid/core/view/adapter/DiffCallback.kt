@@ -22,7 +22,6 @@ class DiffCallback<T>(
     }
 
     override fun getChangePayload(oldItemPosition: Int, newItemPosition: Int): Any? {
-        Timber.e("dsfsdfsdf getChangePayload $oldItemPosition/$newItemPosition ")
         return listComparisonPayload?.getChangePayload(oldList, newList, oldItemPosition, newItemPosition)
     }
 

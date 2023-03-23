@@ -17,4 +17,10 @@ data class Item(val id: Int, var name: String, var createdAt: Date) {
     override fun hashCode(): Int {
         return id
     }
+
+    override fun toString(): String {
+        return "$id=$name"
+    }
+
+
 }
