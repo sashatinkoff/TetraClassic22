@@ -7,14 +7,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.isidroid.core.databinding.ItemEmptyBinding
 import com.isidroid.core.databinding.ItemLoadingBinding
-import timber.log.Timber
 
 abstract class CoreBindAdapterV2<T>(
     private var hasMore: Boolean = false,
     private var hasEmpty: Boolean = false,
     private var loadingListener: LoadingListener? = null
-) : RecyclerView.Adapter<CoreHolderV2<out ViewDataBinding, T>>(), DiffCallback.ListComparison<T> {
-
+) : RecyclerView.Adapter<CoreHolderV2<out ViewDataBinding, T>>(), DiffCallback.ListContentsComparison<T>, DiffCallback.ListComparisonPayload<T>, DiffCallback.ListItemComparison<T> {
     private var items = mutableListOf<T>()
     private var noInternetConnection = false
     private var isInserted = false
@@ -58,6 +56,14 @@ abstract class CoreBindAdapterV2<T>(
         holder.onViewRecycled()
     }
 
+    override fun areContentsTheSame(oldList: List<T>, newList: List<T>, oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList.getOrNull(oldItemPosition) == newList.getOrNull(newItemPosition)
+    }
+
+    override fun getChangePayload(oldList: List<T>, newList: List<T>, oldItemPosition: Int, newItemPosition: Int): Any? {
+        return null
+    }
+
     protected open fun createLoadingHolder(layoutInflater: LayoutInflater, parent: ViewGroup): CoreLoadingHolderV2<out ViewDataBinding, T> =
         CoreLoadingHolderV2(ItemLoadingBinding.inflate(layoutInflater, parent, false))
 
@@ -94,7 +100,11 @@ abstract class CoreBindAdapterV2<T>(
         }
     }
 
-    fun update(items: List<T>, listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null) {
+    fun update(
+        items: List<T>,
+        listContentsComparison: DiffCallback.ListContentsComparison<T> = this,
+        listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null,
+    ) {
         val oldList = this.items.toMutableList()
         val newList = this.items.toMutableList()
 
@@ -106,9 +116,13 @@ abstract class CoreBindAdapterV2<T>(
                 newList.add(item)
         }
 
-        Timber.i("update oldList=$oldList, newList=$newList")
-
-        insert(oldList = oldList, newList = newList, hasMore = this.hasMore, listComparisonPayload = listComparisonPayload)
+        insert(
+            oldList = oldList,
+            newList = newList,
+            hasMore = this.hasMore,
+            listComparisonPayload = listComparisonPayload,
+            listContentsComparison = listContentsComparison
+        )
     }
 
     fun add(item: T, position: Int? = null) {
@@ -119,7 +133,7 @@ abstract class CoreBindAdapterV2<T>(
         else
             newList.add(item)
 
-        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null)
+        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null, listContentsComparison = this)
     }
 
     fun add(list: List<T>, startPosition: Int? = null) {
@@ -130,7 +144,7 @@ abstract class CoreBindAdapterV2<T>(
         else
             newList.addAll(list)
 
-        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null)
+        insert(oldList = this.items, newList = newList, hasMore = this.hasMore, listComparisonPayload = null, listContentsComparison = this)
     }
 
     fun remove(vararg items: T) {
@@ -143,7 +157,13 @@ abstract class CoreBindAdapterV2<T>(
         if (oldList.size != this.items.size) {
             // let's pass updates to list
 
-            val callback = DiffCallback(oldList = oldList, newList = this.items, listComparison = this, listComparisonPayload = null)
+            val callback = DiffCallback(
+                oldList = oldList,
+                newList = this.items,
+                listContentsComparison = this,
+                listItemComparison = this,
+                listComparisonPayload = null,
+            )
             val diffResult = DiffUtil.calculateDiff(callback)
             diffResult.dispatchUpdatesTo(this)
         }
@@ -154,11 +174,23 @@ abstract class CoreBindAdapterV2<T>(
         newList.addAll(items)
         newList.addAll(list)
 
-        insert(oldList = this.items, newList = newList, hasMore = hasMore, listComparisonPayload = listComparisonPayload)
+        insert(oldList = this.items, newList = newList, hasMore = hasMore, listComparisonPayload = listComparisonPayload, listContentsComparison = this)
     }
 
-    private fun insert(oldList: List<T>, newList: List<T>, hasMore: Boolean, listComparisonPayload: DiffCallback.ListComparisonPayload<T>?) {
-        val callback = DiffCallback(oldList = oldList, newList = newList, listComparison = this, listComparisonPayload = listComparisonPayload)
+    private fun insert(
+        oldList: List<T>,
+        newList: List<T>,
+        hasMore: Boolean,
+        listComparisonPayload: DiffCallback.ListComparisonPayload<T>?,
+        listContentsComparison: DiffCallback.ListContentsComparison<T>
+    ) {
+        val callback = DiffCallback(
+            oldList = oldList,
+            newList = newList,
+            listContentsComparison = listContentsComparison,
+            listComparisonPayload = listComparisonPayload,
+            listItemComparison = this,
+        )
         val diffResult = DiffUtil.calculateDiff(callback)
         diffResult.dispatchUpdatesTo(this)
 

@@ -16,12 +16,6 @@ class Adapter(private val listener: Listener) : CoreBindAdapterV2<Item>() {
         return Holder(ItemSampleBinding.inflate(layoutInflater, parent, false), listener)
     }
 
-    override fun areContentsTheSame(oldList: List<Item>, newList: List<Item>, oldItemPosition: Int, newItemPosition: Int): Boolean {
-        val result = oldList.getOrNull(oldItemPosition)?.name == newList.getOrNull(newItemPosition)?.name
-        Timber.i("areContentsTheSame old=${oldList.getOrNull(oldItemPosition)?.name}, new=${newList.getOrNull(newItemPosition)?.name}, result=$result")
-        return result
-    }
-
     interface Listener {
         fun updateTime(item: Item)
         fun updateComplete(item: Item)

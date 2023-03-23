@@ -12,7 +12,6 @@ import com.isidroid.b21.ui.home.adapter.Item
 import com.isidroid.b21.utils.base.BindFragment
 import com.isidroid.core.ext.visible
 import com.isidroid.core.ui.AppBarListener
-import com.isidroid.core.view.adapter.DiffCallback
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -52,9 +51,15 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener 
         with(binding) {
             buttonUpdateAll.setOnClickListener { updateAll() }
             buttonUpdatePartiallyAll.setOnClickListener { updatePartially() }
-            buttonAdd.setOnClickListener { updateAndAdd() }
+            buttonAdd.setOnClickListener { add() }
             buttonAdd2.setOnClickListener { addMulti() }
+            buttonAddFew.setOnClickListener { addFew() }
         }
+    }
+
+    private fun addFew() {
+        val list = (0..1).map { Item(id = kotlin.random.Random.nextInt(200, 300), name = "multi $it", createdAt = Date()) }
+        adapter.add(list)
     }
 
     private fun addMulti() {
@@ -62,21 +67,23 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener, Adapter.Listener 
         adapter.insert(list)
     }
 
-    private fun updateAndAdd() {
+    private fun add() {
         val item = Item(id = kotlin.random.Random.nextInt(10, 100), name = "hi", createdAt = Date())
         adapter.add(item)
     }
 
     private fun updatePartially() {
         val items = adapter.list.mapIndexed { index, item ->
-            item.copy(name = "updatePartially $index", createdAt = Date())
-        }
+            item.copy(name = "updatePartially ${kotlin.random.Random.nextInt(100)}", createdAt = Date())
+        }.toMutableList()
 
-        adapter.update(items, listComparisonPayload = object : DiffCallback.ListComparisonPayload<Item> {
-            override fun getChangePayload(oldList: List<Item>, newList: List<Item>, oldItemPosition: Int, newItemPosition: Int): Any? {
-                return "some"
-            }
-        })
+        if (!items.any { it.id == 0 })
+            items.add(Item(id = 0, name = "sda", createdAt = Date()))
+
+        adapter.update(items,
+            listContentsComparison = { _, _, _, _ -> false },
+            listComparisonPayload = { _, _, _, _ -> "hello" }
+        )
     }
 
     private fun updateAll() {
