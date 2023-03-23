@@ -1,7 +1,5 @@
 package com.isidroid.core.view.adapter
 
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
@@ -9,8 +7,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.isidroid.core.databinding.ItemEmptyBinding
 import com.isidroid.core.databinding.ItemLoadingBinding
-import timber.log.Timber
-import kotlin.random.Random
 
 abstract class CoreBindAdapterV2<T>(
     var hasMore: Boolean = false,
@@ -225,8 +221,6 @@ abstract class CoreBindAdapterV2<T>(
         this.isInserted = true
         this.hasMore = hasMore
         this.items = newList.toMutableList()
-
-        Timber.i("dsfsdfdsf insert ${newList.map { it }}")
     }
 
     // ==== utils ====
