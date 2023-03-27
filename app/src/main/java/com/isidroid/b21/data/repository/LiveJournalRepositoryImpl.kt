@@ -63,8 +63,6 @@ class LiveJournalRepositoryImpl(
 //        val file = File(App.instance.cacheDir, "download_file.html")
 //        file.bufferedWriter().use { out -> out.write(html) }
 
-        Timber.i("$getByUrl")
-
         val document = Jsoup.parse(html)
         val url = document.getElementsByTag("meta").firstOrNull { it.attr("property") == "og:url" }?.attr("content")!!
         val id = url.toUri().lastPathSegment?.let { "\\D".toRegex().replace(it, "") }.orEmpty()

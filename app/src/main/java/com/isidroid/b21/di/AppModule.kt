@@ -5,11 +5,13 @@ import com.google.gson.Gson
 import com.isidroid.b21.App
 import com.isidroid.b21.data.repository.LiveJournalRepositoryImpl
 import com.isidroid.b21.data.repository.PdfRepositoryImpl
+import com.isidroid.b21.data.repository.PostRepositoryImpl
 import com.isidroid.b21.data.repository.SessionRepositoryImpl
 import com.isidroid.b21.data.source.local.AppDatabase
 import com.isidroid.b21.data.source.remote.api.ApiLiveJournal
 import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.domain.repository.PdfRepository
+import com.isidroid.b21.domain.repository.PostRepository
 import com.isidroid.b21.domain.repository.SessionRepository
 import dagger.Module
 import dagger.Provides
@@ -41,4 +43,7 @@ object AppModule {
     @Singleton
     @Provides
     fun providePdf( appDatabase: AppDatabase, apiLiveJournal: ApiLiveJournal): PdfRepository = PdfRepositoryImpl(appDatabase, apiLiveJournal)
+
+    @Singleton @Provides
+    fun providePostRepository(appDatabase: AppDatabase): PostRepository = PostRepositoryImpl(appDatabase.postDao)
 }

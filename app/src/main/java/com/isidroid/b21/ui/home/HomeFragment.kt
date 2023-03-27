@@ -57,6 +57,8 @@ class HomeFragment : BindFragment(), HomeView {
 //                saveJsonContract.launch(null)
                 viewModel.storeLiveJournalDb()
             }
+
+            buttonLoadImages.setOnClickListener { viewModel.loadImages() }
         }
     }
 

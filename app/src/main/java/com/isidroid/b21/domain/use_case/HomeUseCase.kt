@@ -1,13 +1,24 @@
 package com.isidroid.b21.domain.use_case
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.net.Uri
+import com.isidroid.b21.App
 import com.isidroid.b21.data.source.local.AppDatabase
+import com.isidroid.b21.data.source.remote.api.ApiLiveJournal
 import com.isidroid.b21.domain.model.Post
 import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.domain.repository.PdfRepository
+import com.isidroid.b21.domain.repository.PostRepository
+import com.isidroid.b21.ext.saveToFile
 import com.isidroid.core.ext.date
+import com.isidroid.core.ext.md5
+import com.isidroid.core.ext.string
+import com.isidroid.core.ext.tryCatch
 import kotlinx.coroutines.flow.flow
+import org.jsoup.Jsoup
+import timber.log.Timber
+import java.io.File
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -16,7 +27,9 @@ class HomeUseCase @Inject constructor(
     private val context: Context,
     private val liveJournalRepository: LiveJournalRepository,
     private val pdfRepository: PdfRepository,
-    private val appDatabase: AppDatabase
+    private val appDatabase: AppDatabase,
+    private val postRepository: PostRepository,
+    private val apiLiveJournal: ApiLiveJournal
 ) {
     @Volatile
     private var isRunning = false
@@ -43,6 +56,9 @@ class HomeUseCase @Inject constructor(
 
             emit(Result.OnLoading(url))
             val post = liveJournalRepository.postHtml(url)
+
+            Timber.i("${post.createdAt?.string} ${post.title}")
+
             emit(Result.OnPostSaved(post))
 
             url = liveJournalRepository.nextPostUrl(post.id)
@@ -116,6 +132,45 @@ class HomeUseCase @Inject constructor(
         emit(true)
     }
 
+    fun loadImages() = flow {
+        val posts = postRepository.findAll().filter { it.isLiveJournal }
+        val images = mutableSetOf<String>()
+        val imagePosts = hashMapOf<String, Post>()
+
+        for (post in posts) {
+            val jDoc = Jsoup.parse(post.html.orEmpty()).normalise()
+
+            // replace images
+            jDoc.getElementsByTag("img").forEachIndexed { index, element ->
+                val url = element.attr("src")
+                images.add(url)
+
+                imagePosts[url] = post
+            }
+        }
+
+        images.forEachIndexed { index, url ->
+            val imageFileName = "img_${url.md5()}"
+            val file = File(App.instance.cacheDir, imageFileName)
+
+            emit(ImageDownloadResult.Loading(url = url, progress = index, total = images.size))
+
+            if (!file.exists())
+                tryCatch {
+                    Timber.i("load $url from ${imagePosts.get(url)?.url}")
+
+                    val body = apiLiveJournal.downloadFile(url).execute().body()
+                    val outputStream = body?.byteStream()
+                    BitmapFactory.decodeStream(outputStream).also { it.saveToFile(file) }
+                    outputStream?.close()
+
+                    images.add(url)
+                }
+        }
+
+        emit(ImageDownloadResult.Complete(images.size))
+    }
+
     sealed interface Result {
         data class OnPostFoundLocal(val post: Post) : Result
         data class OnLoading(val url: String) : Result
@@ -125,6 +180,11 @@ class HomeUseCase @Inject constructor(
         data class PdfCompleted(val fileName: String) : Result
         data class Stats(val liveJournalCount: Int, val liveInternetCount: Int, val logs: List<String>, val liveJournalDownloaded: Int) : Result
         data class PostSavedInPdf(val post: Post, val fileName: String) : Result
+    }
+
+    sealed interface ImageDownloadResult {
+        data class Loading(val url: String, val progress: Int, val total: Int) : ImageDownloadResult
+        data class Complete(val size: Int) : ImageDownloadResult
     }
 }
 

@@ -12,6 +12,7 @@ import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
+import kotlin.math.log
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
@@ -110,5 +111,19 @@ class HomeViewModel @Inject constructor(
         }
     }
 
+    fun loadImages() {
+        viewModelScope.launch {
+            useCase.loadImages()
+                .flowOn(Dispatchers.IO)
+                .catch { Timber.e(it) }
+                .collect { state ->
+                    val logs = when (state) {
+                        is HomeUseCase.ImageDownloadResult.Complete -> "Image download completed ${state.size}"
+                        is HomeUseCase.ImageDownloadResult.Loading -> "Image downloading ${state.progress}/${state.total}\n${state.url}"
+                    }
 
+                    showLogs(logs)
+                }
+        }
+    }
 }
