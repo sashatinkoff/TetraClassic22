@@ -12,6 +12,7 @@ import com.isidroid.b21.ext.bitmapToByteArray
 import com.isidroid.b21.ext.saveToFile
 import com.isidroid.core.ext.addMonths
 import com.isidroid.core.ext.md5
+import com.isidroid.core.ext.toBitmap
 import com.isidroid.core.ext.tryCatch
 import com.itextpdf.text.*
 import com.itextpdf.text.pdf.BaseFont
@@ -27,7 +28,7 @@ class PdfRepositoryImpl(
 ) : PdfRepository {
     private val postDao by lazy { appDatabase.postDao }
 
-    override suspend fun create(context: Context, uri: Uri, listener: PdfRepository.Listener) {
+    override suspend fun create(context: Context, uri: Uri, imagesUri: Uri?, listener: PdfRepository.Listener) {
         var date: Date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
             .parse("2000-01-01 01:00:00")!!
         val yearFormat = SimpleDateFormat("yyyyy", Locale.getDefault())
@@ -39,6 +40,7 @@ class PdfRepositoryImpl(
             create(
                 context = context,
                 uri = uri,
+                imagesUri = imagesUri,
                 start = startDate,
                 end = endDate,
                 pdfFileName = "fixin",
@@ -51,7 +53,7 @@ class PdfRepositoryImpl(
         }
     }
 
-    override suspend fun create(context: Context, uri: Uri, start: Date, end: Date, pdfFileName: String, listener: PdfRepository.Listener) {
+    override suspend fun create(context: Context, uri: Uri, imagesUri: Uri?, start: Date, end: Date, pdfFileName: String, listener: PdfRepository.Listener) {
         val posts = postDao.filterByDate(start, end).filter { it.isDownloaded }
         if (posts.isEmpty())
             return
@@ -86,7 +88,15 @@ class PdfRepositoryImpl(
         document.pageSize = PageSize.A4;
         document.addCreationDate();
 
-        posts.forEach { post ->
+        val imagesDocumentFolder = imagesUri?.let { DocumentFile.fromTreeUri(context, imagesUri) }
+
+        for (post in posts) {
+            if (post.title?.contains("Мои публикации в Instagram", ignoreCase = true) == true)
+                continue
+
+            if (post.html.isNullOrEmpty())
+                continue
+
             val imageInsertion = "image_insertion_${UUID.randomUUID()}"
             val date = dateFormat.format(post.createdAt!!)
 
@@ -123,19 +133,17 @@ class PdfRepositoryImpl(
 
                 val url = images.getOrNull(index)
                 if (url != null) {
-                    val imageFileName = "img_${url.md5()}"
+                    val imageFileName = "img_${url.md5()}.jpg"
+                    val documentFileImage = imagesDocumentFolder?.findFile(imageFileName)
 
-                    val file = File(App.instance.cacheDir, imageFileName)
-                    val bitmap = if (file.exists()) {
-                        BitmapFactory.decodeFile(file.absolutePath)
+                    val bitmap = if (documentFileImage != null) {
+                        documentFileImage.uri.toBitmap(context)
                     } else {
                         tryCatch {
                             listener.downloadImage(url, post.title)
-
                             val body = apiLiveJournal.downloadFile(url).execute().body()
                             val outputStream = body?.byteStream()
                             BitmapFactory.decodeStream(outputStream)
-                                .also { it.saveToFile(file) }
                         }
                     }
 

@@ -3,12 +3,14 @@ package com.isidroid.b21.ui.main
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.NavOptions
 import com.isidroid.b21.R
+import com.isidroid.b21.data.source.settings.Settings
 import com.isidroid.b21.databinding.ActivityMainBinding
 import com.isidroid.b21.ui.AppBarListener
 import com.isidroid.core.ext.findNavController
@@ -30,7 +32,7 @@ class MainActivity : BindActivity(), MainView, AppBarListener {
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        updateStatusBarColor()
+        updateStatusBarColor(isLightStatusBarIcons = false, colorRes = android.R.color.black)
     }
 
     override fun onFragmentResumed(fr: Fragment) {

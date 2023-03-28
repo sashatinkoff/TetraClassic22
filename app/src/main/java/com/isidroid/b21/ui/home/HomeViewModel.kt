@@ -4,6 +4,7 @@ import android.net.Uri
 import androidx.core.net.toUri
 import androidx.lifecycle.*
 import com.isidroid.b21.domain.use_case.HomeUseCase
+import com.isidroid.core.ext.tryCatch
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
@@ -12,7 +13,6 @@ import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
-import kotlin.math.log
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
@@ -39,7 +39,7 @@ class HomeViewModel @Inject constructor(
                     when (it) {
                         is HomeUseCase.Result.OnLoading -> {}
                         is HomeUseCase.Result.OnPostFoundLocal -> showLogs(monthDateFormat.format(it.post.createdAt!!))
-                        is HomeUseCase.Result.OnPostSaved -> showLogs("${it.post.title} ${dateFormat.format(it.post.createdAt!!)} saved")
+                        is HomeUseCase.Result.OnPostSaved -> showLogs("${it.post.title} ${tryCatch { dateFormat.format(it.post.createdAt!!) }} saved")
                         else -> State.Empty
                     }
                 }
@@ -50,9 +50,9 @@ class HomeViewModel @Inject constructor(
         useCase.stop()
     }
 
-    fun createPdf(uri: Uri) {
+    fun createPdf(pdfUri: Uri, imagesUri: Uri?) {
         viewModelScope.launch {
-            useCase.createPdf(uri)
+            useCase.createPdf(pdfUri, imagesUri)
                 .flowOn(Dispatchers.IO)
                 .catch { Timber.e(it) }
                 .collect {
@@ -111,9 +111,12 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun loadImages() {
+
+    fun downloadPictures(uri: Uri?) {
+        uri ?: return
+
         viewModelScope.launch {
-            useCase.loadImages()
+            useCase.loadImages(uri)
                 .flowOn(Dispatchers.IO)
                 .catch { Timber.e(it) }
                 .collect { state ->

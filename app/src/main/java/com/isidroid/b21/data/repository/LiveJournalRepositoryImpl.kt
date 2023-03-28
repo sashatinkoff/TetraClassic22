@@ -64,8 +64,11 @@ class LiveJournalRepositoryImpl(
 //        file.bufferedWriter().use { out -> out.write(html) }
 
         val document = Jsoup.parse(html)
+
         val url = document.getElementsByTag("meta").firstOrNull { it.attr("property") == "og:url" }?.attr("content")!!
         val id = url.toUri().lastPathSegment?.let { "\\D".toRegex().replace(it, "") }.orEmpty()
+
+        Timber.i("id=$id, url=$url")
 
         val post = try {
             val dateFormats = arrayOf(
@@ -88,6 +91,14 @@ class LiveJournalRepositoryImpl(
 
             val contentHtml = content.html()
             val contentText = content.text()
+
+
+            if (id.contains("2541563")) {
+                Timber.i("timeDocument=$timeDocument")
+                Timber.i("dateString=$dateString")
+                Timber.i("title=$title")
+            }
+
 
             Post(
                 id = id,
@@ -167,13 +178,14 @@ class LiveJournalRepositoryImpl(
         var year = 2006
         while (year < 2019) {
             val file = "diary_0${year}.json.txt"
-            tryCatch {
+            try {
                 val json = file.assetsFileContent(context)
                 val data = gson.fromJson<List<Post>>(json)
 
                 postDao.insert(*data.toTypedArray())
+            } catch (t: Throwable) {
+                Timber.e(t)
             }
-
 
             year++
         }

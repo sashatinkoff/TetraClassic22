@@ -1,9 +1,7 @@
 package com.isidroid.b21.ui.home
 
 import android.annotation.SuppressLint
-import android.app.Application
-import android.content.Context
-import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,30 +11,36 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.navArgs
-import com.isidroid.b21.App
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
 import com.isidroid.core.ext.randomColor
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @AndroidEntryPoint
 class HomeFragment : BindFragment(), HomeView {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private val args: HomeFragmentArgs by navArgs()
     private val viewModel by viewModels<HomeViewModel>()
+    private var pdfUri: Uri? = null
 
     private val documentPdfContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
-        viewModel.createPdf(it!!)
+        pdfUri = it
+        pdfImagesContract.launch(null)
+    }
+
+    private val pdfImagesContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
+        viewModel.createPdf(pdfUri = pdfUri!!, imagesUri = it)
     }
 
     private val saveJsonContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
         binding.textView.text = ""
         viewModel.saveLjJson(it!!)
+    }
+
+    private val downloadPicturesContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
+        viewModel.downloadPictures(it)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -51,7 +55,10 @@ class HomeFragment : BindFragment(), HomeView {
                 viewModel.create()
             }
             buttonStop.setOnClickListener { viewModel.stop() }
-            buttonPdf.setOnClickListener { documentPdfContract.launch(null) }
+            buttonPdf.setOnClickListener {
+                pdfUri = null
+                documentPdfContract.launch(null)
+            }
             buttonLiveinternet.setOnClickListener { viewModel.liveInternet() }
             buttonLiveJournalJson.setOnClickListener {
 //                saveJsonContract.launch(null)
@@ -59,8 +66,7 @@ class HomeFragment : BindFragment(), HomeView {
             }
 
             buttonSaveLjToJson.setOnClickListener { saveJsonContract.launch(null) }
-
-            buttonLoadImages.setOnClickListener { viewModel.loadImages() }
+            buttonLoadImages.setOnClickListener { downloadPicturesContract.launch(null) }
         }
     }
 
@@ -96,17 +102,6 @@ class HomeFragment : BindFragment(), HomeView {
             append("\n")
             append("liveInternetCount=$liveInternetCount")
         }
-    }
-
-    override fun onReady() {
-        super.onReady()
-
-        if (view2 == null) {
-            view2 = binding.root
-
-            view2?.setBackgroundColor(randomColor())
-        }
-
     }
 
     companion object {

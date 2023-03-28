@@ -6,8 +6,8 @@ import com.isidroid.b21.domain.model.Post
 import java.util.Date
 
 interface PdfRepository {
-    suspend fun create(context: Context, uri: Uri, listener: Listener)
-    suspend fun create(context: Context, uri: Uri, start: Date, end: Date, pdfFileName: String, listener: Listener)
+    suspend fun create(context: Context, uri: Uri, imagesUri: Uri?, listener: Listener)
+    suspend fun create(context: Context, uri: Uri, imagesUri: Uri?, start: Date, end: Date, pdfFileName: String, listener: Listener)
 
     interface Listener {
         suspend fun startPdf(fileName: String)

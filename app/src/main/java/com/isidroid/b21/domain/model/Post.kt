@@ -5,7 +5,7 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 import java.util.Date
 
-@Entity(indices = [Index(value = ["getByUrl"])])
+@Entity(indices = [Index(value = ["getByUrl", "url"])])
 data class Post(
     @PrimaryKey val id: String,
     val createdAt: Date? = null,

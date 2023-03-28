@@ -1,24 +1,25 @@
 package com.isidroid.b21.domain.use_case
 
 import android.content.Context
-import android.graphics.BitmapFactory
 import android.net.Uri
-import com.isidroid.b21.App
+import androidx.documentfile.provider.DocumentFile
 import com.isidroid.b21.data.source.local.AppDatabase
 import com.isidroid.b21.data.source.remote.api.ApiLiveJournal
 import com.isidroid.b21.domain.model.Post
 import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.domain.repository.PdfRepository
 import com.isidroid.b21.domain.repository.PostRepository
-import com.isidroid.b21.ext.saveToFile
 import com.isidroid.core.ext.date
+import com.isidroid.core.ext.json
 import com.isidroid.core.ext.md5
 import com.isidroid.core.ext.string
-import com.isidroid.core.ext.tryCatch
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import org.jsoup.Jsoup
 import timber.log.Timber
-import java.io.File
+import java.io.InputStream
+import java.io.OutputStream
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -36,12 +37,13 @@ class HomeUseCase @Inject constructor(
 
     fun start() = flow {
         isRunning = true
-        var url = "https://fixin.livejournal.com/385.html"
+
 //        url = liveJournalRepository.nextPostUrl("2033243")
-
-
 //        url = "https://fixin.livejournal.com/2310772.html"
+
         val deadline = "2021-01-01".date
+
+        var url = postRepository.findAll().sortedByDescending { it.createdAt }.firstOrNull()?.url ?: "https://fixin.livejournal.com/385.html"
 
         while (true) {
             if (!isRunning) break
@@ -57,7 +59,6 @@ class HomeUseCase @Inject constructor(
             emit(Result.OnLoading(url))
             val post = liveJournalRepository.postHtml(url)
 
-            Timber.i("${post.createdAt?.string} ${post.title}")
 
             emit(Result.OnPostSaved(post))
 
@@ -77,8 +78,8 @@ class HomeUseCase @Inject constructor(
         isRunning = false
     }
 
-    fun createPdf(uri: Uri) = flow {
-        pdfRepository.create(context, uri, object : PdfRepository.Listener {
+    fun createPdf(uri: Uri, imagesUri: Uri?) = flow {
+        pdfRepository.create(context, uri, imagesUri, object : PdfRepository.Listener {
             override suspend fun startPdf(fileName: String) {
                 emit(Result.StartPdf(fileName))
             }
@@ -132,7 +133,7 @@ class HomeUseCase @Inject constructor(
         emit(true)
     }
 
-    fun loadImages() = flow {
+    fun loadImages(uri: Uri) = flow {
         val posts = postRepository.findAll().filter { it.isLiveJournal }
         val images = mutableSetOf<String>()
         val imagePosts = hashMapOf<String, Post>()
@@ -149,27 +150,36 @@ class HomeUseCase @Inject constructor(
             }
         }
 
-        images.forEachIndexed { index, url ->
-            val imageFileName = "img_${url.md5()}"
-            val file = File(App.instance.cacheDir, imageFileName)
+        val documentFolder = DocumentFile.fromTreeUri(context, uri)!!
+        for ((index, url) in images.withIndex()) {
+            val imageFileName = "img_${url.md5()}.jpg"
 
             emit(ImageDownloadResult.Loading(url = url, progress = index, total = images.size))
+            if (documentFolder.findFile(imageFileName)?.exists() == true) continue
 
-            if (!file.exists())
-                tryCatch {
-                    Timber.i("load $url from ${imagePosts.get(url)?.url}")
+            var outputStream: OutputStream? = null
+            var stream: InputStream? = null
 
-                    val body = apiLiveJournal.downloadFile(url).execute().body()
-                    val outputStream = body?.byteStream()
-                    BitmapFactory.decodeStream(outputStream).also { it.saveToFile(file) }
-                    outputStream?.close()
+            try {
+                val documentFile = documentFolder.createFile("image/*", imageFileName)!!
 
-                    images.add(url)
-                }
+                val body = apiLiveJournal.downloadFile(url).execute().body()
+                stream = body?.byteStream()
+                outputStream = context.contentResolver.openOutputStream(documentFile.uri)
+                outputStream?.write(stream?.readBytes())
+
+
+            } catch (t: Throwable) {
+                Timber.e(t)
+            } finally {
+                outputStream?.close()
+                stream?.close()
+            }
         }
 
         emit(ImageDownloadResult.Complete(images.size))
     }
+        .flowOn(Dispatchers.IO)
 
     sealed interface Result {
         data class OnPostFoundLocal(val post: Post) : Result

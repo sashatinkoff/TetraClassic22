@@ -1,8 +1,11 @@
 package com.isidroid.core.ext
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
+import timber.log.Timber
 import java.io.BufferedReader
 import java.io.File
 import java.io.IOException
@@ -55,4 +58,32 @@ fun DocumentFile.copy(context: Context, file: File): Boolean {
         inputStream.close()
     }
     return result
+}
+
+fun Uri.stream(context: Context): InputStream? {
+    return tryCatch { context.contentResolver.openInputStream(this) }
+}
+
+fun Uri.toBitmap(context: Context): Bitmap? {
+    var stream: InputStream? = null
+    val bitmap = try {
+
+        try {
+            stream = stream(context)
+            BitmapFactory.decodeStream(stream)
+
+        } catch (t: Throwable) {
+            stream?.close()
+            stream = stream(context)
+            BitmapFactory.decodeStream(stream)
+        }
+
+    } catch (t: Throwable) {
+        Timber.e(t)
+        null
+    } finally {
+        stream?.close()
+    }
+
+    return bitmap
 }
