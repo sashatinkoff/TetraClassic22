@@ -151,11 +151,18 @@ class HomeUseCase @Inject constructor(
         }
 
         val documentFolder = DocumentFile.fromTreeUri(context, uri)!!
+        val existingFiles = documentFolder.listFiles().map { it.name }
+
+        Timber.i("existingFiles=$existingFiles")
+
         for ((index, url) in images.withIndex()) {
             val imageFileName = "img_${url.md5()}.jpg"
 
             emit(ImageDownloadResult.Loading(url = url, progress = index, total = images.size))
-            if (documentFolder.findFile(imageFileName)?.exists() == true) continue
+
+            if (existingFiles.contains(imageFileName)) {
+                continue
+            }
 
             var outputStream: OutputStream? = null
             var stream: InputStream? = null

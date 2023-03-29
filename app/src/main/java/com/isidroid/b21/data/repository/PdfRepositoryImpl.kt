@@ -18,6 +18,7 @@ import com.itextpdf.text.*
 import com.itextpdf.text.pdf.BaseFont
 import com.itextpdf.text.pdf.PdfWriter
 import org.jsoup.Jsoup
+import timber.log.Timber
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -49,12 +50,16 @@ class PdfRepositoryImpl(
 
             date = endDate
 
-            if (yearFormat.format(date).toInt() > 2020) break
+            if (yearFormat.format(date).toInt() > 2021) break
         }
     }
 
     override suspend fun create(context: Context, uri: Uri, imagesUri: Uri?, start: Date, end: Date, pdfFileName: String, listener: PdfRepository.Listener) {
-        val posts = postDao.filterByDate(start, end).filter { it.isDownloaded }
+//        val posts = postDao.filterByDate(start, end).filter { it.isDownloaded }
+        val posts = postDao.all().filter { it.html?.contains("https://pics.livejournal.com/iamfixin/pic/000011kx/s320x240") == true }
+
+        Timber.i("create posts=${posts.size}")
+
         if (posts.isEmpty())
             return
 
@@ -100,7 +105,7 @@ class PdfRepositoryImpl(
             val imageInsertion = "image_insertion_${UUID.randomUUID()}"
             val date = dateFormat.format(post.createdAt!!)
 
-            var content = post.html.orEmpty().clearHtml()
+            var content = post.html.clearHtml()
             val jDoc = Jsoup.parse(content).normalise()
 
             arrayOf("span", "u", "b", "strong", "i", "table").forEach {
@@ -136,14 +141,18 @@ class PdfRepositoryImpl(
                     val imageFileName = "img_${url.md5()}.jpg"
                     val documentFileImage = imagesDocumentFolder?.findFile(imageFileName)
 
+                    Timber.i("loadimage $url, documentFileImage=${documentFileImage?.name}")
+
                     val bitmap = if (documentFileImage != null) {
                         documentFileImage.uri.toBitmap(context)
+                            .also { Timber.i("bitmap from document file ${it?.width}x${it?.height}") }
                     } else {
                         tryCatch {
                             listener.downloadImage(url, post.title)
                             val body = apiLiveJournal.downloadFile(url).execute().body()
                             val outputStream = body?.byteStream()
                             BitmapFactory.decodeStream(outputStream)
+                                .also { Timber.i("bitmap from remote server ${it?.width}x${it?.height}") }
                         }
                     }
 

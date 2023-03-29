@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.isidroid.b21.databinding.FragmentHomeBinding
 import com.isidroid.b21.utils.base.BindFragment
+import com.isidroid.core.ext.alert
 import com.isidroid.core.ext.randomColor
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -27,7 +28,12 @@ class HomeFragment : BindFragment(), HomeView {
 
     private val documentPdfContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
         pdfUri = it
-        pdfImagesContract.launch(null)
+
+        activity?.alert(
+            message = "Select images folder",
+            positiveRes = android.R.string.ok,
+            onPositive = { pdfImagesContract.launch(null) }
+        )
     }
 
     private val pdfImagesContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
@@ -57,7 +63,12 @@ class HomeFragment : BindFragment(), HomeView {
             buttonStop.setOnClickListener { viewModel.stop() }
             buttonPdf.setOnClickListener {
                 pdfUri = null
-                documentPdfContract.launch(null)
+
+                activity?.alert(
+                    message = "Select pdf folder",
+                    positiveRes = android.R.string.ok,
+                    onPositive = { documentPdfContract.launch(null) }
+                )
             }
             buttonLiveinternet.setOnClickListener { viewModel.liveInternet() }
             buttonLiveJournalJson.setOnClickListener {
@@ -66,7 +77,9 @@ class HomeFragment : BindFragment(), HomeView {
             }
 
             buttonSaveLjToJson.setOnClickListener { saveJsonContract.launch(null) }
-            buttonLoadImages.setOnClickListener { downloadPicturesContract.launch(null) }
+            buttonLoadImages.setOnClickListener {
+                downloadPicturesContract.launch(null)
+            }
         }
     }
 
