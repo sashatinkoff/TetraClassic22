@@ -5,15 +5,16 @@ import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
 import com.isidroid.b21.data.source.local.AppDatabase
 import com.isidroid.b21.data.source.remote.api.ApiLiveJournal
+import com.isidroid.b21.domain.model.ImageInfo
 import com.isidroid.b21.domain.model.Post
 import com.isidroid.b21.domain.repository.LiveJournalRepository
 import com.isidroid.b21.domain.repository.PdfRepository
 import com.isidroid.b21.domain.repository.PostRepository
 import com.isidroid.core.ext.date
-import com.isidroid.core.ext.json
 import com.isidroid.core.ext.md5
-import com.isidroid.core.ext.string
+import com.isidroid.core.ext.tryCatch
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import org.jsoup.Jsoup
@@ -134,41 +135,55 @@ class HomeUseCase @Inject constructor(
     }
 
     fun loadImages(uri: Uri) = flow {
-        val posts = postRepository.findAll().filter { it.isLiveJournal }
+        Timber.i("start")
+
+        val posts = postRepository.findAll()
         val images = mutableSetOf<String>()
-        val imagePosts = hashMapOf<String, Post>()
+
+        emit(ImageDownloadResult.Loading(message = "Parsing posts ${posts.size}"))
 
         for (post in posts) {
             val jDoc = Jsoup.parse(post.html.orEmpty()).normalise()
+            val localImages = jDoc.getElementsByTag("img").map { element -> element.attr("src") }
 
-            // replace images
-            jDoc.getElementsByTag("img").forEachIndexed { index, element ->
-                val url = element.attr("src")
-                images.add(url)
-
-                imagePosts[url] = post
-            }
+            images.addAll(localImages)
         }
 
         val documentFolder = DocumentFile.fromTreeUri(context, uri)!!
-        val existingFiles = documentFolder.listFiles().map { it.name }
+        val existingFiles = documentFolder.listFiles()
+            .filter { it.length() > 0 }
+            .mapNotNull { it.name }
+            .toMutableList()
 
-        Timber.i("existingFiles=$existingFiles")
+        emit(ImageDownloadResult.Loading(message = "Local images found ${existingFiles.size}"))
 
-        for ((index, url) in images.withIndex()) {
-            val imageFileName = "img_${url.md5()}.jpg"
+        appDatabase.imagesDao.deleteAll()
+        appDatabase.imagesDao.insert(existingFiles.map { ImageInfo(it) })
 
-            emit(ImageDownloadResult.Loading(url = url, progress = index, total = images.size))
-
-            if (existingFiles.contains(imageFileName)) {
-                continue
+        val images2 = images
+            .filter {
+                val fileName = "img_${it.md5()}.jpg"
+                !existingFiles.contains(fileName)
             }
 
-            var outputStream: OutputStream? = null
-            var stream: InputStream? = null
+        val total = images.size
+        val existing = existingFiles.size
+        existingFiles.clear()
+
+        var outputStream: OutputStream? = null
+        var stream: InputStream? = null
+
+        for ((index, url) in images2.withIndex()) {
+            val imageFileName = "img_${url.md5()}.jpg"
+            val message = StringBuilder("download ${existing + index}/$total")
 
             try {
-                val documentFile = documentFolder.createFile("image/*", imageFileName)!!
+                val documentFile = try {
+                    documentFolder.createFile("image/*", imageFileName)!!
+                } catch (t: Throwable) {
+                    documentFolder.findFile(imageFileName)?.delete()
+                    documentFolder.createFile("image/*", imageFileName)!!
+                }
 
                 val body = apiLiveJournal.downloadFile(url).execute().body()
                 stream = body?.byteStream()
@@ -177,11 +192,18 @@ class HomeUseCase @Inject constructor(
 
 
             } catch (t: Throwable) {
+                message.append("\nError $url")
                 Timber.e(t)
             } finally {
                 outputStream?.close()
                 stream?.close()
+
+                outputStream = null
+                stream = null
+                message.append("\nsuccess")
             }
+
+            emit(ImageDownloadResult.Loading(message = message.toString()))
         }
 
         emit(ImageDownloadResult.Complete(images.size))
@@ -200,7 +222,7 @@ class HomeUseCase @Inject constructor(
     }
 
     sealed interface ImageDownloadResult {
-        data class Loading(val url: String, val progress: Int, val total: Int) : ImageDownloadResult
+        data class Loading(val message: String) : ImageDownloadResult
         data class Complete(val size: Int) : ImageDownloadResult
     }
 }

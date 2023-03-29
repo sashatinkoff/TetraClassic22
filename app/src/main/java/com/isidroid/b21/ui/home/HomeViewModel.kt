@@ -122,7 +122,7 @@ class HomeViewModel @Inject constructor(
                 .collect { state ->
                     val logs = when (state) {
                         is HomeUseCase.ImageDownloadResult.Complete -> "Image download completed ${state.size}"
-                        is HomeUseCase.ImageDownloadResult.Loading -> "Image downloading ${state.progress}/${state.total}\n${state.url}"
+                        is HomeUseCase.ImageDownloadResult.Loading -> state.message
                     }
 
                     showLogs(logs)

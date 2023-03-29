@@ -3,4 +3,8 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">liveinternet.ru</domain>
     </domain-config>
+
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">li.ru</domain>
+    </domain-config>
 </network-security-config>
