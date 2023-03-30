@@ -1,13 +1,15 @@
 package com.isidroid.b21.ui.home
 
-import androidx.lifecycle.*
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.isidroid.b21.domain.use_case.HomeUseCase
-import com.isidroid.b21.ui.home.adapter.Item
 import com.isidroid.core.ext.catchTimber
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import java.util.UUID
 import javax.inject.Inject
@@ -19,30 +21,12 @@ class HomeViewModel @Inject constructor(
     private val _viewState = MutableStateFlow<UiState?>(null)
     val viewState = _viewState.asStateFlow()
 
-    var page = 0
-
-    fun makePreview(link: Array<String>) {
+    fun createCustomer(name: String = "Johhny", lastName: String = UUID.randomUUID().toString().take(5)) {
         viewModelScope.launch {
-            useCase.preview(link)
+            useCase.createCustomer(name, lastName)
                 .flowOn(Dispatchers.IO)
                 .catchTimber { }
                 .collect()
-        }
-    }
-
-    fun loadNext() {
-        viewModelScope.launch {
-            flow {
-                delay(3000)
-
-                val items = (0..4).map { Item(id = (page * 10) + it, name = UUID.randomUUID().toString()) }
-                emit(items)
-            }
-                .flowOn(Dispatchers.Default)
-                .collect {
-                    _viewState.value = UiState.Data(it, hasMore = page < 4)
-                    page++
-                }
         }
     }
 }

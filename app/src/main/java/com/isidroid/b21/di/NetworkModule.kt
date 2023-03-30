@@ -4,7 +4,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.isidroid.b21.data.source.remote.AuthInterceptor
 import com.isidroid.b21.data.source.remote.DateDeserializer
-import com.isidroid.b21.data.source.remote.api.ApiTest
+import com.isidroid.b21.data.source.remote.api.ApiDwolla
 import com.isidroid.b21.domain.repository.SessionRepository
 import dagger.Module
 import dagger.Provides
@@ -79,9 +79,9 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideApiReports(interceptor: AuthInterceptor) = api(
-        cl = ApiTest::class.java,
+    fun provideAApiDwolla() = api(
+        baseUrl = "https://api-sandbox.dwolla.com/",
+        cl = ApiDwolla::class.java,
         logLevel = HttpLoggingInterceptor.Level.BODY,
-        authInterceptor = interceptor
     )
 }

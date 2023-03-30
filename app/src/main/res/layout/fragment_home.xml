@@ -7,57 +7,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/flow"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonUpdateAll"
+            android:id="@+id/buttonCreateCustomer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update All" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonUpdatePartiallyAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="UpdatePartially" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonAdd2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add multi" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonAddFew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add with add" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonLoading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Loading" />
+            android:text="Create Dwolla Customer" />
 
         <androidx.constraintlayout.helper.widget.Flow
             android:id="@+id/flow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="buttonUpdateAll, buttonUpdatePartiallyAll, buttonAdd, buttonAdd2, buttonAddFew, buttonLoading"
+            android:padding="10dp"
+            app:constraint_referenced_ids="buttonCreateCustomer"
             app:flow_horizontalAlign="start"
-            app:flow_horizontalBias="0"
             app:flow_maxElementsWrap="3"
             app:flow_verticalBias="0"
             app:flow_verticalGap="2dp"
