@@ -6,6 +6,10 @@ import com.isidroid.b21.domain.repository.PostRepository
 
 class PostRepositoryImpl(private val postDao: PostDao) : PostRepository {
     override fun findAll(): List<Post> {
-        return return postDao.all()
+        return postDao.all()
+    }
+
+    override fun findLast(): Post? {
+        return postDao.findLast()
     }
 }

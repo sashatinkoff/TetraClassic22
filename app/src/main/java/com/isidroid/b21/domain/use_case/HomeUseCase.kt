@@ -44,7 +44,7 @@ class HomeUseCase @Inject constructor(
 
         val deadline = "2021-01-01".date
 
-        var url = postRepository.findAll().sortedByDescending { it.createdAt }.firstOrNull()?.url ?: "https://fixin.livejournal.com/385.html"
+        var url = postRepository.findLast()?.url ?: "https://fixin.livejournal.com/385.html"
 
         while (true) {
             if (!isRunning) break

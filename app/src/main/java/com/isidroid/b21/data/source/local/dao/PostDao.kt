@@ -35,4 +35,7 @@ interface PostDao {
 
     @Query("DELETE FROM post WHERE source = 'liveInternet'")
     fun deleteLiveInternet()
+
+    @Query("SELECT * FROM post ORDER BY createdAt DESC LIMIT 1")
+    fun findLast(): Post?
 }
