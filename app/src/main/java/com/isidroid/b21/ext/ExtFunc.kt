@@ -17,9 +17,14 @@ fun bitmapToByteArray(bitmap: Bitmap, width: Float, height: Float): ByteArray? {
     return try {
         val max = max(width, height).toInt()
         val stream = ByteArrayOutputStream();
-        scaleToMaxSize(bitmap, max / 2, false).compress(Bitmap.CompressFormat.PNG, 100, stream);
+
+//        val testBitmap = scaleToMaxSize(bitmap, max, true)
+//        testBitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream)
         val byteArray = stream.toByteArray();
         bitmap.recycle()
+//        testBitmap.recycle()
         byteArray
     } catch (t: Throwable) {
         null

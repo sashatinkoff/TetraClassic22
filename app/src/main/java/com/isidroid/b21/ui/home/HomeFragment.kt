@@ -27,12 +27,11 @@ class HomeFragment : BindFragment(), HomeView {
     private var pdfUri: Uri? = null
 
     private val documentPdfContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
-        pdfUri = it
-        pdfImagesContract.launch(null)
+        viewModel.createPdf(pdfUri = it!!, imagesUri = it)
     }
 
     private val pdfImagesContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
-        viewModel.createPdf(pdfUri = pdfUri!!, imagesUri = it)
+
     }
 
     private val saveJsonContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
@@ -58,12 +57,7 @@ class HomeFragment : BindFragment(), HomeView {
             buttonStop.setOnClickListener { viewModel.stop() }
             buttonPdf.setOnClickListener {
                 pdfUri = null
-
-                activity?.alert(
-                    message = "Select pdf folder",
-                    positiveRes = android.R.string.ok,
-                    onPositive = { documentPdfContract.launch(null) }
-                )
+                documentPdfContract.launch(null)
             }
             buttonLiveinternet.setOnClickListener { viewModel.liveInternet() }
             buttonLiveJournalJson.setOnClickListener {

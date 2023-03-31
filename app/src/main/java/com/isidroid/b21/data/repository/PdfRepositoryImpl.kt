@@ -4,24 +4,23 @@ import android.content.Context
 import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
-import com.isidroid.b21.App
 import com.isidroid.b21.data.source.local.AppDatabase
 import com.isidroid.b21.data.source.remote.api.ApiLiveJournal
 import com.isidroid.b21.domain.repository.PdfRepository
 import com.isidroid.b21.ext.bitmapToByteArray
-import com.isidroid.b21.ext.saveToFile
 import com.isidroid.core.ext.addMonths
 import com.isidroid.core.ext.md5
-import com.isidroid.core.ext.toBitmap
 import com.isidroid.core.ext.tryCatch
 import com.itextpdf.text.*
 import com.itextpdf.text.pdf.BaseFont
+import com.itextpdf.text.pdf.PdfPCell
 import com.itextpdf.text.pdf.PdfWriter
 import org.jsoup.Jsoup
 import timber.log.Timber
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 class PdfRepositoryImpl(
     private val appDatabase: AppDatabase,
@@ -37,28 +36,29 @@ class PdfRepositoryImpl(
         while (true) {
             val startDate = date
             val endDate = Date(date.addMonths(12).time - 1L)
+            val year = yearFormat.format(date).toInt()
 
-            create(
-                context = context,
-                uri = uri,
-                imagesUri = imagesUri,
-                start = startDate,
-                end = endDate,
-                pdfFileName = "fixin",
-                listener = listener
-            )
+//            if (year == 2009)
+                create(
+                    context = context,
+                    uri = uri,
+                    imagesUri = imagesUri,
+                    start = startDate,
+                    end = endDate,
+                    pdfFileName = "fixin",
+                    listener = listener
+                )
 
             date = endDate
 
-            if (yearFormat.format(date).toInt() > 2021) break
+
+
+            if (year > 2021) break
         }
     }
 
     override suspend fun create(context: Context, uri: Uri, imagesUri: Uri?, start: Date, end: Date, pdfFileName: String, listener: PdfRepository.Listener) {
-//        val posts = postDao.filterByDate(start, end).filter { it.isDownloaded }
-        val posts = postDao.all()
-
-        Timber.i("create posts=${posts.size}")
+        val posts = postDao.filterByDate(start, end).filter { it.isDownloaded }
 
         if (posts.isEmpty())
             return
@@ -67,6 +67,8 @@ class PdfRepositoryImpl(
         val fileName = with(SimpleDateFormat("yyyy", Locale.getDefault())) {
             "${pdfFileName}_${format(start)}"
         }
+
+        Timber.i("create posts=${posts.size} file=$fileName")
 
         listener.startPdf(fileName)
 
@@ -93,11 +95,16 @@ class PdfRepositoryImpl(
         document.pageSize = PageSize.A4;
         document.addCreationDate();
 
-        val imagesDocumentFolder = imagesUri?.let { DocumentFile.fromTreeUri(context, imagesUri) }
-
         for (post in posts) {
             if (post.title?.contains("Мои публикации в Instagram", ignoreCase = true) == true)
                 continue
+
+            val month = with(Calendar.getInstance()) {
+                time = post.createdAt!!
+                get(Calendar.MONTH)
+            }
+
+//            if (month != 1) continue
 
             if (post.html.isNullOrEmpty())
                 continue
@@ -108,7 +115,7 @@ class PdfRepositoryImpl(
             var content = post.html.clearHtml()
             val jDoc = Jsoup.parse(content).normalise()
 
-            arrayOf("span", "u", "b", "strong", "i", "table").forEach {
+            arrayOf("span", "u", "b", "strong", "i", "table", "tr", "td").forEach {
                 jDoc.getElementsByTag(it).forEach { element -> content = content.replace("$element", element.text()) }
             }
 
@@ -139,14 +146,13 @@ class PdfRepositoryImpl(
                 val url = images.getOrNull(index)
                 if (url != null) {
                     val imageFileName = "img_${url.md5()}.jpg"
-                    val documentFileImage = imagesDocumentFolder?.findFile(imageFileName)
+                    val documentFileImage = File(context.filesDir, imageFileName)
 
-                    Timber.i("loadimage $url, documentFileImage=${documentFileImage?.name}")
 
-                    val bitmap = if (documentFileImage != null) {
-                        documentFileImage.uri.toBitmap(context)
+                    val bitmap = if (documentFileImage.exists()) {
+                        BitmapFactory.decodeFile(documentFileImage.absolutePath)
                             .also { Timber.i("bitmap from document file ${it?.width}x${it?.height}") }
-                    } else {
+                    } else if (!post.isLiveJournal) {
                         tryCatch {
                             listener.downloadImage(url, post.title)
                             val body = apiLiveJournal.downloadFile(url).execute().body()
@@ -154,15 +160,29 @@ class PdfRepositoryImpl(
                             BitmapFactory.decodeStream(outputStream)
                                 .also { Timber.i("bitmap from remote server ${it?.width}x${it?.height}") }
                         }
-                    }
+                    } else
+                        null
 
                     if (bitmap != null) {
-                        val width = kotlin.math.min(bitmap.width.toFloat(), document.pageSize.width)
-                        val height = kotlin.math.min(bitmap.height.toFloat(), document.pageSize.height)
+                        val fullSize = false
+
+                        val width = if (fullSize)
+                            document.pageSize.width
+                        else
+                            kotlin.math.min(bitmap.width.toFloat(), document.pageSize.width)
+
+
+                        val height = if (fullSize)
+                            document.pageSize.height
+                        else
+                            kotlin.math.min(bitmap.height.toFloat(), document.pageSize.height)
+
 
                         val byteArray = bitmapToByteArray(bitmap, width, height)
-                        val image = Image.getInstance(byteArray)
+                        val image = Image.getInstance(documentFileImage.absolutePath)
                         image.alignment = Image.ALIGN_MIDDLE
+                        image.widthPercentage = 100f
+//                        image.isDeflated = false
 
                         byteArray?.also {
                             val pos = pdfWriter.getVerticalPosition(false)
