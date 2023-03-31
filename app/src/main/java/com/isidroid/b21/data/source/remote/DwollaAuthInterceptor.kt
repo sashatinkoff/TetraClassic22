@@ -5,7 +5,7 @@ import okhttp3.Response
 
 class DwollaAuthInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
-        val token = "UfL2i7Xarx0UZPUEFFaL552AcxH8xLrb9eXltMv7D3rPhmwHC7"
+        val token = "FNkasKm3av1JjXcaZ1ouPOLVyLdPHy8wE0qr9ZlC9v0aI6tlRS"
 
         val request = chain.request().newBuilder()
             .addHeader("Authorization", "Bearer $token")
