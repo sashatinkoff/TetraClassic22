@@ -164,12 +164,24 @@ class LiveJournalRepositoryImpl(
             "28.winter_2009"
         )
 
+        // remove invalid
+        val invalidPosts = postDao.all().filter { !it.isLiveJournal && it.createdAt == null }
+        postDao.delete(invalidPosts)
+
         files.forEachIndexed { filePosition, fileName ->
             val file = "$fileName.txt"
             val json = file.assetsFileContent(context)
             val data = gson.fromJson<RssDocumentResponse>(json)
 
             val posts = data.rss.channel.items.map { PostMapper.transformNetwork(it) }
+
+            val invalid = posts.firstOrNull { it.createdAt == null }
+            val s = data.rss.channel.items.firstOrNull { it.guid.data == invalid?.id }
+
+            Timber.i("sdfsdfdsf ${posts.filter { it.createdAt == null }.size}")
+            Timber.i("sdfsdfdsf invalid=${invalid?.title}")
+            Timber.i("sdfsdfdsf s=${s?.title}, pubDate=${s?.pubDate?.data}")
+
             postDao.insert(*posts.toTypedArray())
         }
     }

@@ -28,12 +28,7 @@ class HomeFragment : BindFragment(), HomeView {
 
     private val documentPdfContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
         pdfUri = it
-
-        activity?.alert(
-            message = "Select images folder",
-            positiveRes = android.R.string.ok,
-            onPositive = { pdfImagesContract.launch(null) }
-        )
+        pdfImagesContract.launch(null)
     }
 
     private val pdfImagesContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {

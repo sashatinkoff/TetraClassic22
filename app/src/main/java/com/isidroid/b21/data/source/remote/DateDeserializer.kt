@@ -3,6 +3,7 @@ package com.isidroid.b21.data.source.remote
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
+import com.isidroid.core.ext.tryCatch
 import java.lang.reflect.Type
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -27,7 +28,10 @@ class DateDeserializer : JsonDeserializer<Date?> {
 
         for (format in formats) {
             try {
-                return SimpleDateFormat(format, Locale.getDefault()).parse(jsonElement.asString)
+
+                return tryCatch { SimpleDateFormat(format, Locale.getDefault()).parse(jsonElement.asString) }
+                    ?: tryCatch { SimpleDateFormat(format, Locale.US).parse(jsonElement.asString) }!!
+
             } catch (e: ParseException) {
 //                Timber.e(e)
             }

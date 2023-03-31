@@ -1,6 +1,7 @@
 package com.isidroid.b21.data.source.local.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -38,4 +39,7 @@ interface PostDao {
 
     @Query("SELECT * FROM post ORDER BY createdAt DESC LIMIT 1")
     fun findLast(): Post?
+
+    @Delete
+    fun delete(invalidPosts: List<Post>)
 }
