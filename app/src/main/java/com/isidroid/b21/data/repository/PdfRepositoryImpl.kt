@@ -56,7 +56,7 @@ class PdfRepositoryImpl(
 
     override suspend fun create(context: Context, uri: Uri, imagesUri: Uri?, start: Date, end: Date, pdfFileName: String, listener: PdfRepository.Listener) {
 //        val posts = postDao.filterByDate(start, end).filter { it.isDownloaded }
-        val posts = postDao.all().filter { it.html?.contains("https://pics.livejournal.com/iamfixin/pic/000011kx/s320x240") == true }
+        val posts = postDao.all()
 
         Timber.i("create posts=${posts.size}")
 
