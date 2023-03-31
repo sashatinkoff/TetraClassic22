@@ -17,7 +17,15 @@ class HomeUseCase @Inject constructor(
     fun createCustomer(name: String, lastName: String) = flow {
         val email = "${name}_$lastName@fakedomain.com"
 
-        dwollaRepository.createCustomer(name = name, lastName = lastName, email = email)
+        val customerId = dwollaRepository.createCustomer(
+            name = name,
+            lastName = lastName,
+            email = email,
+            ssn = "9876"
+        )
+
+//        val customerId = "6eb1cab5-02f1-4cc7-b397-f1da0a6c3183"
+        dwollaRepository.checkStatus(customerId)
 
         emit(true)
     }

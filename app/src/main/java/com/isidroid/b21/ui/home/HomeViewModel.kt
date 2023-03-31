@@ -23,7 +23,7 @@ class HomeViewModel @Inject constructor(
 
     fun createCustomer(name: String = "Johhny", lastName: String = UUID.randomUUID().toString().take(5)) {
         viewModelScope.launch {
-            useCase.createCustomer(name, lastName)
+            useCase.createCustomer(name = "kba", lastName)
                 .flowOn(Dispatchers.IO)
                 .catchTimber { }
                 .collect()

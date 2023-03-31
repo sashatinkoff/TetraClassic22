@@ -2,10 +2,13 @@ package com.isidroid.b21.di
 
 import android.content.Context
 import com.isidroid.b21.data.repository.DwollaRepositoryImpl
+import com.isidroid.b21.data.repository.PlaidRepositoryImpl
 import com.isidroid.b21.data.repository.SessionRepositoryImpl
 import com.isidroid.b21.data.source.local.AppDatabase
 import com.isidroid.b21.data.source.remote.api.ApiDwolla
+import com.isidroid.b21.data.source.remote.api.ApiPlaid
 import com.isidroid.b21.domain.repository.DwollaRepository
+import com.isidroid.b21.domain.repository.PlaidRepository
 import com.isidroid.b21.domain.repository.SessionRepository
 import dagger.Module
 import dagger.Provides
@@ -29,4 +32,7 @@ object AppModule {
     @Provides
     fun provideDwollaRepository(apiDwolla: ApiDwolla): DwollaRepository = DwollaRepositoryImpl(apiDwolla)
 
+    @Singleton
+    @Provides
+    fun providePlaidRepository(apiPlaid: ApiPlaid): PlaidRepository = PlaidRepositoryImpl(apiPlaid)
 }

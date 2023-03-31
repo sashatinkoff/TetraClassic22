@@ -4,7 +4,9 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.isidroid.b21.data.source.remote.AuthInterceptor
 import com.isidroid.b21.data.source.remote.DateDeserializer
+import com.isidroid.b21.data.source.remote.DwollaAuthInterceptor
 import com.isidroid.b21.data.source.remote.api.ApiDwolla
+import com.isidroid.b21.data.source.remote.api.ApiPlaid
 import com.isidroid.b21.domain.repository.SessionRepository
 import dagger.Module
 import dagger.Provides
@@ -47,6 +49,9 @@ object NetworkModule {
     @Provides
     fun provideAuthInterceptor(sessionRepository: SessionRepository) = AuthInterceptor(sessionRepository)
 
+    @Provides @Singleton
+    fun provideDwollaAuthInterceptor() = DwollaAuthInterceptor()
+
     @Singleton
     @Provides
     fun provideGson(): Gson = GsonBuilder()
@@ -79,9 +84,19 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideAApiDwolla() = api(
+    fun provideAApiDwolla(authInterceptor: DwollaAuthInterceptor) = api(
         baseUrl = "https://api-sandbox.dwolla.com/",
         cl = ApiDwolla::class.java,
         logLevel = HttpLoggingInterceptor.Level.BODY,
+        authInterceptor = authInterceptor
+    )
+
+    @Singleton
+    @Provides
+    fun provideApiPlaid() = api(
+        baseUrl = "https://sandbox.plaid.com/",
+        cl = ApiPlaid::class.java,
+        logLevel = HttpLoggingInterceptor.Level.BODY,
+//        authInterceptor = authInterceptor
     )
 }

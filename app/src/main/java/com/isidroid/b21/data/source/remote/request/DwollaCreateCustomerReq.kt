@@ -12,5 +12,5 @@ data class DwollaCreateCustomerReq(
     @SerializedName("state") val state: String = "NY",
     @SerializedName("postalCode") val postalCode: String = "11101",
     @SerializedName("dateOfBirth") val dateOfBirth: String = "1970-01-01",
-    @SerializedName("ssn") val ssn: String = "12345",
+    @SerializedName("ssn") val ssn: String,
 )
