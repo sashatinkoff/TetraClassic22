@@ -18,7 +18,10 @@ import com.isidroid.core.ui.ErrorUiHandler
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindBottomSheetDialogFragment() : BottomSheetDialogFragment(), BaseView, ErrorUiHandler {
+abstract class CoreBindBottomSheetDialogFragment : BottomSheetDialogFragment, BaseView, ErrorUiHandler {
+    constructor() : super()
+    constructor(contentLayoutId: Int) : super(contentLayoutId)
+
     protected open val noDim: Boolean = false
     protected open val fullScreenHeight: Boolean = false
 

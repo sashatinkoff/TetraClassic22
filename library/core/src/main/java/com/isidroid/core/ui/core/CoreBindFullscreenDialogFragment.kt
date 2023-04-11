@@ -19,7 +19,10 @@ import com.isidroid.core.ui.ErrorUiHandler
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindFullscreenDialogFragment() : AppCompatDialogFragment(), BaseView, ErrorUiHandler {
+abstract class CoreBindFullscreenDialogFragment : AppCompatDialogFragment, BaseView, ErrorUiHandler {
+    constructor() : super()
+    constructor(contentLayoutId: Int) : super(contentLayoutId)
+
     open val canceledOnTouchOutside: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,6 +3,7 @@ package com.isidroid.core.ui.core
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.CallSuper
+import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
 import androidx.navigation.fragment.NavHostFragment
@@ -18,7 +19,10 @@ import timber.log.Timber
  * To extend the class with your logic use base/Bind*.kt class
  *
  */
-abstract class CoreBindFragment : Fragment(), LifecycleObserver, LifecycleOwner, BaseView, FragmentConnector, FragmentResultListener {
+abstract class CoreBindFragment : Fragment, LifecycleObserver, LifecycleOwner, BaseView, FragmentConnector, FragmentResultListener {
+    constructor() : super()
+    constructor(contentLayoutId: Int) : super(contentLayoutId)
+
     override var currentFragment: Fragment? = null
 
     @CallSuper
