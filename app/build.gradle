@@ -14,6 +14,7 @@ apply from: "$rootDir/versions.gradle"
 def versionPropsFile = file('version.properties')
 
 android {
+    namespace 'com.isidroid.b21'
     compileSdk build_versions.compile_sdk
 
     defaultConfig {
@@ -82,6 +83,7 @@ android {
     buildFeatures {
         dataBinding true
         compose false
+        buildConfig true
     }
 
     flavorDimensions 'app_type'

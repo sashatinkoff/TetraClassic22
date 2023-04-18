@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace 'com.isidroid.core'
     compileSdk build_versions.compile_sdk
 
     defaultConfig {
