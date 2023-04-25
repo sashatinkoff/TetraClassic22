@@ -108,7 +108,30 @@ inline fun <reified T : Parcelable> Intent.getParcelableArrayListExtraCompat(key
         getParcelableArrayListExtra(key)
 }
 
-val Int.dp: Int
-    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
-val Int.px: Int
-    get() = (this * Resources.getSystem().displayMetrics.density).toInt()
+val Number.dp: Int
+    get() = (this.toInt() / Resources.getSystem().displayMetrics.density).toInt()
+val Number.px: Int
+    get() = (this.toInt() * Resources.getSystem().displayMetrics.density).toInt()
+
+
+infix fun <T> List<T>?.sameAs(other: List<T>?): Boolean {
+    this ?: return false
+    other ?: return false
+
+    // check collections aren't same
+    if (this !== other) {
+        // fast check of sizes
+        if (this.size != other.size) return false
+
+        val areNotEqual = this.asSequence()
+            // check other contains next element from this
+            .map { it in other }
+            // searching for first negative answer
+            .contains(false)
+
+        if (areNotEqual)
+            return false
+    }
+    // collections are same or they are contains same elements
+    return true
+}
