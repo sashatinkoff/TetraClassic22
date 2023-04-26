@@ -20,12 +20,12 @@ inline fun <reified T : ViewBinding> Fragment.viewBinding() = FragmentViewBindin
 
 
 class FragmentViewBindingDelegate<T : ViewBinding>(
-    private val bindingClass: Class<T>,
+    bindingClass: Class<T>,
     val fragment: Fragment
 ) : ReadOnlyProperty<Fragment, T> {
     private val clearBindingHandler by lazy(LazyThreadSafetyMode.NONE) { Handler(Looper.getMainLooper()) }
     private var binding: T? = null
-    private val bindMethod = bindingClass.getMethod("bind", View::class.java)
+    private val bindMethod = bindingClass.getDeclaredMethod("bind", View::class.java)
 
     init {
         val uiStateObserver = object : DefaultLifecycleObserver {

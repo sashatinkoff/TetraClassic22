@@ -19,9 +19,9 @@ object LinkPreviewModule {
     fun provideOpenGraphMetaData(api: ApiLinkPreviewParser): OpenGraphMetaDataRepository = OpenGraphMetaDataRepositoryImpl(api)
 
     @Singleton @Provides
-    fun provideApiLinkPreviewParser() = createClient(ApiLinkPreviewParser::class.java)
+    fun provideApiLinkPreviewParser(): ApiLinkPreviewParser = createClient(ApiLinkPreviewParser::class.java)
 
-    private fun <T> createClient(cl: Class<T>): T {
+    private inline fun <reified T> createClient(cl: Class<T>): T {
         val client = OkHttpClient().newBuilder()
             .readTimeout(15, TimeUnit.SECONDS)
             .build()
@@ -30,6 +30,18 @@ object LinkPreviewModule {
             .client(client)
             .baseUrl("https://google.com")
             .build()
-            .create(cl) as T
+            .create(cl)
     }
+
+//    private fun <T> createClient(cl: Class<T>): T {
+//        val client = OkHttpClient().newBuilder()
+//            .readTimeout(15, TimeUnit.SECONDS)
+//            .build()
+//
+//        return Retrofit.Builder()
+//            .client(client)
+//            .baseUrl("https://google.com")
+//            .build()
+//            .create(cl) as T
+//    }
 }
