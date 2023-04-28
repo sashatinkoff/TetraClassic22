@@ -18,3 +18,4 @@ rootProject.name = "TetraClassic22"
 include ':app'
 include ':library:core'
 include ':library:link_preview'
+include ':library:chart'

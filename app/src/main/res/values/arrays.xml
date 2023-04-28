@@ -5,4 +5,12 @@
         <item>?colorPrimary</item>
         <item>?colorAccent</item>
     </integer-array>
+
+    <string-array name="analyticalPieChartColorArray">
+        <item>#E480F4</item>
+        <item>#6CC3F3</item>
+        <item>#7167ED</item>
+        <item>#D9455F</item>
+        <item>#6054EA</item>
+    </string-array>
 </resources>
