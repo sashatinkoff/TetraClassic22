@@ -7,28 +7,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.isidroid.chart.view.AnalyticalPieChart
-            android:id="@+id/chartView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:pieChartCirclePadding="4dp"
-            app:pieChartCirclePaintRoundSize="true"
-            app:pieChartColors="@array/analyticalPieChartColorArray"
-            app:pieChartMarginTextFirst="2dp"
-            app:pieChartMarginTextSecond="4dp"
-            app:pieChartTextAmount="Total"
-            app:pieChartTextAmountColor="?attr/colorOnPrimaryContainer"
-            app:pieChartTextAmountSize="14sp"
-            app:pieChartTextDescriptionColor="?attr/colorOnPrimaryContainer"
-            app:pieChartTextDescriptionSize="10sp"
-            app:pieChartTextNumberColor="?attr/colorOnPrimaryContainer"
-            app:pieChartTextNumberSize="12sp" />
-
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonUpdateAll"
             android:layout_width="wrap_content"
