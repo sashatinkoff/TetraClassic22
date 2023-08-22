@@ -1,5 +1,6 @@
 package com.isidroid.b21.ui.main
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.ViewGroup
@@ -52,6 +53,11 @@ class MainActivity : BindActivity(), MainView, NavigationListener, BottomNavigat
         navController.addOnDestinationChangedListener { controller, _, _ ->
             Timber.i("navigationBackQueue=${controller.backQueue.mapNotNull { it.destination.label }}")
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Timber.i("HomeFragment onActivityResult")
     }
 
     private fun createWindowInset() {

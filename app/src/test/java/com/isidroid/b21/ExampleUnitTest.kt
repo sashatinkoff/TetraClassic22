@@ -10,103 +10,47 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-    @Test
-    fun addition_isCorrect() {
-        val data = A.values()
-        val bgColors = data.map { it.bgColor }.distinct()
-        val headerColor = data.map { it.headerColor }.distinct()
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        for ((index, number) in nums.withIndex()) {
+            val subArray = nums.take(index + 1)
+            if (subArray.sum() >= target)
+                return (0..index).toList().toIntArray()
+        }
 
-        println(bgColors)
-        println(headerColor)
+        return intArrayOf()
     }
-}
 
-enum class A(val bgColor: String, val headerColor: String) {
-    NEW(
-        bgColor = "R.color.audit_new",
-        headerColor = "R.color.audit_new_header",
-    ),
+    fun isPalindrome(x: Int): Boolean {
+        if (x in 0..10) return false
 
-    NEW_CHECKING(
-        bgColor = "R.color.audit_new",
-        headerColor = "R.color.audit_new_header",
-    ),
+        val string = "$x".toCharArray()
+        val steps = string.size / 2
 
-    IN_PROGRESS(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
+        for (i in 0 until steps) {
+            val rightPosition = string.size - (i + 1)
 
-    ASSIGNED(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
+            if (string[i] != string[rightPosition])
+                return false
+        }
 
-    ON_CONTROL(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
-    ON_REWORK(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
+        return true
+    }
 
-    CHECK(
-        bgColor = "R.color.audit_check",
-        headerColor = "R.color.audit_check_header",
-    ),
-    ON_CHECK(
-        bgColor = "R.color.audit_on_check",
-        headerColor = "R.color.audit_on_check_header",
-    ),
+    @Test
+    fun testTwoSum() {
+        val expected = intArrayOf(0, 1)
+        val actual = twoSum(intArrayOf(2, 7, 11, 15), 9)
 
-    MODIFY(
-        bgColor = "R.color.audit_modify",
-        headerColor = "R.color.audit_modify_header",
-    ),
+        println("${actual.joinToString()}")
+        assertEquals(expected.toList(), actual.toList())
+    }
 
-    ANSWERS_MODIFIED_SENDING(
-        bgColor = "R.color.audit_modify",
-        headerColor = "R.color.audit_modify_header",
-    ),
+    @Test
+    fun testPalindrome() {
+        val expected = true
+        val actual = isPalindrome(-1234554321)
 
-    ON_MODIFY(
-        bgColor = "R.color.audit_modify",
-        headerColor = "R.color.audit_modify_header",
-    ),
-
-    ACCEPTED(
-        bgColor = "R.color.audit_accepted",
-        headerColor = "R.color.audit_accepted_header",
-    ),
-
-    FAILED(
-        bgColor = "R.color.bg_course_card_failed_v2",
-        headerColor = "R.color.ic_course_state_failed",
-    ),
-
-    COMPLETED(
-        bgColor = "R.color.audit_completed",
-        headerColor = "R.color.audit_completed_header",
-    ),
-
-    ANSWERS_SENDING(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
-
-    CHECK_SENDING(
-        bgColor = "R.color.audit_new",
-        headerColor = "R.color.audit_new_header",
-    ),
-
-    UNASSIGNED(
-        bgColor = "R.color.audit_accepted",
-        headerColor = "R.color.list_state_nav_icon_text_color_unchecked",
-    ),
-
-    UNKNOWN(
-        bgColor = "R.color.audit_new",
-        headerColor = "R.color.audit_new_header",
-    );
+        println("actual=$actual")
+        assertEquals(expected, actual)
+    }
 }

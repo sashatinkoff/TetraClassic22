@@ -20,7 +20,7 @@ gradle.taskGraph.whenReady { taskGraph ->
     def branchName = gitBranch()
 
     taskGraph.allTasks.iterator().forEachRemaining { t ->
-        println("tasssssk=${t.name} in $branchName")
+//        println("tasssssk=${t.name} in $branchName")
 
         //  || t.name == "bundleProdRealRelease"
         if (branchName == "master" && (t.name == "bundleProdRelease")) {

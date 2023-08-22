@@ -160,6 +160,13 @@ dependencies {
     implementation "com.jakewharton.timber:timber:$tools.timber"
     kapt "com.github.bumptech.glide:compiler:$tools.glide"
 
+    implementation 'com.facebook.android:facebook-login:16.0.1'
+
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
+
+
     // test
     androidTestImplementation "androidx.test.espresso:espresso-core:$test.espresso_core"
     androidTestImplementation "junit:junit:$test.junit"

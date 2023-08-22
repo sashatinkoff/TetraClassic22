@@ -97,8 +97,10 @@ abstract class CoreBindAdapterV2<T>(
     override fun getItem(position: Int) = items.getOrNull(position)
 
     override fun clear() = apply {
-        notifyItemRangeRemoved(0, items.size)
+        val count = items.size
+
         items.clear()
+        notifyItemRangeRemoved(0, count)
         hasMore = false
     }
 

@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Tetra22</string>
+    <string name="app_name">Discover Services</string>
     <string name="label">Hint</string>
+
+    <string name="facebook_app_id">560959735951963</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">c68b36100f1089ddc55e0ee81ee84189</string>
 </resources>
