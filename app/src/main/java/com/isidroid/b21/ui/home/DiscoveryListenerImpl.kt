@@ -12,16 +12,19 @@ class DiscoveryListenerImpl(
     private val nsdManager: NsdManager,
     private val listener: Listener
 ) : DiscoveryListener {
-    private lateinit var resolveListener: NsdManager.ResolveListener
     private var resolveListenerBusy = AtomicBoolean(false)
-    private var pendingNsdServices = ConcurrentLinkedQueue<NsdServiceInfo>()
+    private var pendingNsdServices = ConcurrentLinkedQueue<Pair<NsdServiceInfo?, NsdManager.ResolveListener>>()
     private var resolvedNsdServices: MutableList<NsdServiceInfo> = Collections.synchronizedList(ArrayList<NsdServiceInfo>())
 
-
-    override fun onStartDiscoveryFailed(p0: String?, p1: Int) {}
-    override fun onStopDiscoveryFailed(p0: String?, p1: Int) {}
+    override fun onStartDiscoveryFailed(p0: String?, p1: Int) {
+        Timber.i("onStartDiscoveryFailed $p0, code=$p1")
+    }
+    override fun onStopDiscoveryFailed(p0: String?, p1: Int) {
+        Timber.i("onStopDiscoveryFailed $p0, code=$p1")
+    }
 
     override fun onDiscoveryStarted(p0: String?) {
+        Timber.i("onDiscoveryStarted $p0")
         listener.onDiscoveryStarted(p0)
     }
 
@@ -30,33 +33,39 @@ class DiscoveryListenerImpl(
     }
 
     override fun onServiceFound(service: NsdServiceInfo?) {
-        Timber.i("onServiceFound ${service?.serviceName}, isLocked=")
-
         // If the resolver is free, resolve the service to get all the details
+        Timber.i("onServiceFound ${service?.serviceName}")
+
+
+        val resolveListener = createResolveListener()
+
+
         if (resolveListenerBusy.compareAndSet(false, true)) {
-            resolveListener = createResolveListener()
+            Timber.i("resolveService")
             nsdManager.resolveService(service, resolveListener)
         } else {
             // Resolver was busy. Add the service to the list of pending services
-            pendingNsdServices.add(service)
+            Timber.i("add pending service ${service?.serviceName}")
+            pendingNsdServices.add(Pair(service, resolveListener))
         }
 
 //        nsdManager.resolveService(service, createResolveListener())
     }
 
     override fun onServiceLost(service: NsdServiceInfo?) {
-        var iterator = pendingNsdServices.iterator()
-        while (iterator.hasNext()) {
-            if (iterator.next().serviceName == service?.serviceName)
-                iterator.remove()
+        val iteratorPending = pendingNsdServices.iterator()
+        while (iteratorPending.hasNext()) {
+            if (iteratorPending.next().first?.serviceName == service?.serviceName) {
+                iteratorPending.remove()
+            }
         }
 
         // If the lost service was in the list of resolved services, remove it
         synchronized(resolvedNsdServices) {
-            iterator = resolvedNsdServices.iterator()
-            while (iterator.hasNext()) {
-                if (iterator.next().serviceName == service?.serviceName)
-                    iterator.remove()
+            val iteratorResolved = resolvedNsdServices.iterator()
+            while (iteratorResolved.hasNext()) {
+                if (iteratorResolved.next().serviceName == service?.serviceName)
+                    iteratorResolved.remove()
             }
         }
 
@@ -65,10 +74,10 @@ class DiscoveryListenerImpl(
     }
 
     private fun createResolveListener() = object : NsdManager.ResolveListener {
-        override fun onResolveFailed(p0: NsdServiceInfo?, p1: Int) {
-            p0 ?: return
-            Timber.e("onResolveFailed ${p0.serviceName}, reason=$p1")
-            listener.onFailed(p0, p1)
+        override fun onResolveFailed(service: NsdServiceInfo?, p1: Int) {
+            service ?: return
+            Timber.e("onResolveFailed ${service.serviceName}, reason=$p1")
+            listener.onFailed(service, p1)
             resolveNextInQueue()
         }
 
@@ -84,13 +93,16 @@ class DiscoveryListenerImpl(
     // Resolve next NSD service pending resolution
     private fun resolveNextInQueue() {
         // Get the next NSD service waiting to be resolved from the queue
+        val pendingItem = pendingNsdServices.poll()
+        val service = pendingItem?.first
+        val resolveListener = pendingItem.second
 
-        Timber.e("resolveNextInQueue")
+        Timber.i("resolveNextInQueue ${service?.serviceName}")
 
-        val nextNsdService = pendingNsdServices.poll()
-        if (nextNsdService != null) {
+        if (service != null) {
             // There was one. Send to be resolved.
-            nsdManager?.resolveService(nextNsdService, resolveListener)
+            Timber.i("resolve service")
+            nsdManager.resolveService(service, resolveListener)
         } else {
             // There was no pending service. Release the flag
             resolveListenerBusy.set(false)
@@ -101,8 +113,8 @@ class DiscoveryListenerImpl(
     interface Listener {
         fun onDiscoveryStarted(regType: String?)
         fun onDiscoveryStopped(regType: String?)
-        fun onFailed(info: NsdServiceInfo, code: Int)
-        fun onResolved(info: NsdServiceInfo)
+        fun onFailed(service: NsdServiceInfo, code: Int)
+        fun onResolved(service: NsdServiceInfo)
         fun onNsdServiceLost(service: NsdServiceInfo?)
     }
 }

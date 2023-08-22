@@ -20,6 +20,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 
 private const val SERVICE_TYPE = "_pdl-datastream._tcp."
@@ -45,7 +46,7 @@ class HomeFragment : BindFragment(R.layout.fragment_home), HomeView, AppBarListe
         binding.buttonStartDiscover.setOnClickListener {
             lifecycleScope.launch {
                 startDiscovery()
-                    .flowOn(Dispatchers.Default)
+                    .flowOn(Dispatchers.IO)
                     .catchTimber { }
                     .collect()
             }
@@ -105,14 +106,15 @@ class HomeFragment : BindFragment(R.layout.fragment_home), HomeView, AppBarListe
         viewModel.onDiscoveryStarted()
     }
 
-    override fun onDiscoveryStopped(regType: String?) {}
-
-    override fun onFailed(info: NsdServiceInfo, code: Int) {
-        viewModel.resolveFailed(info, code)
+    override fun onDiscoveryStopped(regType: String?) {
     }
 
-    override fun onResolved(info: NsdServiceInfo) {
-        viewModel.add(info)
+    override fun onFailed(service: NsdServiceInfo, code: Int) {
+        viewModel.resolveFailed(service, code)
+    }
+
+    override fun onResolved(service: NsdServiceInfo) {
+        viewModel.add(service)
     }
 
     override fun onNsdServiceLost(service: NsdServiceInfo?) {
