@@ -22,6 +22,7 @@ interface CoreBindAdapterCallback<T> : DiffCallback.ListContentsComparison<T>, D
         listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null,
     )
 
+    fun remove(position: Int)
     fun remove(vararg items: T)
     fun insert(list: List<T>, hasMore: Boolean = false, listComparisonPayload: DiffCallback.ListComparisonPayload<T>? = null)
     fun clear(): CoreBindAdapterV2<T>

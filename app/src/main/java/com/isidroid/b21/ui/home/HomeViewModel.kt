@@ -38,7 +38,7 @@ class HomeViewModel @Inject constructor(
 
             useCase.sendMessage(service, message)
                 .flowOn(Dispatchers.IO)
-                .catchTimber { _viewState.emit(UiState.Error(it))}
+                .catchTimber { _viewState.emit(UiState.Error(it)) }
                 .collect {
 
                 }
@@ -57,5 +57,13 @@ class HomeViewModel @Inject constructor(
     fun selectService(service: NsdServiceInfo) {
         this._nsdService = service
         viewModelScope.launch { _viewState.emit(UiState.SelectedService(service)) }
+    }
+
+    sealed interface UiState {
+        data class ServiceItem(val info: NsdServiceInfo) : UiState
+        object Clear : UiState
+        data class ResolveFailed(val info: NsdServiceInfo, val code: Int) : UiState
+        data class SelectedService(val service: NsdServiceInfo) : UiState
+        data class Error(val t: Throwable) : UiState
     }
 }

@@ -72,7 +72,6 @@ abstract class CoreBindAdapterV2<T>(
         holder.onViewRecycled()
     }
 
-
     // ==== Creation ====
     override fun createLoadingHolder(layoutInflater: LayoutInflater, parent: ViewGroup): CoreLoadingHolderV2<out ViewDataBinding, T> =
         CoreLoadingHolderV2(ItemLoadingBinding.inflate(layoutInflater, parent, false))
@@ -116,6 +115,13 @@ abstract class CoreBindAdapterV2<T>(
         newList.addAll(list)
 
         insert(oldList = this.items, newList = newList, hasMore = hasMore, listComparisonPayload = listComparisonPayload, listContentsComparison = this)
+    }
+
+    override fun remove(position: Int) {
+        if (position in items.indices) {
+            items.removeAt(position)
+            notifyItemRemoved(position)
+        }
     }
 
     override fun remove(vararg items: T) {

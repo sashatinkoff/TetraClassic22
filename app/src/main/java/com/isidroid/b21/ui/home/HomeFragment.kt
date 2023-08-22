@@ -3,6 +3,8 @@ package com.isidroid.b21.ui.home
 import android.content.Context
 import android.net.nsd.NsdManager
 import android.net.nsd.NsdServiceInfo
+import android.net.wifi.WifiManager
+import android.net.wifi.WifiManager.MulticastLock
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -18,10 +20,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import timber.log.Timber
-
+import com.isidroid.b21.ui.home.HomeViewModel.UiState as UiState
 
 private const val SERVICE_TYPE = "_pdl-datastream._tcp."
 
@@ -33,6 +37,7 @@ class HomeFragment : BindFragment(R.layout.fragment_home), HomeView, AppBarListe
     private val discoveryListener by lazy { DiscoveryListenerImpl(nsdManager, this) }
     private val adapter = Adapter(this)
     private var isDiscovering = false
+    private var multicastLock: MulticastLock? = null
 
     override fun onInsetChanged(start: Int, top: Int, end: Int, bottom: Int) {
         binding.root.setPadding(16.dp, top, 16.dp, bottom)
@@ -43,52 +48,48 @@ class HomeFragment : BindFragment(R.layout.fragment_home), HomeView, AppBarListe
     }
 
     override fun createForm() {
-        binding.buttonStartDiscover.setOnClickListener {
-            lifecycleScope.launch {
-                startDiscovery()
-                    .flowOn(Dispatchers.IO)
-                    .catchTimber { }
-                    .collect()
-            }
-        }
-
-        binding.buttonSendMessage.setOnClickListener { viewModel.sendMessage(message = binding.inputMessage.text.toString()) }
+        binding.buttonStartDiscover.setOnClickListener { startDiscovery() }
+        binding.buttonSendMessage.setOnClickListener { sendMessage(binding.inputMessage.text.toString()) }
     }
 
     override suspend fun onCreateViewModel() {
         viewModel.viewState.collect { state ->
             when (state) {
-                is UiState.ServiceItem -> adapter.add(state.info)
-                UiState.Clear -> {
-                    adapter.clear()
-                    binding.errorTextView.text = ""
-                }
+                is UiState.ServiceItem -> onServiceFound(state.info)
+                is UiState.ResolveFailed -> onResolveFailed(state.info, state.code)
+                is UiState.SelectedService -> onSelectService(state.service)
+                is UiState.Error -> showError(state.t)
 
-                is UiState.ResolveFailed -> {
-                    val message = "${state.info.serviceName} resolve failed, error=${state.code}"
+                UiState.Clear -> onCleared()
 
-                    val text = buildString {
-                        append(message)
-                        append("\n")
-                        append(binding.errorTextView.text.toString())
-                    }
-
-                    binding.errorTextView.text = text
-
-                    Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
-                }
-
-                null -> {}
-                is UiState.SelectedService -> binding.buttonSendMessage.text = buildString { append("Send message to ${state.service.serviceName}") }
-                is UiState.Error -> Toast.makeText(activity, "${state.t.message}", Toast.LENGTH_SHORT).show()
+                else -> Unit
             }
         }
     }
 
-    private fun startDiscovery() = flow<Boolean> {
-        if (isDiscovering)
+    /**
+     * Issue found on Pixel 3a. Need to acquire multicast lock
+     */
+    private fun createMulticastLock() {
+        val wifi = requireActivity().applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
+        multicastLock = wifi.createMulticastLock("multicastLock").apply {
+            setReferenceCounted(true)
+            acquire()
+        }
+    }
+
+    private fun releaseMulticastLock() {
+        multicastLock?.release()
+        multicastLock = null
+    }
+
+    // HomeView
+    override fun startDiscovery() {
+        if (isDiscovering) {
+            releaseMulticastLock()
             nsdManager.stopServiceDiscovery(discoveryListener)
-        else {
+        } else {
+            createMulticastLock()
             nsdManager.discoverServices(SERVICE_TYPE, NsdManager.PROTOCOL_DNS_SD, discoveryListener)
         }
 
@@ -96,18 +97,45 @@ class HomeFragment : BindFragment(R.layout.fragment_home), HomeView, AppBarListe
         binding.buttonStartDiscover.text = if (isDiscovering) "Stop discovering" else "Start discovering"
     }
 
+    override fun onServiceFound(info: NsdServiceInfo) {
+        adapter.add(info)
+    }
+
+    override fun onCleared() {
+        adapter.clear()
+        binding.errorTextView.text = ""
+    }
+
+    override fun onResolveFailed(info: NsdServiceInfo, code: Int) {
+        val message = "${info.serviceName} resolve failed, error=${code}"
+        binding.errorTextView.text = buildString {
+            append(message)
+            append("\n")
+            append(binding.errorTextView.text.toString())
+        }
+
+        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onSelectService(service: NsdServiceInfo) {
+        binding.buttonSendMessage.text = buildString { append("Send message to ${service.serviceName}") }
+    }
+
+    override fun sendMessage(message: String) {
+        viewModel.sendMessage(message = message)
+    }
+
+    // Adapter.Listener
     override fun clickOnServiceItem(item: NsdServiceInfo) {
         viewModel.selectService(item)
     }
-
 
     // DiscoveryListenerImpl.Listener
     override fun onDiscoveryStarted(regType: String?) {
         viewModel.onDiscoveryStarted()
     }
 
-    override fun onDiscoveryStopped(regType: String?) {
-    }
+    override fun onDiscoveryStopped(regType: String?) {}
 
     override fun onFailed(service: NsdServiceInfo, code: Int) {
         viewModel.resolveFailed(service, code)
@@ -118,5 +146,14 @@ class HomeFragment : BindFragment(R.layout.fragment_home), HomeView, AppBarListe
     }
 
     override fun onNsdServiceLost(service: NsdServiceInfo?) {
+        lifecycleScope.launch {
+            flowOf(service)
+                .flowOn(Dispatchers.Main)
+                .onEach {
+                    val position = adapter.list.indexOfFirst { it.serviceName == service?.serviceName }
+                    adapter.remove(position)
+                }.collect()
+        }
+
     }
 }
