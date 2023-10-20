@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AnalyticalPieChart">
+        <attr format="reference" name="pieChartColors"/>
+
+        <attr format="dimension" name="pieChartMarginTextFirst"/>
+        <attr format="dimension" name="pieChartMarginTextSecond"/>
+        <attr format="dimension" name="pieChartMarginTextThird"/>
+        <attr format="dimension" name="pieChartMarginSmallCircle"/>
+
+        <attr format="dimension" name="pieChartCircleStrokeWidth"/>
+        <attr format="dimension" name="pieChartCirclePadding"/>
+        <attr format="boolean" name="pieChartCirclePaintRoundSize"/>
+        <attr format="float" name="pieChartCircleSectionSpace"/>
+
+        <attr format="dimension" name="pieChartTextCircleRadius"/>
+        <attr format="dimension" name="pieChartTextAmountSize"/>
+        <attr format="dimension" name="pieChartTextNumberSize"/>
+        <attr format="dimension" name="pieChartTextDescriptionSize"/>
+
+        <attr format="color" name="pieChartTextAmountColor"/>
+        <attr format="color" name="pieChartTextNumberColor"/>
+        <attr format="color" name="pieChartTextDescriptionColor"/>
+
+        <attr format="string" name="pieChartTextAmount"/>
+    </declare-styleable>
+</resources>

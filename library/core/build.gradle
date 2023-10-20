@@ -7,6 +7,7 @@ plugins {
 
 android {
     compileSdk build_versions.compile_sdk
+    namespace = "com.isidroid.core"
 
     defaultConfig {
         minSdk build_versions.min_sdk

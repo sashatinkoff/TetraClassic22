@@ -1,0 +1,20 @@
+R_DEF: Internal format may change without notice
+local
+attr? pieChartCirclePadding
+attr? pieChartCirclePaintRoundSize
+attr? pieChartCircleSectionSpace
+attr? pieChartCircleStrokeWidth
+attr? pieChartColors
+attr? pieChartMarginSmallCircle
+attr? pieChartMarginTextFirst
+attr? pieChartMarginTextSecond
+attr? pieChartMarginTextThird
+attr? pieChartTextAmount
+attr? pieChartTextAmountColor
+attr? pieChartTextAmountSize
+attr? pieChartTextCircleRadius
+attr? pieChartTextDescriptionColor
+attr? pieChartTextDescriptionSize
+attr? pieChartTextNumberColor
+attr? pieChartTextNumberSize
+styleable AnalyticalPieChart pieChartColors pieChartMarginTextFirst pieChartMarginTextSecond pieChartMarginTextThird pieChartMarginSmallCircle pieChartCircleStrokeWidth pieChartCirclePadding pieChartCirclePaintRoundSize pieChartCircleSectionSpace pieChartTextCircleRadius pieChartTextAmountSize pieChartTextNumberSize pieChartTextDescriptionSize pieChartTextAmountColor pieChartTextNumberColor pieChartTextDescriptionColor pieChartTextAmount

@@ -26,9 +26,19 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
         viewModel.createPdf(it!!, name = binding.input.text.toString())
     }
 
+    private val documentHashTagsContract = registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) {
+        viewModel.createHashTags(
+            it!!,
+            moreThanOne = binding.checkboxHashTagsMoreOne.isChecked,
+            showCounters = binding.checkboxHashTagsWithCounter.isChecked,
+            alreadyHaveHashTags = binding.checkboxAlreadyHaveHashtagsPost.isChecked,
+            saveHashTagsInFile = binding.checkboxSaveHashTagsInFile.isChecked
+        )
+    }
 
     override fun onReady() {
         binding.button.setOnClickListener { documentPdfContract.launch(null) }
+        binding.buttonHashTags.setOnClickListener { documentHashTagsContract.launch(null) }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -57,8 +67,19 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
                     binding.progressBar.setProgressCompat(state.current, true)
                     binding.progressBar.max = state.max
                 }
-                else -> {}
+
+                is UiState.CompleteHashTags -> completeHashTags(state.fileName, state.content)
+                is UiState.Loading -> TODO()
+                null -> {}
             }
         }
+    }
+
+    private fun completeHashTags(fileName: String?, content: String) {
+        if (fileName != null)
+            Toast.makeText(activity, "Content saved in $fileName", Toast.LENGTH_SHORT).show()
+
+        binding.contentTextView.text = content
+
     }
 }

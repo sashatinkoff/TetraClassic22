@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sashatinkoff/Documents/Android/TetraClassic22/library/chart/src/main/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sashatinkoff/Documents/Android/TetraClassic22/library/chart/src/main/res"><file path="/Users/sashatinkoff/Documents/Android/TetraClassic22/library/chart/src/main/res/values/attr.xml" qualifiers=""><declare-styleable name="AnalyticalPieChart">
+        <attr format="reference" name="pieChartColors"/>
+
+        <attr format="dimension" name="pieChartMarginTextFirst"/>
+        <attr format="dimension" name="pieChartMarginTextSecond"/>
+        <attr format="dimension" name="pieChartMarginTextThird"/>
+        <attr format="dimension" name="pieChartMarginSmallCircle"/>
+
+        <attr format="dimension" name="pieChartCircleStrokeWidth"/>
+        <attr format="dimension" name="pieChartCirclePadding"/>
+        <attr format="boolean" name="pieChartCirclePaintRoundSize"/>
+        <attr format="float" name="pieChartCircleSectionSpace"/>
+
+        <attr format="dimension" name="pieChartTextCircleRadius"/>
+        <attr format="dimension" name="pieChartTextAmountSize"/>
+        <attr format="dimension" name="pieChartTextNumberSize"/>
+        <attr format="dimension" name="pieChartTextDescriptionSize"/>
+
+        <attr format="color" name="pieChartTextAmountColor"/>
+        <attr format="color" name="pieChartTextNumberColor"/>
+        <attr format="color" name="pieChartTextDescriptionColor"/>
+
+        <attr format="string" name="pieChartTextAmount"/>
+    </declare-styleable></file></source></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="release$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sashatinkoff/Documents/Android/TetraClassic22/library/chart/src/release/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="release" generated-set="release$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sashatinkoff/Documents/Android/TetraClassic22/library/chart/src/release/res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sashatinkoff/Documents/Android/TetraClassic22/library/chart/build/generated/res/resValues/release"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="/Users/sashatinkoff/Documents/Android/TetraClassic22/library/chart/build/generated/res/resValues/release"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="AnalyticalPieChart">
+        <attr format="reference" name="pieChartColors"/>
+
+        <attr format="dimension" name="pieChartMarginTextFirst"/>
+        <attr format="dimension" name="pieChartMarginTextSecond"/>
+        <attr format="dimension" name="pieChartMarginTextThird"/>
+        <attr format="dimension" name="pieChartMarginSmallCircle"/>
+
+        <attr format="dimension" name="pieChartCircleStrokeWidth"/>
+        <attr format="dimension" name="pieChartCirclePadding"/>
+        <attr format="boolean" name="pieChartCirclePaintRoundSize"/>
+        <attr format="float" name="pieChartCircleSectionSpace"/>
+
+        <attr format="dimension" name="pieChartTextCircleRadius"/>
+        <attr format="dimension" name="pieChartTextAmountSize"/>
+        <attr format="dimension" name="pieChartTextNumberSize"/>
+        <attr format="dimension" name="pieChartTextDescriptionSize"/>
+
+        <attr format="color" name="pieChartTextAmountColor"/>
+        <attr format="color" name="pieChartTextNumberColor"/>
+        <attr format="color" name="pieChartTextDescriptionColor"/>
+
+        <attr format="string" name="pieChartTextAmount"/>
+    </declare-styleable></configuration></mergedItems></merger>
