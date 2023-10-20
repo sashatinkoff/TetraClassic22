@@ -50,6 +50,7 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
             app:layout_constraintBottom_toTopOf="@id/checkboxSaveHashTagsInFile"
             app:layout_constraintTop_toBottomOf="@id/inputLayout">
 
@@ -66,6 +67,7 @@
             android:id="@+id/checkboxSaveHashTagsInFile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:minHeight="0dp"
             android:text="Save hashtags in file"
             android:textSize="12sp"
@@ -75,6 +77,7 @@
             android:id="@+id/checkboxAlreadyHaveHashtagsPost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:minHeight="0dp"
             android:text="I already have hashtags post"
             android:textSize="12sp"
@@ -84,6 +87,7 @@
             android:id="@+id/checkboxHashTagsMoreOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:minHeight="0dp"
             android:text="More then one hashtag"
             android:textSize="12sp"
@@ -93,6 +97,7 @@
             android:id="@+id/checkboxHashTagsWithCounter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
             android:minHeight="0dp"
             android:text="Hash tags with counters"
             android:textSize="12sp"
@@ -104,10 +109,8 @@
             style="?materialButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginHorizontal="16dp"
             android:text="Create hashtags"
-            app:elevation="16dp"
             app:layout_constraintBottom_toTopOf="@id/button" />
 
         <com.google.android.material.button.MaterialButton
@@ -115,10 +118,8 @@
             style="?materialButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginHorizontal="16dp"
             android:text="Create pdf"
-            app:elevation="16dp"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

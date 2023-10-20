@@ -1,5 +1,10 @@
 package com.isidroid.b21.ui.home
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
+import android.content.Context.CLIPBOARD_SERVICE
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +21,7 @@ import com.isidroid.core.ui.AppBarListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BindFragment(), HomeView, AppBarListener {
+class HomeFragment : BindFragment(), HomeView {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -51,12 +56,6 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
         _binding = null
     }
 
-    override fun createToolbar(toolbar: MaterialToolbar, navController: NavController) {
-        super.createToolbar(toolbar, navController)
-        toolbar.visible(true)
-        toolbar.title = "Hello Sample World"
-    }
-
     override suspend fun onCreateViewModel() {
         viewModel.viewState.collect { state ->
             when (state) {
@@ -79,7 +78,15 @@ class HomeFragment : BindFragment(), HomeView, AppBarListener {
         if (fileName != null)
             Toast.makeText(activity, "Content saved in $fileName", Toast.LENGTH_SHORT).show()
 
-        binding.contentTextView.text = content
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val clipboard = requireActivity().getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+            val clip = ClipData.newPlainText("Telegram hash tags", content)
+            clipboard.setPrimaryClip(clip)
+        } else {
 
+        }
+
+
+        binding.contentTextView.text = content
     }
 }
