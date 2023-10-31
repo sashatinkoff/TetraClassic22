@@ -6,5 +6,5 @@ sealed interface UiState {
 
     object Complete : UiState
     data class Progress(val current: Int, val max: Int) : UiState
-    data class CompleteHashTags(val fileName: String?, val content: String) : UiState
+    data class CompleteHashTags(val content: String) : UiState
 }

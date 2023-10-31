@@ -3,10 +3,12 @@ package com.isidroid.b21.domain.usecase
 import android.content.Context
 import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
+import com.isidroid.b21.ext.makeSingleLine
+import com.isidroid.b21.ext.splitByLetter
 import com.isidroid.core.ext.readText
-import com.isidroid.core.ext.saveContentToFile
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.flow
+import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -14,21 +16,13 @@ import javax.inject.Singleton
 class FileUseCase @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
-    fun read(uri: Uri, ext: String) = flow {
-        val result = DocumentFile.fromTreeUri(context, uri)
-
-        val file = result?.listFiles()?.firstOrNull { it.name?.endsWith(".$ext") == true } ?: throw IllegalStateException("File not found")
-        emit(file.readText(context))
+    fun read(uri: Uri) = flow {
+        val r = DocumentFile.fromSingleUri(context, uri)
+        emit(r!!.readText(context))
     }
 
-    fun writeHashTags(uri: Uri, map: LinkedHashMap<String, Int>, showCounters: Boolean, moreThanOne: Boolean, alreadyHaveHashTags: Boolean, saveHashTagsInFile: Boolean) = flow {
-        val limit = when {
-            moreThanOne && alreadyHaveHashTags -> 2
-            moreThanOne || alreadyHaveHashTags -> 1
-            else -> 0
-        }
-
-        val entries = map.entries.filter { it.value > limit }
+    fun writeHashTags(map: LinkedHashMap<String, Int>, showCounters: Boolean, isSingleLine: Boolean, isSplitByLetter: Boolean) = flow {
+        val entries = map.entries
 
         val content = entries.joinToString("\n") { entry ->
             if (showCounters)
@@ -37,10 +31,13 @@ class FileUseCase @Inject constructor(
                 entry.key
         }
 
-        val fileName = "telegram_hash_tags.txt"
-        if (saveHashTagsInFile)
-            content.saveContentToFile(context, fileName, uri)
+        val result = when {
+            isSplitByLetter -> content.splitByLetter()
+            isSingleLine -> content.makeSingleLine()
+            else -> content
+        }
 
-        emit(Pair(fileName.takeIf { saveHashTagsInFile }, content))
+        Timber.i("$result")
+        emit(result)
     }
 }

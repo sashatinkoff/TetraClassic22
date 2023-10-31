@@ -87,14 +87,14 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun createHashTags(uri: Uri, moreThanOne: Boolean, showCounters: Boolean, alreadyHaveHashTags: Boolean, saveHashTagsInFile: Boolean) {
+    fun createHashTags(uri: Uri, showCounters: Boolean, isSingleLine: Boolean, isSplitByLetter: Boolean, ) {
         viewModelScope.launch {
-            fileUseCase.read(uri, "json")
+            fileUseCase.read(uri)
                 .flatMapMerge { hashTagUseCase.collectTags(it) }
-                .flatMapMerge { fileUseCase.writeHashTags(uri, it, showCounters, moreThanOne, alreadyHaveHashTags, saveHashTagsInFile) }
+                .flatMapMerge { fileUseCase.writeHashTags(it, showCounters, isSingleLine, isSplitByLetter) }
                 .flowOn(Dispatchers.IO)
                 .catchTimber { _viewState.value = UiState.Error(it) }
-                .onEach { _viewState.value = UiState.CompleteHashTags(it.first, it.second)}
+                .onEach { _viewState.value = UiState.CompleteHashTags(it)}
                 .collect()
         }
     }

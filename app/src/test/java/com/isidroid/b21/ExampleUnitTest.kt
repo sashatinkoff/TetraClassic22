@@ -1,5 +1,6 @@
 package com.isidroid.b21
 
+import com.isidroid.b21.ext.splitByLetter
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -12,101 +13,89 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        val data = A.values()
-        val bgColors = data.map { it.bgColor }.distinct()
-        val headerColor = data.map { it.headerColor }.distinct()
-
-        println(bgColors)
-        println(headerColor)
+        println(string.splitByLetter())
     }
 }
 
-enum class A(val bgColor: String, val headerColor: String) {
-    NEW(
-        bgColor = "R.color.audit_new",
-        headerColor = "R.color.audit_new_header",
-    ),
-
-    NEW_CHECKING(
-        bgColor = "R.color.audit_new",
-        headerColor = "R.color.audit_new_header",
-    ),
-
-    IN_PROGRESS(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
-
-    ASSIGNED(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
-
-    ON_CONTROL(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
-    ON_REWORK(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
-
-    CHECK(
-        bgColor = "R.color.audit_check",
-        headerColor = "R.color.audit_check_header",
-    ),
-    ON_CHECK(
-        bgColor = "R.color.audit_on_check",
-        headerColor = "R.color.audit_on_check_header",
-    ),
-
-    MODIFY(
-        bgColor = "R.color.audit_modify",
-        headerColor = "R.color.audit_modify_header",
-    ),
-
-    ANSWERS_MODIFIED_SENDING(
-        bgColor = "R.color.audit_modify",
-        headerColor = "R.color.audit_modify_header",
-    ),
-
-    ON_MODIFY(
-        bgColor = "R.color.audit_modify",
-        headerColor = "R.color.audit_modify_header",
-    ),
-
-    ACCEPTED(
-        bgColor = "R.color.audit_accepted",
-        headerColor = "R.color.audit_accepted_header",
-    ),
-
-    FAILED(
-        bgColor = "R.color.bg_course_card_failed_v2",
-        headerColor = "R.color.ic_course_state_failed",
-    ),
-
-    COMPLETED(
-        bgColor = "R.color.audit_completed",
-        headerColor = "R.color.audit_completed_header",
-    ),
-
-    ANSWERS_SENDING(
-        bgColor = "R.color.audit_progress",
-        headerColor = "R.color.audit_progress_header",
-    ),
-
-    CHECK_SENDING(
-        bgColor = "R.color.audit_new",
-        headerColor = "R.color.audit_new_header",
-    ),
-
-    UNASSIGNED(
-        bgColor = "R.color.audit_accepted",
-        headerColor = "R.color.list_state_nav_icon_text_color_unchecked",
-    ),
-
-    UNKNOWN(
-        bgColor = "R.color.audit_new",
-        headerColor = "R.color.audit_new_header",
-    );
-}
+private val string = "#apple\n" +
+        "#daily\n" +
+        "#dynamix\n" +
+        "#fail\n" +
+        "#vezubr\n" +
+        "#авито\n" +
+        "#анапа\n" +
+        "#березники\n" +
+        "#ближний_восток\n" +
+        "#блогеры\n" +
+        "#будущее\n" +
+        "#бухмиллер\n" +
+        "#вагнер\n" +
+        "#вангую\n" +
+        "#война\n" +
+        "#воспитание\n" +
+        "#времена_года\n" +
+        "#геноцид\n" +
+        "#гоа20\n" +
+        "#грузия\n" +
+        "#двойные_стандарты\n" +
+        "#девушки\n" +
+        "#европа\n" +
+        "#звезды\n" +
+        "#здоровье\n" +
+        "#знакомые\n" +
+        "#знаменитость\n" +
+        "#израиль\n" +
+        "#инвестиционный_портфель\n" +
+        "#ипотека16\n" +
+        "#ипотека21\n" +
+        "#ипотека23\n" +
+        "#история\n" +
+        "#итоги\n" +
+        "#кавказ\n" +
+        "#катастрофа\n" +
+        "#ковид\n" +
+        "#комментарии\n" +
+        "#конфликт\n" +
+        "#кризис\n" +
+        "#культура_отмены\n" +
+        "#либерал\n" +
+        "#ложь\n" +
+        "#мир\n" +
+        "#мысли\n" +
+        "#нацизм\n" +
+        "#нейросеть\n" +
+        "#новоселовы\n" +
+        "#новости\n" +
+        "#палестина\n" +
+        "#певчих\n" +
+        "#пермь\n" +
+        "#политика\n" +
+        "#последний_раз\n" +
+        "#предатели\n" +
+        "#психолог\n" +
+        "#репост\n" +
+        "#россия\n" +
+        "#самоизоляция\n" +
+        "#санкции\n" +
+        "#секс\n" +
+        "#семья\n" +
+        "#смерть\n" +
+        "#сочи\n" +
+        "#сочи19\n" +
+        "#сочи2020\n" +
+        "#сочи23\n" +
+        "#стихи\n" +
+        "#стихия\n" +
+        "#стройка_днк\n" +
+        "#таняжжет\n" +
+        "#тачки\n" +
+        "#тим\n" +
+        "#третья_мировая\n" +
+        "#трудныйребенок\n" +
+        "#турция\n" +
+        "#украина\n" +
+        "#цитаты\n" +
+        "#чаты\n" +
+        "#экономика\n" +
+        "#эмиграция\n" +
+        "#эмоция_дня"
